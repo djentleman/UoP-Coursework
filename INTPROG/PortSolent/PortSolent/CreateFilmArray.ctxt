@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.params=
+comment0.target=CreateFilmArray()
+comment1.params=
+comment1.target=Film[]\ createTop1000()
+comment1.text=\r\n\ createTop1000()\ returns\ an\ array\ containing\ the\ top\ 1000\ films\r\n\ of\ all\ time.\r\n
+comment2.params=
+comment2.target=Film\ getRandomFilm()
+numComments=3

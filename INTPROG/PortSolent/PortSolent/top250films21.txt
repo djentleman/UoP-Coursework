@@ -1,0 +1,250 @@
+In the Mood for Love,Wong Kar-Wai,2000,97
+Mulholland Dr.,Lynch David,2001,146
+Yi yi,Yang Edward,2000,173
+Eternal Sunshine of the Spotless Mind,Gondry Michel,2004,108
+Lost in Translation,Coppola Sofia,2003,102
+Spirited Away,Miyazaki Hayao,2001,124
+There Will Be Blood,Anderson Paul Thomas,2007,158
+Talk to Her,Almodóvar Pedro,2002,112
+History of Violence A,Cronenberg David,2005,95
+Y tu mamá también,Cuarón Alfonso,2001,105
+Crouching Tiger Hidden Dragon,Lee Ang,2000,120
+Sideways,Payne Alexander,2004,123
+Hurt Locker The,Bigelow Kathryn,2008,130
+Far from Heaven,Haynes Todd,2002,107
+Million Dollar Baby,Eastwood Clint,2004,137
+No Country for Old Men,Coen Joel and Ethan Coen,2007,122
+Royal Tenenbaums The,Anderson Wes,2001,109
+Before Sunset,Linklater Richard,2004,80
+Memento,Nolan Christopher,2000,113
+4 Months 3 Weeks and 2 Days,Mungiu Cristian,2007,113
+Pan's Labyrinth,del Toro Guillermo,2006,120
+Zodiac,Fincher David,2007,158
+Brokeback Mountain,Lee Ang,2005,134
+Punch-Drunk Love,Anderson Paul Thomas,2002,95
+Caché,Haneke Michael,2005,117
+A.I. Artificial Intelligence,Spielberg Steven,2001,145
+Lord of the Rings: The Return of the King The,Jackson Peter,2003,201
+Death of Mr. Lazarescu The,Puiu Cristi,2005,154
+Lord of the Rings: The Fellowship of the Ring The,Jackson Peter,2001,178
+City of God,Meirelles Fernando,2002,129
+Adaptation,Jonze Spike,2002,114
+Departed The,Scorsese Martin,2006,152
+Grizzly Man,Herzog Werner,2005,103
+Donnie Darko,Kelly Richard,2001,112
+Incredibles The,Bird Brad,2004,121
+Mystic River,Eastwood Clint,2003,137
+Dogville,von Trier Lars,2003,177
+Syndromes and a Century,Weerasethakul Apichatpong,2006,105
+2046,Wong Kar-Wai,2004,129
+Ghost World,Zwigoff Terry,2001,111
+WALL-E,Stanton Andrew,2008,98
+United 93,Greengrass Paul,2006,110
+Moulin Rouge,,Luhrmann Baz,2001,126
+Children of Men,Cuarón Alfonso,2006,109
+Squid and the Whale The,Baumbach Noah,2005,80
+Flight of the Red Balloon,Hou Hsiao-Hsien,2007,115
+Still Life,Jia Zhangke,2006,113
+Summer Hours,Assayas Olivier,2008,103
+Requiem for a Dream,Aronofsky Darren,2000,100
+Queen The,Frears Stephen,2006,103
+Elephant,Van Sant Gus,2003,81
+Finding Nemo,Stanton Andrew & Lee Unkrich,2003,100
+You Can Count on Me,Lonergan Kenneth,2000,110
+Capturing the Friedmans,Jarecki Andrew,2003,107
+Tropical Malady,Weerasethakul Apichatpong,2004,118
+Dancer in the Dark,von Trier Lars,2000,140
+Enfant L',Dardenne Jean-Pierre & Luc Dardenne,2005,95
+Russian Ark,Sokurov Aleksandr,2002,96
+Gleaners & I The,Varda Agnès,2000,82
+Lord of the Rings: The Two Towers The,Jackson Peter,2002,179
+Letters from Iwo Jima,Eastwood Clint,2006,140
+Pianist The,Polanski Roman,2002,148
+American Splendor,Pulcini Robert & Shari Springer Berman,2003,101
+Kings & Queen,Desplechin Arnaud,2004,152
+Inglourious Basterds,Tarantino Quentin,2009,153
+Lives of Others The,von Donnersmarck Florian Henckel,2006,138
+Serious Man A,Coen Joel and Ethan Coen,2009,105
+I'm Not There,Haynes Todd,2007,135
+Oldboy,Park Chan-wook,2003,120
+World The,Jia Zhangke,2004,140
+Christmas Tale A,Desplechin Arnaud,2008,153
+Fantastic Mr. Fox,Anderson Wes,2009,87
+Waking Life,Linklater Richard,2001,100
+Platform,Jia Zhangke,2000,154
+Almost Famous,Crowe Cameron,2000,122
+Amores perros,Iñárritu Alejandro González,2000,153
+House of Mirth The,Davies Terence,2000,140
+In the Bedroom,Field Todd,2001,130
+Assassination of Jesse James by the Coward Robert Ford The,Dominik Andrew,2007,160
+Synecdoche New York,Kaufman Charlie,2008,124
+New World The,Malick Terrence,2005,135
+Wendy and Lucy,Reichardt Kelly,2008,80
+Moolaadé,Sembene Ousmane,2004,120
+About Schmidt,Payne Alexander,2002,125
+Son The,Dardenne Jean-Pierre & Luc Dardenne,2002,103
+Traffic,Soderbergh Steven,2000,147
+Waltz with Bashir,Folman Ari,2008,90
+My Winnipeg,Maddin Guy,2007,80
+Gosford Park,Altman Robert,2001,137
+Headless Woman The,Martel Lucrecia,2008,87
+Borat: Cultural Learnings of America for Make Benefit Glorious Nation of Kazakhstan,Charles Larry,2006,84
+Kill Bill Vol. 1,Tarantino Quentin,2003,111
+Atanarjuat,Kunuk Zacahrias,2000,172
+In Praise of Love,Godard Jean-Luc,2001,97
+Let the Right One In,Alfredson Tomas,2008,114
+Inland Empire,Lynch David,2006,180
+Amélie,Jeunet Jean-Pierre,2001,122
+Shrek,Adamson Andrew & Vicky Jenson,2001,90
+Aviator The,Scorsese Martin,2004,170
+Silent Light,Reygadas Carlos,2007,136
+35 Shots of Rum,Denis Claire,2008,101
+Goodbye Dragon Inn,Tsai Ming-Liang,2003,82
+Saraband,Bergman Ingmar,2003,120
+Together,Moodysson Lukas,2000,106
+Holy Girl The,Martel Lucrecia,2004,103
+Vera Drake,Leigh Mike,2004,125
+Werckmeister Harmonies,Tarr Béla,2000,145
+Fog of War The,Morris Errol,2003,107
+Munich,Spielberg Steven,2005,160
+Up,Docter Pete,2009,96
+Piano Teacher The,Haneke Michael,2001,130
+Colossal Youth,Costa Pedro,2006,155
+Man Without a Past The,Kaurismäki Aki,2002,97
+Dark Knight The,Nolan Christopher,2008,152
+Master and Commander: The Far Side of The World,Weir Peter,2003,138
+Good Night and Good Luck,Clooney George,2005,93
+Time Out,Cantet Laurent,2001,134
+Paranoid Park,Van Sant Gus,2007,85
+Regular Lovers,Garrel Philippe,2004,178
+Hunger,McQueen Steve,2008,96
+Police Adjective,Porumboiu Corneliu,2009,115
+White Ribbon The,Haneke Michael,2009,144
+Circle The,Panahi Jafar,2000,90
+School of Rock,Linklater Richard,2003,108
+Little Miss Sunshine,Dayton Jonathan & Valerie Faris,2006,102
+Happy-Go-Lucky,Leigh Mike,2008,118
+Volver,Almodóvar Pedro,2006,121
+Half Nelson,Fleck Ryan,2006,107
+Bad Education,Almodóvar Pedro,2004,105
+Wrestler The,Aronofsky Darren,2008,109
+Best of Youth The,Giordana Marco Tullio,2003,373
+House of Flying Daggers,Zhang Yimou,2004,111
+Capote,Miller Bennett,2005,98
+Sexy Beast,Glazer Jonathan,2000,88
+Bowling for Columbine,Moore Michael,2002,120
+Intruder The,Denis Claire,2004,130
+What Time is it There?,Tsai Ming-Liang,2001,116
+Black Book,Verhoeven Paul,2006,146
+Café Lumière,Hou Hsiao-Hsien,2003,108
+Once,Carney John,2007,87
+I'm Going Home,de Oliveira Manoel,2000,89
+Gladiator,Scott Ridley,2000,154
+Wonder Boys,Hanson Curtis,2000,112
+Head-On,Akin Fatih,2003,121
+Fahrenheit 9/11,Moore Michael,2004,122
+25th Hour,Lee Spike,2002,134
+Gangs of New York,Scorsese Martin,2002,166
+Notre musique,Godard Jean-Luc,2004,80
+Demonlover,Assayas Olivier,2002,129
+To Be and to Have,Philibert Nicolas,2002,104
+Shaun of the Dead,Wright Edgar,2004,99
+Commune (Paris 1871) La,Watkins Peter,2000,345
+Eureka,Aoyama Shinji,2000,217
+Kill Bill Vol. 2,Tarantino Quentin,2004,136
+Three Times,Hou Hsiao-Hsien,2005,135
+Triplets of Belleville The,Chomet Sylvain,2003,80
+In the City of Sylvia,Guerín José Luis,2007,84
+In America,Sheridan Jim,2003,105
+Songs from the Second Floor,Andersson Roy,2000,98
+Eastern Promises,Cronenberg David,2007,101
+Last Days,Van Sant Gus,2004,96
+Milk,Van Sant Gus,2008,128
+Erin Brockovich,Soderbergh Steven,2000,130
+Ten,Kiarostami Abbas,2002,92
+Diving Bell and the Butterfly The,Schnabel Julian,2007,112
+A ma soeur,,Breillat Catherine,2001,86
+Spider,Cronenberg David,2002,98
+I Don’t Want to Sleep Alone,Tsai Ming-Liang,2006,118
+O Brother Where Art Thou?,Coen Joel and Ethan Coen,2000,107
+Hours The,Daldry Stephen,2002,114
+Host The,Bong Joon-ho,2006,119
+Man on Wire,Marsh James,2007,94
+Spellbound,Blitz Jeffrey,2002,96
+Bloody Sunday,Greengrass Paul,2001,110
+Distant,Ceylan Nuri Bilge,2002,110
+Kinsey,Condon Bill,2004,118
+Ratatouille,Bird Brad,2007,111
+George Washington,Green David Gordon,2000,89
+Irréversible,Noé Gaspar,2002,97
+Hotel Rwanda,George Terry,2004,121
+Two Lovers,Gray James,2008,110
+Up in the Air,Reitman Jason,2009,109
+Minority Report,Spielberg Steven,2002,144
+21 Grams,Iñárritu Alejandro González,2003,125
+24 Hour Party People,Winterbottom Michael,2001,115
+Offside,Panahi Jafar,2006,91
+Hero,Zhang Yimou,2002,99
+Chicago,Marshall Rob,2002,113
+Tie Xi Qu: West of the Tracks,Wang Bing,2003,551
+Nobody Knows,Koreeda Hirokazu,2003,141
+In the Loop,Iannucci Armando,2009,106
+Tarnation,Caouette Jonathan,2003,88
+Prairie Home Companion A,Altman Robert,2006,106
+Downfall,Hirschbiegel Oliver,2004,156
+Sun The,Sokurov Aleksandr,2005,115
+Black Hawk Down,Scott Ridley,2001,144
+Rachel Getting Married,Demme Jonathan,2008,113
+Maria Full of Grace,Marston Joshua,2003,100
+Crash,Haggis Paul,2004,113
+Flags of Our Fathers,Eastwood Clint,2006,132
+Persepolis,Paronnaud Vincent & Marjane Satrapi,2007,96
+High Fidelity,Frears Stephen,2000,113
+Femme Fatale,De Palma Brian,2002,110
+Chicken Run,Lord Peter & Nick Park,2000,84
+Monsoon Wedding,Nair Mira,2001,114
+Collateral,Mann Michael,2004,120
+Morvern Callar,Ramsay Lynne,2002,97
+I Heart Huckabees,Russell David O.,2004,106
+Casino Royale,Campbell Martin,2006,144
+Howl's Moving Castle,Miyazaki Hayao,2004,119
+12:08 East of Bucharest,Porumboiu Corneliu,2006,89
+Wallace & Gromit: The Curse of the Were-Rabbit,Park Nick & Steve Box,2005,85
+Duchess of Langeais The,Rivette Jacques,2007,137
+Before Night Falls,Schnabel Julian,2000,133
+Match Point,Allen Woody,2005,124
+Keane,Kerrigan Lodge,2004,100
+Man Who Wasn't There The,Coen Joel and Ethan Coen,2001,116
+Unknown Pleasures,Jia Zhangke,2002,112
+Crimson Gold,Panahi Jafar,2003,96
+Bright Star,Campion Jane,2009,119
+Slumdog Millionaire,Boyle Danny,2008,120
+Beaches of Agnès The,Varda Agnès,2008,110
+Gerry,Van Sant Gus,2001,102
+Gomorrah,Garrone Matteo,2008,137
+Tristram Shandy: A Cock and Bull Story,Winterbottom Michael,2005,94
+Edge of Heaven The,Akin Fatih,2007,121
+Into the Wild,Penn Sean,2007,148
+King Kong,Jackson Peter,2005,187
+Woman on the Beach,Hong Sang-soo,2006,100
+28 Days Later...,Boyle Danny,2002,113
+Monsters Inc.,Docter Peter/David Silverman/Lee Unkrich,2001,95
+Los Angeles Plays Itself,Andersen Thom,2003,169
+Old Joy,Reichardt Kelly,2005,73
+Late Marriage,Kosashvili Dover,2001,102
+Still Walking,Koreeda Hirokazu,2008,114
+Blissfully Yours,Weerasethakul Apichatpong,2002,125
+Coraline,Selick Henry,2009,101
+Kung Fu Hustle,Chow Stephen,2004,98
+Code Unknown,Haneke Michael,2000,116
+Paradise Now,Abu-Assad Hany,2005,91
+Of Time and the City,Davies Terence,2008,72
+Billy Elliot,Daldry Stephen,2000,110
+Time for Drunken Horses A,Ghobadi Bahman,2000,80
+Ballast,Hammer Lance,2008,96
+Where the Wild Things Are,Jonze Spike,2009,101
+Under the Sand,Ozon François,2000,96
+Iraq in Fragments,Longley James,2006,94
+Private Fears in Public Places,Resnais Alain,2006,120
+Bamako,Sissako Abderrahmane,2006,117
+Climates,Ceylan Nuri Bilge,2006,102

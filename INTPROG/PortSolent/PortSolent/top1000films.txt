@@ -1,0 +1,1001 @@
+Citizen Kane,Welles Orson,1941,119
+Vertigo,Hitchcock Alfred,1958,128
+Rules of the Game The,Renoir Jean,1939,113
+2001: A Space Odyssey,Kubrick Stanley,1968,139
+8½,Fellini Federico,1963,135
+Godfather The,Coppola Francis,1972,175
+Searchers The,Ford John,1956,119
+Seven Samurai The,Kurosawa Akira,1954,200
+Singin' in the Rain,Donen Stanley/Gene Kelly,1952,102
+Battleship Potemkin,Eisenstein Sergei,1925,65
+Tokyo Story,Ozu Yasujiro,1953,134
+Sunrise,Murnau F.W.,1927,110
+Lawrence of Arabia,Lean David,1962,216
+Bicycle Thieves,De Sica Vittorio,1948,90
+Godfather Part II The,Coppola Francis,1974,200
+Atalante L',Vigo Jean,1934,89
+Casablanca,Curtiz Michael,1942,102
+Rashomon,Kurosawa Akira,1950,88
+Raging Bull,Scorsese Martin,1980,128
+Passion of Joan of Arc The,Dreyer Carl,1928,77
+Touch of Evil,Welles Orson,1958,108
+Some Like it Hot,Wilder Billy,1959,119
+Dolce vita La,Fellini Federico,1960,175
+Grande illusion La,Renoir Jean,1937,117
+City Lights,Chaplin Charles,1931,86
+Taxi Driver,Scorsese Martin,1976,113
+General The,Keaton Buster/Clyde Bruckman,1926,74
+Psycho,Hitchcock Alfred,1960,109
+Enfants du paradis Les,Carné Marcel,1945,195
+Third Man The,Reed Carol,1949,104
+Sunset Blvd.,Wilder Billy,1950,110
+Gold Rush The,Chaplin Charles,1925,82
+Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb,Kubrick Stanley,1964,93
+Breathless,Godard Jean-Luc,1959,89
+Apocalypse Now,Coppola Francis,1979,150
+Chinatown,Polanski Roman,1974,131
+Night of the Hunter The,Laughton Charles,1955,93
+Ordet,Dreyer Carl,1955,125
+Avventura L',Antonioni Michelangelo,1960,145
+Blade Runner,Scott Ridley,1982,118
+400 Blows The,Truffaut François,1959,99
+Persona,Bergman Ingmar,1966,81
+Andrei Rublev,Tarkovsky Andrei,1966,185
+Rear Window,Hitchcock Alfred,1954,112
+It's a Wonderful Life,Capra Frank,1946,129
+Magnificent Ambersons The,Welles Orson,1942,88
+Ugetsu monogatari,Mizoguchi Kenji,1953,96
+M,Lang Fritz,1931,99
+Jules et Jim,Truffaut François,1961,104
+Strada La,Fellini Federico,1954,115
+Wild Bunch The,Peckinpah Sam,1969,144
+Contempt,Godard Jean-Luc,1963,103
+Seventh Seal The,Bergman Ingmar,1957,96
+Intolerance,Griffith D.W.,1916,178
+Modern Times,Chaplin Charles,1936,89
+Wild Strawberries,Bergman Ingmar,1957,90
+North by Northwest,Hitchcock Alfred,1959,136
+Rio Bravo,Hawks Howard,1959,141
+Apartment The,Wilder Billy,1960,125
+Au hasard Balthazar,Bresson Robert,1966,95
+Gone with the Wind,Fleming Victor,1939,222
+Once Upon a Time in the West,Leone Sergio,1968,165
+Conformist The,Bertolucci Bernardo,1969,115
+Pather Panchali,Ray Satyajit,1955,112
+Leopard The,Visconti Luchino,1963,205
+Wizard of Oz The,Fleming Victor,1939,101
+Greed,von Stroheim Erich,1924,140
+Mirror The,Tarkovsky Andrei,1976,106
+Metropolis,Lang Fritz,1926,120
+All About Eve,Mankiewicz Joseph L.,1950,138
+Man Who Shot Liberty Valance The,Ford John,1962,119
+To Be or Not to Be,Lubitsch Ernst,1942,99
+Viridiana,Buñuel Luis,1961,90
+Nashville,Altman Robert,1975,159
+Fanny and Alexander,Bergman Ingmar,1982,189
+Amarcord,Fellini Federico,1973,127
+Notorious,Hitchcock Alfred,1946,101
+Madame de...,Ophüls Max,1953,105
+Ikiru,Kurosawa Akira,1952,143
+Bringing Up Baby,Hawks Howard,1938,102
+Pickpocket,Bresson Robert,1959,75
+Letter from an Unknown Woman,Ophüls Max,1948,90
+Stagecoach,Ford John,1939,96
+Barry Lyndon,Kubrick Stanley,1975,183
+Aguirre: The Wrath of God,Herzog Werner,1972,94
+Voyage in Italy,Rossellini Roberto,1953,97
+Sansho the Bailiff,Mizoguchi Kenji,1954,125
+Playtime,Tati Jacques,1967,108
+Jaws,Spielberg Steven,1975,124
+Clockwork Orange A,Kubrick Stanley,1971,137
+Battle of Algiers The,Pontecorvo Gillo,1965,123
+Pierrot le fou,Godard Jean-Luc,1965,110
+Last Year at Marienbad,Resnais Alain,1961,94
+On the Waterfront,Kazan Elia,1954,108
+My Darling Clementine,Ford John,1946,97
+GoodFellas,Scorsese Martin,1990,146
+Double Indemnity,Wilder Billy,1944,106
+Rome Open City,Rossellini Roberto,1945,105
+Blue Velvet,Lynch David,1986,120
+Duck Soup,McCarey Leo,1933,70
+Man with a Movie Camera The,Vertov Dziga,1929,80
+Âge d'or L',Buñuel Luis,1930,63
+Nosferatu,Murnau F.W.,1922,84
+Star Wars,Lucas George,1977,121
+Annie Hall,Allen Woody,1977,94
+His Girl Friday,Hawks Howard,1940,92
+Hiroshima mon amour,Resnais Alain,1959,91
+Napoléon,Gance Abel,1927,235
+Lady Eve The,Sturges Preston,1941,94
+King Kong,Cooper Merian C./Ernest B. Schoedsack,1933,103
+Gertrud,Dreyer Carl,1964,116
+Stalker,Tarkovsky Andrei,1979,160
+Olvidados Los,Buñuel Luis,1950,88
+Manhattan,Allen Woody,1979,96
+Sherlock Jr.,Keaton Buster,1924,44
+Ran,Kurosawa Akira,1985,161
+Exterminating Angel The,Buñuel Luis,1962,95
+Paisan,Rossellini Roberto,1946,120
+Broken Blossoms,Griffith D.W.,1919,90
+Treasure of the Sierra Madre The,Huston John,1948,124
+Out of the Past,Tourneur Jacques,1947,97
+E.T. The Extra-Terrestrial,Spielberg Steven,1982,115
+Umberto D.,De Sica Vittorio,1952,89
+McCabe & Mrs. Miller,Altman Robert,1971,121
+Vivre sa vie,Godard Jean-Luc,1963,85
+Ashes and Diamonds,Wajda Andrzej,1958,96
+Mean Streets,Scorsese Martin,1973,110
+Sullivan's Travels,Sturges Preston,1941,91
+Grapes of Wrath The,Ford John,1940,129
+Pulp Fiction,Tarantino Quentin,1994,154
+Dekalog,Kieslowski Krszystof,1988,550
+Red Shoes The,Powell Michael/Emeric Pressburger,1948,133
+Birth of a Nation The,Griffith D.W.,1915,187
+Man Escaped A,Bresson Robert,1956,102
+Jetée La,Marker Chris,1962,27
+Earth,Dovzhenko Alexander,1930,90
+Shining The,Kubrick Stanley,1980,142
+Matter of Life and Death A,Powell Michael/Emeric Pressburger,1946,104
+Close Encounters of the Third Kind,Spielberg Steven,1977,135
+Life and Death of Colonel Blimp The,Powell Michael/Emeric Pressburger,1943,163
+Best Years of Our Lives The,Wyler William,1946,172
+Chimes at Midnight,Welles Orson,1966,115
+Don't Look Now,Roeg Nicolas,1973,110
+Bonnie and Clyde,Penn Arthur,1967,111
+Philadelphia Story The,Cukor George,1940,112
+Black Narcissus,Powell Michael/Emeric Pressburger,1946,99
+Brief Encounter,Lean David,1945,85
+Once Upon a Time in America,Leone Sergio,1984,227
+One Flew Over the Cuckoo's Nest,Forman Milos,1975,133
+Red River,Hawks Howard,1948,133
+Belle de jour,Buñuel Luis,1967,100
+Jeanne Dielman 23 Quai du Commerce 1080 Bruxelles,Akerman Chantal,1975,201
+Cabinet of Dr. Caligari The,Wiene Robert,1919,69
+Days of Heaven,Malick Terrence,1978,95
+Badlands,Malick Terrence,1973,95
+Band Wagon The,Minnelli Vincente,1953,112
+Ivan the Terrible Part Two,Eisenstein Sergei,1946,88
+Sweet Smell of Success,Mackendrick Alexander,1957,96
+Shoah,Lanzmann Claude,1985,566
+Woman Under the Influence A,Cassavetes John,1974,155
+Rocco and His Brothers,Visconti Luchino,1960,180
+Cries and Whispers,Bergman Ingmar,1972,106
+Brazil,Gilliam Terry,1985,131
+Ivan the Terrible Part One,Eisenstein Sergei,1944,96
+Good the Bad and the Ugly The,Leone Sergio,1966,161
+Conversation The,Coppola Francis,1974,113
+Chien andalou Un,Buñuel Luis,1928,16
+Palm Beach Story The,Sturges Preston,1942,90
+Maltese Falcon The,Huston John,1941,100
+Partie de campagne,Renoir Jean,1936,40
+Travelling Players The,Angelopoulos Theo,1975,230
+Trouble in Paradise,Lubitsch Ernst,1932,83
+Discreet Charm of the Bourgeoisie The,Buñuel Luis,1972,100
+Quiet Man The,Ford John,1952,129
+Belle et la bête La,Cocteau Jean,1946,95
+Mother and the Whore The,Eustache Jean,1973,210
+Freaks,Browning Tod,1932,64
+Last Laugh The,Murnau F.W.,1924,77
+Do the Right Thing,Lee Spike,1989,120
+World of Apu The,Ray Satyajit,1959,103
+Gospel According to St. Matthew The,Pasolini Pier Paolo,1964,135
+Monsieur Verdoux,Chaplin Charles,1947,123
+Vampyr,Dreyer Carl,1932,73
+Nights of Cabiria,Fellini Federico,1957,110
+Exorcist The,Friedkin William,1973,121
+Performance,Roeg Nicolas/Donald Cammell,1970,105
+Death in Venice,Visconti Luchino,1971,130
+Raiders of the Lost Ark,Spielberg Steven,1981,115
+Music Room The,Ray Satyajit,1958,95
+Celine and Julie Go Boating,Rivette Jacques,1974,192
+Paths of Glory,Kubrick Stanley,1957,86
+Blow-Up,Antonioni Michelangelo,1966,111
+Eclisse L',Antonioni Michelangelo,1962,123
+It Happened One Night,Capra Frank,1934,105
+Late Spring,Ozu Yasujiro,1949,108
+Throne of Blood,Kurosawa Akira,1957,108
+River The,Renoir Jean,1951,99
+Great Dictator The,Chaplin Charles,1940,128
+Pandora's Box,Pabst G.W.,1928,110
+Ali: Fear Eats the Soul,Fassbinder Rainer Werner,1974,94
+Sans soleil,Marker Chris,1983,100
+Crowd The,Vidor King,1928,104
+Schindler's List,Spielberg Steven,1993,195
+Spirit of the Beehive The,Erice Victor,1973,95
+Deer Hunter The,Cimino Michael,1978,183
+Wages of Fear The,Clouzot Henri-Georges,1952,105
+Kind Hearts and Coronets,Hamer Robert,1949,104
+Umbrellas of Cherbourg The,Demy Jacques,1964,91
+Shop Around the Corner The,Lubitsch Ernst,1940,97
+Argent L',Bresson Robert,1983,90
+Tabu,Murnau F.W.,1931,82
+Written on the Wind,Sirk Douglas,1956,99
+Bride of Frankenstein,Whale James,1935,75
+Night of the Living Dead,Romero George A.,1968,96
+Graduate The,Nichols Mike,1967,105
+Alien,Scott Ridley,1979,117
+Unforgiven,Eastwood Clint,1992,127
+Rosemary's Baby,Polanski Roman,1968,136
+Close-Up,Kiarostami Abbas,1989,93
+Bridge on the River Kwai The,Lean David,1957,161
+Johnny Guitar,Ray Nicholas,1954,110
+Alexander Nevsky,Eisenstein Sergei,1938,107
+Peeping Tom,Powell Michael,1960,109
+Notte La,Antonioni Michelangelo,1961,120
+Imitation of Life,Sirk Douglas,1959,124
+Only Angels Have Wings,Hawks Howard,1939,121
+Solaris,Tarkovsky Andrei,1972,165
+Berlin Alexanderplatz,Fassbinder Rainer Werner,1980,931
+Samouraï Le,Melville Jean-Pierre,1967,95
+Birds The,Hitchcock Alfred,1963,120
+Meet Me in St. Louis,Minnelli Vincente,1944,113
+Mr. Hulot's Holiday,Tati Jacques,1953,86
+Star is Born A,Cukor George,1954,154
+Texas Chainsaw Massacre The,Hooper Tobe,1974,83
+To Kill a Mockingbird,Mulligan Robert,1962,129
+Week-End,Godard Jean-Luc,1967,103
+Night at the Opera A,Wood Sam,1935,92
+Cinema Paradiso,Tornatore Giuseppe,1988,123
+Nanook of the North,Flaherty Robert,1922,79
+Orpheus,Cocteau Jean,1950,95
+Shoot the Piano Player,Truffaut François,1960,92
+Diary of a Country Priest,Bresson Robert,1950,120
+Snow White and the Seven Dwarfs,Hand David,1937,83
+Crimes and Misdemeanors,Allen Woody,1989,104
+Sátántangó,Tarr Béla,1994,450
+In the Mood for Love,Wong Kar-Wai,2000,97
+Zero for Conduct,Vigo Jean,1933,41
+Passenger The,Antonioni Michelangelo,1975,119
+Senso,Visconti Luchino,1954,115
+Last Tango in Paris,Bertolucci Bernardo,1973,129
+Germany Year Zero,Rossellini Roberto,1947,74
+Two or Three Things I Know About Her,Godard Jean-Luc,1966,95
+Salo or the 120 Days of Sodom,Pasolini Pier Paolo,1975,117
+Story of the Late Chrysanthemums The,Mizoguchi Kenji,1939,143
+High Noon,Zinnemann Fred,1952,84
+Ninotchka,Lubitsch Ernst,1939,110
+Wings of Desire,Wenders Wim,1987,130
+Life of Oharu The,Mizoguchi Kenji,1952,146
+Terminator The,Cameron James,1984,108
+To Have and Have Not,Hawks Howard,1944,100
+Blue Angel The,von Sternberg Josef,1930,103
+Tree of Wooden Clogs The,Olmi Ermanno,1978,185
+Day for Night,Truffaut François,1973,120
+Fantasia,Sharpsteen Ben,1940,120
+Piano The,Campion Jane,1993,121
+Shane,Stevens George,1953,118
+Day of Wrath,Dreyer Carl,1943,110
+Fargo,Coen Joel and Ethan Coen,1995,97
+In the Realm of the Senses,Oshima Nagisa,1976,108
+1900,Bertolucci Bernardo,1976,311
+Floating Clouds,Naruse Mikio,1955,123
+Mouchette,Bresson Robert,1966,80
+Lola Montès,Ophüls Max,1955,110
+Empire Strikes Back The,Kershner Irvin,1980,124
+West Side Story,Wise Robert/Jerome Robbins,1961,151
+Dawn of the Dead,Romero George A.,1978,126
+Crime of Monsieur Lange The,Renoir Jean,1936,90
+All That Heaven Allows,Sirk Douglas,1955,89
+Big Sleep The,Hawks Howard,1946,114
+Miracle in Milan,De Sica Vittorio,1951,95
+Cabaret,Fosse Bob,1972,128
+My Night at Maud's,Rohmer Eric,1969,105
+Last Picture Show The,Bogdanovich Peter,1971,118
+Night and Fog,Resnais Alain,1955,32
+Million Le,Clair René,1931,85
+Make Way for Tomorrow,McCarey Leo,1937,92
+Salvatore Giuliano,Rosi Francesco,1961,125
+Laura,Preminger Otto,1944,85
+Midnight Cowboy,Schlesinger John,1969,113
+Meshes of the Afternoon,Deren Maya,1943,15
+Wind The,Sjöström Victor,1928,88
+Autumn Afternoon An,Ozu Yasujiro,1962,115
+Strangers on a Train,Hitchcock Alfred,1951,101
+Kings of the Road,Wenders Wim,1976,176
+Aparajito,Ray Satyajit,1956,108
+African Queen The,Huston John,1951,105
+Kid The,Chaplin Charles,1921,60
+Kiss Me Deadly,Aldrich Robert,1955,105
+Scarlet Empress The,von Sternberg Josef,1934,110
+Rebel Without a Cause,Ray Nicholas,1955,111
+In a Lonely Place,Ray Nicholas,1950,91
+Time to Live and the Time to Die The,Hou Hsiao-Hsien,1985,137
+Aliens,Cameron James,1986,137
+Verdugo El,Berlanga Luis García,1963,90
+Strike,Eisenstein Sergei,1924,73
+Asphalt Jungle The,Huston John,1950,112
+How Green Was My Valley,Ford John,1941,118
+Carrie,De Palma Brian,1976,97
+Shadows,Cassavetes John,1959,87
+Red Desert,Antonioni Michelangelo,1964,118
+Hustler The,Rossen Robert,1961,135
+Come and See,Klimov Elem,1985,142
+Paris Texas,Wenders Wim,1984,150
+Rebecca,Hitchcock Alfred,1940,130
+White Heat,Walsh Raoul,1949,114
+Top Hat,Sandrich Mark,1935,99
+Wavelength,Snow Michael,1967,45
+Eraserhead,Lynch David,1976,90
+Charulata,Ray Satyajit,1964,124
+Chungking Express,Wong Kar-Wai,1994,104
+All Quiet on the Western Front,Milestone Lewis,1930,105
+Awful Truth The,McCarey Leo,1937,92
+Amadeus,Forman Milos,1984,158
+Network,Lumet Sidney,1976,121
+Triumph of the Will,Riefenstahl Leni,1935,110
+Killer of Sheep,Burnett Charles,1977,83
+High and Low,Kurosawa Akira,1963,142
+39 Steps The,Hitchcock Alfred,1935,87
+City of Sadness A,Hou Hsiao-Hsien,1989,158
+King of Comedy The,Scorsese Martin,1983,109
+Ben-Hur,Wyler William,1959,212
+October,Eisenstein Sergei,1927,103
+El,Buñuel Luis,1952,91
+Pinocchio,Sharpsteen Ben & Hamilton Luske,1940,88
+Thief of Bagdad The,Powell Michael/Ludwig Berger/Tim Whelan,1940,106
+Yojimbo,Kurosawa Akira,1961,110
+Shadow of a Doubt,Hitchcock Alfred,1943,108
+Tootsie,Pollack Sydney,1982,116
+Plaisir Le,Ophüls Max,1951,97
+F for Fake,Welles Orson,1973,85
+Accattone,Pasolini Pier Paolo,1961,120
+Black God White Devil,Rocha Glauber,1964,110
+Easy Rider,Hopper Dennis,1969,94
+Five Easy Pieces,Rafelson Bob,1970,98
+Man of Aran,Flaherty Robert,1934,77
+Marnie,Hitchcock Alfred,1964,129
+Mad Max 2,Miller George,1981,94
+Eyes Without a Face,Franju Georges,1959,88
+Spartacus,Kubrick Stanley,1960,184
+Wedding March The,von Stroheim Erich,1928,113
+Casque d'or,Becker Jacques,1952,96
+Mon oncle,Tati Jacques,1958,126
+Cameraman The,Keaton Buster/Edward Sedgwick,1928,69
+Heat,Mann Michael,1995,174
+Navigator The,Keaton Buster/Donald Crisp,1924,69
+Closely Watched Trains,Menzel Jirí,1966,89
+Deliverance,Boorman John,1972,109
+Memories of Underdevelopment,Alea Tomás Gutiérrez,1968,97
+Killing of a Chinese Bookie The,Cassavetes John,1976,109
+Repulsion,Polanski Roman,1965,105
+Back to the Future,Zemeckis Robert,1985,116
+Vitelloni I,Fellini Federico,1953,104
+Great Expectations,Lean David,1946,118
+Manchurian Candidate The,Frankenheimer John,1962,126
+Groundhog Day,Ramis Harold,1993,103
+Canterbury Tale A,Powell Michael/Emeric Pressburger,1944,124
+Halloween,Carpenter John,1978,93
+Providence,Resnais Alain,1977,104
+Stranger Than Paradise,Jarmusch Jim,1984,90
+Flowers of St. Francis The,Rossellini Roberto,1950,83
+In a Year with 13 Moons,Fassbinder Rainer Werner,1978,129
+Reservoir Dogs,Tarantino Quentin,1991,99
+Fellini Satyricon,Fellini Federico,1969,129
+Mulholland Dr.,Lynch David,2001,146
+Silence of the Lambs The,Demme Jonathan,1991,118
+Don't Look Back,Pennebaker D.A.,1967,96
+Love Streams,Cassavetes John,1984,141
+Point Blank,Boorman John,1967,92
+Dead The,Huston John,1987,83
+Listen to Britain,Jennings Humphrey,1941,20
+Lady Vanishes The,Hitchcock Alfred,1938,97
+Breaking the Waves,von Trier Lars,1996,156
+Steamboat Bill Jr.,Keaton Buster/Charles F. Reisner,1928,71
+Loves of a Blonde,Forman Milos,1965,88
+Claire's Knee,Rohmer Eric,1971,103
+Bring Me the Head of Alfredo Garcia,Peckinpah Sam,1974,112
+Butch Cassidy and the Sundance Kid,Hill George Roy,1969,112
+Streetcar Named Desire A,Kazan Elia,1951,122
+Colour of Pomegranate The,Parajanov Sergei,1969,73
+Servant The,Losey Joseph,1963,115
+Tristana,Buñuel Luis,1970,98
+Scorpio Rising,Anger Kenneth,1964,29
+Our Hospitality,Keaton Buster/John Blystone,1923,74
+Doctor Zhivago,Lean David,1965,197
+Mr. Smith Goes to Washington,Capra Frank,1939,129
+JFK,Stone Oliver,1991,188
+Chelsea Girls,Warhol Andy,1967,215
+Forbidden Games,Clément René,1951,87
+Thelma & Louise,Scott Ridley,1991,128
+I Know Where I'm Going,,Powell Michael/Emeric Pressburger,1945,91
+Frankenstein,Whale James,1931,70
+Lady from Shanghai The,Welles Orson,1948,87
+Big Heat The,Lang Fritz,1953,90
+Big Lebowski The,Coen Joel and Ethan Coen,1998,113
+Vampires Les,Feuillade Louis,1915,440
+Muriel,Resnais Alain,1963,115
+Henry V,Olivier Laurence,1944,137
+Alice in the Cities,Wenders Wim,1974,110
+India Song,Duras Marguerite,1974,120
+Invasion of the Body Snatchers,Siegel Don,1956,80
+Spring in a Small Town,Fei Mu,1948,85
+Sacrifice The,Tarkovsky Andrei,1986,145
+Faust,Murnau F.W.,1926,116
+All That Jazz,Fosse Bob,1979,123
+Harold and Maude,Ashby Hal,1972,90
+Cloud-Capped Star The,Ghatak Ritwik,1960,126
+Pyaasa,Dutt Guru,1957,146
+Dersu Uzala,Kurosawa Akira,1975,140
+My Neighbour Totoro,Miyazaki Hayao,1988,86
+Full Metal Jacket,Kubrick Stanley,1987,116
+This is Spinal Tap,Reiner Rob,1984,82
+Hard Day's Night A,Lester Richard,1964,85
+Cat People,Tourneur Jacques,1942,73
+Young Girls of Rochefort The,Demy Jacques,1967,124
+Seven Chances,Keaton Buster,1925,56
+Toy Story,Lasseter John,1995,80
+Dog Day Afternoon,Lumet Sidney,1975,130
+It's a Gift,McLeod Norman Z.,1934,73
+Where is the Friend's Home?,Kiarostami Abbas,1987,85
+Some Came Running,Minnelli Vincente,1958,136
+Nostalghia,Tarkovsky Andrei,1983,120
+Red Balloon The,Lamorisse Albert,1956,34
+Sound of Music The,Wise Robert,1965,174
+Lola,Demy Jacques,1961,90
+Monty Python's Life of Brian,Jones Terry,1979,93
+Three Colours: Red,Kieslowski Krszystof,1994,99
+Moment of Innocence A,Makhmalbaf Mohsen,1995,78
+American Graffiti,Lucas George,1973,110
+Limelight,Chaplin Charles,1952,145
+Brighter Summer Day A,Yang Edward,1991,237
+Love Me Tonight,Mamoulian Rouben,1932,96
+Evil Dead II,Raimi Sam,1987,85
+Masculin Feminin,Godard Jean-Luc,1966,103
+Terra em Transe,Rocha Glauber,1967,106
+Lancelot du Lac,Bresson Robert,1974,84
+Yi yi,Yang Edward,2000,173
+Being There,Ashby Hal,1979,130
+Raise the Red Lantern,Zhang Yimou,1991,125
+Voyage dans la lune Le,Méliès Georges,1902,14
+Local Hero,Forsyth Bill,1983,111
+Kes,Loach Ken,1969,113
+Silence The,Bergman Ingmar,1963,96
+Scarface,Hawks Howard,1932,90
+My Life as a Dog,Hallström Lasse,1985,101
+Breakfast at Tiffany's,Edwards Blake,1961,115
+Place in the Sun A,Stevens George,1951,122
+Dames du Bois de Boulogne Les,Bresson Robert,1945,85
+Terra trema La,Visconti Luchino,1947,160
+Rocky,Avildsen John G.,1976,119
+Cool Hand Luke,Rosenberg Stuart,1967,126
+They Were Expendable,Ford John,1945,135
+Foolish Wives,von Stroheim Erich,1922,107
+Videodrome,Cronenberg David,1983,90
+I Am Cuba,Kalatozishvili Mikheil,1964,85
+Right Stuff The,Kaufman Philip,1983,193
+42nd Street,Bacon Lloyd,1933,89
+She Wore a Yellow Ribbon,Ford John,1949,103
+Affair to Remember An,McCarey Leo,1957,115
+Faces,Cassavetes John,1968,130
+Detour,Ulmer Edgar G.,1945,69
+L.A. Confidential,Hanson Curtis,1997,137
+Dead Man,Jarmusch Jim,1995,121
+12 Angry Men,Lumet Sidney,1957,95
+Dead Ringers,Cronenberg David,1988,115
+French Cancan,Renoir Jean,1955,93
+Ferris Bueller's Day Off,Hughes John,1986,103
+Fellini's Casanova,Fellini Federico,1976,158
+Teorema,Pasolini Pier Paolo,1968,98
+Man Who Fell to Earth The,Roeg Nicolas,1976,140
+Dumbo,Sharpsteen Ben,1941,64
+Age of Innocence The,Scorsese Martin,1993,133
+I Was Born But…,Ozu Yasujiro,1932,100
+That Obscure Object of Desire,Buñuel Luis,1977,103
+Suspiria,Argento Dario,1977,92
+Blow Out,De Palma Brian,1981,107
+Olympia,Riefenstahl Leni,1938,220
+Golden Coach The,Renoir Jean,1952,100
+Adventures of Robin Hood The,Curtiz Michael/William Keighley,1938,102
+Man Who Would Be King The,Huston John,1975,129
+Army of Shadows,Melville Jean-Pierre,1969,140
+Last Detail The,Ashby Hal,1973,105
+Shadows of Our Forgotten Ancestors,Parajanov Sergei,1964,95
+Damned The,Visconti Luchino,1969,155
+Innocents The,Clayton Jack,1961,100
+Spirited Away,Miyazaki Hayao,2001,124
+All the President's Men,Pakula Alan J.,1976,138
+Saturday Night and Sunday Morning,Reisz Karel,1960,90
+À nous la liberté,Clair René,1931,97
+Scenes from a Marriage,Bergman Ingmar,1973,168
+Devils The,Russell Ken,1971,109
+Scarface,De Palma Brian,1983,170
+Underground,Kusturica Emir,1995,192
+Devil is a Woman The,von Sternberg Josef,1935,83
+Winter Light,Bergman Ingmar,1962,80
+Day the Earth Stood Still The,Wise Robert,1951,92
+And Life Goes On,Kiarostami Abbas,1992,108
+Distant Voices Still Lives,Davies Terence,1988,85
+I Walked with a Zombie,Tourneur Jacques,1943,69
+Marriage of Maria Braun The,Fassbinder Rainer Werner,1978,120
+Monty Python and the Holy Grail,Gilliam Terry/Terry Jones,1975,90
+Lolita,Kubrick Stanley,1962,152
+Reds,Beatty Warren,1981,200
+Three Colours: Blue,Kieslowski Krszystof,1993,100
+Midnight Run,Brest Martin,1988,122
+On the Town,Donen Stanley/Gene Kelly,1949,98
+Terminator 2: Judgment Day,Cameron James,1991,136
+Bande à part,Godard Jean-Luc,1964,97
+Two-Lane Blacktop,Hellman Monte,1971,101
+Bitter Tears of Petra von Kant The,Fassbinder Rainer Werner,1972,119
+Stromboli,Rossellini Roberto,1949,81
+Bigger Than Life,Ray Nicholas,1956,95
+Dirty Harry,Siegel Don,1971,102
+Boogie Nights,Anderson Paul Thomas,1997,155
+Enigma of Kaspar Hauser The,Herzog Werner,1974,110
+Story of a Cheat The,Guitry Sacha,1936,85
+Barefoot Contessa The,Mankiewicz Joseph L.,1954,128
+Antonio das Mortes,Rocha Glauber,1969,95
+Producers The,Brooks Mel,1968,88
+Young Mr. Lincoln,Ford John,1939,100
+Pat Garrett and Billy the Kid,Peckinpah Sam,1973,122
+Odd Man Out,Reed Carol,1947,115
+Forrest Gump,Zemeckis Robert,1994,142
+Double Life of Veronique The,Kieslowski Krszystof,1991,97
+Wild Child The,Truffaut François,1969,85
+Eternal Sunshine of the Spotless Mind,Gondry Michel,2004,108
+Diaboliques Les,Clouzot Henri-Georges,1955,114
+Circus The,Chaplin Charles,1928,72
+Barton Fink,Coen Joel and Ethan Coen,1991,117
+Husbands,Cassavetes John,1970,138
+Long Goodbye The,Altman Robert,1973,112
+Beyond the Valley of the Dolls,Meyer Russ,1970,109
+Chant d'amour Un,Genet Jean,1950,26
+Mildred Pierce,Curtiz Michael,1945,109
+Blood of a Poet The,Cocteau Jean,1930,58
+Through the Olive Trees,Kiarostami Abbas,1994,103
+Killer The,Woo John,1989,110
+Ossessione,Visconti Luchino,1942,140
+Alphaville,Godard Jean-Luc,1965,95
+Ride the High Country,Peckinpah Sam,1962,94
+Fight Club,Fincher David,1999,139
+Jour se lève Le,Carné Marcel,1939,93
+Outskirts,Barnet Boris,1933,98
+Picnic at Hanging Rock,Weir Peter,1975,110
+Cleo from 5 to 7,Varda Agnès,1961,90
+Killing The,Kubrick Stanley,1956,83
+Seven Women,Ford John,1966,87
+Party The,Edwards Blake,1968,99
+Tiger of Eschnapur The,Lang Fritz,1958,101
+Barren Lives,Dos Santos Nelson Pereira,1963,135
+Time of the Gypsies,Kusturica Emir,1989,142
+If...,Anderson Lindsay,1968,111
+America America,Kazan Elia,1963,168
+Passion,Godard Jean-Luc,1982,87
+Gun Crazy,Lewis Joseph H.,1949,86
+Touch of Zen A,Hu King,1968,200
+Get Carter,Hodges Mike,1971,112
+Now Voyager,Rapper Irving,1942,117
+Cranes Are Flying The,Kalatozishvili Mikheil,1957,94
+Liebelei,Ophüls Max,1932,88
+Duel in the Sun,Vidor King,1946,130
+Fat City,Huston John,1972,100
+Que viva Mexico,,Eisenstein Sergei,1932,85
+M*A*S*H,Altman Robert,1970,116
+Die Hard,McTiernan John,1988,131
+Young Frankenstein,Brooks Mel,1974,105
+Bambi,Hand David,1942,69
+Van Gogh,Pialat Maurice,1991,155
+Hart of London The,Chambers Jack,1970,80
+Pépé le Moko,Duvivier Julien,1936,93
+Bad and the Beautiful The,Minnelli Vincente,1952,118
+Holiday,Cukor George,1938,93
+Bob le flambeur,Melville Jean-Pierre,1955,102
+Shawshank Redemption The,Darabont Frank,1994,142
+Phantom of Liberty The,Buñuel Luis,1974,104
+Tin Drum The,Schlöndorff Volker,1979,142
+Sawdust and Tinsel,Bergman Ingmar,1953,92
+Hellzapoppin',Potter H.C.,1941,84
+Sauve qui peut (la vie),Godard Jean-Luc,1980,87
+Hour of the Furnaces The,Getino Octavio & Fernando E. Solanas,1968,113
+Verdict The,Lumet Sidney,1982,129
+Ivan's Childhood,Tarkovsky Andrei,1962,94
+Région centrale La,Snow Michael,1971,180
+Heaven's Gate,Cimino Michael,1980,219
+Short Cuts,Altman Robert,1993,189
+Salesman,Maysles Albert/David Maysles/Charlotte Zwerin,1968,85
+Down by Law,Jarmusch Jim,1986,107
+They Live by Night,Ray Nicholas,1948,95
+Storm Over Asia,Pudovkin Vsevolod,1928,93
+Funny Face,Donen Stanley,1957,103
+Fitzcarraldo,Herzog Werner,1982,157
+Splendor in the Grass,Kazan Elia,1961,124
+Diner,Levinson Barry,1982,110
+East of Eden,Kazan Elia,1955,115
+Land Without Bread,Buñuel Luis,1932,28
+Unfaithfully Yours,Sturges Preston,1948,105
+American in Paris An,Minnelli Vincente,1951,115
+Xala,Sembene Ousmane,1974,123
+Beau travail,Denis Claire,1998,93
+Angel,Lubitsch Ernst,1937,91
+Princess Yang Kwei Fei,Mizoguchi Kenji,1955,98
+End of Summer The,Ozu Yasujiro,1961,103
+Man of the West,Mann Anthony,1958,100
+Daisies,Chytilová Vera,1966,76
+Smiles of a Summer Night,Bergman Ingmar,1955,108
+Kagemusha,Kurosawa Akira,1980,159
+Ludwig,Visconti Luchino,1973,173
+Farewell My Concubine,Chen Kaige,1993,155
+Hitler: A Film from Germany,Syberberg Hans-Jürgen,1977,420
+Outlaw Josey Wales The,Eastwood Clint,1976,135
+City of God,Meirelles Fernando,2002,129
+Amants du Pont-Neuf Les,Carax Lèos,1991,126
+Ghost and Mrs. Muir The,Mankiewicz Joseph L.,1947,104
+Miracle of Morgan's Creek The,Sturges Preston,1944,99
+Tarnished Angels The,Sirk Douglas,1958,91
+Woman Next Door The,Truffaut François,1981,106
+Blood Simple,Coen Joel and Ethan Coen,1984,97
+Fly The,Cronenberg David,1986,100
+Carnival in Flanders,Feyder Jacques,1935,95
+Hôtel Terminus,Ophüls Marcel,1987,267
+Juliet of the Spirits,Fellini Federico,1965,148
+Thing from Another World The,Nyby Christian/Howard Hawks,1951,87
+Gentlemen Prefer Blondes,Hawks Howard,1953,91
+Godfather Part III The,Coppola Francis,1990,161
+Boudu Saved from Drowning,Renoir Jean,1932,87
+Gilda,Vidor Charles,1946,110
+Ronde La,Ophüls Max,1950,97
+Edward Scissorhands,Burton Tim,1990,100
+Fires Were Started,Jennings Humphrey,1943,80
+Woman in the Window The,Lang Fritz,1944,99
+Heimat,Reitz Edgar,1984,940
+Grey Gardens,Maysles David/Albert Maysles/Ellen Hovde/Muffie Meyer,1975,95
+Elephant Man The,Lynch David,1980,125
+Taste of Cherry A,Kiarostami Abbas,1997,99
+Anatahan,von Sternberg Josef,1953,90
+Not Reconciled,Straub Jean-Marie,1965,53
+Mother,Pudovkin Vsevolod,1926,70
+Raising Arizona,Coen Joel and Ethan Coen,1987,92
+Roman Holiday,Wyler William,1953,119
+Mon oncle d'Amérique,Resnais Alain,1980,123
+Woman in the Dunes,Teshigahara Hiroshi,1964,127
+Wagon Master,Ford John,1950,86
+Morocco,von Sternberg Josef,1930,92
+Design for Living,Lubitsch Ernst,1933,90
+Trainspotting,Boyle Danny,1995,95
+Othello,Welles Orson,1952,92
+Firemen's Ball The,Forman Milos,1967,73
+Matrix The,Wachowski Andy & Larry Wachowski,1999,136
+Threepenny Opera The,Pabst G.W.,1931,112
+Chronicle of Anna Magdalena Bach The,Straub Jean-Marie,1968,94
+Thin Red Line The,Malick Terrence,1998,170
+Days and Nights in the Forest,Ray Satyajit,1969,120
+Gimme Shelter,Maysles Albert/David Maysles/Charlotte Zwerin,1970,91
+Faster Pussycat Kill Kill,Meyer Russ,1966,84
+Walkabout,Roeg Nicolas,1971,95
+National Lampoon's Animal House,Landis John,1978,109
+Misfits The,Huston John,1961,124
+Puppetmaster The,Hou Hsiao-Hsien,1993,141
+Hana-Bi,Kitano Takeshi,1997,103
+Ace in the Hole,Wilder Billy,1951,112
+Hallelujah,,Vidor King,1929,106
+Gandhi,Attenborough Richard,1982,188
+Orlando,Potter Sally,1992,93
+Magnificent Seven The,Sturges John,1960,126
+Naked,Leigh Mike,1993,126
+Straw Dogs,Peckinpah Sam,1971,113
+Dead Poets Society,Weir Peter,1989,128
+Shock Corridor,Fuller Sam,1963,101
+All About My Mother,Almodóvar Pedro,1999,101
+Green Ray The,Rohmer Eric,1986,96
+Last Temptation of Christ The,Scorsese Martin,1988,164
+Fallen Idol The,Reed Carol,1948,94
+Yellow Earth,Chen Kaige,1984,89
+Pakeezah,Amrohi Kamal,1972,150
+Tom Tom the Piper's Son,Jacobs Ken,1969,86
+Heiress The,Wyler William,1949,115
+Belle noiseuse La,Rivette Jacques,1991,240
+Ceddo,Sembene Ousmane,1976,117
+Johnny Got His Gun,Trumbo Dalton,1971,111
+Usual Suspects The,Singer Bryan,1995,105
+Witness,Weir Peter,1985,112
+French Connection The,Friedkin William,1971,104
+Casino,Scorsese Martin,1995,182
+Kaagaz Ke Phool,Dutt Guru,1959,148
+Safe,Haynes Todd,1995,119
+Dr. Mabuse The Gambler,Lang Fritz,1922,270
+Sorrow and the Pity The,Ophüls Marcel,1970,260
+Rushmore,Anderson Wes,1998,93
+Under the Roofs of Paris,Clair René,1930,92
+O Lucky Man,,Anderson Lindsay,1973,173
+There's Always Tomorrow,Sirk Douglas,1956,84
+Moonfleet,Lang Fritz,1955,89
+Big Deal on Madonna Street,Monicelli Mario,1958,91
+Player The,Altman Robert,1992,123
+Royal Tenenbaums The,Anderson Wes,2001,109
+Actor's Revenge An,Ichikawa Kon,1963,114
+Oldboy,Park Chan-wook,2003,120
+Virgin Spring The,Bergman Ingmar,1959,88
+Hatari,,Hawks Howard,1962,159
+Donnie Darko,Kelly Richard,2001,112
+Histoire(s) du cinéma,Godard Jean-Luc,1998,265
+Zelig,Allen Woody,1983,79
+Princess Bride The,Reiner Rob,1987,98
+Flowers of Shanghai,Hou Hsiao-Hsien,1998,130
+Red Beard,Kurosawa Akira,1965,185
+My Fair Lady,Cukor George,1964,170
+Phantom Carriage The,Sjöström Victor,1920,89
+Pickup on South Street,Fuller Sam,1953,80
+Woman of Paris A,Chaplin Charles,1923,81
+Gregory's Girl,Forsyth Bill,1980,91
+Hannah and Her Sisters,Allen Woody,1986,106
+Crouching Tiger Hidden Dragon,Lee Ang,2000,120
+47 Ronin The,Mizoguchi Kenji,1941,219
+Wind Will Carry Us The,Kiarostami Abbas,1999,118
+Robocop,Verhoeven Paul,1987,103
+Fellini's Roma,Fellini Federico,1972,128
+Black Sunday,Bava Mario,1960,83
+Hour of the Wolf,Bergman Ingmar,1967,88
+Docks of New York The,von Sternberg Josef,1928,76
+Bidone Il,Fellini Federico,1955,92
+Man from Laramie The,Mann Anthony,1955,104
+Vagabond,Varda Agnès,1985,106
+Limite,Peixoto Mario,1931,120
+Man for All Seasons A,Zinnemann Fred,1966,120
+Night of the Demon,Tourneur Jacques,1957,82
+Law of Desire,Almodóvar Pedro,1987,100
+Trou Le,Becker Jacques,1959,140
+Sun Shines Bright The,Ford John,1953,90
+Rise to Power of Louis XIV The,Rossellini Roberto,1966,100
+Pan's Labyrinth,del Toro Guillermo,2006,120
+Great Escape The,Sturges John,1963,168
+Excalibur,Boorman John,1981,140
+Private Life of Sherlock Holmes The,Wilder Billy,1970,125
+Beyond a Reasonable Doubt,Lang Fritz,1956,80
+Shoeshine,De Sica Vittorio,1946,93
+Naked Spur The,Mann Anthony,1953,91
+Sugar Cane Alley,Palcy Euzhan,1983,103
+You Only Live Once,Lang Fritz,1937,86
+Ordinary People,Redford Robert,1980,123
+Reckless Moment The,Ophüls Max,1949,82
+Trial The,Welles Orson,1963,118
+Fish Called Wanda A,Crichton Charles,1988,108
+My Own Private Idaho,Van Sant Gus,1991,102
+Talk to Her,Almodóvar Pedro,2002,112
+Early Summer,Ozu Yasujiro,1951,135
+Lost in Translation,Coppola Sofia,2003,102
+Thin Blue Line The,Morris Errol,1988,96
+Branded to Kill,Suzuki Seijun,1966,91
+Abraham's Valley,de Oliveira Manoel,1993,189
+Dances with Wolves,Costner Kevin,1990,181
+Lusty Men The,Ray Nicholas,1952,113
+Avanti,,Wilder Billy,1972,144
+Red Circle The,Melville Jean-Pierre,1970,150
+Plácido,Berlanga Luis García,1961,85
+Peter Ibbetson,Hathaway Henry,1935,88
+Informer The,Ford John,1935,91
+Indian Tomb The,Lang Fritz,1959,95
+Anatomy of a Murder,Preminger Otto,1959,160
+Miller's Crossing,Coen Joel and Ethan Coen,1990,115
+Eyes Wide Shut,Kubrick Stanley,1999,159
+While the City Sleeps,Lang Fritz,1956,100
+Judex,Franju Georges,1963,95
+Pursued,Walsh Raoul,1947,101
+Lives of Others The,von Donnersmarck Florian Henckel,2006,138
+W.R.: Mysteries of the Organism,Makavejev Dusan,1971,84
+Saragossa Manuscript The,Has Wojciech,1964,124
+Grave of the Fireflies,Takahata Isao,1988,93
+Maîtres fous Les,Rouch Jean,1955,36
+Red Sorghum,Zhang Yimou,1987,91
+Saving Private Ryan,Spielberg Steven,1998,169
+Lord of the Rings: The Fellowship of the Ring The,Jackson Peter,2001,178
+Magnolia,Anderson Paul Thomas,1999,188
+Purple Rose of Cairo The,Allen Woody,1985,82
+Crash,Cronenberg David,1996,100
+Subarnarekha,Ghatak Ritwik,1965,143
+There Will Be Blood,Anderson Paul Thomas,2007,158
+Assault on Precinct 13,Carpenter John,1976,90
+Dazed and Confused,Linklater Richard,1993,94
+Chronicle of a Summer,Rouch Jean & Edgar Morin,1960,90
+Caro diario,Moretti Nanni,1994,100
+Memento,Nolan Christopher,2000,113
+Berlin: Symphony of a Great City,Ruttmann Walter,1927,65
+Kameradschaft,Pabst G.W.,1931,93
+Shanghai Express,von Sternberg Josef,1932,80
+Starship Troopers,Verhoeven Paul,1997,129
+Blues Brothers The,Landis John,1980,130
+Destiny,Lang Fritz,1921,105
+Sweet Hereafter The,Egoyan Atom,1997,112
+Big Parade The,Vidor King,1925,141
+Bête humaine La,Renoir Jean,1938,99
+Art of Vision The,Brakhage Stan,1964,248
+Broadway Danny Rose,Allen Woody,1984,86
+Opening Night,Cassavetes John,1977,144
+Cook The Thief His Wife & Her Lover The,Greenaway Peter,1989,120
+Requiem for a Dream,Aronofsky Darren,2000,100
+Man in the White Suit The,Mackendrick Alexander,1951,84
+War of the Worlds The,Haskin Byron,1953,85
+Yeelen,Cissé Souleymane,1987,105
+Ju Dou,Zhang Yimou,1990,95
+Port of Shadows,Carné Marcel,1938,91
+Shanghai Gesture The,von Sternberg Josef,1941,98
+Queen Kelly,von Stroheim Erich,1928,96
+Wrong Man The,Hitchcock Alfred,1956,105
+A.I. Artificial Intelligence,Spielberg Steven,2001,145
+Red and the White The,Jancsó Miklós,1967,90
+Fountainhead The,Vidor King,1949,114
+Femme est une femme Une,Godard Jean-Luc,1961,83
+Mephisto,Szabó István,1981,135
+Feu follet Le,Malle Louis,1963,108
+Times of Harvey Milk The,Epstein Rob,1984,87
+Childhood of Maxim Gorky The,Donskoi Mark,1938,99
+Nibelungen Die,Lang Fritz,1924,186
+New York New York,Scorsese Martin,1977,164
+Marquise of O The,Rohmer Eric,1976,102
+Midnight,Leisen Mitchell,1939,94
+Portrait of Jennie,Dieterle William,1948,86
+Dracula,Browning Tod,1931,75
+Murder by Contract,Lerner Irving,1958,81
+Cul-de-sac,Polanski Roman,1966,111
+Loneliness of the Long Distance Runner The,Richardson Tony,1962,103
+Spider's Stratagem The,Bertolucci Bernardo,1970,100
+Out 1: Spectre,Rivette Jacques,1972,255
+Happiness,Medvedkin Aleksandr,1934,69
+Enfants terribles Les,Melville Jean-Pierre,1949,107
+Chienne La,Renoir Jean,1931,95
+Rio Grande,Ford John,1950,105
+Collectionneuse La,Rohmer Eric,1966,88
+Touki Bouki,Mambéty Djibril Diop,1973,85
+Pixote,Babenco Hector,1981,127
+Douce,Autant-Lara Claude,1943,111
+Sorpasso Il,Risi Dino,1963,105
+El Dorado,Hawks Howard,1967,126
+3 Women,Altman Robert,1977,125
+Three Colours: White,Kieslowski Krszystof,1993,92
+Coeur en hiver Un,Sautet Claude,1991,105
+Ballad of Narayama,Imamura Shohei,1983,130
+Pink Flamingos,Waters John,1972,92
+In the Heat of the Night,Jewison Norman,1967,109
+Year of Living Dangerously The,Weir Peter,1983,115
+Duel,Spielberg Steven,1971,90
+Who Framed Roger Rabbit?,Zemeckis Robert,1988,103
+Mädchen in Uniform,Sagan Leontine,1931,98
+Pilgrim The,Chaplin Charles,1923,59
+Our Daily Bread,Vidor King,1934,74
+Tom Jones,Richardson Tony,1963,129
+Diary of a Lost Girl,Pabst G.W.,1929,104
+American Gigolo,Schrader Paul,1980,117
+Seconds,Frankenheimer John,1966,106
+To Live,Zhang Yimou,1994,145
+Wild at Heart,Lynch David,1990,127
+Lost Highway,Lynch David,1996,135
+End of St. Petersburg The,Pudovkin Vsevolod,1927,80
+Wild River,Kazan Elia,1960,110
+Hamlet,Olivier Laurence,1948,153
+They Died with Their Boots On,Walsh Raoul,1941,138
+Italian Straw Hat The,Clair René,1927,74
+Corbeau Le,Clouzot Henri-Georges,1943,92
+Criminal Life of Archibaldo de la Cruz The,Buñuel Luis,1955,91
+Lone Star,Sayles John,1995,134
+Happy Together,Wong Kar-Wai,1997,97
+Plein soleil,Clément René,1960,119
+Nutty Professor The,Lewis Jerry,1963,107
+Second Breath,Melville Jean-Pierre,1966,144
+Long Day Closes The,Davies Terence,1992,83
+Moana,Flaherty Robert,1925,85
+Punch-Drunk Love,Anderson Paul Thomas,2002,95
+Veronika Voss,Fassbinder Rainer Werner,1982,105
+Night Porter The,Cavani Liliana,1973,118
+Festen,Vinterberg Thomas,1998,105
+Samson and Delilah,DeMille Cecil B.,1949,128
+Europa '51,Rossellini Roberto,1951,110
+True Heart Susie,Griffith D.W.,1919,87
+Chikamatsu monogatari,Mizoguchi Kenji,1954,100
+Charade,Donen Stanley,1963,114
+Ed Wood,Burton Tim,1994,124
+Zorn's Lemma,Frampton Hollis,1970,60
+Gleaners & I The,Varda Agnès,2000,82
+Diary for Timothy A,Jennings Humphrey,1945,40
+Argent L',L'Herbier Marcel,1928,195
+Under the Bridges,Kaütner Helmut,1944,92
+Dark Knight The,Nolan Christopher,2008,152
+War and Peace,Bondarchuk Sergei,1967,357
+Nazarín,Buñuel Luis,1958,94
+Boucher Le,Chabrol Claude,1970,94
+Ride Lonesome,Boetticher Budd,1959,73
+Rose Hobart,Cornell Joseph,1936,20
+By the Bluest of Seas,Barnet Boris,1936,71
+Lacombe Lucien,Malle Louis,1974,137
+Tobacco Road,Ford John,1941,84
+Unbearable Lightness of Being The,Kaufman Philip,1988,171
+Night Moves,Penn Arthur,1975,95
+World According to Garp The,Hill George Roy,1982,136
+Two for the Road,Donen Stanley,1967,112
+Out of Africa,Pollack Sydney,1985,161
+Black Orpheus,Camus Marcel,1959,103
+City Girl,Murnau F.W.,1929,90
+Eternity and a Day,Angelopoulos Theo,1998,132
+Far Country The,Mann Anthony,1955,97
+Léolo,Lauzon Jean-Claude,1992,107
+Seventh Heaven,Borzage Frank,1927,119
+Bridges of Madison County The,Eastwood Clint,1995,135
+Female Trouble,Waters John,1974,95
+Bend of the River,Mann Anthony,1952,91
+And the Ship Sails On,Fellini Federico,1984,138
+Se7en,Fincher David,1995,127
+Radio Days,Allen Woody,1987,85
+Poison,Haynes Todd,1990,85
+Rocker,Lemke Klaus,1972,85
+Jour de Féte,Tati Jacques,1948,70
+Sonatine,Kitano Takeshi,1993,94
+Fort Apache,Ford John,1948,127
+Cutter's Way,Passer Ivan,1981,105
+Death of Mr. Lazarescu The,Puiu Cristi,2005,154
+Amour fou L',Rivette Jacques,1968,252
+Way Down East,Griffith D.W.,1920,119
+Spione,Lang Fritz,1928,90
+Posto Il,Olmi Ermanno,1961,93
+Dog Star Man,Brakhage Stan,1964,75
+Gold Diggers of 1933,LeRoy Mervyn,1933,96
+Too Early Too Late,Straub Jean-Marie & Danièle Huillet,1981,100
+Heaven Can Wait,Lubitsch Ernst,1943,112
+Saga of Gosta Berling The,Stiller Mauritz,1924,91
+Fallen Angels,Wong Kar-Wai,1995,90
+Amélie,Jeunet Jean-Pierre,2001,122
+Ceremony The,Oshima Nagisa,1971,121
+Lord of the Rings: The Return of the King The,Jackson Peter,2003,201
+Sign of Leo The,Rohmer Eric,1959,90
+Million Dollar Baby,Eastwood Clint,2004,137
+Yesterday Girl,Kluge Alexander,1966,88
+Baker's Wife The,Pagnol Marcel,1938,124
+Scarlet Street,Lang Fritz,1945,103
+Slave of Love A,Mikhalkov Nikita,1976,94
+Devil in the Flesh,Autant-Lara Claude,1946,110
+Lord of the Rings: The Two Towers The,Jackson Peter,2002,179
+Leave Her to Heaven,Stahl John M.,1945,110
+Night of the Shooting Stars The,Taviani Paolo & Vittorio Taviani,1982,106
+Variety,Dupont E.A.,1925,104
+Sur El,Erice Victor,1983,95
+Stray Dog,Kurosawa Akira,1949,122
+My Apprenticeship,Donskoi Mark,1939,100
+Passion of Anna The,Bergman Ingmar,1969,101
+Pillow Book The,Greenaway Peter,1995,126
+Late Autumn,Ozu Yasujiro,1960,127
+Unknown The,Browning Tod,1927,65
+Seven Brides for Seven Brothers,Donen Stanley,1954,103
+Bienvenido Mister Marshall,Berlanga Luis García,1952,95
+Koyaanisqatsi,Reggio Godfrey,1983,87
+My Friend Ivan Lapshin,Gherman Alexei,1986,99
+Kanal,Wajda Andrzej,1956,97
+Z,Costa-Gavras Constantin,1969,127
+Two English Girls,Truffaut François,1972,108
+Strangers When We Meet,Quine Richard,1960,117
+Shin heike monogatari,Mizoguchi Kenji,1955,108
+Arsenal,Dovzhenko Alexander,1929,78
+Song of Ceylon,Wright Basil,1934,38
+Letter to Three Wives A,Mankiewicz Joseph L.,1949,103
+Fury,Lang Fritz,1936,94
+Simon of the Desert,Buñuel Luis,1965,43
+Roaring Twenties The,Walsh Raoul,1939,104
+Ox-Bow Incident The,Wellman William,1943,75
+Camille,Cukor George,1936,108
+Elephant,Van Sant Gus,2003,81
+Chloe in the Afternoon,Rohmer Eric,1972,97
+Toni,Renoir Jean,1935,90
+In Praise of Love,Godard Jean-Luc,2001,97
+Tout va bien,Godard Jean-Luc & Jean-Pierre Gorin,1972,95
+Kill Bill Vol. 1,Tarantino Quentin,2003,111
+Toute une nuit,Akerman Chantal,1982,90
+Ballad of Cable Hogue The,Peckinpah Sam,1970,121
+Four Horsemen of the Apocalypse,Minnelli Vincente,1962,153
+Dracula,Fisher Terence,1958,82
+Mothlight,Brakhage Stan,1963,4
+Short Film About Love A,Kieslowski Krszystof,1988,87
+California Split,Altman Robert,1974,108
+People on Sunday,Siodmak Robert & Edgar G. Ulmer,1929,74
+Forty Guns,Fuller Sam,1957,80
+Time to Love and a Time to Die A,Sirk Douglas,1958,132
+American Beauty,Mendes Sam,1999,121
+Central Station,Salles Walter,1998,110
+Before the Revolution,Bertolucci Bernardo,1964,115
+Near Dark,Bigelow Kathryn,1987,95
+One Two Three,Wilder Billy,1961,108
+Tale of Tales,Norstein Yuri,1979,29
+Bay of Angels,Demy Jacques,1963,85
+Bells of St. Mary's The,McCarey Leo,1945,126
+Straight Story The,Lynch David,1999,111
+Mr. Arkadin,Welles Orson,1955,99
+Husbands and Wives,Allen Woody,1992,107
+Truman Show The,Weir Peter,1998,102
+You Can't Take it with You,Capra Frank,1938,127
+Fires on the Plain,Ichikawa Kon,1959,105
+

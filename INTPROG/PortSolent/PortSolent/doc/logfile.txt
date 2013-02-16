@@ -1,0 +1,51 @@
+Class documentation
+<---- javadoc command: ---->
+C:\Program Files\Java\jdk1.7.0_02\bin\javadoc.exe
+-author
+-version
+-nodeprecated
+-package
+-noindex
+-notree
+-nohelp
+-nonavbar
+-source
+1.7
+-classpath
+C:\Program Files (x86)\BlueJ\lib\bluejcore.jar;C:\Program Files (x86)\BlueJ\lib\junit-4.8.2.jar;D:\java coursework\PortSolent\PortSolent
+-d
+D:\java coursework\PortSolent\PortSolent\doc
+-encoding
+windows-1252
+-charset
+windows-1252
+-docletpath
+C:\Program Files (x86)\BlueJ\lib\bjdoclet.jar
+-doclet
+bluej.doclet.doclets.formats.html.HtmlDoclet
+D:\java coursework\PortSolent\PortSolent\Cinema.java
+<---- end of javadoc command ---->
+Loading source file D:\java coursework\PortSolent\PortSolent\Cinema.java...
+Constructing Javadoc information...
+Standard Doclet version 1.7.0_02
+Building tree for all the packages and classes...
+Generating D:\java coursework\PortSolent\PortSolent\doc\Cinema.html...
+D:\java coursework\PortSolent\PortSolent\Interface.java:104: error: ';' expected
+        System.out.println("enter the amount of people in your group")
+                                                                      ^
+D:\java coursework\PortSolent\PortSolent\Interface.java:107: error: ';' expected
+        System.out.println("enter the screen you want to book seats on")
+                                                                        ^
+D:\java coursework\PortSolent\PortSolent\Interface.java:110: error: ';' expected
+        System.out.println("enter the time you're film starts")
+                                                               ^
+Generating D:\java coursework\PortSolent\PortSolent\doc\package-frame.html...
+Generating D:\java coursework\PortSolent\PortSolent\doc\package-summary.html...
+Generating D:\java coursework\PortSolent\PortSolent\doc\constant-values.html...
+Building index for all the packages and classes...
+Building index for all classes...
+Generating D:\java coursework\PortSolent\PortSolent\doc\allclasses-frame.html...
+Generating D:\java coursework\PortSolent\PortSolent\doc\allclasses-noframe.html...
+Generating D:\java coursework\PortSolent\PortSolent\doc\index.html...
+Generating D:\java coursework\PortSolent\PortSolent\doc\stylesheet.css...
+3 errors
