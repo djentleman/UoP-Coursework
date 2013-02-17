@@ -1,0 +1,332 @@
+
+*
+{
+	font-family:arial;
+}
+
+body
+{
+	text-align : center;
+	background-color:#FFDD99;
+}
+
+.mainContent
+{
+	background-color : #FFFFFF;
+	margin-top:80px;
+	margin-bottom:2%;
+	margin-right:10%;
+	margin-left:10%;
+	overflow: auto;
+	border-radius: 25px;
+	-moz-border-radius: 25px;
+}
+
+
+
+.itemImage
+{
+	max-width: 100%;
+	max-height: 100%;
+}
+
+
+.itemPicture
+{
+	float: left;
+	float: top;
+	margin-left: 100px;
+	margin-top: 80px;
+	margin-bottom: 80px;
+	height: 25%;
+	width: 25%;
+	max-height: 400px;
+	max-width: 400px;
+	
+}
+
+.itemComments
+{
+	margin-left:10%;
+	margin-right:10%;
+	margin-bottom: 10px;
+	width: 80%;
+	height: 42%;
+}
+
+.commentForm
+{
+	text-align: left;
+	margin-left: 5%;
+}
+
+.itemInfo
+{
+	text-align: left;
+	float: right;
+	float: top;
+	margin-top: 80px;
+	margin-right: 40px;
+	margin-bottom: 80px;
+	width: 40%;
+	height: 30%;
+	
+}
+
+.itemDescription
+{
+	text-align: left;
+	margin-left:10%;
+	margin-right:10%;
+	margin-top: 450px;
+	margin-bottom: 20px;
+	width: 80%;
+	height: 20%;
+	/*border: 1px solid #999999;*/
+	
+}
+
+	
+
+
+
+.left
+{
+	text-align : left;
+	margin-left: 10%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+
+select
+{
+	margin-right:10%;
+}
+
+/*this code handles the menu, consider changing to classes for maintainabilty*/
+
+ul
+{
+	font-family: Arial;
+	font-size: 20px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+ul li 
+{
+	display: block;
+	position: relative;
+	float: right;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+li ul 
+{ 
+	display: none; 
+}
+
+.menuCase
+/* formats the actual menu items */
+{
+	display: block;
+	text-decoration: none;
+	color: #000000;
+	border-left: 1px solid #000000;
+	/*border-right: 1px solid #000000;*/
+	padding: 5px 15px 5px 15px;
+	background: #FFCC88;
+	margin-left: 1px;
+	white-space: nowrap;
+}
+
+ul li a:hover 
+{
+	background: #FFDD99; 
+}
+
+li:hover ul 
+{
+  display: block;
+  position: absolute;
+}
+
+li:hover li 
+{
+  float: none;
+  font-size: 20px;
+}
+
+li:hover a 
+{
+	background: #FFDD99; 
+}
+li:hover li a:hover 
+{
+	background: #FFCC88;
+}
+
+/*end of menu code */
+
+.logo
+{
+float: left;
+}
+
+.leftDiv
+{
+	width: 50%;
+	float: left;
+	overflow: auto;
+}
+
+.rightDiv
+{
+	width: 50%;
+	float: right;
+	overflow: auto;
+}
+
+.hide
+{
+	visibility: hidden;
+}
+
+.unhide
+{
+	visibility: visible;
+}
+
+header
+{
+	padding-top: 1em;
+	position: fixed;
+	width:100%;
+	right:0px;
+	min-width: 930px;
+	top: 0px;
+	height: 50px;
+	background-color:#FFCC88;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.select
+{
+	padding-right: 40%;
+	oveflow: auto;
+}
+
+@media screen and (max-width:650px) {
+
+    header{
+		padding-top: 1em;
+		position: fixed;
+		width:100%;
+		right:0px;
+		min-width: 380px;
+		top: 0px;
+		height: 150px;
+		background-color:#FFCC88;
+    }
+	
+	.logo
+	{
+		top:0;
+		right: 0;
+		float:right;
+		padding-left: 20%;
+		padding-right: 20%;
+	}
+	
+	.dropDown
+	{
+		top:60px;
+		right: 0;
+		float:right;
+		padding-left: 30%;
+		padding-right: 30%;
+		overflow: auto;
+	}
+	
+	.mainContent
+	{
+		background-color : #FFFFFF;
+		margin-top:200px;
+		margin-bottom:2%;
+		margin-right:10%;
+		margin-left:10%;
+		overflow: auto;
+	}
+	
+
+	
+	.leftDiv
+	{
+		width: 100%;
+		float: none;
+	}
+	
+	.rightDiv
+	{
+		width: 100%;
+		float: none;
+	}
+	
+	
+	
+	.searchForm
+	{
+		width: 300px;
+		padding-left: 20%;
+		right: 30px;
+		overflow: auto;
+		float: right;
+	}
+	
+	.search
+	{
+		left: 50 px;
+		overflow: auto;
+	}
+
+	
+	.menuCase
+	/* formats the actual menu items */
+	{
+		float: right;
+		display: block;
+		text-decoration: none;
+		color: #000000;
+		border-left: 1px solid #000000;
+		border-right: 1px solid #000000;
+		padding: 1px 4px 1px 4px;
+		background: #FFCC88;
+		margin-right: 30%;
+		white-space: nowrap;
+		
+	}
+	
+	
+	li:hover li 
+	{
+		float: none;
+		font-size: 16px;
+	}
+	
+	ul
+	{
+		font-family: Arial;
+		font-size: 16px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	}
+
+
+
+
+
