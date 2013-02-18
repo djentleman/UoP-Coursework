@@ -1,7 +1,7 @@
 			<div class="leftDiv" id="itemForm">
 				
 				<!-- action="item_upload_complete.php" OLD HREF -->
-				<form method="post" action="item_upload_complete.php" enctype="multipart/form-data"  class="left">
+				<form class="left">
 			
 					<h2>New Item</h2>
 					

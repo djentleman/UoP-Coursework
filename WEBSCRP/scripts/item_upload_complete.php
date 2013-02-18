@@ -26,30 +26,7 @@
 				executeQuery($query, $con);
 				
 				
-				///////////////////////////////
-				//------MOVE TO FILE FOR PART 2-------\\
-				
-				$tmpName = "none chosen";
-				
-				if (isset($_FILES['image']) && $_FILES['image']['size'] > 0) { 
-
-					// Temporary file name stored on the server
-					$tmpName  = $_FILES['image']['tmp_name'];  
-					   
-					//echo $tmpName;
-				}	
-				
-				$newfile = "img/uploads/" . $itemName . ".jpg";
-				copy($tmpName, $newfile);
-				
-				
-				//echo "<img src=$newfile></img>";
-				
-				
-				//////////////////////////////////
-			
-				
-				
+	
 				
 				
 				$query = "INSERT INTO `items` (`itemName`, `itemQuantity`,

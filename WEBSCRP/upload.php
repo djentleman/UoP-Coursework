@@ -7,7 +7,8 @@
 		<script src="ajax/form_upload_chooser.js"></script>
 		<script src="js/form_choice_upload.js"></script> <!--JS script for menu -->
 		<script src="js/uploadInfo.js"></script> <!-- JS for step transition -->
-		<script src="ajax/upload_step2.js"></script> <!-- AJAX for step transition -->
+		<script src="ajax/render_step2.js"></script> <!-- AJAX for step transition -->
+		<script src="ajax/upload_item2.js"></script> <!-- AJAX for image upload -->
 
 		
 		<div class="mainContent" style="padding-bottom: 20px;">

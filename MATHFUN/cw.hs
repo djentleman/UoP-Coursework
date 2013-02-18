@@ -31,13 +31,50 @@ getFilmsByYear year  = filter (isYear year) -- filters for year
 isFan :: String -> Film -> Bool
 isFan person (Film _ _ _ []) =  False
 isFan person (Film name actors year (fan:fans))
-	|person == fan = True || (isFan person (Film name actors year fans))
+	|person == fan = True
 	|otherwise = (isFan person (Film name actors year fans))
 	
 getFilmsByFan person = filter (isFan person)
 
+
+	
+afterYear :: Int -> Film -> Bool
+afterYear year (Film _ _ filmYear _) -- did the film come out after the year
+	|year <= filmYear = True
+	|otherwise = False
+
+beforeYear :: Int -> Film -> Bool
+beforeYear year (Film _ _ filmYear _) -- did the film come out before the year
+	|year >= filmYear = True
+	|otherwise = False
+	
+hasActor :: String -> Film -> Bool
+hasActor _ (Film _ [] _ _) = False
+hasActor filmActor (Film name (actor:actors) year fans)
+	|filmActor == actor = True
+	|otherwise = hasActor filmActor (Film name actors year fans)
+
+inPeriod before after actor = filter (beforeYear before) . filter (afterYear after) . filter (hasActor actor)
+-- film is inPeriod is it's beforeYear before, and afterYear after
+
+
+getFilmByName :: String -> [Film] -> Film
+getFilmByName filmName (Film name actors year fans:films)
+	|filmName == name = Film name actors year fans
+	|otherwise = getFilmByName filmName films
+
+	
 addFanToFilm :: String -> Film -> Film
 addFanToFilm newFan (Film name actors year fans) = (Film name actors year (newFan:fans))
+
+--becomeFan :: String -> String -> [Film] -> [Film]
+--becomeFan fanName filmName films  --WRITE THIS TO SAVE
+
+getNumberOfFans :: Film -> Int
+getNumberOfFans (Film _ _ _ []) = 0
+getNumberOfFans (Film name actors year (fan:fans)) = 1 + getNumberOfFans (Film name actors year fans)
+
+
 
 --                  --
 ----Interface Code----
@@ -66,6 +103,8 @@ getMenuChoice "1" = addFilm
 getMenuChoice "2" = viewAllFilms
 getMenuChoice "3" = viewFilmsByYear
 getMenuChoice "4" = viewFilmsByFan
+getMenuChoice "5" = viewFilmsFromPeriod
+getMenuChoice "6" = becomeFanOfFilm
 -- TODO - FINISH THIS FUNCTION
 getMenuChoice "9" = exit
 getMenuChoice _ = invalidChoice
@@ -85,7 +124,7 @@ menu = do
     putStrLn "Press 2 To View All Films"
     putStrLn "Press 3 To Display All Films From A Certain Year"
     putStrLn "Press 4 To Display All Films A User Is A Fan Of"
-    putStrLn "Press 5 To Display All Films Released Within A Peticular Period"
+    putStrLn "Press 5 To Display All Films With A Selected Actor Released Within A Peticular Period"
     putStrLn "Press 6 To Say You're A Fan Of A Peticular FIlm"
     putStrLn "Press 7 To Display The 'Best' Film"
     putStrLn "Press 8 To Display The 'Top 5' FIlms"
@@ -107,13 +146,12 @@ addFilm = do
     actors <- getActors []
     releaseYear <- getReleaseYear
     fans <- getFans []
+    films <- loadFilms -- REMOVE THIS LINE
     let film = Film title actors releaseYear fans
-    films <- loadFilms -- may remove this line depending on structure of load/save
     let filmsToSave = addNewFilm film films
     putStrLn "Film Has Been Added!"
-    listFilms filmsToSave -- permission denied to save without this line
+    listFilms filmsToSave
     --- problem will be solved if films is read in from 'main'
-    saveFilms filmsToSave -- permission denied? 
     menu
 
 getTitle :: IO String
@@ -196,6 +234,48 @@ viewFilmsByFan = do
         else do listFilms filmsByFan
                 menu
     menu
+
+-------------VIEW FILMS WITH A CERTAIN ACTOR FROM A CERTAIN PERIOD--------
+
+viewFilmsFromPeriod :: IO ()
+viewFilmsFromPeriod = do
+    putStrLn "Enter The First (Lower) Boundry:"
+    putStr ">>>"
+    after <- getLine
+    putStrLn "Enter The Second (Higher) Boundry:"
+    putStr ">>>"
+    before <- getLine
+    putStrLn "Enter The Actor:"
+    putStr ">>>"
+    actor <- getLine
+    allFilms <- loadFilms
+    let filmsByPeriod = inPeriod (read before :: Int) (read after :: Int) actor allFilms
+    if filmsByPeriod == []
+        then do putStrLn "No Films Found"
+                menu
+        else do listFilms filmsByPeriod
+                menu
+				
+-------------STATE YOU'RE A FAN OF A CERTAIN FILM-----------------
+
+becomeFanOfFilm :: IO ()
+becomeFanOfFilm = do
+    putStrLn "Enter The Name Of The Film You Want To Become A Fan Of:"
+    putStr ">>>"
+    filmName <- getLine
+    films <- loadFilms
+    let film = getFilmByName filmName films -- print film, yes/no here
+    putStrLn "Enter Your Name:"
+    putStr ">>>"
+    fanName <- getLine
+    let updatedFilm = addFanToFilm fanName film -- currently doesn't save
+    putStr fanName
+    putStr " Is Now A Fan Of "
+    putStrLn filmName
+    filmPrintOut updatedFilm
+    menu
+    
+
 	
 ----------------EXIT----------------------------------
 

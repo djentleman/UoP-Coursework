@@ -2,7 +2,7 @@
 	<head>
 		<title> Tbuyer </title>
 		<meta http-equiv="Content-Script-Type" content="text/javascript">
-		<link rel="stylesheet" type="text/css" href="Tbuyer.css">
+		<link rel="stylesheet" type="text/css" href="css/Tbuyer.css">
 		<script src="ajax/reset.js"></script>
 		
 		
