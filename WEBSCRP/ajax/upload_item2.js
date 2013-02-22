@@ -16,6 +16,7 @@ function uploadItem2() {
 			if (xhr.status === 200) {
 				// add the retrieved content to it using
 				// the innerHTML property
+				var img = image;
 				target.innerHTML = "<p>Something Went Right</p>";
 			} else {
 				
@@ -26,6 +27,8 @@ function uploadItem2() {
 			}
 		}
 	};
+	
+	// FILES NEED TO BE DEFINED HERE
 	
 
 	// initialise a request, specifying the HTTP method

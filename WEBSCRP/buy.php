@@ -12,8 +12,12 @@
 					$GLOBALS = $GLOBALS+$_REQUEST;
 					include "scripts/getItemInfo.php"; // comes with a free scripts/executeQuery.php
 					
-					
-					echo "<img src='$image' class='itemImage'></img>";
+					if ($image != "none" && $image != ""){
+						echo "<img src='$image' class='itemImage'></img>";
+					}
+					else {
+						echo "<img src='img/no_img.png'></img>";
+					}
 				?>
 			</div>
 			<div class="itemInfo">
