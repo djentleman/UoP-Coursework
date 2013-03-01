@@ -1,7 +1,7 @@
 			<?php
 				
 				
-				$GLOBALS = $GLOBALS+$_REQUEST;
+				//$image = $_POST['image'];
 				
 				
 				include "executeQuery.php";
@@ -51,6 +51,10 @@
 				
 				
 				header("x-debug1: '$tmpName'");
+				
+				header("x-files: " . json_encode($_FILES));
+				header("x-post: " . json_encode($_POST));
+				
 			
 				if ($tmpName != "none"){
 					$newfile = $_SERVER['DOCUMENT_ROOT'] . "/cw/img/uploads/" . $itemID . ".jpg"; // ID is unique
@@ -76,5 +80,6 @@
 				
 				
 				mysql_close($con);
+				
 			?>
 			

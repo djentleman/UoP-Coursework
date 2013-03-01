@@ -45,10 +45,7 @@
 		
 		
 		<div class="mainContent">
-			<br>
-			<br>
-			<h2>Remove Content</h2>
-			<br>
+			<h1>Remove Content</h1>
 			<form>
 				<p>Delete an Item:
 					<input type="radio" name="deleteType" value="item">

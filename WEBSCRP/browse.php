@@ -4,12 +4,12 @@
 		
 		<div class="mainContent">
 			<?php
-				
-				$GLOBALS = $GLOBALS+$_REQUEST;
 				//echo "'$search' was your search criteria";
 				//echo "<br>";
 				//echo "under catagory: $catagory";
+				$search = $_GET['search']; // init var
 				
+				// ordering
 				
 				function length($str){
 					$i = 0;
@@ -95,7 +95,15 @@
 				//old query for search not being 0
 				// "SELECT * FROM `items` WHERE `itemName`='$search'"
 				//if you leave the query black it returns all
-				$query = "SELECT * FROM `items`";
+				
+				
+				
+				// ADD AN ORDER BY BUTTON HERE!
+				
+				
+				
+				$query = "SELECT * FROM `items`
+				ORDER BY itemName";
 				executeResults($query, $con, $search);
 					
 				

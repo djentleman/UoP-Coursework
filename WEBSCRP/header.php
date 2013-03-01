@@ -29,14 +29,14 @@
 					<li><a class="menuCase">Manage Content</a>
 					<ul>
 						<li><a class="menuCase" href="upload.php">Upload Content</a></li>
-						<li><a class="menuCase" href="update_content.php">Edit Content</a></li>
+						<li><a class="menuCase" href="update_content.php">Update Content</a></li>
 						<li><a class="menuCase" href="delete_content.php">Remove Content</a></li>
 						<li><a class="menuCase" id="fetch" onclick="return confirmAction()">Reset Database</a></li>
 					</ul>
 					<li><a class="menuCase" href="index.php">Basket</a></li>
 				</ul>
 			</nav>
-			<form method="post" action="browse.php" class="searchForm">
+			<form method="get" action="browse.php" class="searchForm">
 				<div class="search">
 					<input type="text" name="search" value="">
 					<input type="submit" name="submit" value="Search" >

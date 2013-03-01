@@ -10,6 +10,7 @@ function uploadItem2() {
 
 	// create a request object
 	xhr = new XMLHttpRequest();
+	
 	changeListener = function () {
 		
 		if (xhr.readyState === 4) {
@@ -17,7 +18,7 @@ function uploadItem2() {
 				// add the retrieved content to it using
 				// the innerHTML property
 				var img = image;
-				target.innerHTML = "<p>Something Went Right</p>";
+				target.innerHTML = "Upload Successful";
 			} else {
 				
 				var img = image;
@@ -25,6 +26,11 @@ function uploadItem2() {
 				target.innerHTML = str;
 				window.console.log(str);
 			}
+		} else if (xhr.readyState != 4 && xhr.readyState != 0){
+		// loading stuff
+			
+			target.innerHTML = "<p>Loading...</p>";
+		
 		}
 	};
 	
@@ -39,15 +45,18 @@ function uploadItem2() {
 	var image = document.getElementById('img').value;
 	
 	
-	var stringToPass = "image=" + image;
+	
+	var params = "image=" + image;
+	
+	
 	
 	
 	xhr.open("POST", "./scripts/item_image_upload.php", true);
+	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); // multipart/form-data for files???
 	
-	
-	
+
 	xhr.onreadystatechange = changeListener;
-	xhr.send(stringToPass);
+	xhr.send(params);
 	
 	return false;
 

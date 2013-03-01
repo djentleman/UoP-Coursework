@@ -9,17 +9,18 @@
 		
 		
 		<div class="mainContent">
-			<br>
-			<br>
-			<h2>Update Content</h2>
-			<br>
+			<h1>Update Content</h1>
 			<form>
 				<p>Update an Item:
-					<input type="radio" name="deleteType" value="item">
+					<input type="radio" name="updateType" value="item">
+				</p>
+				
+				<p>Update An Image:
+					<input type="radio" name="updateType" value="image">
 				</p>
 				
 				<p>Update a Catagory
-					<input type="radio" name="deleteType" value="catagory">
+					<input type="radio" name="updateType" value="catagory">
 				</p>
 				
 				<button onClick="return run()">Go!</button>

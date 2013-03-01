@@ -11,11 +11,13 @@
 			}
 			
 			function run(){
-				var radioValue = getRadioValue('deleteType');
+				var radioValue = getRadioValue('updateType');
 				if (radioValue == "item"){
 					showItem();
 				} else if (radioValue == "catagory"){
 					showCatagory();
+				} else {
+					showImage();
 				}
 				
 				

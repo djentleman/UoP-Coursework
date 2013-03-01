@@ -22,7 +22,7 @@
 						</p>
 						
 						
-						<button onclick="return uploadItem2()">Submit</button> 
+						<input type="submit" value="Submit" onclick="return uploadItem2()"> <!-- submit!-->
 					</form>
 					
 					<div id="dynamicText"></div>
