@@ -92,7 +92,7 @@
 					   
 					//echo $tmpName;
 					
-					$newfile = "img/uploads/" . $itemName . ".jpg";
+					$newfile = "img/uploads/" . $itemID . ".jpg";
 					copy($tmpName, $newfile);
 					
 					
