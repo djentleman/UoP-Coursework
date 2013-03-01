@@ -58,21 +58,28 @@ inPeriod before after actor = filter (beforeYear before) . filter (afterYear aft
 -- film is inPeriod is it's beforeYear before, and afterYear after
 
 
-getFilmByName :: String -> [Film] -> Film
-getFilmByName filmName (Film name actors year fans:films)
-	|filmName == name = Film name actors year fans
-	|otherwise = getFilmByName filmName films
 
-	
-addFanToFilm :: String -> Film -> Film
-addFanToFilm newFan (Film name actors year fans) = (Film name actors year (newFan:fans))
-
---becomeFan :: String -> String -> [Film] -> [Film]
---becomeFan fanName filmName films  --WRITE THIS TO SAVE
+becomeFan :: String -> String -> [Film] -> [Film]
+becomeFan _ _ [] = []
+becomeFan fanName filmName ((Film name actors year fans):films)
+	|filmName == name = (Film name actors year (fanName:fans)) : (becomeFan fanName filmName films)
+	|otherwise = (Film name actors year fans) : (becomeFan fanName filmName films) -- no change
 
 getNumberOfFans :: Film -> Int
 getNumberOfFans (Film _ _ _ []) = 0
 getNumberOfFans (Film name actors year (fan:fans)) = 1 + getNumberOfFans (Film name actors year fans)
+
+getFilmWithMostFans :: [Film] -> Film -> Film -- dirty code, will need to rebuild
+getFilmWithMostFans [] currentBest = currentBest
+getFilmWithMostFans (film:films) currentBest
+	|(getNumberOfFans film) > (getNumberOfFans currentBest) = getFilmWithMostFans films film
+	|otherwise = getFilmWithMostFans films currentBest
+
+getBestFilm :: [Film] -> Film -- dirty code, will need to rebuild
+getBestFilm (film:films) = getFilmWithMostFans films film -- calls above function
+
+
+
 
 
 
@@ -95,7 +102,7 @@ saveFilms films = do
     
 
 
-	
+
 
 --input = String, output = IO function  
 getMenuChoice :: String -> IO () -- string used as opposed to Int for robustness
@@ -105,6 +112,7 @@ getMenuChoice "3" = viewFilmsByYear
 getMenuChoice "4" = viewFilmsByFan
 getMenuChoice "5" = viewFilmsFromPeriod
 getMenuChoice "6" = becomeFanOfFilm
+getMenuChoice "7" = printTopFilm
 -- TODO - FINISH THIS FUNCTION
 getMenuChoice "9" = exit
 getMenuChoice _ = invalidChoice
@@ -136,7 +144,7 @@ menu = do
 invalidChoice :: IO ()
 invalidChoice = do
     putStrLn "Invalid Menu Choice"
-    menu
+    pressEnter
 
 -------------ADD FILM-----------------
 
@@ -152,7 +160,7 @@ addFilm = do
     putStrLn "Film Has Been Added!"
     listFilms filmsToSave
     --- problem will be solved if films is read in from 'main'
-    menu
+    pressEnter
 
 getTitle :: IO String
 getTitle = do
@@ -194,7 +202,7 @@ viewAllFilms = do
     films <- loadFilms
     putStrLn "List Of Films:"
     listFilms films
-    menu
+    pressEnter
 
 listFilms :: [Film] -> IO ()
 listFilms (film:films) = do
@@ -215,9 +223,9 @@ viewFilmsByYear = do
     let filmsByYear = getFilmsByYear (read year ::	Int) films
     if filmsByYear == []
         then do putStrLn "No Films Found"
-                menu
+                pressEnter
         else do listFilms filmsByYear
-                menu
+                pressEnter
 
 --------------------VIEW FILMS BY FAN--------------------------
 	
@@ -230,10 +238,10 @@ viewFilmsByFan = do
     let filmsByFan = getFilmsByFan person films
     if filmsByFan == []
         then do putStrLn "No Films Found"
-                menu
+                pressEnter
         else do listFilms filmsByFan
-                menu
-    menu
+                pressEnter
+    pressEnter
 
 -------------VIEW FILMS WITH A CERTAIN ACTOR FROM A CERTAIN PERIOD--------
 
@@ -252,30 +260,49 @@ viewFilmsFromPeriod = do
     let filmsByPeriod = inPeriod (read before :: Int) (read after :: Int) actor allFilms
     if filmsByPeriod == []
         then do putStrLn "No Films Found"
-                menu
+                pressEnter
         else do listFilms filmsByPeriod
-                menu
+                pressEnter
 				
 -------------STATE YOU'RE A FAN OF A CERTAIN FILM-----------------
 
 becomeFanOfFilm :: IO ()
 becomeFanOfFilm = do
+    films <- loadFilms
     putStrLn "Enter The Name Of The Film You Want To Become A Fan Of:"
     putStr ">>>"
     filmName <- getLine
-    films <- loadFilms
-    let film = getFilmByName filmName films -- print film, yes/no here
     putStrLn "Enter Your Name:"
     putStr ">>>"
     fanName <- getLine
-    let updatedFilm = addFanToFilm fanName film -- currently doesn't save
+    let updatedFilms = becomeFan fanName filmName films
     putStr fanName
     putStr " Is Now A Fan Of "
     putStrLn filmName
-    filmPrintOut updatedFilm
-    menu
+    listFilms updatedFilms
+    pressEnter
     
+--------------------PRINT 'TOP' FILM------------------------------
 
+
+printTopFilm :: IO ()
+printTopFilm = do
+    films <- loadFilms -- will pass from menu in reality
+    let bestFilm = getBestFilm films
+    putStrLn "Best Film:"
+    filmPrintOut bestFilm
+    pressEnter
+
+
+	
+--------------PRESS ENTER TO CONTINUTE---------------------------
+
+pressEnter :: IO () -- allows a break before menu refresh
+pressEnter = do
+    putStrLn "Press Enter To Continue"
+    putStr ">>>"
+    ln <- getLine
+    menu
 	
 ----------------EXIT----------------------------------
 
@@ -295,8 +322,7 @@ filmPrintOut (Film title actors releaseYear fans) = do
     printStringArray actors
     putStrLn "" -- new line
     printReleaseYear releaseYear
-    putStr "Fans: "
-    printStringArray fans
+    printNumberOfFans (Film title actors releaseYear fans)
     putStrLn "" -- new line
 
 printTitle :: String -> IO ()
@@ -304,7 +330,7 @@ printTitle title = do
     putStr "Title: "
     putStrLn title
 
-printStringArray :: [String] -> IO ()
+printStringArray :: [String] -> IO () -- general 'string printer'
 printStringArray (str:strs) = do
     putStr str
     putStr ", "
@@ -316,6 +342,13 @@ printReleaseYear :: Int -> IO ()
 printReleaseYear year = do
     putStr "Release Year: "
     putStrLn (show year)
+
+printNumberOfFans :: Film -> IO () -- takes in a film, returns number of fans
+printNumberOfFans film = do
+    putStr "Fans: "
+    let noOfFans = (getNumberOfFans film)
+    putStrLn (show noOfFans)
+    
 	
 
 ---------------------------------------------------------------
