@@ -19,6 +19,7 @@ public class Project {
     private String name; //name of project
     private String filePath; // file path for save/load
     private float timeFrame; //total timeframe (in hrs), calculated from tasks (used to be in Chart)
+    private long startProject, endProject; //start and end times of project
 
     public Project() {
         // default constructor
@@ -28,7 +29,8 @@ public class Project {
         tasks = new ArrayList<>(); // init
         gantt = new Gantt(tasks, timeFrame); // init  \
         pert = new PERT(tasks); // init    | all have no tasks, they all start empty
-        wbt = new WBT(tasks); // init      /
+        wbt = new WBT(tasks); // init  /
+        
 
         this.name = name; // read in
         this.filePath = filePath; // read in
@@ -98,6 +100,9 @@ public class Project {
         for (Task currentTask : newTask.getChildren()) {
             addTask(currentTask);
         }
+        wbt.setTasks(tasks); // updates wbt
+        gantt.setTasks(tasks); // updates pert
+        pert.setTasks(tasks); // updates gantt
     }
 
     public void printOut() { // print out function
@@ -108,8 +113,8 @@ public class Project {
             System.out.println("Currently No Tasks");
         } else {
             System.out.println("---Task Overview---");
-            for (Task currentTask : tasks) {
-                currentTask.printOut();
+            for (int i = 0; i < tasks.size(); i++) {
+                tasks.get(i).printOut();
                 System.out.println("-------------");
             }
         }
@@ -155,5 +160,43 @@ public class Project {
     public void saveToFile() {
         // save everything to the filePath
         // tasks saves as full tasks
+    }
+    
+    public float getTaskPercentage(Task task){
+        long allTaskDuration = 0;
+        for(int i = 0; i < tasks.size(); i++){
+            allTaskDuration =+ tasks.get(i).getTaskDuration();
+        }
+        return (float)((task.getTaskDuration() / allTaskDuration) * 100);
+    }
+    
+    /*
+     * Finds the project start/end times.
+     * Used when rendering gantt charts.
+     */
+    public long findProjectStartOrEnd(char startOrEnd){
+        long currentTaskTime;
+        long returnTaskTime = 0;
+        //calculates the project
+        if(startOrEnd == 's'){
+            for(Task t: tasks){
+                currentTaskTime = t.calendarToMillisecond(t.getStartCalendar());
+                if(currentTaskTime < returnTaskTime){
+                    returnTaskTime = currentTaskTime;
+                }
+            }
+        }
+        else{
+            for(Task t: tasks){
+                currentTaskTime = t.calendarToMillisecond(t.getStartCalendar());
+                if(currentTaskTime > returnTaskTime){
+                    returnTaskTime = currentTaskTime;
+                }
+            }
+        }
+        return returnTaskTime;
+    }
+    public int getNumberOfTasks(){
+        return tasks.size();
     }
 }

@@ -46,24 +46,26 @@ public class Vysichart {
         //make breakfast!
         Project makeBreakfast = new Project("Breakfast Maker", "D:/Documents/MRC/Vysichart/Breakfast");
 
-        Task makeBreak = new Task("Make Breakfast");
+        
         Calendar startCal = Calendar.getInstance();
-        startCal.set(2011, 5, 12, 5, 25);
+        startCal.set(2010, 5, 11, 6, 25);
         Calendar endCal = Calendar.getInstance();
-        endCal.set(2011, 5, 12, 5, 30);
-        makeBreak.setStartCalendar(startCal);
-        makeBreak.setEndCalendar(endCal);
+        endCal.set(2010, 5, 11, 6, 45);
+        Task makeBreak = new Task("Make Breakfast", startCal, endCal);
+        int[] cal = makeBreak.getTotalTime();
+        String[] timeFrames = {"year", "month", "week", "day", "hour", 
+                                "minute", "second"};
 
         Task makeCerial = new Task("Make Cerial", makeBreak);
         Task makeJuice = new Task("Make Juice", makeBreak);
         Task eatBreakfast = new Task("Eat The Breakfast", makeBreak);
 
         Task getBowl = new Task("Get Bowl", makeCerial);
-        Task pourCerial = new Task("Pour Cerial Into Bowl", makeCerial);
+        Task pourCerial = new Task("Pour Cerial", makeCerial);
         Task addMilk = new Task("Add Milk To Cerial", makeCerial);
-
-        Task getGlass = new Task("Get Glass", makeJuice);
-        Task addJuice = new Task("Pour Juice", makeJuice);
+        
+        Task eatCerial = new Task("Eat Cerial", eatBreakfast);
+        Task drinkJuice = new Task("Drink Juice", eatBreakfast);
 
         eatBreakfast.addDependantNode(makeCerial);
         eatBreakfast.addDependantNode(makeJuice);
@@ -71,7 +73,6 @@ public class Vysichart {
         pourCerial.addDependantNode(getBowl);
         addMilk.addDependantNode(pourCerial);
 
-        addJuice.addDependantNode(getGlass);
 
 
         makeBreakfast.addTask(makeBreak);
@@ -81,6 +82,8 @@ public class Vysichart {
         //System.out.println(makeBreakfast.getString());
 
         GraphicalUserInterface gui = new GraphicalUserInterface(makeBreakfast);
+        
+        
         // no default contructor
         gui.main(null);
 

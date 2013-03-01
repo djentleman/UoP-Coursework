@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 /**
 *
-* @author Harry, Todd =======
 * @author UP619902, OtherID1, OtherID2
 */
 public class Task {
@@ -19,7 +18,7 @@ public class Task {
     private ArrayList<Task> dependentNodes;
     private ArrayList<Task> children; // tasks children
     private Calendar startCalendar, endCalendar, lateStart, lateEnd;
-    private float taskDuration, taskSlack;
+    private long taskDuration, taskSlack;
     private boolean taskIsComplete;
 
     public Task() {
@@ -34,6 +33,17 @@ public class Task {
         children = new ArrayList<>();
         taskIsComplete = false; // defaults
     }
+    /*
+     * FOR TEST PURPOSES ONLY
+     */
+    public Task (String taskName, Calendar startCalendar, Calendar endCalendar){
+        this.taskName = taskName;
+        dependentNodes = new ArrayList<>();
+        children = new ArrayList<>();
+        this.startCalendar = startCalendar;
+        this.endCalendar = endCalendar;
+        taskDuration = calculateDuration();
+    }   
 
     public Task(String taskName, Task taskParent) {
         this.taskName = taskName;
@@ -56,6 +66,7 @@ public class Task {
         this.children = new ArrayList<>(); // init
         this.startCalendar = startCalendar;
         this.endCalendar = endCalendar;
+        taskDuration = calculateDuration();
         
         taskIsComplete = false; // defaults
 
@@ -70,12 +81,13 @@ public class Task {
         this.dependentNodes = dependentNodes; // no need to init
         this.startCalendar = startCalendar;
         this.endCalendar = endCalendar;
+        taskDuration = calculateDuration();
         this.children = new ArrayList<>();
 
         initParent(); // adds THIS as child to parent
     }
     
-    public void initParent(){
+    private void initParent(){
         this.taskParent.addChild(this); // fixes leakage
     }
 
@@ -124,7 +136,7 @@ public class Task {
         return lateEnd;
     }
 
-    public float getTaskDuration() {
+    public long getTaskDuration() {
         return taskDuration;
     }
 
@@ -216,21 +228,51 @@ public class Task {
         //setTaskParent automatically adds THIS as child
     }
 	
-	/*throws NPE, but works okay? fix if you can!*/
-    public long dateToMillisecond(Calendar date){
+    public long calendarToMillisecond(Calendar date){
         
         long year = date.get(Calendar.YEAR) * 31556952000L;
         long day = date.get(Calendar.DAY_OF_YEAR) * 86400000;
         long hour = date.get(Calendar.HOUR_OF_DAY) * 3600000;
         long minute = date.get(Calendar.MINUTE) * 60000;
         long second = date.get(Calendar.SECOND) * 1000;
-        
+        System.out.println("cTM: " + (year + day + hour + minute + second));
         return (year + day + hour + minute + second);
     }
-    
-    public long calculateDuration(){
-        return dateToMillisecond(endCalendar) - 
-                dateToMillisecond(startCalendar);
+    /* This method converts back to other date formats.
+     * Useful for pipelining conversions to other methods which display
+     * timeframes to users.
+     */
+    private int millisecondToOtherFormat(long duration, String conversionSwitch){
+        switch(conversionSwitch){
+            case("year")    :   return (int)(duration/31556952000L);
+            case("month")   :   return (int)(duration/2629746000L);
+            case("week")    :   return (int)(duration/604800000);
+            case("day")     :   return (int)(duration/86400000);
+            case("hour")    :   return (int)(duration/3600000);
+            case("minute")  :   return (int)(duration/60000);
+            default         :   return (int)(duration/1000); //returns in seconds
+        }
+    }
+    //Everything works flawlessly, except the months value - it's miscalculating!
+    public int[] getTotalTime(){
+        int[] totalTime = new int[7];
+        long currentDuration = taskDuration;
+        String[] timeFrameNames = {"year", "month", "week", "day", "hour", 
+                                "minute", "second"};
+        long[] timeFrames = {31556952000L, 2629746000L, 604800000, 86400000,
+                            3600000, 60000, 1000};
+        for(int i = 0; i < timeFrameNames.length; i++){
+            totalTime[i] = millisecondToOtherFormat
+                    (currentDuration, timeFrameNames[i]);
+            if(totalTime[i] != 0){
+                currentDuration -= (totalTime[i] * timeFrames[i]);
+            }
+        }
+        return totalTime;
+    }
+    private long calculateDuration(){
+        return calendarToMillisecond(endCalendar) - 
+                calendarToMillisecond(startCalendar);
     }
     
     public String getString(){

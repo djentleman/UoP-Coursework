@@ -24,7 +24,7 @@ public class PERTRender extends JPanel {
     public PERTRender(Chart pert) // set up graphics window
     {
         super();
-        setBackground(Color.WHITE);
+        //setBackground(Color.WHITE);
         this.pert = pert;
     }
 
@@ -37,7 +37,20 @@ public class PERTRender extends JPanel {
 
         super.paintComponent(g);
         
-        // Render Code Goes Here
+        
+        drawNode(g, 100, 100);
+    }
+    
+    public void drawNode(Graphics g, int x, int y){
+        g.drawRect(x, y, 120, 80); // default node size
+        g.drawString("PERT task", x + 30, y + 20);
+        g.drawString("Task 3.7", x + 30, y + 40);
+    }
+    
+
+    public void drawChart(Graphics g){
+        // All 'next node' calculations are handled in here
+        //TODO
     }
     
      public void run() {
