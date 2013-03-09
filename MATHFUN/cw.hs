@@ -303,13 +303,7 @@ pressEnter = do
     putStr ">>>"
     ln <- getLine
     menu
-	
-----------------EXIT----------------------------------
 
-exit :: IO ()
-exit = do
-    putStrLn "Thank You For Using The Program"
-    putStrLn "Please Use It Again! :D"
 	
 
 --------------FILM PRINT OUT----------------------------------
@@ -352,17 +346,24 @@ printNumberOfFans film = do
 	
 
 ---------------------------------------------------------------
-	
+
 
 --        --
 ----Main----
 --        --
 
+
+-- STARTS
 main :: IO ()
 main = do
     --films <- loadFilms -- 'films' holds the String from the text file
-    menu
-	
+
+-- ENDS
+-- take in films, save films exit program
+exit :: IO ()
+exit = do
+    putStrLn "Thank You For Using The Program"
+    putStrLn "Please Use It Again! :D"
 
 
 --                    --
