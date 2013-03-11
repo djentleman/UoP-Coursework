@@ -5,17 +5,17 @@
 -- UP612136
 --
 
---         --
+-- --
 ----Types----
---         --
+-- --
 
 data Film = Film String [String] Int [String] -- Title, Cast, Year, Fans
                  deriving (Eq, Ord, Show, Read)
 
 
---                   --
+-- --
 ----Functional Code----
---                   --
+-- --
 
 
 addNewFilm :: Film -> [Film] -> [Film]
@@ -25,34 +25,34 @@ isYear :: Int -> Film -> Bool
 isYear year (Film _ _ filmYear _)
     |year == filmYear = True
     |otherwise = False
-	
-getFilmsByYear year  = filter (isYear year) -- filters for year
+
+getFilmsByYear year = filter (isYear year) -- filters for year
 
 isFan :: String -> Film -> Bool
-isFan person (Film _ _ _ []) =  False
+isFan person (Film _ _ _ []) = False
 isFan person (Film name actors year (fan:fans))
-	|person == fan = True
-	|otherwise = (isFan person (Film name actors year fans))
-	
+    |person == fan = True
+    |otherwise = (isFan person (Film name actors year fans))
+
 getFilmsByFan person = filter (isFan person)
 
 
-	
+
 afterYear :: Int -> Film -> Bool
 afterYear year (Film _ _ filmYear _) -- did the film come out after the year
-	|year <= filmYear = True
-	|otherwise = False
+    |year <= filmYear = True
+    |otherwise = False
 
 beforeYear :: Int -> Film -> Bool
 beforeYear year (Film _ _ filmYear _) -- did the film come out before the year
-	|year >= filmYear = True
-	|otherwise = False
-	
+    |year >= filmYear = True
+    |otherwise = False
+
 hasActor :: String -> Film -> Bool
 hasActor _ (Film _ [] _ _) = False
 hasActor filmActor (Film name (actor:actors) year fans)
-	|filmActor == actor = True
-	|otherwise = hasActor filmActor (Film name actors year fans)
+    |filmActor == actor = True
+    |otherwise = hasActor filmActor (Film name actors year fans)
 
 inPeriod before after actor = filter (beforeYear before) . filter (afterYear after) . filter (hasActor actor)
 -- film is inPeriod is it's beforeYear before, and afterYear after
@@ -62,8 +62,8 @@ inPeriod before after actor = filter (beforeYear before) . filter (afterYear aft
 becomeFan :: String -> String -> [Film] -> [Film]
 becomeFan _ _ [] = []
 becomeFan fanName filmName ((Film name actors year fans):films)
-	|filmName == name = (Film name actors year (fanName:fans)) : (becomeFan fanName filmName films)
-	|otherwise = (Film name actors year fans) : (becomeFan fanName filmName films) -- no change
+    |filmName == name = (Film name actors year (fanName:fans)) : (becomeFan fanName filmName films)
+    |otherwise = (Film name actors year fans) : (becomeFan fanName filmName films) -- no change
 
 getNumberOfFans :: Film -> Int
 getNumberOfFans (Film _ _ _ []) = 0
@@ -72,8 +72,8 @@ getNumberOfFans (Film name actors year (fan:fans)) = 1 + getNumberOfFans (Film n
 getFilmWithMostFans :: [Film] -> Film -> Film -- dirty code, will need to rebuild
 getFilmWithMostFans [] currentBest = currentBest
 getFilmWithMostFans (film:films) currentBest
-	|(getNumberOfFans film) > (getNumberOfFans currentBest) = getFilmWithMostFans films film
-	|otherwise = getFilmWithMostFans films currentBest
+    |(getNumberOfFans film) > (getNumberOfFans currentBest) = getFilmWithMostFans films film
+    |otherwise = getFilmWithMostFans films currentBest
 
 getBestFilm :: [Film] -> Film -- dirty code, will need to rebuild
 getBestFilm (film:films) = getFilmWithMostFans films film -- calls above function
@@ -83,11 +83,11 @@ getBestFilm (film:films) = getFilmWithMostFans films film -- calls above functio
 
 
 
---                  --
+-- --
 ----Interface Code----
---                  --
+-- --
 
-	
+
 loadFilms :: IO [Film]
 loadFilms = do
     filmStr <- readFile "films.txt"
@@ -104,30 +104,30 @@ saveFilms films = do
 
 
 
---input = String, output = IO function  
-getMenuChoice :: String -> IO () -- string used as opposed to Int for robustness
-getMenuChoice "1" = addFilm
-getMenuChoice "2" = viewAllFilms
-getMenuChoice "3" = viewFilmsByYear
-getMenuChoice "4" = viewFilmsByFan
-getMenuChoice "5" = viewFilmsFromPeriod
-getMenuChoice "6" = becomeFanOfFilm
-getMenuChoice "7" = printTopFilm
+--input = String, output = IO function
+getMenuChoice :: String -> [Film] -> IO () -- string used as opposed to Int for robustness
+getMenuChoice "1" films = addFilm films
+getMenuChoice "2" films = viewAllFilms films
+getMenuChoice "3" films = viewFilmsByYear films
+getMenuChoice "4" films = viewFilmsByFan films
+getMenuChoice "5" films = viewFilmsFromPeriod films
+getMenuChoice "6" films = becomeFanOfFilm films
+getMenuChoice "7" films = printTopFilm films
 -- TODO - FINISH THIS FUNCTION
-getMenuChoice "9" = exit
-getMenuChoice _ = invalidChoice
+getMenuChoice "9" films = exit films
+getMenuChoice _ films = invalidChoice films
 
-	
-	
-menu :: IO ()
-menu = do
-    putStrLn "            ##############"
-    putStrLn "            #PORT  SOLENT#"
-    putStrLn "            #FILM  SYSTEM#"
-    putStrLn "            ##############"
+
+
+menu :: [Film] -> IO ()
+menu films = do
+    putStrLn " ##############"
+    putStrLn " #PORT SOLENT#"
+    putStrLn " #FILM SYSTEM#"
+    putStrLn " ##############"
     putStrLn "(not related to year 1 java in any way!)"
     putStrLn ""
-    putStrLn "#-#-#-#-#-#- MENU  SYSTEM -#-#-#-#-#-#"
+    putStrLn "#-#-#-#-#-#- MENU SYSTEM -#-#-#-#-#-#"
     putStrLn "Press 1 To Add A Film"
     putStrLn "Press 2 To View All Films"
     putStrLn "Press 3 To Display All Films From A Certain Year"
@@ -139,28 +139,26 @@ menu = do
     putStrLn "Press 9 To Exit"
     putStr ">>>"
     choice <- getLine
-    getMenuChoice choice
-	
-invalidChoice :: IO ()
-invalidChoice = do
+    getMenuChoice choice films
+
+invalidChoice :: [Film] -> IO ()
+invalidChoice films = do
     putStrLn "Invalid Menu Choice"
-    pressEnter
+    pressEnter films
 
 -------------ADD FILM-----------------
 
-addFilm :: IO ()
-addFilm = do
+addFilm :: [Film] -> IO ()
+addFilm films = do
     title <- getTitle -- would you 'let', but not printing anything
     actors <- getActors []
     releaseYear <- getReleaseYear
     fans <- getFans []
-    films <- loadFilms -- REMOVE THIS LINE
     let film = Film title actors releaseYear fans
     let filmsToSave = addNewFilm film films
     putStrLn "Film Has Been Added!"
-    listFilms filmsToSave
-    --- problem will be solved if films is read in from 'main'
-    pressEnter
+	-- filmsToSave is new Films
+    pressEnter filmsToSave
 
 getTitle :: IO String
 getTitle = do
@@ -168,7 +166,7 @@ getTitle = do
     putStr ">>>"
     title <- getLine
     return title
-	
+
 getActors :: [String] -> IO [String]
 getActors actors = do
     putStrLn "Enter Actor Name (enter empty string to finish entering actors)"
@@ -194,15 +192,14 @@ getFans fans = do
         then return fans
         else do getFans (fanToAdd : fans)
     
-	
+
 --------------VIEW ALL FILMS---------------
-	
-viewAllFilms :: IO ()
-viewAllFilms = do
-    films <- loadFilms
+
+viewAllFilms :: [Film] -> IO ()
+viewAllFilms films = do
     putStrLn "List Of Films:"
     listFilms films
-    pressEnter
+    pressEnter films
 
 listFilms :: [Film] -> IO ()
 listFilms (film:films) = do
@@ -212,41 +209,39 @@ listFilms (film:films) = do
         else do listFilms films
 
 -------------------VIEW FILMS BY YEAR------------
-		
-		
-viewFilmsByYear :: IO ()
-viewFilmsByYear = do
+
+
+viewFilmsByYear :: [Film] -> IO ()
+viewFilmsByYear films = do
     putStrLn "Enter A Year To Search"
     putStr ">>>"
     year <- getLine
-    films <- loadFilms
     let filmsByYear = getFilmsByYear (read year ::	Int) films
     if filmsByYear == []
         then do putStrLn "No Films Found"
-                pressEnter
+                pressEnter films
         else do listFilms filmsByYear
-                pressEnter
+                pressEnter films
 
 --------------------VIEW FILMS BY FAN--------------------------
-	
-viewFilmsByFan :: IO ()
-viewFilmsByFan = do
+
+viewFilmsByFan :: [Film] -> IO ()
+viewFilmsByFan films = do
     putStrLn "Enter A Fan To Search"
     putStr ">>>"
     person <- getLine
-    films <- loadFilms
     let filmsByFan = getFilmsByFan person films
     if filmsByFan == []
         then do putStrLn "No Films Found"
-                pressEnter
+                pressEnter films
         else do listFilms filmsByFan
-                pressEnter
-    pressEnter
+                pressEnter films
+    pressEnter films
 
 -------------VIEW FILMS WITH A CERTAIN ACTOR FROM A CERTAIN PERIOD--------
 
-viewFilmsFromPeriod :: IO ()
-viewFilmsFromPeriod = do
+viewFilmsFromPeriod :: [Film] -> IO ()
+viewFilmsFromPeriod allFilms = do
     putStrLn "Enter The First (Lower) Boundry:"
     putStr ">>>"
     after <- getLine
@@ -256,19 +251,17 @@ viewFilmsFromPeriod = do
     putStrLn "Enter The Actor:"
     putStr ">>>"
     actor <- getLine
-    allFilms <- loadFilms
     let filmsByPeriod = inPeriod (read before :: Int) (read after :: Int) actor allFilms
     if filmsByPeriod == []
         then do putStrLn "No Films Found"
-                pressEnter
+                pressEnter allFilms
         else do listFilms filmsByPeriod
-                pressEnter
-				
+                pressEnter allFilms
+
 -------------STATE YOU'RE A FAN OF A CERTAIN FILM-----------------
 
-becomeFanOfFilm :: IO ()
-becomeFanOfFilm = do
-    films <- loadFilms
+becomeFanOfFilm :: [Film] -> IO ()
+becomeFanOfFilm films = do
     putStrLn "Enter The Name Of The Film You Want To Become A Fan Of:"
     putStr ">>>"
     filmName <- getLine
@@ -279,35 +272,33 @@ becomeFanOfFilm = do
     putStr fanName
     putStr " Is Now A Fan Of "
     putStrLn filmName
-    listFilms updatedFilms
-    pressEnter
+    pressEnter updatedFilms
     
 --------------------PRINT 'TOP' FILM------------------------------
 
 
-printTopFilm :: IO ()
-printTopFilm = do
-    films <- loadFilms -- will pass from menu in reality
+printTopFilm :: [Film] -> IO ()
+printTopFilm films = do
     let bestFilm = getBestFilm films
     putStrLn "Best Film:"
     filmPrintOut bestFilm
-    pressEnter
+    pressEnter films
 
 
-	
+
 --------------PRESS ENTER TO CONTINUTE---------------------------
 
-pressEnter :: IO () -- allows a break before menu refresh
-pressEnter = do
+pressEnter :: [Film] -> IO () -- allows a break before menu refresh
+pressEnter films = do
     putStrLn "Press Enter To Continue"
     putStr ">>>"
     ln <- getLine
-    menu
+    menu films
 
-	
+
 
 --------------FILM PRINT OUT----------------------------------
-	
+
 filmPrintOut :: Film -> IO ()
 filmPrintOut (Film title actors releaseYear fans) = do
     putStrLn "--------------------"
@@ -329,7 +320,7 @@ printStringArray (str:strs) = do
     putStr str
     putStr ", "
     if strs == []
-        then return () 
+        then return ()
         else do printStringArray strs
 
 printReleaseYear :: Int -> IO ()
@@ -343,74 +334,79 @@ printNumberOfFans film = do
     let noOfFans = (getNumberOfFans film)
     putStrLn (show noOfFans)
     
-	
+
 
 ---------------------------------------------------------------
 
 
---        --
+-- --
 ----Main----
---        --
+-- --
+
+-- the films loads on program start
+-- the films are passed around (and modified) by the program
+-- when the program is exited, the (modified) films save
 
 
 -- STARTS
 main :: IO ()
 main = do
-    --films <- loadFilms -- 'films' holds the String from the text file
+    films <- loadFilms -- 'films' holds the String from the text file
+    menu films
 
 -- ENDS
--- take in films, save films exit program
-exit :: IO ()
-exit = do
+exit :: [Film] -> IO ()
+exit films = do
+    saveFilms films -- saves 'films'
     putStrLn "Thank You For Using The Program"
     putStrLn "Please Use It Again! :D"
 
 
---                    --
+-- --
 ----Demo Information----
---                    --
+-- --
 
 
 
--- Demo function to test basic functionality (without persistence - i.e. 
+-- Demo function to test basic functionality (without persistence - i.e.
 -- testDatabase doesn't change and nothing is saved/loaded to/from file).
 
 
 
 
 --demo :: Int -> IO ()
---demo 1  = putStrLn all films after adding 2013 film "The Great Gatsby"
+--demo 1 = putStrLn all films after adding 2013 film "The Great Gatsby"
 -- starring "Leonardo DiCaprio" and "Tobey Maguire" to testDatabase
---demo 2  = putStrLn (fnToTurnAListOfFilmsIntoAMultiLineString testDatabase)
---demo 3  = putStrLn all films from 2012
---demo 4  = putStrLn all films that "Zoe" is a fan of
---demo 5  = putStrLn all "Tom Hanks" films from 2000 until 2011
---demo 6  = putStrLn all films after "Zoe" becomes fan of "Forrest Gump"
+--demo 2 = putStrLn (fnToTurnAListOfFilmsIntoAMultiLineString testDatabase)
+--demo 3 = putStrLn all films from 2012
+--demo 4 = putStrLn all films that "Zoe" is a fan of
+--demo 5 = putStrLn all "Tom Hanks" films from 2000 until 2011
+--demo 6 = putStrLn all films after "Zoe" becomes fan of "Forrest Gump"
 --demo 61 = putStrLn all films after "Zoe" becomes fan of "Inception"
---demo 7  = putStrLn best "Tom Hanks" film
---demo 8  = putStrLn top 5 films
+--demo 7 = putStrLn best "Tom Hanks" film
+--demo 8 = putStrLn top 5 films
 
---             --
+-- --
 ----Test Data----
---             --
+-- --
 
 testDatabase :: [Film]
-testDatabase = [ 
-    (Film 
-	    "Casino Royale" 
-	    ["Daniel Craig", "Eva Green", "Judi Dench"] 
-	    2006 
-	    ["Garry", "Dave", "Zoe", "Kevin", "Emma"]), 
-    (Film 
-	    "Cowboys & Aliens"
-	    ["Harrison Ford", "Daniel Craig", "Olivia Wilde"]
-	    2011
-	    ["Bill", "Jo", "Garry", "Kevin", "Olga", "Liz"]), 
+testDatabase = [
     (Film
-	    "Catch Me If You Can"
-	    ["Leonardo DiCaprio", "Tom Hanks"]
-	    2002
-	    ["Zoe", "Heidi", "Jo", "Emma", "Liz", "Sam", "Olga", "Kevin", "Tim"]), 
+        "Casino Royale"
+        ["Daniel Craig", "Eva Green", "Judi Dench"]
+        2006
+        ["Garry", "Dave", "Zoe", "Kevin", "Emma"]),
+    (Film
+        "Cowboys & Aliens"
+        ["Harrison Ford", "Daniel Craig", "Olivia Wilde"]
+        2011
+        ["Bill", "Jo", "Garry", "Kevin", "Olga", "Liz"]),
+    (Film
+        "Catch Me If You Can"
+        ["Leonardo DiCaprio", "Tom Hanks"]
+        2002
+        ["Zoe", "Heidi", "Jo", "Emma", "Liz", "Sam", "Olga", "Kevin", "Tim"]),
     (Film
         "Mamma Mia!"
         ["Meryl Streep", "Pierce Brosnan"]
@@ -422,7 +418,7 @@ testDatabase = [
         1998
         ["Heidi", "Jo", "Megan", "Olga", "Zoe", "Wally"]),
     (Film
-        "Life of Pi" 
+        "Life of Pi"
         ["Suraj Sharma"]
         2012
         ["Kevin", "Olga", "Liz", "Tim", "Zoe", "Paula", "Jo", "Emma"]),
@@ -520,5 +516,5 @@ testDatabase = [
         "Django Unchained"
         ["Jamie Foxx", "Leonardo DiCaprio", "Christoph Waltz"]
         2012
-        ["Kevin", "Tim", "Emma", "Olga"  ])
+        ["Kevin", "Tim", "Emma", "Olga" ])
     ]
