@@ -121,10 +121,10 @@ getMenuChoice _ films = invalidChoice films
 
 menu :: [Film] -> IO ()
 menu films = do
-    putStrLn " ##############"
-    putStrLn " #PORT SOLENT#"
-    putStrLn " #FILM SYSTEM#"
-    putStrLn " ##############"
+    putStrLn "          ###############"
+    putStrLn "          # PORT SOLENT #"
+    putStrLn "          # FILM SYSTEM #"
+    putStrLn "          ###############"
     putStrLn "(not related to year 1 java in any way!)"
     putStrLn ""
     putStrLn "#-#-#-#-#-#- MENU SYSTEM -#-#-#-#-#-#"
