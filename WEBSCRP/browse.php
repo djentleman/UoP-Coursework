@@ -1,6 +1,7 @@
 	<?php 
 		include "header.php" 
 	?>
+		<script src="js/form_buy.js"></script> <!-- JS for page load -->
 		
 		<div class="mainContent">
 			<?php
@@ -34,7 +35,7 @@
 						die('Could not connect: ' . mysql_error());
 					}
 					if (mysql_query($query ,$con)){
-						echo "<h2>Browse Results:</h2>";
+						echo "<h1>Browse Results:</h1>";
 						$output = (mysql_query($query ,$con));
 						while($row = mysql_fetch_array($output))
 						
@@ -54,9 +55,13 @@
 								
 							
 								if(search_for($row['itemName'], $search)){
+								
+									$idParam = $row['itemID'];
+								
 									
-									
+									echo "<div class='browseDiv'  onClick='goToBuy($idParam)'>";
 									include "scripts/browseButton.php"; // defines the variables
+									echo "</div>";
 									
 									//variables to pass
 									// TODO pass the rest
@@ -67,15 +72,15 @@
 							else{
 								//if the search is empty, dump it all
 								
+								
+								$idParam = $row['itemID'];
+								
+								echo "<div class='browseDiv' onClick='goToBuy($idParam)'>";
 								include "scripts/browseButton.php"; // defines the variables
+								echo "</div>";
 								
 							}
-						}
-						echo "<br>";
-						echo "<br>";
-						echo "<p> not finding what you're looking for?";
-						echo "<p> try <a href='advancedSearch.php'>'advanced search'</a></p> ";
-						
+						}	
 					}
 					else{
 						echo mysql_error();

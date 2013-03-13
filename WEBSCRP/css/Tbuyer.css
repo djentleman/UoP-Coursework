@@ -18,8 +18,10 @@ body
 	margin-right:10%;
 	margin-left:10%;
 	overflow: auto;
+	min-width: 950px;
 	border-radius: 25px;
 	-moz-border-radius: 25px;
+	padding-bottom:20px;
 }
 
 
@@ -43,6 +45,36 @@ body
 	max-height: 400px;
 	max-width: 400px;
 	
+}
+
+.browsePicture
+{
+	float: right;
+	height: 30%;
+	width: 30%;
+	margin-right: 20px;
+	max-height: 200px;
+	max-width: 200px;	
+}
+
+.browseDiv
+{
+	min-height: 13em;
+	width: 45%;
+	margin: 2.5%;
+	margin-top: 0%;
+	margin-bottom: 0%;
+	float: left;
+}
+
+.browseDiv:hover
+{
+	box-shadow: 0px 0px 8px #DDBB77;
+}
+
+.browseDiv:active
+{
+	box-shadow: 0px 0px 12px #BB9955;
 }
 
 .itemComments
@@ -119,6 +151,7 @@ ul li
 	display: block;
 	position: relative;
 	float: right;
+	margin-left: 0;
 	margin-left: 0;
 	margin-right: 0;
 }
@@ -201,16 +234,21 @@ float: left;
 
 header
 {
-	padding-top: 1em;
+	padding-top: 0em;
 	position: fixed;
 	width:100%;
 	right:0px;
-	min-width: 930px;
+	min-width: 900px;
 	top: 0px;
 	height: 50px;
 	background-color:#FFCC88;
 	-moz-border-radius: 10px;
 	border-radius: 10px;
+}
+
+.headerSearch
+{
+	padding-top: 10px;
 }
 
 .select
@@ -219,7 +257,8 @@ header
 	oveflow: auto;
 }
 
-@media screen and (max-width:650px) {
+/*@media screen and (max-width:650px) {
+
 
     header{
 		padding-top: 1em;
@@ -294,7 +333,8 @@ header
 
 	
 	.menuCase
-	/* formats the actual menu items */
+	
+	
 	{
 		float: right;
 		display: block;
@@ -325,6 +365,8 @@ header
 		list-style: none;
 	}
 	}
+	
+	*/
 
 
 

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<title> Tbuyer </title>
@@ -37,9 +38,9 @@
 				</ul>
 			</nav>
 			<form method="get" action="browse.php" class="searchForm">
-				<div class="search">
+				<div class="search headerSearch">
 					<input type="text" name="search" value="">
-					<input type="submit" name="submit" value="Search" >
+					<input type="submit" name="submit" value="Search">
 				</div>
 			</form>
 			

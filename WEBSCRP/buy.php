@@ -16,7 +16,7 @@
 						echo "<img src='$image' class='itemImage'></img>";
 					}
 					else {
-						echo "<img src='img/no_img.png'></img>";
+						echo "<img src='img/no_img.png' class='itemImage'></img>"; // 'no image defined'
 					}
 				?>
 			</div>
@@ -24,7 +24,7 @@
 				<?php
 					echo "<h2>$itemName</h2>";
 					echo "<p>";
-					echo "Price &pound;:$itemPrice   ,";
+					echo "Price &pound;$itemPrice   ,";
 					echo "Quantity: $itemQuantity";
 					echo "</p>";
 					echo "<p> Seller Name; $sellerName</p>";
@@ -59,59 +59,14 @@
 				<h3> COMMENTS </h3>
 				
 				
-				
-				<?php
-				
-					
-					
-					function fetchComments($query, $con){
-						
-						if (!$con){
-							die('Could not connect: ' . mysql_error());
-						}
-						if (mysql_query($query ,$con)){
-						//	echo "Command Executed.";
-							
-							$output = (mysql_query($query ,$con));
-							while($row = mysql_fetch_array($output)){
-							// this is the printed comment section
-							
-								echo "<p> Poster Name: " . $row['posterName'] . "</p>";
-								echo "<p> " . $row['commentBody'] . "</p>";
-								echo "<br>";
-							}
-								
-						}
-						else{
-							echo mysql_error();
-						}
-					}
-					
-					$con = mysql_connect("localhost","root");
-				
-				
-					$query = "USE `tbuyer`";
-					executeQuery($query, $con);
-					
-
-					
-					$query = "SELECT * FROM `comments` WHERE itemID = '$itemID'";
-					fetchComments($query, $con);
-					
-					
-					
-					mysql_close($con);
-					
-				
-				
-				?>
+				<div id="comments">
+					<?php
+						include "scripts/fetch_comments.php";
+					?>
+				</div>
 				
 				<p id="dynamicText"></p>
-				<p id="dynamicText1"></p>
 				
-				<br>
-				<br>
-				<h3>Please Refresh The Page To Render All New Comments</h3>
 				
 			
 				
@@ -143,7 +98,7 @@
 					<p></p>
 					
 					<!-- calls ajax -->
-					<input type="submit" onclick="return uploadCom()" name="submit" value="Submit Comment">
+					<input type="submit" onclick="return uploadAndRefresh()" name="submit" value="Submit Comment">
 					
 					
 				</form>
