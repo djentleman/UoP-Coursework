@@ -58,7 +58,7 @@ inPeriod before after actor = filter (beforeYear before) . filter (afterYear aft
 -- film is inPeriod is it's beforeYear before, and afterYear after
 
 
-
+-- fanName, filmName, films
 becomeFan :: String -> String -> [Film] -> [Film]
 becomeFan _ _ [] = []
 becomeFan fanName filmName ((Film name actors year fans):films)
@@ -77,6 +77,26 @@ getFilmWithMostFans (film:films) currentBest
 
 getBestFilm :: [Film] -> Film -- dirty code, will need to rebuild
 getBestFilm (film:films) = getFilmWithMostFans films film -- calls above function
+
+-- originalFilms (the array that gets filtered) -- -- current iteration -- output
+-- dirty, prefreabley [Film] -> [Film]
+filterTopFilm :: [Film] -> [Film] -> [Film]
+filterTopFilm _ [] = []
+filterTopFilm originalFilms (film:films)
+	|getBestFilm originalFilms == film = filterTopFilm originalFilms films
+	|otherwise = film : filterTopFilm originalFilms films
+
+-- get top n films
+-- count -> filmList -> topFilms -> output
+-- top of list = number 1
+-- bottom of list = number 5 :D
+getTopNFilms :: Int -> [Film] -> [Film] -> [Film]
+getTopNFilms 0 _ topFilms = topFilms
+getTopNFilms count allFilms topFilms = (getTopNFilms (count - 1)) (filterTopFilm allFilms allFilms) (getBestFilm allFilms:topFilms)
+
+getTopFive :: [Film] -> [Film]
+getTopFive films = getTopNFilms 5 films []
+
 
 
 
@@ -113,7 +133,7 @@ getMenuChoice "4" films = viewFilmsByFan films
 getMenuChoice "5" films = viewFilmsFromPeriod films
 getMenuChoice "6" films = becomeFanOfFilm films
 getMenuChoice "7" films = printTopFilm films
--- TODO - FINISH THIS FUNCTION
+getMenuChoice "8" films = printTopFive films
 getMenuChoice "9" films = exit films
 getMenuChoice _ films = invalidChoice films
 
@@ -121,10 +141,10 @@ getMenuChoice _ films = invalidChoice films
 
 menu :: [Film] -> IO ()
 menu films = do
-    putStrLn "          ###############"
-    putStrLn "          # PORT SOLENT #"
-    putStrLn "          # FILM SYSTEM #"
-    putStrLn "          ###############"
+    putStrLn " ##############"
+    putStrLn " #PORT SOLENT#"
+    putStrLn " #FILM SYSTEM#"
+    putStrLn " ##############"
     putStrLn "(not related to year 1 java in any way!)"
     putStrLn ""
     putStrLn "#-#-#-#-#-#- MENU SYSTEM -#-#-#-#-#-#"
@@ -134,8 +154,8 @@ menu films = do
     putStrLn "Press 4 To Display All Films A User Is A Fan Of"
     putStrLn "Press 5 To Display All Films With A Selected Actor Released Within A Peticular Period"
     putStrLn "Press 6 To Say You're A Fan Of A Peticular FIlm"
-    putStrLn "Press 7 To Display The 'Best' Film"
-    putStrLn "Press 8 To Display The 'Top 5' FIlms"
+    putStrLn "Press 7 To Display The Best Film By A Particular Actor"
+    putStrLn "Press 8 To Display The Top 5 FIlms"
     putStrLn "Press 9 To Exit"
     putStr ">>>"
     choice <- getLine
@@ -279,11 +299,37 @@ becomeFanOfFilm films = do
 
 printTopFilm :: [Film] -> IO ()
 printTopFilm films = do
-    let bestFilm = getBestFilm films
+    putStrLn "Enter Actor:"
+    putStr ">>>"
+    actor <- getLine
+    let filmsByActor = filter (hasActor actor) films
+    let bestFilm = getBestFilm filmsByActor
     putStrLn "Best Film:"
     filmPrintOut bestFilm
     pressEnter films
 
+	
+-----------------PRINT TOP 5 FILMS------------------------------------
+	
+	
+printTopFive :: [Film] -> IO ()
+printTopFive films = do
+    putStrLn "Top 5 Films"
+    let topFiveFilms = getTopFive films
+    listFilmsInOrder 5 topFiveFilms
+    pressEnter films
+
+	
+	
+listFilmsInOrder :: Int -> [Film] -> IO ()
+listFilmsInOrder count (film:films) = do
+    putStr (show count)
+    putStrLn "."
+    filmPrintOut film
+    if films == []
+        then return ()
+        else do listFilmsInOrder (count - 1) films
+    
 
 
 --------------PRESS ENTER TO CONTINUTE---------------------------
@@ -356,7 +402,7 @@ main = do
 
 -- ENDS
 exit :: [Film] -> IO ()
-exit films = do
+exit films = do -- perhaps before saving, push though the whole file so it can close
     saveFilms films -- saves 'films'
     putStrLn "Thank You For Using The Program"
     putStrLn "Please Use It Again! :D"
@@ -373,18 +419,28 @@ exit films = do
 
 
 
-
---demo :: Int -> IO ()
+demo :: Int -> IO ()
 --demo 1 = putStrLn all films after adding 2013 film "The Great Gatsby"
 -- starring "Leonardo DiCaprio" and "Tobey Maguire" to testDatabase
+demo 1 = listFilms (addNewFilm (Film "The Great Gatsby" ["Leonardo DiCaprio", "Tobey Maguire"] 2013 ["Todd"]) (testDatabase))
 --demo 2 = putStrLn (fnToTurnAListOfFilmsIntoAMultiLineString testDatabase)
+demo 2 = listFilms testDatabase
 --demo 3 = putStrLn all films from 2012
+demo 3 = listFilms (getFilmsByYear 2012 testDatabase)
 --demo 4 = putStrLn all films that "Zoe" is a fan of
+demo 4 = listFilms (getFilmsByFan "Zoe" testDatabase)
 --demo 5 = putStrLn all "Tom Hanks" films from 2000 until 2011
+demo 5 = listFilms (inPeriod 2011 2000 "Tom Hanks" testDatabase)
 --demo 6 = putStrLn all films after "Zoe" becomes fan of "Forrest Gump"
+demo 6 = listFilms (becomeFan "Zoe" "Forrest Gump" testDatabase)
 --demo 61 = putStrLn all films after "Zoe" becomes fan of "Inception"
+demo 61 = listFilms (becomeFan "Zoe" "Inception" testDatabase)
 --demo 7 = putStrLn best "Tom Hanks" film
+demo 7 = filmPrintOut (getBestFilm (filter (hasActor "Tom Hanks") testDatabase))
 --demo 8 = putStrLn top 5 films
+demo 8 = listFilmsInOrder 5 (getTopFive testDatabase)
+-- catch all
+demo _ = putStrLn "Invalid Input"
 
 -- --
 ----Test Data----
