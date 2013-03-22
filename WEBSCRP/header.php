@@ -4,7 +4,8 @@
 		<title> Tbuyer </title>
 		<meta http-equiv="Content-Script-Type" content="text/javascript">
 		<link rel="stylesheet" type="text/css" href="css/Tbuyer.css">
-		<script src="ajax/reset.js"></script>
+		<script src="ajax/reset.js"></script> <!-- AJAX for DB reset -->
+		<script src="js/form_browse.js"></script> <!-- JS for browse -->
 		
 		
 	</head>
@@ -26,21 +27,22 @@
 		<header>
 			<nav>
 				<ul>
-					<a href="index.php"><img class="logo" src="img/Tbuyer.png"></a></img>
-					<li><a class="menuCase">Manage Content</a>
+					<a href="index.php" ><img class="logo" style="margin-top:5px" src="img/Tbuyer.png"></a></img>
+					<li><a class="menuCase" style="margin-top:10px">Manage Content</a>
 					<ul>
 						<li><a class="menuCase" href="upload.php">Upload Content</a></li>
 						<li><a class="menuCase" href="update_content.php">Update Content</a></li>
 						<li><a class="menuCase" href="delete_content.php">Remove Content</a></li>
 						<li><a class="menuCase" id="fetch" onclick="return confirmAction()">Reset Database</a></li>
 					</ul>
-					<li><a class="menuCase" href="index.php">Basket</a></li>
+					<li><a class="menuCase" style="margin-top:10px" href="index.php">Basket</a></li>
 				</ul>
 			</nav>
-			<form method="get" action="browse.php" class="searchForm">
+			<form class="searchForm" action="browse.php"> <!-- action still needs to be 'beowse.php' -->
 				<div class="search headerSearch">
-					<input type="text" name="search" value="">
-					<input type="submit" name="submit" value="Search">
+					<input type="text" id="searchValue" name="search" value="">
+					<button onclick="browse()">Search</button> <!-- USES JS NOW -->
+					<!--<input type="submit" name="submit" value="Search"> -->
 				</div>
 			</form>
 			

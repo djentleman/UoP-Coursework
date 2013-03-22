@@ -13,8 +13,10 @@
 			function run(){
 				var radioValue = getRadioValue('uploadType');
 				if (radioValue == "item"){
+					document.getElementById("dragtarget").style.visibility = 'hidden';
 					showItem();
 				} else if (radioValue == "catagory"){
+					document.getElementById("dragtarget").style.visibility = 'hidden';
 					showCatagory();
 				}
 				

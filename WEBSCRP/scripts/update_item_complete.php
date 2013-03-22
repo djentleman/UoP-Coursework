@@ -83,27 +83,6 @@
 				} // else keep it the same
 				
 				
-				$tmpName = "none chosen";
-				
-				if (isset($_FILES['image']) && $_FILES['image']['size'] > 0) { 
-
-					// Temporary file name stored on the server
-					$tmpName  = $_FILES['image']['tmp_name'];  
-					   
-					//echo $tmpName;
-					
-					$newfile = "img/uploads/" . $itemID . ".jpg";
-					copy($tmpName, $newfile);
-					
-					
-					if ($newfile != ""){
-						$query = "UPDATE `items`
-						SET `image`='$newfile'
-						WHERE `itemID`='$itemID'";
-						executeQuery($query, $con);
-					} // else keep it the same
-				}	
-				
 				
 				
 				

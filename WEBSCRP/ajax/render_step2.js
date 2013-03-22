@@ -1,6 +1,6 @@
 function renderStep2() {
 
-	
+	document.getElementById("dragtarget").style.visibility = 'visible';
 
 	// declare the two variables that will be used
 	var xhr, target, changeListener;

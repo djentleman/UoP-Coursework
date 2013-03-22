@@ -14,10 +14,13 @@
 				var radioValue = getRadioValue('updateType');
 				if (radioValue == "item"){
 					showItem();
+					document.getElementById("dragtarget").style.visibility = 'hidden';
 				} else if (radioValue == "catagory"){
 					showCatagory();
+					document.getElementById("dragtarget").style.visibility = 'hidden';
 				} else {
-					showImage();
+					showImage(); // render text
+					document.getElementById("dragtarget").style.visibility = 'visible';
 				}
 				
 				

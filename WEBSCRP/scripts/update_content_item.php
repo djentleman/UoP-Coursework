@@ -1,5 +1,5 @@
 <div id="itemForm" class="leftDiv">
-				<p class="left">Select Item To Delete</p>
+				<p class="left">Select Item To Update</p>
 				<form class="left" action="update_item.php" method="post" enctype="multipart/form-data">
 					<?php
 						$GLOBALS = $GLOBALS+$_REQUEST;
@@ -49,9 +49,6 @@
 					<?php
 					
 						
-					
-						
-						
 						
 						$con = mysql_connect("localhost","root");
 				
@@ -67,16 +64,19 @@
 						
 					<p>Description (MAX 1000 characters)</p>
 					<textarea cols="25" rows="5" name="description"></textarea>
-						
 					
-					<p> Add Image*
+					
+						
+					<!-- IMAGE UPDATE CODE -->
+					<!--<p> Add Image*
 						<!-- Add Image Path* -->
 					
 						<!-- <input type="text" name="image" value=""> -->
 						
-						<input name="MAX_FILE_SIZE" value="10002400" type="hidden">
+						<!--<input name="MAX_FILE_SIZE" value="10002400" type="hidden">
 						<input name="image" accept="image/jpeg" type="file">
-					</p>
+					</p> -->
+					
 						
 					<input type="submit" name="submit" value="Submit">
 						

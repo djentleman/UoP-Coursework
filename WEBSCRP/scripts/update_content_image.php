@@ -22,17 +22,11 @@
 						renderListBox($query, $con);
 						
 						mysql_close($con);
+						
+						// Drag And Drop Rendered Seperatley (on page load)
 					?>
-					
-					
-						<p> Add Image
 						
-							<input name="MAX_FILE_SIZE" value="10002400" type="hidden">
-							<input type="file" name="image" id="img" accept="image/jpeg">
-						</p>
-						
-						
-						<button onclick="">Submit</button> <!-- add oinclick-->
+						<!--  DRAG AND DROP HANDLES EVERYTHING <button onclick="">Submit</button> <!-- add oinclick-->
 					</form>
 					
 				</form>

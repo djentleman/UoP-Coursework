@@ -7,23 +7,21 @@
 					<h2>New Item</h2>
 					<h2>Step 2: Image</h2>
 					
-
-				
-					<form method="post" enctype="multipart/form-data">
-						<p>The item data has now been uploaded; please upload an image for the new item</p>
-						<br>
-						<p> Add Image*
-							<!-- Add Image Path* -->
+					<!--
 					
-							<!-- <input type="text" name="image" value=""> -->
-						
-							<input name="MAX_FILE_SIZE" value="10002400" type="hidden">
-							<input type="file" name="image" id="img" accept="image/jpeg">
-						</p>
-						
-						
-						<input type="submit" value="Submit" onclick="return uploadItem2()"> <!-- submit!-->
+					<script src="js/dragupload.js"></script> <!-- JS drag upload script -->
+					
+					<!--
+					<form enctype="multipart/form-data" name="dragtarget" method="POST" onsubmit="return false;">
 					</form>
+
+					<div class="dragBox" id="dragtarget">
+						<p>Drop The Image You Want To Upload Here</p>
+						<p id="response">No Image Uploaded Yet</p>
+					</div>
+					-->
+					
+					
 					
 					<div id="dynamicText"></div>
 				</div>

@@ -1,8 +1,8 @@
 			<?php
 				
-				
-				//$image = $_POST['image'];
-				
+
+				$response["request"] = $_REQUEST;
+				$response["files"] = $_FILES;
 				
 				include "executeQuery.php";
 			
@@ -25,7 +25,7 @@
 						return $currentHighest;
 					}
 					else{
-						echo mysql_error();
+						$response["SQL_Error"] = mysql_error();
 					}
 				}
 
@@ -37,23 +37,17 @@
 				
 				$itemID = getHighestID($con);
 				
-				header("x-debug3: '$itemID'");
 			
 				$tmpName = "none";
 				
-				if (isset($_FILES['image']) && $_FILES['image']['size'] > 0) { 
+				if (isset($_FILES['file']) && $_FILES['file']['size'] > 0) { 
 
 					// Temporary file name stored on the server
-					$tmpName  = $_FILES['image']['tmp_name'];  
+					$tmpName  = $_FILES['file']['tmp_name'];  
 					   
 					//echo $tmpName;
 				}	
 				
-				
-				header("x-debug1: '$tmpName'");
-				
-				header("x-files: " . json_encode($_FILES));
-				header("x-post: " . json_encode($_POST));
 				
 			
 				if ($tmpName != "none"){
@@ -65,21 +59,20 @@
 				}
 				
 				
-				header("x-debug2: '$newfile'");
+				$actualDir = "/cw/img/uploads/" . $itemID . ".jpg";
 				
+				$response['temp dir'] = $tmpName;
+				$response['new dir'] = $newfile;
+				$response['Actual dir'] = $actualDir;
 				
-				
-				
-				
-				
-				
-				$query = "UPDATE `items` 
-						SET `image`='$newfile' 
-						WHERE `itemID`='$itemID'";
+				$query = "UPDATE `items` SET image='$actualDir' WHERE itemID='$itemID'";
 				executeQuery($query, $con);
 				
 				
 				mysql_close($con);
+				
+				
+				echo json_encode($response);
 				
 			?>
 			

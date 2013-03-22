@@ -50,8 +50,8 @@ body
 .browsePicture
 {
 	float: right;
-	height: 30%;
-	width: 30%;
+	height: 25%;
+	width: 25%;
 	margin-right: 20px;
 	max-height: 200px;
 	max-width: 200px;	
@@ -60,10 +60,10 @@ body
 .browseDiv
 {
 	min-height: 13em;
-	width: 45%;
-	margin: 2.5%;
-	margin-top: 0%;
-	margin-bottom: 0%;
+	width: 42%;
+	margin: 3.5%;
+	margin-top: 2px;
+	margin-bottom: 2px;
 	float: left;
 }
 
@@ -368,7 +368,32 @@ header
 	
 	*/
 
+/* drag drop uploader style */
 
+.dragBox {
+	float: left;
+	padding: 2em;
+	max-width: 8em;
+	background: #FFDD99;
+	text-align: center;
+	border-radius: .2em;
+	color: #FFF;
+	font-weight: bold;
+	font-size: 150%;
+	text-shadow: 0 0ex 0.1ex rgba(0,0,0,0.5);
+	box-shadow:  0 0ex 3px rgba(0,0,0,0.5) inset;
+	margin-left: 10em;
+}
+
+#response {
+	font-size: 60%;	
+}
+
+.dragBox:hover{
+	background:#FFCC88;
+	0 0ex 5px rgba(0,0,0,0.5) inset;
+	
+}
 
 
 

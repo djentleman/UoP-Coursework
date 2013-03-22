@@ -8,7 +8,7 @@
 		<script src="js/form_choice_upload.js"></script> <!--JS script for menu -->
 		<script src="js/uploadInfo.js"></script> <!-- JS for step transition -->
 		<script src="ajax/render_step2.js"></script> <!-- AJAX for step transition -->
-		<script src="ajax/upload_item2.js"></script> <!-- AJAX for image upload -->
+		<script src="js/dragupload.js"></script> <!-- JS drag upload script -->
 
 		
 		<div class="mainContent" style="padding-bottom: 20px;">
@@ -29,6 +29,17 @@
 			</form>
 			
 			<div id="dynamic"></div>
+			
+			
+			<form enctype="multipart/form-data" name="dragtarget" method="POST" onsubmit="return false;">
+			</form>
+
+			<!-- hidden (for now) so listeners init -->
+			<!-- doesn't render with ajax, uses regular JS to unhide -->
+			<div class="dragBox" id="dragtarget" style="visibility:hidden"> <!--   -->
+				<p>Drop The Image You Want To Upload Here</p>
+				<p id="response">No Image Uploaded Yet</p>
+			</div>
 			
 
 			
