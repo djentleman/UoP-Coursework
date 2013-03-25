@@ -17,6 +17,12 @@ data Film = Film String [String] Int [String] -- Title, Cast, Year, Fans
 ----Functional Code----
 -- --
 
+filmExists :: String -> [Film] -> Bool
+filmExists _ [] = False
+filmExists filmName ((Film name _ _ _):films)
+    |filmName == name = True || filmExists filmName films
+    |otherwise = False || filmExists filmName films
+    
 
 addNewFilm :: Film -> [Film] -> [Film]
 addNewFilm filmToAdd films = filmToAdd : films
@@ -78,6 +84,10 @@ getFilmWithMostFans (film:films) currentBest
 getBestFilm :: [Film] -> Film -- dirty code, will need to rebuild
 getBestFilm (film:films) = getFilmWithMostFans films film -- calls above function
 
+reverseList :: [a] -> [a] -- reverses list -- polymorphic
+reverseList [] = []
+reverseList (x:xs) = (reverseList xs) ++ [x]
+
 -- originalFilms (the array that gets filtered) -- -- current iteration -- output
 -- dirty, prefreabley [Film] -> [Film]
 filterTopFilm :: [Film] -> [Film] -> [Film]
@@ -121,26 +131,36 @@ saveFilms films = do
     putStrLn "Films Saved!"
     
 
-
+welcome :: [Film] -> IO ()
+welcome films = do
+    putStrLn "Please Enter Your Name"
+    putStr ">>>"
+    userName <- getLine
+    putStrLn ""
+    putStrLn "#########################"
+    putStr "    Welcome   "
+    putStrLn userName
+    putStrLn "#########################"
+    menu films userName
 
 
 --input = String, output = IO function
-getMenuChoice :: String -> [Film] -> IO () -- string used as opposed to Int for robustness
-getMenuChoice "1" films = addFilm films
-getMenuChoice "2" films = viewAllFilms films
-getMenuChoice "3" films = viewFilmsByYear films
-getMenuChoice "4" films = viewFilmsByFan films
-getMenuChoice "5" films = viewFilmsFromPeriod films
-getMenuChoice "6" films = becomeFanOfFilm films
-getMenuChoice "7" films = printTopFilm films
-getMenuChoice "8" films = printTopFive films
-getMenuChoice "9" films = exit films
-getMenuChoice _ films = invalidChoice films
+getMenuChoice :: String -> [Film] -> String -> IO () -- string used as opposed to Int for robustness
+getMenuChoice "1" films userName = addFilm films userName
+getMenuChoice "2" films userName = viewAllFilms films userName
+getMenuChoice "3" films userName = viewFilmsByYear films userName
+getMenuChoice "4" films userName = viewFilmsByFan films userName
+getMenuChoice "5" films userName = viewFilmsFromPeriod films userName
+getMenuChoice "6" films userName = becomeFanOfFilm films userName
+getMenuChoice "7" films userName = printTopFilm films userName
+getMenuChoice "8" films userName = printTopFive films userName
+getMenuChoice "9" films _ = exit films 
+getMenuChoice _ films userName = invalidChoice films userName
 
 
 
-menu :: [Film] -> IO ()
-menu films = do
+menu :: [Film] -> String -> IO ()
+menu films userName = do
     putStrLn " ##############"
     putStrLn " #PORT SOLENT#"
     putStrLn " #FILM SYSTEM#"
@@ -159,26 +179,28 @@ menu films = do
     putStrLn "Press 9 To Exit"
     putStr ">>>"
     choice <- getLine
-    getMenuChoice choice films
+    getMenuChoice choice films userName
 
-invalidChoice :: [Film] -> IO ()
-invalidChoice films = do
+invalidChoice :: [Film] -> String -> IO ()
+invalidChoice films userName = do
     putStrLn "Invalid Menu Choice"
-    pressEnter films
+    pressEnter films userName
 
 -------------ADD FILM-----------------
 
-addFilm :: [Film] -> IO ()
-addFilm films = do
+addFilm :: [Film] -> String -> IO ()
+addFilm films userName = do
     title <- getTitle -- would you 'let', but not printing anything
     actors <- getActors []
     releaseYear <- getReleaseYear
     fans <- getFans []
     let film = Film title actors releaseYear fans
-    let filmsToSave = addNewFilm film films
-    putStrLn "Film Has Been Added!"
-	-- filmsToSave is new Films
-    pressEnter filmsToSave
+    if (filmExists title films) == True
+        then do putStrLn "Film Already Exists; Film Will Not Be Added"
+                pressEnter films userName
+        else do let filmsToSave = addNewFilm film films -- filmsToSave is new Films
+                putStrLn "Film Has Been Added!" 
+                pressEnter filmsToSave userName
 
 getTitle :: IO String
 getTitle = do
@@ -215,11 +237,11 @@ getFans fans = do
 
 --------------VIEW ALL FILMS---------------
 
-viewAllFilms :: [Film] -> IO ()
-viewAllFilms films = do
+viewAllFilms :: [Film] -> String -> IO ()
+viewAllFilms films userName = do
     putStrLn "List Of Films:"
     listFilms films
-    pressEnter films
+    pressEnter films userName
 
 listFilms :: [Film] -> IO ()
 listFilms (film:films) = do
@@ -231,37 +253,34 @@ listFilms (film:films) = do
 -------------------VIEW FILMS BY YEAR------------
 
 
-viewFilmsByYear :: [Film] -> IO ()
-viewFilmsByYear films = do
+viewFilmsByYear :: [Film] -> String -> IO ()
+viewFilmsByYear films userName = do
     putStrLn "Enter A Year To Search"
     putStr ">>>"
     year <- getLine
     let filmsByYear = getFilmsByYear (read year ::	Int) films
     if filmsByYear == []
         then do putStrLn "No Films Found"
-                pressEnter films
+                pressEnter films userName
         else do listFilms filmsByYear
-                pressEnter films
+                pressEnter films userName
 
 --------------------VIEW FILMS BY FAN--------------------------
 
-viewFilmsByFan :: [Film] -> IO ()
-viewFilmsByFan films = do
-    putStrLn "Enter A Fan To Search"
-    putStr ">>>"
-    person <- getLine
-    let filmsByFan = getFilmsByFan person films
+viewFilmsByFan :: [Film] -> String -> IO ()
+viewFilmsByFan films userName = do
+    let filmsByFan = getFilmsByFan userName films
     if filmsByFan == []
         then do putStrLn "No Films Found"
-                pressEnter films
+                pressEnter films userName
         else do listFilms filmsByFan
-                pressEnter films
-    pressEnter films
+                pressEnter films userName
+    pressEnter films userName
 
 -------------VIEW FILMS WITH A CERTAIN ACTOR FROM A CERTAIN PERIOD--------
 
-viewFilmsFromPeriod :: [Film] -> IO ()
-viewFilmsFromPeriod allFilms = do
+viewFilmsFromPeriod :: [Film] -> String -> IO ()
+viewFilmsFromPeriod allFilms userName = do
     putStrLn "Enter The First (Lower) Boundry:"
     putStr ">>>"
     after <- getLine
@@ -274,31 +293,32 @@ viewFilmsFromPeriod allFilms = do
     let filmsByPeriod = inPeriod (read before :: Int) (read after :: Int) actor allFilms
     if filmsByPeriod == []
         then do putStrLn "No Films Found"
-                pressEnter allFilms
+                pressEnter allFilms userName
         else do listFilms filmsByPeriod
-                pressEnter allFilms
+                pressEnter allFilms userName
 
 -------------STATE YOU'RE A FAN OF A CERTAIN FILM-----------------
 
-becomeFanOfFilm :: [Film] -> IO ()
-becomeFanOfFilm films = do
+becomeFanOfFilm :: [Film] -> String -> IO ()
+becomeFanOfFilm films userName = do
     putStrLn "Enter The Name Of The Film You Want To Become A Fan Of:"
     putStr ">>>"
     filmName <- getLine
-    putStrLn "Enter Your Name:"
-    putStr ">>>"
-    fanName <- getLine
-    let updatedFilms = becomeFan fanName filmName films
-    putStr fanName
-    putStr " Is Now A Fan Of "
-    putStrLn filmName
-    pressEnter updatedFilms
+    if filmExists filmName films -- use isFan to validate for fans
+        then do let updatedFilms = becomeFan userName filmName films
+                putStr userName
+                putStr " Is Now A Fan Of "
+                putStrLn filmName
+                pressEnter updatedFilms userName
+        else do putStrLn "Film Does Not Exist"
+                pressEnter films userName
+                
     
 --------------------PRINT 'TOP' FILM------------------------------
 
 
-printTopFilm :: [Film] -> IO ()
-printTopFilm films = do
+printTopFilm :: [Film] -> String -> IO ()
+printTopFilm films userName = do
     putStrLn "Enter Actor:"
     putStr ">>>"
     actor <- getLine
@@ -306,18 +326,18 @@ printTopFilm films = do
     let bestFilm = getBestFilm filmsByActor
     putStrLn "Best Film:"
     filmPrintOut bestFilm
-    pressEnter films
+    pressEnter films userName
 
 	
 -----------------PRINT TOP 5 FILMS------------------------------------
 	
 	
-printTopFive :: [Film] -> IO ()
-printTopFive films = do
+printTopFive :: [Film] -> String -> IO ()
+printTopFive films userName = do
     putStrLn "Top 5 Films"
-    let topFiveFilms = getTopFive films
-    listFilmsInOrder 5 topFiveFilms
-    pressEnter films
+    let topFiveFilms = reverseList (getTopFive films)
+    listFilmsInOrder 1 topFiveFilms
+    pressEnter films userName
 
 	
 	
@@ -328,18 +348,18 @@ listFilmsInOrder count (film:films) = do
     filmPrintOut film
     if films == []
         then return ()
-        else do listFilmsInOrder (count - 1) films
+        else do listFilmsInOrder (count + 1) films
     
 
 
 --------------PRESS ENTER TO CONTINUTE---------------------------
 
-pressEnter :: [Film] -> IO () -- allows a break before menu refresh
-pressEnter films = do
+pressEnter :: [Film] -> String -> IO () -- allows a break before menu refresh
+pressEnter films userName = do
     putStrLn "Press Enter To Continue"
     putStr ">>>"
     ln <- getLine
-    menu films
+    menu films userName
 
 
 
@@ -398,7 +418,8 @@ printNumberOfFans film = do
 main :: IO ()
 main = do
     films <- loadFilms -- 'films' holds the String from the text file
-    menu films
+    welcome films
+    --menu films
 
 -- ENDS
 exit :: [Film] -> IO ()
