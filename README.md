@@ -21,5 +21,3 @@ WEBSCRP IDEAS:
 
 basket is a PHP object, controlled by SESSION
 
-use Boakes' Notes For File Upload
-
