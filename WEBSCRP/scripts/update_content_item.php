@@ -1,6 +1,7 @@
 <div id="itemForm" class="leftDiv">
 				<p class="left">Select Item To Update</p>
-				<form class="left" action="update_item.php" method="post" enctype="multipart/form-data">
+				<!-- action="update_item.php"  -->
+				<form class="left" method="post" enctype="multipart/form-data">
 					<?php
 						$GLOBALS = $GLOBALS+$_REQUEST;
 						
@@ -25,24 +26,24 @@
 					
 				
 					<p>Item Name*</p>
-					<input type="text" name="itemName" value="">
+					<input type="text" id="itemName" name="itemName" value="">
 						
 					<p>Quantity*</p>
-					<input type="text" name="itemQuantity" value="">
+					<input type="text" id="quantity" name="itemQuantity" value="">
 						
 					<p>Price* (in £)</p>
-					<input type="text" name="itemPrice" value="">
+					<input type="text" id="price" name="itemPrice" value="">
 						
 					<p>Seller Name*</p>
-					<input type="text" name="sellerName" value="">
+					<input type="text" id="sellerName" name="sellerName" value="">
 						
 					<p>Is The Item New?*
-						<input type="checkBox" name="new" value="">
+						<input type="checkBox" id="isNew" name="new" value="">
 					</p>
 						
 						
 					<p>Tag(s) (seperate with commas)</p>
-					<textarea cols="25" rows="5" name="tags"></textarea>
+					<textarea id="tags" cols="25" rows="5" name="tags"></textarea>
 						
 					<p>Catagory*</p>
 					
@@ -63,22 +64,10 @@
 					?>
 						
 					<p>Description (MAX 1000 characters)</p>
-					<textarea cols="25" rows="5" name="description"></textarea>
+					<textarea id="desc" cols="25" rows="5" name="description"></textarea>
+
 					
-					
-						
-					<!-- IMAGE UPDATE CODE -->
-					<!--<p> Add Image*
-						<!-- Add Image Path* -->
-					
-						<!-- <input type="text" name="image" value=""> -->
-						
-						<!--<input name="MAX_FILE_SIZE" value="10002400" type="hidden">
-						<input name="image" accept="image/jpeg" type="file">
-					</p> -->
-					
-						
-					<input type="submit" name="submit" value="Submit">
+					<button onclick="return editItem()">Submit</button>				
 						
 				</form>
 			</div>

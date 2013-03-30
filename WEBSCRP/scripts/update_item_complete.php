@@ -2,7 +2,18 @@
 
 				$GLOBALS = $GLOBALS+$_REQUEST;
 				
-				include "scripts/executeQuery.php";
+				// $_GET requests
+				$itemID = $_GET['itemID'];
+				$itemName = $_GET['itemName'];
+				$itemQuantity = $_GET['itemQuantity'];
+				$itemPrice = $_GET['itemPrice'];
+				$sellerName = $_GET['sellerName'];
+				$isNew = $_GET['isNew'];
+				$tags = $_GET['tags'];
+				$catagoryID = $_GET['catagoryID'];
+				$description = $_GET['description'];
+				
+				include "executeQuery.php";
 				
 				
 				// connections must be open while above function is executed
@@ -39,6 +50,9 @@
 				} // else keep it the same
 				
 				
+				
+				
+				
 				if ($sellerName != ""){
 					$query = "UPDATE `items`
 					SET `sellerName`='$sellerName'
@@ -46,10 +60,9 @@
 					executeQuery($query, $con);
 				} // else keep it the same
 				
-				
-				if ($sellerName != ""){
+				if ($isNew != ""){
 					$query = "UPDATE `items`
-					SET `sellerName`='$sellerName'
+					SET `isNew`='$isNew'
 					WHERE `itemID`='$itemID'";
 					executeQuery($query, $con);
 				} // else keep it the same

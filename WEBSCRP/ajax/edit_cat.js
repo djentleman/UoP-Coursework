@@ -12,7 +12,7 @@ function editCat() {
 	changeListener = function () {
 		if (xhr.readyState === 4) {
 			if (xhr.status === 200) {
-				alert("The New Catagory Has Been Updated");
+				alert("The Catagory Has Been Updated");
 			} else {
 				alert("Something Went Wrong, Try Reloading The Page.");
 			}

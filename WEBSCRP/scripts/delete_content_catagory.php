@@ -1,6 +1,7 @@
 <div id="catForm" class="rightDiv">
 				<p class="left"> Select a Catagory</p>
-				<form class="left" action="delete_complete.php" method="post">
+				<!--  action="delete_complete.php" OLD -->
+				<form class="left" method="post">
 					<?php
 						
 						include "executeQuery.php";
@@ -17,10 +18,9 @@
 						
 						
 						mysql_close($con);
-						
-						echo "<input type='hidden' name='deleteType' value='cat'>";
-						
-						echo "<input type='submit' name='submit' value='delete'>"
 					?>
+	
+					<button onclick="return name=del(true)">Submit</button>
+					
 				</form>
 			</div>

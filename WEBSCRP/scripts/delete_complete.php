@@ -3,9 +3,11 @@
 						$GLOBALS = $GLOBALS+$_REQUEST;
 						
 						// this handles deletion of both catagories and items from the database
+						
+						$deleteType = $_GET['delType'];
 					
 						
-						include "scripts/executeQuery.php";
+						include "executeQuery.php";
 						
 					
 						
@@ -18,9 +20,11 @@
 						
 						
 						if ($deleteType == "cat"){
+							$catagoryID = $_GET['catagoryID'];
 							$query = "DELETE FROM `catagories` WHERE `catagoryID`='$catagoryID' ";
 						}
 						else {
+							$itemID = $_GET['itemID'];
 							$query = "DELETE FROM `items` WHERE `itemID`='$itemID' ";
 						}
 						

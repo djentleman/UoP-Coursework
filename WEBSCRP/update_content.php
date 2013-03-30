@@ -2,10 +2,11 @@
 		include "header.php" 
 	?>
 		<script src="ajax/edit_cat.js"></script>
+		<script src="ajax/edit_item.js"></script>
 		<script src="ajax/form_update_chooser.js"></script>
 		<script src="js/form_choice_update.js"></script>
 		<script src="js/dragupdate.js"></script> <!-- drag and drop uploader listeners -->
-		
+		<!-- drag and drop may need moving -->
 		
 		
 		

@@ -4,6 +4,7 @@
 	
 		<script src="js/form_choice_delete.js"></script> <!-- JS for form choice -->
 		<script src="ajax/form_delete_chooser.js"></script> <!-- AJAX for form rendering -->
+		<script src="ajax/del.js"></script> <!-- AJAX for handling deletions -->
 		
 	
 	
