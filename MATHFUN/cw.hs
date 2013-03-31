@@ -12,7 +12,6 @@
 data Film = Film String [String] Int [String] -- Title, Cast, Year, Fans
                  deriving (Eq, Ord, Show, Read)
 
-
 -- --
 ----Functional Code----
 -- --
@@ -28,7 +27,6 @@ actsInFilm _ (Film _ [] _ _) = False
 actsInFilm actorName (Film name (actor:actors) year fans)
 	|actorName == actor = True -- break
 	|otherwise = actsInFilm actorName (Film name actors year fans)
-
 	
 actorExists :: String -> [Film] -> Bool -- could be higher order - fold
 actorExists _ [] = False
@@ -36,14 +34,12 @@ actorExists actor (film:films)
 	|(actsInFilm actor film) = True
 	|otherwise = actorExists actor films
 
-    
 getFilmFromName :: String -> [Film] -> Film
 getFilmFromName _ [] = (Film "NULL" [] 0 []) -- 'the invalid film' 
 getFilmFromName nameQuery ((Film name cast year fans):films)
     |nameQuery == name = (Film name cast year fans)
     |otherwise = getFilmFromName nameQuery films
     
-
 addNewFilm :: Film -> [Film] -> [Film]
 addNewFilm filmToAdd films = filmToAdd : films
 
@@ -62,7 +58,6 @@ isFan person (Film name actors year (fan:fans))
 
 getFilmsByFan person = filter (isFan person)
 
-
 afterYear :: Int -> Film -> Bool
 afterYear year (Film _ _ filmYear _) -- did the film come out after the year
     |year <= filmYear = True
@@ -73,7 +68,7 @@ beforeYear year (Film _ _ filmYear _) -- did the film come out before the year
     |year >= filmYear = True
     |otherwise = False
 
-hasActor :: String -> Film -> Bool
+hasActor :: String -> Film -> Bool -- could be done with higher order
 hasActor _ (Film _ [] _ _) = False
 hasActor filmActor (Film name (actor:actors) year fans)
     |filmActor == actor = True
@@ -82,7 +77,6 @@ hasActor filmActor (Film name (actor:actors) year fans)
 inPeriod before after actor = filter (beforeYear before) . filter (afterYear after) . filter (hasActor actor)
 -- film is inPeriod is it's beforeYear before, and afterYear after
 
-
 -- fanName, filmName, films
 becomeFan :: String -> String -> [Film] -> [Film]
 becomeFan _ _ [] = []
@@ -90,9 +84,7 @@ becomeFan fanName filmName ((Film name actors year fans):films)
     |filmName == name = (Film name actors year (fanName:fans)) : (becomeFan fanName filmName films)
     |otherwise = (Film name actors year fans) : (becomeFan fanName filmName films) -- no change
 
-getNumberOfFans :: Film -> Int
-getNumberOfFans (Film _ _ _ []) = 0
-getNumberOfFans (Film name actors year (fan:fans)) = 1 + getNumberOfFans (Film name actors year fans)
+getNumberOfFans (Film _ _ _ fans) = (length fans)
 
 getFilmWithMostFans :: [Film] -> Film -> Film -- dirty code, will need to rebuild
 getFilmWithMostFans [] currentBest = currentBest
@@ -116,26 +108,17 @@ filterTopFilm originalFilms (film:films)
 	|otherwise = film : filterTopFilm originalFilms films
 
 -- get top n films
--- count -> filmList -> topFilms -> output
--- top of list = number 1
--- bottom of list = number 5 :D
-getTopNFilms :: Int -> [Film] -> [Film] -> [Film]
-getTopNFilms 0 _ topFilms = topFilms
-getTopNFilms count allFilms topFilms = (getTopNFilms (count - 1)) (filterTopFilm allFilms allFilms) (getBestFilm allFilms:topFilms)
+-- count -> filmList -> output
+getTopNFilms :: Int -> [Film] -> [Film]
+getTopNFilms 0 _ = []
+getTopNFilms count allFilms = getBestFilm allFilms : (getTopNFilms (count - 1) (filterTopFilm allFilms allFilms))
 
 getTopFive :: [Film] -> [Film]
-getTopFive films = getTopNFilms 5 films []
-
-
-
-
-
-
+getTopFive films = getTopNFilms 5 films
 
 -- --
 ----Interface Code----
 -- --
-
 
 loadFilms :: IO [Film]
 loadFilms = do
@@ -149,7 +132,6 @@ saveFilms films = do
     writeFile "films.txt" (show films)
     putStrLn "Films Saved!"
     
-
 welcome :: [Film] -> IO ()
 welcome films = do
     putStrLn "Please Enter Your Name"
@@ -161,7 +143,6 @@ welcome films = do
     putStrLn userName
     putStrLn "#########################"
     menu films userName
-
 
 --input = String, output = IO function
 getMenuChoice :: String -> [Film] -> String -> IO () -- string used as opposed to Int for robustness
@@ -175,8 +156,6 @@ getMenuChoice "7" films userName = printTopFilm films userName
 getMenuChoice "8" films userName = printTopFive films userName
 getMenuChoice "9" films _ = exit films 
 getMenuChoice _ films userName = invalidChoice films userName
-
-
 
 menu :: [Film] -> String -> IO ()
 menu films userName = do
@@ -253,7 +232,6 @@ getFans fans = do
         then return fans
         else do getFans (fanToAdd : fans)
     
-
 --------------VIEW ALL FILMS---------------
 
 viewAllFilms :: [Film] -> String -> IO ()
@@ -270,7 +248,6 @@ listFilms (film:films) = do
         else do listFilms films
 
 -------------------VIEW FILMS BY YEAR------------
-
 
 viewFilmsByYear :: [Film] -> String -> IO ()
 viewFilmsByYear films userName = do
@@ -336,10 +313,8 @@ becomeFanOfFilm films userName = do
                             pressEnter films userName
         else do putStrLn "Film Does Not Exist"
                 pressEnter films userName
-                
-    
+                    
 --------------------PRINT 'TOP' FILM------------------------------
-
 
 printTopFilm :: [Film] -> String -> IO ()
 printTopFilm films userName = do
@@ -354,19 +329,15 @@ printTopFilm films userName = do
                 pressEnter films userName
         else do putStrLn "Actor Not In Database"
                 pressEnter films userName
-
 	
 -----------------PRINT TOP 5 FILMS------------------------------------
-	
-	
+		
 printTopFive :: [Film] -> String -> IO ()
 printTopFive films userName = do
     putStrLn "Top 5 Films"
     let topFiveFilms = reverseList (getTopFive films)
-    listFilmsInOrder 1 topFiveFilms
+    listFilmsInOrder 5 topFiveFilms
     pressEnter films userName
-
-	
 	
 listFilmsInOrder :: Int -> [Film] -> IO ()
 listFilmsInOrder count (film:films) = do
@@ -375,10 +346,8 @@ listFilmsInOrder count (film:films) = do
     filmPrintOut film
     if films == []
         then return ()
-        else do listFilmsInOrder (count + 1) films
+        else do listFilmsInOrder (count - 1) films
     
-
-
 --------------PRESS ENTER TO CONTINUTE---------------------------
 
 pressEnter :: [Film] -> String -> IO () -- allows a break before menu refresh
@@ -387,8 +356,6 @@ pressEnter films userName = do
     putStr ">>>"
     ln <- getLine
     menu films userName
-
-
 
 --------------FILM PRINT OUT----------------------------------
 
@@ -427,10 +394,7 @@ printNumberOfFans film = do
     let noOfFans = (getNumberOfFans film)
     putStrLn (show noOfFans)
     
-
-
 ---------------------------------------------------------------
-
 
 -- --
 ----Main----
@@ -455,17 +419,12 @@ exit films = do -- perhaps before saving, push though the whole file so it can c
     putStrLn "Thank You For Using The Program"
     putStrLn "Please Use It Again! :D"
 
-
 -- --
 ----Demo Information----
 -- --
 
-
-
 -- Demo function to test basic functionality (without persistence - i.e.
 -- testDatabase doesn't change and nothing is saved/loaded to/from file).
-
-
 
 demo :: Int -> IO ()
 --demo 1 = putStrLn all films after adding 2013 film "The Great Gatsby"
