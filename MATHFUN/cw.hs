@@ -3,7 +3,7 @@
 -- MATHFUN - DISCRETE MATHEMATICS AND FUNCTIONAL PROGRAMMING
 -- Functional Programming Assignment, 2012/13
 -- UP612136
---
+-- 
 
 -- --
 ----Types----
@@ -17,11 +17,31 @@ data Film = Film String [String] Int [String] -- Title, Cast, Year, Fans
 ----Functional Code----
 -- --
 
-filmExists :: String -> [Film] -> Bool
+filmExists :: String -> [Film] -> Bool -- could be higher order - fold
 filmExists _ [] = False
 filmExists filmName ((Film name _ _ _):films)
-    |filmName == name = True || filmExists filmName films
-    |otherwise = False || filmExists filmName films
+    |filmName == name = True
+    |otherwise = filmExists filmName films
+	
+actsInFilm :: String -> Film -> Bool -- could be higher order - fold
+actsInFilm _ (Film _ [] _ _) = False
+actsInFilm actorName (Film name (actor:actors) year fans)
+	|actorName == actor = True -- break
+	|otherwise = actsInFilm actorName (Film name actors year fans)
+
+	
+actorExists :: String -> [Film] -> Bool -- could be higher order - fold
+actorExists _ [] = False
+actorExists actor (film:films)
+	|(actsInFilm actor film) = True
+	|otherwise = actorExists actor films
+
+    
+getFilmFromName :: String -> [Film] -> Film
+getFilmFromName _ [] = (Film "NULL" [] 0 []) -- 'the invalid film' 
+getFilmFromName nameQuery ((Film name cast year fans):films)
+    |nameQuery == name = (Film name cast year fans)
+    |otherwise = getFilmFromName nameQuery films
     
 
 addNewFilm :: Film -> [Film] -> [Film]
@@ -41,7 +61,6 @@ isFan person (Film name actors year (fan:fans))
     |otherwise = (isFan person (Film name actors year fans))
 
 getFilmsByFan person = filter (isFan person)
-
 
 
 afterYear :: Int -> Film -> Bool
@@ -190,12 +209,12 @@ invalidChoice films userName = do
 
 addFilm :: [Film] -> String -> IO ()
 addFilm films userName = do
-    title <- getTitle -- would you 'let', but not printing anything
+    title <- getTitle
     actors <- getActors []
     releaseYear <- getReleaseYear
     fans <- getFans []
     let film = Film title actors releaseYear fans
-    if (filmExists title films) == True
+    if (filmExists title films) -- does the film exist?
         then do putStrLn "Film Already Exists; Film Will Not Be Added"
                 pressEnter films userName
         else do let filmsToSave = addNewFilm film films -- filmsToSave is new Films
@@ -275,7 +294,6 @@ viewFilmsByFan films userName = do
                 pressEnter films userName
         else do listFilms filmsByFan
                 pressEnter films userName
-    pressEnter films userName
 
 -------------VIEW FILMS WITH A CERTAIN ACTOR FROM A CERTAIN PERIOD--------
 
@@ -290,11 +308,14 @@ viewFilmsFromPeriod allFilms userName = do
     putStrLn "Enter The Actor:"
     putStr ">>>"
     actor <- getLine
-    let filmsByPeriod = inPeriod (read before :: Int) (read after :: Int) actor allFilms
-    if filmsByPeriod == []
-        then do putStrLn "No Films Found"
-                pressEnter allFilms userName
-        else do listFilms filmsByPeriod
+    if (actorExists actor allFilms)
+        then do let filmsByPeriod = inPeriod (read before :: Int) (read after :: Int) actor allFilms
+                if filmsByPeriod == []
+                    then do putStrLn "No Films Found"
+                            pressEnter allFilms userName
+                    else do listFilms filmsByPeriod
+                            pressEnter allFilms userName
+        else do putStrLn "Actor Not In Database"
                 pressEnter allFilms userName
 
 -------------STATE YOU'RE A FAN OF A CERTAIN FILM-----------------
@@ -304,12 +325,15 @@ becomeFanOfFilm films userName = do
     putStrLn "Enter The Name Of The Film You Want To Become A Fan Of:"
     putStr ">>>"
     filmName <- getLine
-    if filmExists filmName films -- use isFan to validate for fans
-        then do let updatedFilms = becomeFan userName filmName films
-                putStr userName
-                putStr " Is Now A Fan Of "
-                putStrLn filmName
-                pressEnter updatedFilms userName
+    if filmExists filmName films -- does the film exist?
+        then do if ((isFan userName (getFilmFromName filmName films)) /= True) -- are you already a fan?
+                    then do let updatedFilms = becomeFan userName filmName films
+                            putStr userName
+                            putStr " Is Now A Fan Of "
+                            putStrLn filmName
+                            pressEnter updatedFilms userName
+                    else do putStrLn "You Are Already A Fan Of This Film"
+                            pressEnter films userName
         else do putStrLn "Film Does Not Exist"
                 pressEnter films userName
                 
@@ -322,11 +346,14 @@ printTopFilm films userName = do
     putStrLn "Enter Actor:"
     putStr ">>>"
     actor <- getLine
-    let filmsByActor = filter (hasActor actor) films
-    let bestFilm = getBestFilm filmsByActor
-    putStrLn "Best Film:"
-    filmPrintOut bestFilm
-    pressEnter films userName
+    if (actorExists actor films)
+        then do let filmsByActor = filter (hasActor actor) films
+                let bestFilm = getBestFilm filmsByActor
+                putStrLn "Best Film:"
+                filmPrintOut bestFilm
+                pressEnter films userName
+        else do putStrLn "Actor Not In Database"
+                pressEnter films userName
 
 	
 -----------------PRINT TOP 5 FILMS------------------------------------
