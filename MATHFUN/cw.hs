@@ -16,19 +16,16 @@ data Film = Film String [String] Int [String] -- Title, Cast, Year, Fans
 ----Functional Code----
 -- --
 
-filmExists :: String -> [Film] -> Bool -- could be higher order - fold
+filmExists :: String -> [Film] -> Bool -- could be higher order - elem
 filmExists _ [] = False
 filmExists filmName ((Film name _ _ _):films)
     |filmName == name = True
     |otherwise = filmExists filmName films
+
+getFilmActors (Film _ actors _ _) = actors
+actsInFilm actorName film = elem actorName (getFilmActors film)
 	
-actsInFilm :: String -> Film -> Bool -- could be higher order - fold
-actsInFilm _ (Film _ [] _ _) = False
-actsInFilm actorName (Film name (actor:actors) year fans)
-	|actorName == actor = True -- break
-	|otherwise = actsInFilm actorName (Film name actors year fans)
-	
-actorExists :: String -> [Film] -> Bool -- could be higher order - fold
+actorExists :: String -> [Film] -> Bool -- could be higher order - elem
 actorExists _ [] = False
 actorExists actor (film:films)
 	|(actsInFilm actor film) = True
@@ -75,7 +72,6 @@ hasActor filmActor (Film name (actor:actors) year fans)
     |otherwise = hasActor filmActor (Film name actors year fans)
 
 inPeriod before after actor = filter (beforeYear before) . filter (afterYear after) . filter (hasActor actor)
--- film is inPeriod is it's beforeYear before, and afterYear after
 
 -- fanName, filmName, films
 becomeFan :: String -> String -> [Film] -> [Film]
@@ -86,21 +82,16 @@ becomeFan fanName filmName ((Film name actors year fans):films)
 
 getNumberOfFans (Film _ _ _ fans) = (length fans)
 
-getFilmWithMostFans :: [Film] -> Film -> Film -- dirty code, will need to rebuild
+getFilmWithMostFans :: [Film] -> Film -> Film -- higher order?
 getFilmWithMostFans [] currentBest = currentBest
 getFilmWithMostFans (film:films) currentBest
     |(getNumberOfFans film) > (getNumberOfFans currentBest) = getFilmWithMostFans films film
     |otherwise = getFilmWithMostFans films currentBest
 
-getBestFilm :: [Film] -> Film -- dirty code, will need to rebuild
+getBestFilm :: [Film] -> Film
 getBestFilm (film:films) = getFilmWithMostFans films film -- calls above function
 
-reverseList :: [a] -> [a] -- reverses list -- polymorphic
-reverseList [] = []
-reverseList (x:xs) = (reverseList xs) ++ [x]
-
 -- originalFilms (the array that gets filtered) -- -- current iteration -- output
--- dirty, prefreabley [Film] -> [Film]
 filterTopFilm :: [Film] -> [Film] -> [Film]
 filterTopFilm _ [] = []
 filterTopFilm originalFilms (film:films)
@@ -335,7 +326,7 @@ printTopFilm films userName = do
 printTopFive :: [Film] -> String -> IO ()
 printTopFive films userName = do
     putStrLn "Top 5 Films"
-    let topFiveFilms = reverseList (getTopFive films)
+    let topFiveFilms = reverse (getTopFive films)
     listFilmsInOrder 5 topFiveFilms
     pressEnter films userName
 	
