@@ -5,6 +5,8 @@
 -- UP612136
 -- 
 
+import Data.Char
+
 -- --
 ----Types----
 -- --
@@ -21,6 +23,8 @@ getFilmFans (Film _ _ _ fans) = fans -- 'accessors'
 -- --
 ----Functional Code----
 -- --
+
+isValidYear = (foldr (&&) True) . (map isNumber)
 
 filmExists :: String -> [Film] -> Bool -- could be higher order - elem
 filmExists _ [] = False
@@ -161,24 +165,24 @@ invalidChoice films userName = do
 
 addFilm :: [Film] -> String -> IO ()
 addFilm films userName = do
-    title <- getTitle
+    title <- getTitle films
     actors <- getActors []
     releaseYear <- getReleaseYear
     fans <- getFans []
     let film = Film title actors releaseYear fans
-    if (filmExists title films) -- does the film exist?
-        then do putStrLn "Film Already Exists; Film Will Not Be Added"
-                pressEnter films userName
-        else do let filmsToSave = addNewFilm film films -- filmsToSave is new Films
-                putStrLn "Film Has Been Added!" 
-                pressEnter filmsToSave userName
+    let filmsToSave = addNewFilm film films -- filmsToSave is new Films
+    putStrLn "Film Has Been Added!" 
+    pressEnter filmsToSave userName
 
-getTitle :: IO String
-getTitle = do
+getTitle :: [Film] -> IO String -- films are passed for validation
+getTitle films = do
     putStrLn "Enter Film Title"
     putStr ">>>"
     title <- getLine
-    return title
+    if (filmExists title films) == False -- film is new
+	    then do return title
+        else do putStrLn "Film Already Exists"
+                getTitle films
 
 getActors :: [String] -> IO [String]
 getActors actors = do
@@ -194,7 +198,10 @@ getReleaseYear = do
     putStrLn "Enter Year Of Release"
     putStr ">>>"
     releaseYear <- getLine
-    return (read releaseYear :: Int)
+    if (isValidYear releaseYear)
+        then do return (read releaseYear :: Int)
+        else do putStrLn "Invalid Release Year!"
+                getReleaseYear
 
 getFans :: [String] -> IO [String]
 getFans fans = do
