@@ -198,7 +198,7 @@ getReleaseYear = do
     putStrLn "Enter Year Of Release"
     putStr ">>>"
     releaseYear <- getLine
-    if (isValidYear releaseYear)
+    if (isValidYear releaseYear) && (releaseYear /= "")
         then do return (read releaseYear :: Int)
         else do putStrLn "Invalid Release Year!"
                 getReleaseYear
