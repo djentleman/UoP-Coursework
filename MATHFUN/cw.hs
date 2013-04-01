@@ -70,13 +70,7 @@ beforeYear year (Film _ _ filmYear _) -- did the film come out before the year
     |year >= filmYear = True
     |otherwise = False
 
-hasActor :: String -> Film -> Bool -- could be done with higher order
-hasActor _ (Film _ [] _ _) = False
-hasActor filmActor (Film name (actor:actors) year fans)
-    |filmActor == actor = True
-    |otherwise = hasActor filmActor (Film name actors year fans)
-
-inPeriod before after actor = filter (beforeYear before) . filter (afterYear after) . filter (hasActor actor)
+inPeriod before after actor = filter (beforeYear before) . filter (afterYear after) . filter (actsInFilm actor)
 
 -- fanName, filmName, films
 becomeFan :: String -> String -> [Film] -> [Film]
@@ -318,7 +312,7 @@ printTopFilm films userName = do
     putStr ">>>"
     actor <- getLine
     if (actorExists actor films)
-        then do let filmsByActor = filter (hasActor actor) films
+        then do let filmsByActor = filter (actsInFilm actor) films
                 let bestFilm = getBestFilm filmsByActor
                 putStrLn "Best Film:"
                 filmPrintOut bestFilm
@@ -372,14 +366,13 @@ printTitle title = do
     putStrLn title
 
 printStringArray :: [String] -> IO () -- general 'string printer'
+printStringArray [] = return ()
 printStringArray (str:strs) = do
     putStr str
     putStr ", "
-    if strs == []
-        then return ()
-        else do printStringArray strs
+    printStringArray strs
 
-printReleaseYear :: Int -> IO ()
+printReleaseYear :: Int -> IO () -- use isInt
 printReleaseYear year = do
     putStr "Release Year: "
     putStrLn (show year)
@@ -439,7 +432,7 @@ demo 6 = listFilms (becomeFan "Zoe" "Forrest Gump" testDatabase)
 --demo 61 = putStrLn all films after "Zoe" becomes fan of "Inception"
 demo 61 = listFilms (becomeFan "Zoe" "Inception" testDatabase)
 --demo 7 = putStrLn best "Tom Hanks" film
-demo 7 = filmPrintOut (getBestFilm (filter (hasActor "Tom Hanks") testDatabase))
+demo 7 = filmPrintOut (getBestFilm (filter (actsInFilm "Tom Hanks") testDatabase))
 --demo 8 = putStrLn top 5 films
 demo 8 = listFilmsInOrder 5 (getTopFive testDatabase)
 -- catch all
