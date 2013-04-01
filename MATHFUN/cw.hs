@@ -13,7 +13,7 @@ data Film = Film String [String] Int [String] -- Title, Cast, Year, Fans
                  deriving (Eq, Ord, Show, Read)
 				 
 getFilmTitle (Film title _ _ _) = title -- 'accessors'
-getFilmActors (Film _ actors _ _) = actors -- 'accessors'
+getFilmActors (Film _ actors _ _) = actors -- 'accessors' -- can be used for elem
 getFilmYear (Film _ _ year _) = year -- 'accessors'
 getFilmFans (Film _ _ _ fans) = fans -- 'accessors'
 
@@ -45,31 +45,14 @@ getFilmFromName nameQuery ((Film name cast year fans):films)
 addNewFilm :: Film -> [Film] -> [Film]
 addNewFilm filmToAdd films = filmToAdd : films
 
-isYear :: Int -> Film -> Bool
-isYear year (Film _ _ filmYear _)
-    |year == filmYear = True
-    |otherwise = False
-
+isYear year film = year == (getFilmYear film)
 getFilmsByYear year = filter (isYear year) -- filters for year
 
-isFan :: String -> Film -> Bool
-isFan person (Film _ _ _ []) = False
-isFan person (Film name actors year (fan:fans))
-    |person == fan = True
-    |otherwise = (isFan person (Film name actors year fans))
-
+isFan person film = elem person (getFilmFans film)
 getFilmsByFan person = filter (isFan person)
 
-afterYear :: Int -> Film -> Bool
-afterYear year (Film _ _ filmYear _) -- did the film come out after the year
-    |year <= filmYear = True
-    |otherwise = False
-
-beforeYear :: Int -> Film -> Bool
-beforeYear year (Film _ _ filmYear _) -- did the film come out before the year
-    |year >= filmYear = True
-    |otherwise = False
-
+afterYear year film = year <= (getFilmYear film) -- did the film come out after 'year'
+beforeYear year film = year >= (getFilmYear film) -- did the film come out before 'year'
 inPeriod before after actor = filter (beforeYear before) . filter (afterYear after) . filter (actsInFilm actor)
 
 -- fanName, filmName, films
@@ -79,7 +62,7 @@ becomeFan fanName filmName ((Film name actors year fans):films)
     |filmName == name = (Film name actors year (fanName:fans)) : (becomeFan fanName filmName films)
     |otherwise = (Film name actors year fans) : (becomeFan fanName filmName films) -- no change
 
-getNumberOfFans (Film _ _ _ fans) = (length fans)
+getNumberOfFans film = (length (getFilmFans film))
 
 getFilmWithMostFans :: [Film] -> Film -> Film -- higher order?
 getFilmWithMostFans [] currentBest = currentBest
@@ -393,13 +376,11 @@ printNumberOfFans film = do
 -- the films are passed around (and modified) by the program
 -- when the program is exited, the (modified) films save
 
-
 -- STARTS
 main :: IO ()
 main = do
     films <- loadFilms -- 'films' holds the String from the text file
     welcome films
-    --menu films
 
 -- ENDS
 exit :: [Film] -> IO ()
@@ -429,7 +410,7 @@ demo 4 = listFilms (getFilmsByFan "Zoe" testDatabase)
 demo 5 = listFilms (inPeriod 2011 2000 "Tom Hanks" testDatabase)
 --demo 6 = putStrLn all films after "Zoe" becomes fan of "Forrest Gump"
 demo 6 = listFilms (becomeFan "Zoe" "Forrest Gump" testDatabase)
---demo 61 = putStrLn all films after "Zoe" becomes fan of "Inception"
+--demo 61 = putStrLn all films after "Zoe" becomes fan of "Inception" -- (validation is in the IO)
 demo 61 = listFilms (becomeFan "Zoe" "Inception" testDatabase)
 --demo 7 = putStrLn best "Tom Hanks" film
 demo 7 = filmPrintOut (getBestFilm (filter (actsInFilm "Tom Hanks") testDatabase))
