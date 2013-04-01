@@ -11,6 +11,12 @@
 
 data Film = Film String [String] Int [String] -- Title, Cast, Year, Fans
                  deriving (Eq, Ord, Show, Read)
+				 
+getFilmTitle (Film title _ _ _) = title -- 'accessors'
+getFilmActors (Film _ actors _ _) = actors -- 'accessors'
+getFilmYear (Film _ _ year _) = year -- 'accessors'
+getFilmFans (Film _ _ _ fans) = fans -- 'accessors'
+
 
 -- --
 ----Functional Code----
@@ -22,7 +28,6 @@ filmExists filmName ((Film name _ _ _):films)
     |filmName == name = True
     |otherwise = filmExists filmName films
 
-getFilmActors (Film _ actors _ _) = actors
 actsInFilm actorName film = elem actorName (getFilmActors film)
 	
 actorExists :: String -> [Film] -> Bool -- could be higher order - elem
