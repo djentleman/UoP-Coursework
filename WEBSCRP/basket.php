@@ -2,6 +2,14 @@
 		include "header.php";
 		include "scripts/executeQuery.php";
 		include "scripts/getData.php";
+		
+		if (!isset($_SESSION['basket'])){
+			$_SESSION['basket'] = new Basket();
+		} // init
+		if (!isset($_SESSION['flag'])){
+			$_SESSION['flag'] = false; // init, unlocked
+		}
+		
 	?>
 		<script src="js/form_buy.js"></script>
 		
@@ -11,21 +19,22 @@
 			
 			
 					<?php
-					
 						
-					    // fix validation by using a session flag?
+					    // validation uses a session flag
 						if (isset($_POST['itemID'])){ // has a new thing just beed added?
-							if(empty($_SESSION['basket'])){
-								// no need to check quantity
+							if(empty($_SESSION['basket'])){ // basket empty
+								// no need to check flag
 								$itemIdToAdd = $_POST['itemID'];
 								// lets make the quantity 3
 								$_SESSION['basket']->addItem($itemIdToAdd, 3);
-							} else{ 
-								if ($_POST['itemID'] != ($_SESSION['basket']->itemIDs[$_SESSION['basket']->getSize() - 1])){ // check quantity too
+								$_SESSION['flag'] = true; // true = locked
+							} else { 
+								if ($_SESSION['flag'] == false){
 									$itemIdToAdd = $_POST['itemID'];
 									// lets make the quantity 3
 									$_SESSION['basket']->addItem($itemIdToAdd, 3);
-								}
+									$_SESSION['flag'] = true; // true = locked
+								} // else flag is locked
 							}
 						}
 							

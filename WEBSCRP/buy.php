@@ -1,11 +1,8 @@
-	<?php
-		session_start();
-		$GLOBALS = $GLOBALS+$_REQUEST;
-		$_SESSION['test'] = "test";
-	?>
-	<?php 
-		include "header.php" 
-	?>
+<?php 
+	include "header.php";	
+	$_SESSION['flag'] = false; // init, unlocked
+		
+?>
 	
 		<!-- Script For Comment Upload -->
 		<script src="ajax/upload_com.js"></script>
