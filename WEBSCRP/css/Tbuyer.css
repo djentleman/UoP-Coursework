@@ -6,13 +6,13 @@
 
 body
 {
-	text-align : center;
+	text-align: center;
 	background-color:#FFDD99;
 }
 
 .mainContent
 {
-	background-color : #FFFFFF;
+	background-color: #FFFFFF;
 	margin-top:80px;
 	margin-bottom:2%;
 	margin-right:10%;
@@ -23,6 +23,61 @@ body
 	-moz-border-radius: 25px;
 	padding-bottom:20px;
 }
+
+.basketTable{
+	width: 80%;
+	box-shadow:0 0ex 5px rgba(0,0,0,0.5) inset;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+
+div.basketTable > *:nth-child(2n - 1){
+	/* use this to distinguish rows */
+	background-color: #eee;
+	box-shadow:0 0ex 1px rgba(0,0,0,0.5) inset;
+}
+	
+div.basketTable > *:hover{
+	/* onHover */
+	background-color: #fd9;
+	box-shadow:0 0ex 6px rgba(0,0,0,0.5);
+}
+
+
+div.basketTable > *:active{
+	background-color: #fea;
+}
+
+div.basketTable > *:nth-child(1){
+	/* headers */
+	background-color: #ddd;
+	box-shadow:0 0ex 2px rgba(0,0,0,0.5) inset;
+}
+	
+
+.basketRow{
+	/* height brace */
+	height: 19px;
+}
+
+
+.basketIdWrap{
+	width: 20%;
+	float:left;
+}
+
+.basketQuanWrap{
+	width: 30%;
+	float:left;
+}
+
+.basketPriceWrap{
+	width: 20%;
+	float:right;
+}
+
+	
 
 
 
@@ -391,7 +446,7 @@ header
 
 .dragBox:hover{
 	background:#FFCC88;
-	0 0ex 5px rgba(0,0,0,0.5) inset;
+	box-shadow:0 0ex 5px rgba(0,0,0,0.5) inset;
 	
 }
 

@@ -1,3 +1,4 @@
+<?php include "/scripts/classes/basket.php"; session_start(); ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -35,7 +36,7 @@
 						<li><a class="menuCase" href="delete_content.php">Remove Content</a></li>
 						<li><a class="menuCase" id="fetch" onclick="return confirmAction()">Reset Database</a></li>
 					</ul>
-					<li><a class="menuCase" style="margin-top:10px" href="index.php">Basket</a></li>
+					<li><a class="menuCase" style="margin-top:10px" href="basket.php">Basket</a></li>
 				</ul>
 			</nav>
 			<form class="searchForm" action="browse.php"> <!-- action still needs to be 'beowse.php' -->

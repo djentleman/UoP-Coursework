@@ -1,4 +1,8 @@
-
+	<?php
+		session_start();
+		$GLOBALS = $GLOBALS+$_REQUEST;
+		$_SESSION['test'] = "test";
+	?>
 	<?php 
 		include "header.php" 
 	?>
@@ -38,7 +42,7 @@
 				?>
 				<br>
 				<br>
-				<form method="get" action="addToBasket.php">
+				<form method="post" action="basket.php">
 					<?php
 						echo "<input type='hidden' name='itemID' value='$itemID'>" // item, ID to carry forward
 					?>
