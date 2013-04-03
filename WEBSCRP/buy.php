@@ -40,6 +40,9 @@
 				<br>
 				<br>
 				<form method="post" action="basket.php">
+					<p>Quantity To Buy:
+						<input style="width:20px" type="text" name="quanToBuy">
+					</p>
 					<?php
 						echo "<input type='hidden' name='itemID' value='$itemID'>" // item, ID to carry forward
 					?>
