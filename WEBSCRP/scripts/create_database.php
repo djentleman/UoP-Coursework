@@ -6,7 +6,9 @@
 				
 				include "executeQuery.php";
 				
-				
+				// reset basket
+				include "clear_basket.php"; // catch for ajax loads
+	
 				
 				function clearImgDir(){
 					$dirname = $_SERVER['DOCUMENT_ROOT'] . "/cw/img/uploads";

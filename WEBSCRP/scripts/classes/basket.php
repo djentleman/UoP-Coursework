@@ -24,6 +24,13 @@
 			return $this->quantities[$reference];
 		}
 		
+		public function updateQuantity($itemID, $newQuantity){
+			// update quantity of an item
+			$index = $this->findReference($itemID);
+			$this->quantities[$index] = $newQuantity;
+		
+		}
+		
 		private function findReference($itemID){
 			// returns index of itemID
 			// returns -1 for non existant IDs
@@ -54,6 +61,34 @@
 		
 		public function removeItem($itemID){
 			//delete item here
+			$index = $this->findReference($itemID); // get index of item to delete
+			$currentIndex = 0;
+			$newItemIDs = array();
+			$newQuants = array();
+			
+			foreach ($this->itemIDs as &$currentID){
+				if (!($index == $currentIndex)){
+					array_push($newItemIDs, $currentID);
+				} // else do nothing (removing indexed item)
+				$currentIndex++;
+			}
+			
+			$currentIndex = 0;
+			
+			foreach ($this->quantities as &$currentQuan){
+				if (!($index == $currentIndex)){ // if it's not the one we want to delete
+					array_push($newQuants, $currentQuan);
+				} // else do nothing (removing indexed quantity)
+				$currentIndex++;
+			}
+			
+			//update object vars
+			
+			$this->itemIDs = $newItemIDs;
+			$this->quantities = $newQuants;
+			
+			
+			
 		}
 		
 		public function dump(){
