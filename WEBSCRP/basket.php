@@ -12,6 +12,7 @@
 		<script src="js/form_buy.js"></script> <!-- fetching item pages -->
 		<script src="ajax/clear_basket.js"></script> <!-- AJAX for clearing basket -->
 		<script src="ajax/update_basket.js"></script> <!-- AJAX for updating basket -->
+
 		
 		<div class="mainContent">
 			<br>
@@ -47,16 +48,22 @@
 						include "scripts/get_basket.php"; // renders basket
 						echo "</div>";
 						
+						
 					?>
 				
-				<div style="margin-top:19px">	
-					<button>Buy</button> <!-- stock operations go here -->
+				<div style='float:right; margin-right:13%'>	
+					<button onclick="return buyClearRefresh()">Buy</button> <!-- stock operations go here -->
 					<button onclick="return clearAndRefresh()">Clear Basket</button> <!-- AJAX call -->
 				</div>
+				
+				<p style="margin-top: 40px" id="dynamic"></p>
 				
 			<br>
 			<br>
 			<br>
 		</div>
+		
+	<script src="ajax/buy_item.js"></script> <!-- stock control -->
+	<!-- at bottom so everything is declared on page -->
 	</body>
 </html>

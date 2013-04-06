@@ -1,15 +1,15 @@
-// Clear Basket w/ Ajax
+// Update Basket w/ Ajax
 
 
 function updateAndRefresh(itemID){
 	// we can get the quantity from the item id
-	clear(itemID); // uploads new comment
+	update(itemID); // uploads new comment
 	//refresh(); // refreshes current comments
 	return false; // prevent refresh
 }
 
 
-function clear(itemID) {
+function update(itemID) {
 	//uploads new comment
 
 	

@@ -12,8 +12,6 @@
 						
 						$basket = $_SESSION['basket'];
 						
-						$basketSize = $basket->getSize();
-						echo "<p id='basketSize' value='$basketSize'></p>";
 						
 						$con = mysql_connect("localhost","root"); // will be querying item IDs
 						$query = "USE `tbuyer`";
@@ -44,9 +42,11 @@
 							echo "</div>";
 							
 							echo "</div>";
-							
+							$basketCounter = 0;
 							foreach ($basket->itemIDs as &$currentID){
-								echo "<div class='basketRow'>";
+								$rowId = "row" . $basketCounter;
+								$itemNo = "no" . $basketCounter;
+								echo "<div id='$rowId' class='basketRow'>";
 								// on click goes to buy page
 								
 								$itemID = $currentID;
@@ -56,7 +56,8 @@
 								
 								$itemName = $dataArray[0]; // name
 							
-								echo "<div class='basketIdWrap' onClick='goToBuy($currentID)'>";
+								echo "<div value='$currentID' class='basketIdWrap' onClick='goToBuy($currentID)'>";
+								echo "<input type='hidden' id='$itemNo' value='$currentID'>";
 								echo $itemName;
 								echo "</div>";
 								
@@ -82,6 +83,7 @@
 								
 								echo "</div>";
 								$count++;
+								$basketCounter++;
 							}
 							echo "</div>";
 						}
@@ -91,5 +93,10 @@
 						
 						
 						
-						echo "<p style='float:left; margin-left: 20%;'>Total Price: £" . $totalPrice . "</p>";
+						
+						
+						echo "<p style='float:left; margin-left:13%; margin-top:19px;'>Total Price: £" . $totalPrice . "</p>";
+						$rows = $basket->getSize();
+						echo "<div id='rows' value='$rows' style='visibility:hidden'>$rows</div>";
+						// have to use innerHTML as value wasn't working
 					?>
