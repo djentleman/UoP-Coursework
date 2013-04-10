@@ -23,6 +23,7 @@ function del(isCatagory) { // boolean, isCatagory
 	// initialise a request, specifying the HTTP method
 	// to be used and the URL to be connected to.
 	// variables are assigned above the xhr.open
+	
 
 	if (isCatagory){ // init vars & xhr for catagory delete
 		var catID = document.getElementById('catagoryList').value;
@@ -33,8 +34,7 @@ function del(isCatagory) { // boolean, isCatagory
 		xhr.open("GET", "./scripts/delete_complete.php" + stringToPass, true);
 	} else { // init vars & xhr for item delete
 		var itemID = document.getElementById('itemList').value;
-		var delType = "item";
-		var stringToPass = "?itemID=" + catID + "&delType=" + delType;
+		var stringToPass = "?itemID=" + itemID + "&delType=" + delType;
 		
 		
 		xhr.open("GET", "./scripts/delete_complete.php" + stringToPass, true);
