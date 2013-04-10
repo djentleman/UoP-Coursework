@@ -42,7 +42,7 @@
 				$con = mysql_connect("localhost","root");
 				
 				//delete current database
-				$query = "DROP DATABASE `tbuyer`";
+				$query = "DROP DATABASE IF EXISTS `tbuyer`";
 				try{
 					executeQuery($query, $con);
 				}
