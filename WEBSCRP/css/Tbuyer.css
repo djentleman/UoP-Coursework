@@ -24,6 +24,22 @@ body
 	padding-bottom:20px;
 }
 
+.choiceObject{
+	margin-left: 40%;
+	width: 20%;
+	height: 25px;
+	box-shadow:0 0ex 2px;
+}
+
+.choiceObject:hover{
+	background-color: #fd9;
+	box-shadow:0 0ex 6px;
+}
+
+.choiceObject:active{
+	background-color: #fea;
+}
+
 .updateButton{
 	margin-top: 0px;
 	margin-bottom: 0px;

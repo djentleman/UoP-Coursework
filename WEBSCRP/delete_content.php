@@ -12,17 +12,12 @@
 	
 		<div class="mainContent">
 			<h1>Remove Content</h1>
-			<form>
-				<p>Delete an Item:
-					<input type="radio" name="deleteType" value="item">
-				</p>
-				
-				<p>Delete a Catagory
-					<input type="radio" name="deleteType" value="catagory">
-				</p>
-				
-				<button onClick="return run()">Go!</button>
-			</form>
+			<div class="choiceObject" onclick="return run(false);">
+				<p style="padding-top: 3px;">Delete an Item</p>
+			</div>
+			<div class="choiceObject" onclick="return run(true);">
+				<p style="padding-top: 3px;">Delete a Catagory</p>
+			</div>
 			
 			<div id="dynamic"></div>
 			

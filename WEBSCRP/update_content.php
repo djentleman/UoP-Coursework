@@ -12,21 +12,16 @@
 		
 		<div class="mainContent">
 			<h1>Update Content</h1>
-			<form>
-				<p>Update an Item:
-					<input type="radio" name="updateType" value="item">
-				</p>
-				
-				<p>Update An Image:
-					<input type="radio" name="updateType" value="image">
-				</p>
-				
-				<p>Update a Catagory
-					<input type="radio" name="updateType" value="catagory">
-				</p>
-				
-				<button onClick="return run()">Go!</button>
-			</form>
+			<div class="choiceObject" onclick="return run(0);">
+				<p style="padding-top: 3px;">Update an Item</p>
+			</div>
+			<div class="choiceObject" onclick="return run(2);">
+				<p style="padding-top: 3px;">Update An Image</p>
+			</div>
+			<div class="choiceObject" onclick="return run(1);">
+				<p style="padding-top: 3px;">Update a Catagory</p>
+			</div>
+
 			
 			<br>
 			

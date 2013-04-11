@@ -15,18 +15,12 @@
 		
 			<h1>Upload Content</h1>
 			<p> * indicates mandatory field </p>
-			
-			<form>
-				<p>Upload New Item:
-					<input type="radio" name="uploadType" value="item">
-				</p>
-				
-				<p>Upload New Catagory
-					<input type="radio" name="uploadType" value="catagory">
-				</p>
-				
-				<button onClick="return run()">Go!</button>
-			</form>
+			<div class="choiceObject" onclick="return run(false);">
+				<p style="padding-top: 3px;">Upload New Item</p>
+			</div>
+			<div class="choiceObject" onclick="return run(true);">
+				<p style="padding-top: 3px;">Upload New Catagory</p>
+			</div>
 			
 			<div id="dynamic"></div>
 			

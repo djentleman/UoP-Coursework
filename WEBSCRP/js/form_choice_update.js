@@ -1,21 +1,10 @@
-	// finds the value of the radiobutton
-			function getRadioValue(name) {
-				var group = document.getElementsByName(name);
-
-				for (var i=0;i<group.length;i++) {
-					if (group[i].checked) {
-						return group[i].value;
-					}
-				}
-				return '';
-			}
-			
-			function run(){
-				var radioValue = getRadioValue('updateType');
-				if (radioValue == "item"){
+	
+			function run(code){
+			// code 0 = item, 1 = img, 2 = cat
+				if (code == 0){
 					showItem();
 					document.getElementById("dragtarget").style.visibility = 'hidden';
-				} else if (radioValue == "catagory"){
+				} else if (code == 1){
 					showCatagory();
 					document.getElementById("dragtarget").style.visibility = 'hidden';
 				} else {
