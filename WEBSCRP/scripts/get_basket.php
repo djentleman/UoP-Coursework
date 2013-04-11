@@ -75,7 +75,7 @@
 								$totalPrice += $itemPrice;
 								
 								echo "<div class='basketPriceWrap'>";
-								echo "£" . $itemPrice;
+								echo '&pound;' . $itemPrice;
 								echo "</div>";
 								
 								
@@ -95,7 +95,7 @@
 						
 						
 						
-						echo "<p style='float:left; margin-left:13%; margin-top:19px;'>Total Price: £" . $totalPrice . "</p>";
+						echo "<p style='float:left; margin-left:13%; margin-top:19px;'>Total Price: &pound;" . $totalPrice . "</p>";
 						$rows = $basket->getSize();
 						echo "<div id='rows' value='$rows' style='visibility:hidden'>$rows</div>";
 						// have to use innerHTML as value wasn't working

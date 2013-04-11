@@ -14,7 +14,7 @@
 					<p>Quantity*</p>
 					<input type="text" id="quan" name="itemQuantity" value="">
 						
-					<p>Price* (in £)</p>
+					<p>Price* (in &pound;)</p>
 					<input type="text" id="price" name="price" value="">
 						
 					<p>Seller Name*</p>

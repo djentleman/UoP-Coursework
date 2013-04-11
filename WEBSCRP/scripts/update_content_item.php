@@ -31,7 +31,7 @@
 					<p>Quantity*</p>
 					<input type="text" id="quantity" name="itemQuantity" value="">
 						
-					<p>Price* (in £)</p>
+					<p>Price* (in &pound;)</p>
 					<input type="text" id="price" name="itemPrice" value="">
 						
 					<p>Seller Name*</p>
