@@ -24,10 +24,13 @@
 			<div class="itemInfo">
 				<?php
 					echo "<h2>$itemName</h2>";
-					echo "<p>";
-					echo "Price &pound;$itemPrice   ,";
-					echo "Quantity: $itemQuantity";
-					echo "</p>";
+					if ($itemQuantity > 5){
+						echo "<p>Price &pound;$itemPrice</p>";
+						echo "<p>Quantity: $itemQuantity</p>";
+					} else {
+						echo "<p>Price &pound;$itemPrice</p>";
+						echo "<p style='color:red'>Quantity: $itemQuantity</p>";
+					}
 					echo "<p> Seller Name; $sellerName</p>";
 					
 					if ($isNew != 0){
