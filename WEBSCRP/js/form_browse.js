@@ -14,9 +14,10 @@ function browseWithCat(){
 	
 	var search = document.getElementById('catSearch').value;
 	var catID = document.getElementById('catagoryList').value;
+	var orderID = document.getElementById('orderType').value;
 	console.log("hello");
 	
-	var stringToPass = "?search=" + search + "&catID=" + catID;
+	var stringToPass = "?search=" + search + "&catID=" + catID + "&orderID=" + orderID;
 	location = "browse.php" + stringToPass;
 }
 

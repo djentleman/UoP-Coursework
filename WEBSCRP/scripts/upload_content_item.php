@@ -21,10 +21,7 @@
 					<input type="text" id="sellerName" name="sellerName" value="">
 						
 					<p>Is The Item New?*
-						<input type="radio" id="isNew" name="new" value="1">
-					</p>
-					<p>Is The Item Used*
-						<input type="radio" id="isNew" name="new" value="0">
+						<input type="checkBox" id="isNew" name="new" value="1">
 					</p>
 						
 						

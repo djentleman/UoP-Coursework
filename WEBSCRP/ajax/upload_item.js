@@ -32,7 +32,6 @@ function uploadItem() {
 	var isNew = document.getElementById('isNew').value;
 	var tags = document.getElementById('tags').value;
 	var catagoryID = document.getElementById('catagoryList').value;
-	var catagoryID = 1;
 	var description = document.getElementById('desc').value;
 	
 	

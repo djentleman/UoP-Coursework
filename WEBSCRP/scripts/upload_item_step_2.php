@@ -7,9 +7,7 @@
 					<h2>New Item</h2>
 					<h2>Step 2: Image</h2>
 					
-					<!--
 					
-					<script src="js/dragupload.js"></script> <!-- JS drag upload script -->
 					
 					<!--
 					<form enctype="multipart/form-data" name="dragtarget" method="POST" onsubmit="return false;">
@@ -20,6 +18,10 @@
 						<p id="response">No Image Uploaded Yet</p>
 					</div>
 					-->
+					
+					<!--
+					
+					<script src="js/dragupload.js"></script> <!-- JS drag upload script -->
 					
 					
 					

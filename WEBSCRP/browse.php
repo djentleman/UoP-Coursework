@@ -11,9 +11,13 @@
 					//echo "<br>";
 					//echo "under catagory: $catagory";
 					$catID = -1; // defaults
+					$orderID = -1;
 					$search = $_GET['search']; // init var
 					if (isset($_GET['catID'])){
 						$catID = $_GET['catID'];
+					}
+					if (isset($_GET['orderID'])){
+						$orderID = $_GET['orderID'];
 					}
 					
 					// ordering
@@ -110,18 +114,25 @@
 					
 					
 					
-					// ADD AN ORDER BY BUTTON HERE!
+					// configure orderType
+					if ($orderID == 2){
+						$orderType = "itemPrice";
+					} else if ($orderID == 1){
+						$orderType = "10000 - itemPrice"; // gives opposite effect
+					} else {
+						$orderType = "itemName";
+					}
 					
 					
 					if ($catID == -1){
 						$query = "SELECT * FROM `items`
-						ORDER BY itemName";
+						ORDER BY $orderType";
 						executeResults($query, $con, $search);
 					} else {
 						// cat is being searched
 						$query = "SELECT * FROM `items`
 						WHERE `catagoryID` = '$catID'
-						ORDER BY itemName";
+						ORDER BY $orderType";
 						executeResults($query, $con, $search);
 					}
 						
@@ -135,7 +146,7 @@
 			<div class="SearchOptions" style="width:80%; margin-left:10%; float:left">
 				<h2> Search Options </h2>
 				<div class="catagorySearch" Style="padding: 10px">
-					<p>Want To Be More Specific!  Try Category Based Searching.</p>
+					<p>Want To Be More Specific!  Try Advanced Search.</p>
 					<?php
 						include "scripts/renderListBox.php";
 						
@@ -147,6 +158,15 @@
 					
 					<input type="text" id="catSearch">
 					<button onclick="browseWithCat()">Search</button>
+				</div>
+				<div class="orderBy" Style="padding: 10px">
+					<p style="margin-left: 75px;">Order Search Results:
+						<select style="margin-left:20px;" id="orderType">
+							<option value="0">Alphabetic</option>
+							<option value="1">Price - Highest To Lowest</option>
+							<option value="2">Price - Lowest To Highest</option>
+						</select>
+					</p>
 				</div>
 			</div>
 		</div>
