@@ -34,6 +34,7 @@
 						<li><a class="menuCase" href="upload.php">Upload Content</a></li>
 						<li><a class="menuCase" href="update_content.php">Update Content</a></li>
 						<li><a class="menuCase" href="delete_content.php">Remove Content</a></li>
+						<li><a class="menuCase" href="manage_stock.php">Manage Stock</a></li>
 						<li><a class="menuCase" id="fetch" onclick="return confirmAction()">Reset Database</a></li>
 					</ul>
 					<li><a class="menuCase" style="margin-top:10px" href="basket.php">Basket</a></li>

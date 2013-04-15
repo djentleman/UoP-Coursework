@@ -22,9 +22,8 @@
 						$count = 0;
 						$totalPrice = 0;
 						echo "Basket:";
-						if (empty($basket->itemIDs)){
-							echo "Basket Is Empty";
-						} else {
+
+
 							echo "<div class='basketTable'>";
 							
 							echo "<div class='basketRow'>";
@@ -86,7 +85,7 @@
 								$basketCounter++;
 							}
 							echo "</div>";
-						}
+						
 						
 						mysql_close($con);
 						

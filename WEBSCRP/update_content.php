@@ -6,6 +6,7 @@
 		<script src="ajax/form_update_chooser.js"></script>
 		<script src="js/form_choice_update.js"></script>
 		<script src="js/dragupdate.js"></script> <!-- drag and drop uploader listeners -->
+		<script src="ajax/getUpdateItemData.js"></script>	
 		<!-- drag and drop may need moving -->
 		
 		

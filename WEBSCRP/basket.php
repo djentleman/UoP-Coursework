@@ -44,7 +44,7 @@
 						}
 							
 						
-						echo "<div id='basketTable'>";
+						echo "<div id='basketTable' style='font-size:15px'>";
 						include "scripts/get_basket.php"; // renders basket
 						echo "</div>";
 						

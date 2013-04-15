@@ -1,4 +1,6 @@
 <div id="itemForm" class="leftDiv">
+			
+			
 				<p class="left">Select Item To Update</p>
 				<!-- action="update_item.php"  -->
 				<form class="left" method="post" enctype="multipart/form-data">
@@ -7,6 +9,8 @@
 						
 						include "executeQuery.php";
 						include "renderListBox.php";
+						include "getData.php";
+						
 						
 						
 						
@@ -21,6 +25,8 @@
 						
 						mysql_close($con);
 					?>
+					
+					
 					
 					
 					
@@ -67,7 +73,9 @@
 					<textarea id="desc" cols="25" rows="5" name="description"></textarea>
 
 					
-					<button onclick="return editItem()">Submit</button>				
+					<button onclick="return editItem()">Submit</button>		
+
+				
 						
 				</form>
 			</div>
