@@ -106,7 +106,7 @@ loadFilms = do
 
 saveFilms :: [Film] -> IO ()
 saveFilms films = do
-    writeFile "films.txt" (show films)
+    length films `seq` writeFile "films.txt" (show films) -- length so it reads to the last byte
     putStrLn "Films Saved!"
     
 welcome :: [Film] -> IO ()
