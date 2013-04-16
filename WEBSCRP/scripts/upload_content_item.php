@@ -1,3 +1,6 @@
+
+			
+			
 			<div class="leftDiv" id="itemForm">
 				
 				<!-- action="item_upload_complete.php" OLD HREF -->
@@ -6,6 +9,7 @@
 					<h2>New Item</h2>
 					
 					<h2>Step 1: Item Attributes</h2>
+					<h3> '*' indicates required fields </h3>
 					
 				
 					<p>Item Name*</p>
@@ -20,7 +24,7 @@
 					<p>Seller Name*</p>
 					<input type="text" id="sellerName" name="sellerName" value="">
 						
-					<p>Is The Item New?*
+					<p>Is The Item New?
 						<input type="checkBox" id="isNew" name="new" value="1">
 					</p>
 						
@@ -55,7 +59,7 @@
 						
 					
 
-					<input type="button"  onClick="uploadInfo()"  name="submit" value="Submit"> 
+					<input type="button"  onClick="validateItem()"  name="submit" value="Submit"> 
 					
 						
 				</form>

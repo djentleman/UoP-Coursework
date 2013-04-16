@@ -8,6 +8,29 @@
 		<script src="js/dragupdate.js"></script> <!-- drag and drop uploader listeners -->
 		<script src="ajax/getUpdateItemData.js"></script>	
 		<!-- drag and drop may need moving -->
+		<script>
+			function validateItem(){
+				var valid = true;
+				var quan = document.getElementById('quantity').value;
+				var price = document.getElementById('price').value;
+				
+				if (quan != "" && isNaN(quan)){
+					// quan is not empty, and not a number
+					valid = false;
+				}
+				
+				if (price != "" && isNaN(price)){
+					valid = false;
+				}
+				
+				if (valid){
+					return editItem();
+				} else {
+					alert("Input was invalid, make sure price and quantity are numbers.");
+					return false;
+				}
+			}
+		</script>
 		
 		
 		

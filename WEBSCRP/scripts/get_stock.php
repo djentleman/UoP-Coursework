@@ -3,11 +3,7 @@
 						
 						include "executeQuery.php";
 						include "getData.php";
-						
-						if (!isset($_SESSION['basket'])){
-							include "classes/basket.php"; // catch for ajax loads
-							session_start();
-						}
+
 						
 					function executeResults($query, $con){
 						if (!$con){
@@ -26,9 +22,9 @@
 									echo "<div class='basketRow'>";
 									
 									if ($quantity < 6){
-										echo "<div style='color:red' class='basketIdWrap' onClick='goToBuy($itemID)'>";
+										echo "<div style='color:red' class='stockIdWrap' onClick='goToBuy($itemID)'>";
 									} else {
-										echo "<div class='basketIdWrap' onClick='goToBuy($itemID)'>";
+										echo "<div class='stockIdWrap' onClick='goToBuy($itemID)'>";
 									}
 									echo $itemName;
 									echo "</div>";
@@ -77,7 +73,7 @@
 							
 							echo "<div class='basketRow'>";
 							
-							echo "<div class='basketIdWrap'>";
+							echo "<div style='width:30%; float:left; height:19px;'>";
 							echo "Item Name";
 							echo "</div>";
 							
@@ -94,7 +90,7 @@
 							
 							
 							
-						$query = "SELECT * FROM `items`";
+						$query = "SELECT * FROM `items` ORDER BY `itemName`";
 						executeResults($query, $con);
 						
 							echo "</div>";

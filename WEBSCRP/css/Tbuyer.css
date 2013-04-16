@@ -49,6 +49,21 @@ body
 	
 }
 
+.stockIdWrap:active{
+	background-color: #fea;
+}
+
+.stockIdWrap:hover{
+	background-color: #fd9;
+	box-shadow:0 0ex 6px;
+}
+
+.stockIdWrap{
+	width: 30%;
+	float:left;
+	height: 19px;
+}
+
 .choiceObject:hover{
 	background-color: #fd9;
 	box-shadow:0 0ex 6px;

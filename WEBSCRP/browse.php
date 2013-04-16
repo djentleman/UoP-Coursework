@@ -151,7 +151,7 @@
 						include "scripts/renderListBox.php";
 						
 						$query = "SELECT * FROM `catagories`";
-						renderListBoxCat($query, $con);
+						renderListBoxCatEmpty($query, $con);
 						
 						mysql_close($con);
 					?>

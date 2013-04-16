@@ -35,14 +35,6 @@
 						
 						
 						
-						
-						
-						
-						
-						
-						
-						
-						
 
 						// used for 'catagories'
 						function renderListBoxCat($query, $con){
@@ -56,6 +48,35 @@
 								$output = (mysql_query($query ,$con));
 								
 								echo "<select id='catagoryList' name='catagoryID'>";
+								
+								while($row = mysql_fetch_array($output)){
+									$val = $row['catagoryID'];
+									$nam = $row['catagoryName'];
+									echo "<option value=$val>$nam</option>";
+								}
+									
+								
+								
+								echo "</select>";
+								
+							}
+							else{
+								echo mysql_error();
+							}
+						}
+						
+						function renderListBoxCatEmpty($query, $con){
+							if (!$con){
+								die('Could not connect: ' . mysql_error());
+							}
+							if (mysql_query($query ,$con)){
+								//render list box
+								
+								
+								$output = (mysql_query($query ,$con));
+								
+								echo "<select id='catagoryList' name='catagoryID'>";
+								echo "<option value='-1'>No Catagory</option>"; // -1 fits with search filter
 								
 								while($row = mysql_fetch_array($output)){
 									$val = $row['catagoryID'];

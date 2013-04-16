@@ -1,5 +1,8 @@
 <div id="itemForm" class="leftDiv">
 			
+				
+				<h2>Update Item</h2>
+				<h3>Leaving a field blank causes that field to not be updated</h3> 
 			
 				<p class="left">Select Item To Update</p>
 				<!-- action="update_item.php"  -->
@@ -73,7 +76,7 @@
 					<textarea id="desc" cols="25" rows="5" name="description"></textarea>
 
 					
-					<button onclick="return editItem()">Submit</button>		
+					<button onclick="return validateItem()">Submit</button>		
 
 				
 						

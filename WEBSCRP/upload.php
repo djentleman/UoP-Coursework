@@ -9,6 +9,60 @@
 		<script src="js/uploadInfo.js"></script> <!-- JS for step transition -->
 		<script src="ajax/render_step2.js"></script> <!-- AJAX for step transition -->
 		<script src="js/dragupload.js"></script> <!-- JS drag upload script -->
+		
+				
+		<script>
+			function validateItem(){
+				var valid = true;
+				
+				if (document.getElementById('itemName').value == ""){
+					valid = false;
+				}
+				
+				if (isNaN(document.getElementById('quan').value)){
+					valid = false;
+				} else {
+					// quan is numberic
+					if (document.getElementById('quan').value < 0){
+						valid = false
+					}
+				}
+				
+				if (isNaN(document.getElementById('price').value)){
+					valid = false;
+				} else {
+					// price is numeric
+					if (document.getElementById('price').value < 0){
+						valid = false
+					}
+				}
+				
+				if (document.getElementById('sellerName').value == ""){
+					valid = false;
+				}
+				
+				if (valid){
+					uploadInfo();
+				} else {
+					alert("Invalid Input, Please Make Sure All The Required Fields Are Filled");
+				}
+			}
+			
+			function validateCat(){
+				var valid = true;
+				
+				if (document.getElementById('catName').value == ""){
+					valid = false;
+				}
+				
+				if (valid){
+					return uploadCat();
+				} else {
+					alert("Invalid Input, Please Make Sure All The Required Fields Are Filled");
+				}
+				
+			}
+		</script>
 
 		
 		<div class="mainContent" style="padding-bottom: 20px;">

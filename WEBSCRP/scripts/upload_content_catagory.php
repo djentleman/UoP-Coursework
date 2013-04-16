@@ -8,7 +8,7 @@
 					<p>Catagory Name*</p>
 					<input type="text" id="catName" name="catagoryName" value="">
 						
-					<input type="button" onMouseDown="return uploadCat()" name="submit" value="Submit">
+					<input type="button" onMouseDown="return validateCat()" name="submit" value="Submit">
 						
 					<p id="dynamicText"></p>
 					
