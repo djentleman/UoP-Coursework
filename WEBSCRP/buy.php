@@ -6,6 +6,7 @@
 	
 		<!-- Script For Comment Upload -->
 		<script src="ajax/upload_com.js"></script>
+		<script src="ajax/check_valid_quantity.js"></script>
 		
 		<div class="mainContent">
 			<div class="itemPicture">
@@ -42,12 +43,19 @@
 				?>
 				<br>
 				<br>
-				<form method="post" action="basket.php">
+				<form method="post" action="basket.php"> <!-- still uses php lol -->
 					<p>Quantity To Buy:
-						<input style="width:20px" type="text" name="quanToBuy" value='1'>
+						<?php
+							$id = '"quanToBuy"';
+							if ($itemQuantity > 0){
+								echo "<input class='validBox' id='quanToBuy' onkeyup='return checkValid($itemID, $id)' style='width:20px' type='text' name='quanToBuy' value='1'>";
+							} else {
+								echo "<input class='invalidBox' id='quanToBuy' onkeyup='return checkValid($itemID, $id)' style='width:20px' type='text' name='quanToBuy' value='1'>";
+							}
+						?>
 					</p>
 					<?php
-						echo "<input type='hidden' name='itemID' value='$itemID'>" // item, ID to carry forward
+						echo "<input type='hidden' name='itemID' value='$itemID'>"; // item, ID to carry forward
 					?>
 					<input type="submit" name="submit" value="Add To Basket">
 				</form>
