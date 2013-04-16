@@ -1,8 +1,8 @@
 <?php
-	include "header.php"
+	include "adminheader.php"
 ?>
-		<script src="js/form_buy.js"></script> <!-- fetching item pages -->
-		<script src="ajax/add_stock.js"></script>
+		<script src="../js/form_buy.js"></script> <!-- fetching item pages -->
+		<script src="../ajax/add_stock.js"></script>
 
 
 		<div class="mainContent">
@@ -11,7 +11,7 @@
 			<!-- generate a basket like table of all stock, with add stock buttons -->
 			
 			<?php
-				include "scripts/get_stock.php";
+				include "../scripts/get_stock.php";
 			?>
 		</div>
 	</body>

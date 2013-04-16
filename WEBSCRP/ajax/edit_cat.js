@@ -34,7 +34,7 @@ function editCat() {
 	
 	var stringToPass = "?catagoryName=" + catagoryName + "&catagoryID=" + catagoryID;
 	
-	xhr.open("GET", "./scripts/update_catagory_complete.php" + stringToPass, true);
+	xhr.open("GET", "../scripts/update_catagory_complete.php" + stringToPass, true);
 	xhr.onreadystatechange = changeListener;
 	xhr.send();
 	

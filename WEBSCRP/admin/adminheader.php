@@ -1,12 +1,10 @@
-<?php include "/scripts/classes/basket.php"; session_start(); ?>
+<?php include "../scripts/classes/basket.php"; session_start(); ?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<title> Tbuyer </title>
 		<meta http-equiv="Content-Script-Type" content="text/javascript">
-		<link rel="stylesheet" type="text/css" href="css/Tbuyer.css">
-		<script src="ajax/reset.js"></script> <!-- AJAX for DB reset -->
-		<script src="js/form_browse.js"></script> <!-- JS for browse -->
+		<link rel="stylesheet" type="text/css" href="../css/Tbuyer.css">
 		
 		
 	</head>
@@ -28,9 +26,12 @@
 		<header>
 			<nav>
 				<ul>
-					<a href="index.php" ><img class="logo" style="margin-top:5px" src="img/Tbuyer.png"></a></img>
-					<li><a class="menuCase" style="margin-top:10px" href="basket.php">Basket</a></li>
-					<li><h2 style="margin-top:10px; margin-right:20px;">Customer</h2></li>
+					<a href="index.php" ><img class="logo" style="margin-top:5px" src="../img/Tbuyer.png"></a></img>
+					<li><a class="menuCase" style="margin-top:10px">View Insights</a>
+					<ul>
+						<li><a class="menuCase" href="/admin/manage_stock.php">Manage Stock</a></li>
+					</ul>
+					<li><h2 style="margin-top:10px; margin-right:20px;">Admin</h2></li>
 				</ul>
 			</nav>
 			<form class="searchForm" action="browse.php"> <!-- action still needs to be 'beowse.php' -->

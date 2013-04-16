@@ -34,7 +34,7 @@ function uploadCat() {
 	var catagoryName = document.getElementById('catName').value;
 	var stringToPass = "?catagoryName=" + catagoryName;
 	
-	xhr.open("GET", "./scripts/catagory_upload_complete.php" + stringToPass, true);
+	xhr.open("GET", "../scripts/catagory_upload_complete.php" + stringToPass, true);
 	xhr.onreadystatechange = changeListener;
 	xhr.send();
 

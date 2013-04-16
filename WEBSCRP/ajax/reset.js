@@ -24,7 +24,7 @@ function reset() {
 
 	// initialise a request, specifying the HTTP method
 	// to be used and the URL to be connected to.
-	xhr.open("GET", "./scripts/create_database.php");
+	xhr.open("GET", "../scripts/create_database.php");
 	xhr.onreadystatechange = changeListener;
 	xhr.send();
 	

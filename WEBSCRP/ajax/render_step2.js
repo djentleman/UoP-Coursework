@@ -24,7 +24,7 @@ function renderStep2() {
 	};
 	
 	xhr.onreadystatechange = changeListener;
-	xhr.open("GET", "./scripts/upload_item_step_2.php", true);
+	xhr.open("GET", "../scripts/upload_item_step_2.php", true);
 	xhr.send();
 	
 	return false; //stops page from refreshing

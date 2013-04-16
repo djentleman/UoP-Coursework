@@ -66,7 +66,7 @@ var upload = function (files) {
 
 	xhrSend(
 		"POST",
-		"./scripts/update_image_complete.php", // image update script
+		"../scripts/update_image_complete.php", // image update script
 		fd,
 		callback
 	);

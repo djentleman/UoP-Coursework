@@ -57,10 +57,6 @@
 						}
 					}
 						
-					
-						
-						
-						$basket = $_SESSION['basket'];
 						
 						
 						$con = mysql_connect("localhost","root"); // will be querying item IDs

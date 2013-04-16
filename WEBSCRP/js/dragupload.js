@@ -64,7 +64,7 @@ var upload = function (files) {
 
 	xhrSend(
 		"POST",
-		"./scripts/item_image_upload.php",
+		"../scripts/item_image_upload.php",
 		fd,
 		callback
 	);

@@ -44,7 +44,7 @@ function update(itemID) {
 	var stringToPass = "?itemID=" + itemID + "&stockToAdd=" + stockToAdd;
 	
 	xhr.onreadystatechange = changeListener;
-	xhr.open("GET", "./scripts/update_stock.php" + stringToPass, true); // clears
+	xhr.open("GET", "../scripts/update_stock.php" + stringToPass, true); // clears
 	xhr.send();
 	
 	
@@ -83,7 +83,7 @@ function refresh(){
 	
 
 	xhr.onreadystatechange = changeListener;
-	xhr.open("GET", "./scripts/get_stock.php", true);
+	xhr.open("GET", "../scripts/get_stock.php", true);
 	xhr.send();
 	
 	return false; //stops page from refreshing

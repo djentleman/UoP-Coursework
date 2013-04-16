@@ -24,7 +24,7 @@ function showItem() {
 	};
 	
 	xhr.onreadystatechange = changeListener;
-	xhr.open("GET", "./scripts/update_content_item.php", true);
+	xhr.open("GET", "../scripts/update_content_item.php", true);
 	xhr.send();
 	
 	return false; //stops page from refreshing
@@ -59,7 +59,7 @@ function showCatagory() {
 	};
 	
 	xhr.onreadystatechange = changeListener;
-	xhr.open("GET", "./scripts/update_content_catagory.php", true);
+	xhr.open("GET", "../scripts/update_content_catagory.php", true);
 	xhr.send();
 	
 	return false; //stops page from refreshing
@@ -93,7 +93,7 @@ function showImage() {
 	};
 	
 	xhr.onreadystatechange = changeListener;
-	xhr.open("GET", "./scripts/update_content_image.php", true);
+	xhr.open("GET", "../scripts/update_content_image.php", true);
 	xhr.send();
 	
 	return false; //stops page from refreshing

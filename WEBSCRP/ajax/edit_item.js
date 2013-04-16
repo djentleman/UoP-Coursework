@@ -45,7 +45,7 @@ function editItem() {
 						"&tags=" + tags + "&catagoryID=" + catagoryID +
 						"&description=" + desc;
 	
-	xhr.open("GET", "./scripts/update_item_complete.php" + stringToPass, true);
+	xhr.open("GET", "../scripts/update_item_complete.php" + stringToPass, true);
 	xhr.onreadystatechange = changeListener;
 	xhr.send();
 	

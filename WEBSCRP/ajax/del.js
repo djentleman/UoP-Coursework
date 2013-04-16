@@ -31,13 +31,13 @@ function del(isCatagory) { // boolean, isCatagory
 		var stringToPass = "?catagoryID=" + catID + "&delType=" + delType;
 	
 	
-		xhr.open("GET", "./scripts/delete_complete.php" + stringToPass, true);
+		xhr.open("GET", "../scripts/delete_complete.php" + stringToPass, true);
 	} else { // init vars & xhr for item delete
 		var itemID = document.getElementById('itemList').value;
 		var stringToPass = "?itemID=" + itemID + "&delType=" + delType;
 		
 		
-		xhr.open("GET", "./scripts/delete_complete.php" + stringToPass, true);
+		xhr.open("GET", "../scripts/delete_complete.php" + stringToPass, true);
 	}
 	
 	xhr.onreadystatechange = changeListener;

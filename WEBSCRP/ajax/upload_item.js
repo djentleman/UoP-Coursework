@@ -42,7 +42,7 @@ function uploadItem() {
 	stringToPass += "&description=" + description;
 	
 	
-	xhr.open("GET", "./scripts/item_upload_complete.php" + stringToPass, true);
+	xhr.open("GET", "../scripts/item_upload_complete.php" + stringToPass, true);
 	
 	
 	
