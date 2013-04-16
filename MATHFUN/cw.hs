@@ -47,7 +47,7 @@ getFilmFromName nameQuery ((Film name cast year fans):films)
     |otherwise = getFilmFromName nameQuery films
     
 addNewFilm :: Film -> [Film] -> [Film]
-addNewFilm filmToAdd films = filmToAdd : films
+addNewFilm filmToAdd films = films ++ (filmToAdd : [])
 
 isYear year film = year == (getFilmYear film)
 getFilmsByYear year = filter (isYear year) -- filters for year
