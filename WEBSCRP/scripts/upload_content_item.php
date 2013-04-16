@@ -13,16 +13,16 @@
 					
 				
 					<p>Item Name*</p>
-					<input type="text" id="itemName" name="itemName" value="">
+					<input class="invalidBox" onkeyup="return checkValid(false, 'itemName')" type="text" id="itemName" name="itemName" value="">
 						
 					<p>Quantity*</p>
-					<input type="text" id="quan" name="itemQuantity" value="">
+					<input class="invalidBox" onkeyup="return checkValid(true, 'quan')" type="text" id="quan" name="itemQuantity" value="">
 						
 					<p>Price* (in &pound;)</p>
-					<input type="text" id="price" name="price" value="">
+					<input class="invalidBox" onkeyup="return checkValid(true, 'price')" type="text" id="price" name="price" value="">
 						
 					<p>Seller Name*</p>
-					<input type="text" id="sellerName" name="sellerName" value="">
+					<input class="invalidBox" onkeyup="return checkValid(false, 'sellerName')" type="text" id="sellerName" name="sellerName" value="">
 						
 					<p>Is The Item New?
 						<input type="checkBox" id="isNew" name="new" value="1">

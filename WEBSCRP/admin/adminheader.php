@@ -34,12 +34,5 @@
 					<li><h2 style="margin-top:10px; margin-right:20px;">Admin</h2></li>
 				</ul>
 			</nav>
-			<form class="searchForm" action="browse.php"> <!-- action still needs to be 'beowse.php' -->
-				<div class="search headerSearch">
-					<input type="text" id="searchValue" name="search" value="">
-					<button onclick="browse()">Search</button> <!-- USES JS NOW -->
-					<!--<input type="submit" name="submit" value="Search"> -->
-				</div>
-			</form>
 			
 		</header>

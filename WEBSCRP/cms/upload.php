@@ -19,7 +19,7 @@
 					valid = false;
 				}
 				
-				if (isNaN(document.getElementById('quan').value)){
+				if (isNaN(document.getElementById('quan').value) || (document.getElementById('quan').value == "")){
 					valid = false;
 				} else {
 					// quan is numberic
@@ -28,7 +28,7 @@
 					}
 				}
 				
-				if (isNaN(document.getElementById('price').value)){
+				if (isNaN(document.getElementById('price').value) || (document.getElementById('price').value == "")){
 					valid = false;
 				} else {
 					// price is numeric
@@ -62,6 +62,33 @@
 				}
 				
 			}
+			
+			function checkValid(isNumeric, id){
+				// if isNumeric, then contents must be numeric, else just validate for ""
+				// id is for getElement
+				
+				var input = document.getElementById(id).value;
+				
+				if (isNumeric){
+					if (isNaN(input) || (input == "")){
+						document.getElementById(id).className = "invalidBox";
+					} else {
+						if (input < 0){
+							document.getElementById(id).className = "invalidBox";
+						} else {
+							document.getElementById(id).className = "validBox";
+						}
+					}
+				} else {
+					if (input == ""){
+						document.getElementById(id).className = "invalidBox";
+					} else {
+						document.getElementById(id).className = "validBox";
+					}
+				}
+				return false;
+			}
+			
 		</script>
 
 		

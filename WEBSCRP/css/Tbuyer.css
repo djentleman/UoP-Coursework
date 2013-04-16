@@ -31,6 +31,22 @@ body
 	box-shadow:0 0ex 2px;
 }
 
+.invalidBox:focus{
+	background-color: #FF6D6D
+}
+
+.validBox:focus{
+	background-color: #afa
+}
+
+.validBox{
+	background-color: #9f6;
+}
+
+.invalidBox{
+	background-color: #FF4D4D
+}
+
 .addStock:active{
 	background-color: #fea;
 }
