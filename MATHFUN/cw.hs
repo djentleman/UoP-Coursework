@@ -279,21 +279,25 @@ viewFilmsFromPeriod allFilms userName = do
 
 becomeFanOfFilm :: [Film] -> String -> IO ()
 becomeFanOfFilm films userName = do
+    filmName <- getFilmToBecomeFan films
+    if ((isFan userName (getFilmFromName filmName films)) /= True) -- are you already a fan?
+        then do let updatedFilms = becomeFan userName filmName films
+                putStr userName
+                putStr " Is Now A Fan Of "
+                putStrLn filmName
+                pressEnter updatedFilms userName
+        else do putStrLn "You Are Already A Fan Of This Film"
+                pressEnter films userName
+
+getFilmToBecomeFan :: [Film] -> IO String
+getFilmToBecomeFan films = do
     putStrLn "Enter The Name Of The Film You Want To Become A Fan Of:"
     putStr ">>>"
     filmName <- getLine
-    if filmExists filmName films -- does the film exist?
-        then do if ((isFan userName (getFilmFromName filmName films)) /= True) -- are you already a fan?
-                    then do let updatedFilms = becomeFan userName filmName films
-                            putStr userName
-                            putStr " Is Now A Fan Of "
-                            putStrLn filmName
-                            pressEnter updatedFilms userName
-                    else do putStrLn "You Are Already A Fan Of This Film"
-                            pressEnter films userName
+    if filmExists filmName films
+        then do return filmName
         else do putStrLn "Film Does Not Exist"
-                pressEnter films userName
-                    
+                getFilmToBecomeFan films
 --------------------PRINT 'TOP' FILM------------------------------
 
 printTopFilm :: [Film] -> String -> IO ()
