@@ -64,7 +64,7 @@
 								$quanID = "" . $currentID; // stringified
 								
 								echo "<div class='basketQuanWrap'>"; // middle
-								echo "<input class='validBox' id='$quanID' onkeyup='return checkValid($itemID , $quanID)' style='width:22px; height:12px' type='text' value='$quan'>";
+								echo "<input class='validBox' id='$quanID' onload='return checkValid($itemID , $quanID)' onkeyup='return checkValid($itemID , $quanID)' style='width:22px; height:12px' type='text' value='$quan'>";
 								echo "</div>";
 								
 								

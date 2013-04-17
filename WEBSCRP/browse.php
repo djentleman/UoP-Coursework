@@ -62,7 +62,7 @@
 									//echo "$bool";
 									
 								
-									if(search_for($row['itemName'], $search)){
+									if(search_for($row['itemName'], $search) || search_for($row['tags'], $search)){
 									
 										$idParam = $row['itemID'];
 									

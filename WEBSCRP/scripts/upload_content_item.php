@@ -9,7 +9,6 @@
 					<h2>New Item</h2>
 					
 					<h2>Step 1: Item Attributes</h2>
-					<h3> '*' indicates required fields </h3>
 					
 				
 					<p>Item Name*</p>
@@ -25,7 +24,7 @@
 					<input class="invalidBox" onkeyup="return checkValid(false, 'sellerName')" type="text" id="sellerName" name="sellerName" value="">
 						
 					<p>Is The Item New?
-						<input type="checkBox" id="isNew" name="new" value="1">
+						<input type="checkBox" id="isNew" name="new">
 					</p>
 						
 						

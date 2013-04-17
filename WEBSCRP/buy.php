@@ -30,11 +30,15 @@
 						echo "<p>Quantity: $itemQuantity</p>";
 					} else {
 						echo "<p>Price &pound;$itemPrice</p>";
-						echo "<p style='color:red'>Quantity: $itemQuantity</p>";
+						if ($itemQuantity != 0){
+							echo "<p style='color:red'>Quantity: $itemQuantity</p>";
+						} else {
+							echo "<p style='color:red'>SOLD OUT</p>";
+						}
 					}
 					echo "<p> Seller Name; $sellerName</p>";
 					
-					if ($isNew != 0){
+					if ($isNew == 0){
 						echo "Item Is New";
 					} else {
 						echo "Item Is Used";
@@ -48,7 +52,7 @@
 						<?php
 							$id = '"quanToBuy"';
 							if ($itemQuantity > 0){
-								echo "<input class='validBox' id='quanToBuy' onkeyup='return checkValid($itemID, $id)' style='width:20px' type='text' name='quanToBuy' value='1'>";
+								echo "<input class='validBox' id='quanToBuy' onload='return checkValid($itemID, $id)' onkeyup='return checkValid($itemID, $id)' style='width:20px' type='text' name='quanToBuy' value='1'>";
 							} else {
 								echo "<input class='invalidBox' id='quanToBuy' onkeyup='return checkValid($itemID, $id)' style='width:20px' type='text' name='quanToBuy' value='1'>";
 							}

@@ -11,7 +11,8 @@ function executeQuery($query, $con){
 						//echo "Command Executed.";
 					}
 					else{
-						echo mysql_error();
+						echo "<h3>The Shop Database Isn't Set Up Yet</h3>";
+						echo "<h3>Click Reset Database On The CMS Panel To Fix This Problem</h3>";
 					}
 				}
 ?>

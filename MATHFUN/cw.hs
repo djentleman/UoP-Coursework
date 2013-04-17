@@ -20,9 +20,9 @@ getFilmYear (Film _ _ year _) = year -- 'accessors'
 getFilmFans (Film _ _ _ fans) = fans -- 'accessors'
 
 
--- --
+--                   --
 ----Functional Code----
--- --
+--                   --
 
 isValidYear = (foldr (&&) True) . (map isNumber)
 

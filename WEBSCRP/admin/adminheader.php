@@ -27,7 +27,7 @@
 			<nav>
 				<ul>
 					<a href="index.php" ><img class="logo" style="margin-top:5px" src="../img/Tbuyer.png"></a></img>
-					<li><a class="menuCase" style="margin-top:10px">View Insights</a>
+					<li><a class="menuCase" style="margin-top:10px">Admin Panel</a>
 					<ul>
 						<li><a class="menuCase" href="/admin/manage_stock.php">Manage Stock</a></li>
 					</ul>

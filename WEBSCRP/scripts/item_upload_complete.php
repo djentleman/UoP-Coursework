@@ -14,6 +14,14 @@
 				$catagoryID = $_GET['catagoryID'];
 				$description = $_GET['description'];
 				
+				if ($new == "true"){
+					$new = 0;
+				} else {
+					$new = 1;
+				}
+				
+				echo $new;
+				
 				include "executeQuery.php";
 				
 				
