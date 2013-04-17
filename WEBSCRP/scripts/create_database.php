@@ -72,7 +72,7 @@
 				//create the items table
 				// add end date?
 				$query = "CREATE TABLE `items`(`itemID` int(10) NOT NULL AUTO_INCREMENT, `itemName` varchar(30), `itemQuantity` int(10),
-					`itemPrice` decimal(10), `sellerName` varchar(50), `isNew` int(1), 
+					`itemPrice` float(10), `sellerName` varchar(50), `isNew` int(1), 
 					`tags` varchar(200), `itemDescription` varchar(1000), `image` varchar(200), `inBasket` int(1), `catagoryID` int(10),
 					PRIMARY KEY(`itemID`))";
 				// FOREIGN KEY(`catagoryID`) REFERENCES catagories(`catagoryID`)?
@@ -86,6 +86,13 @@
 					`commentBody` varchar(1000), `itemID` int(10), 
 					PRIMARY KEY(`commentID`))";
 				executeQuery($query, $con);
+				
+				$query = "CREATE TABLE `orders` (`orderID` int(10) NOT NULL AUTO_INCREMENT, `orderQuantity` int(10), `buyerName` varchar(30),
+					`buyerAddress` varchar(1000), `buyerPostcode` varchar(10), `buyerEmail` varchar(80), `buyerPhoneNo` varchar(12), `itemID` int(10), 
+					PRIMARY KEY(`orderID`))";
+				executeQuery($query, $con);
+				
+				echo "callback: database set up success";
 				
 				mysql_close($con);
 				

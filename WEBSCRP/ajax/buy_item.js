@@ -4,8 +4,7 @@
 function buyClearRefresh(){
 	// we can get the quantity from the item id
 	var rows = document.getElementById("rows").innerHTML;
-	buyItems(rows);
-	return false; // prevent refresh
+	return buyItems(rows);
 }
 
 
@@ -32,8 +31,11 @@ function buyItems(basketSize) {
 				var callbackArr = callback.split(" ");
 				var lastWord = callbackArr[callbackArr.length - 1];
 				if (!(lastWord == "Store<br>")){ // if transation works
-					clear(); // clears basket
+					console.log("works");
+					return clear();
 				} // else, nothing to do here
+				
+				return true;
 
 			} else {
 				target.innerHTML = "<p>Something Went Wrong</p>";
@@ -91,8 +93,9 @@ function clear() {
 		if (xhr.readyState === 4) {
 			if (xhr.status === 200) {
 				
-
-				refresh(); // Refreshes page
+				
+				getOrderDetails();
+				return refresh(); // Refreshes page
 
 			} else {
 				target.innerHTML = "<p>Something Went Wrong</p>";
@@ -131,6 +134,7 @@ function refresh(){
 
 
 				target.innerHTML = xhr.responseText; // rendered text from php
+				
 
 			} else {
 				target.innerHTML = "<p>Something Went Wrong</p>";

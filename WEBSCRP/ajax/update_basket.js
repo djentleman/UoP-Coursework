@@ -3,8 +3,7 @@
 
 function updateAndRefresh(itemID){
 	// we can get the quantity from the item id
-	update(itemID); // uploads new comment
-	//refresh(); // refreshes current comments
+	update(itemID); // 
 	return false; // prevent refresh
 }
 
