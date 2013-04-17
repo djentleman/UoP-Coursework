@@ -298,17 +298,23 @@ becomeFanOfFilm films userName = do
 
 printTopFilm :: [Film] -> String -> IO ()
 printTopFilm films userName = do
+    actor <- (getActorForBestFilm films)
+    let filmsByActor = filter (actsInFilm actor) films
+    let bestFilm = getBestFilm filmsByActor
+    putStrLn "Best Film:"
+    filmPrintOut bestFilm
+    pressEnter films userName
+
+
+getActorForBestFilm :: [Film] -> IO String
+getActorForBestFilm films = do
     putStrLn "Enter Actor:"
     putStr ">>>"
     actor <- getLine
     if (actorExists actor films)
-        then do let filmsByActor = filter (actsInFilm actor) films
-                let bestFilm = getBestFilm filmsByActor
-                putStrLn "Best Film:"
-                filmPrintOut bestFilm
-                pressEnter films userName
+        then do return actor
         else do putStrLn "Actor Not In Database"
-                pressEnter films userName
+                getActorForBestFilm films
 	
 -----------------PRINT TOP 5 FILMS------------------------------------
 		
