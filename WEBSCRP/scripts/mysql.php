@@ -35,7 +35,7 @@ function getData($query, $con){
 	else{
 		echo mysql_error();
 	}
-	return [null];
+	return array();
 }
 
 function renderListBox($query, $con){
