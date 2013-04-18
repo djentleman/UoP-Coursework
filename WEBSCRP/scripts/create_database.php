@@ -78,7 +78,7 @@
 				// FOREIGN KEY(`catagoryID`) REFERENCES catagories(`catagoryID`)?
 				//image is directory
 				//tags is a big list seperated by commas
-				// if inBasket or isNew isn't 0, then it's false
+				// if isNew isn't 0, then it's false
 				executeQuery($query, $con);
 				
 				//create the comments table

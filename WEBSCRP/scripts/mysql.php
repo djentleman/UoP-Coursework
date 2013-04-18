@@ -38,6 +38,24 @@ function getData($query, $con){
 	return array();
 }
 
+function getCatName($catId, $con){	
+	$query = "SELECT * FROM `catagories` WHERE `catagoryID` = '$catId'";
+	if (!$con){
+		die('Could not connect: ' . mysql_error());
+	}
+	if (mysql_query($query ,$con)){
+		$output = (mysql_query($query ,$con));
+		while($row = mysql_fetch_array($output))
+			// there should only be one row
+			return $row['catagoryName'];
+				
+	}
+	else{
+		echo mysql_error();
+	}
+	return "No Category";
+}
+
 function renderListBox($query, $con){
 	if (!$con){
 		die('Could not connect: ' . mysql_error());

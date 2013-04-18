@@ -9,12 +9,13 @@
 				$itemQuantity = $_GET['itemQuantity'];
 				$price = $_GET['price'];
 				$sellerName = $_GET['sellerName'];
-				$new = $_GET['isNew'];
+				$new = $_GET['new'];
 				$tags = $_GET['tags'];
 				$catagoryID = $_GET['catagoryID'];
 				$description = $_GET['description'];
 				
-				if ($new == "true"){
+				
+				if ($new == true){
 					$new = 0;
 				} else {
 					$new = 1;
