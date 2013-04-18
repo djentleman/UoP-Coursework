@@ -22,9 +22,9 @@
 									echo "<div class='basketRow'>";
 									
 									if ($quantity < 6){
-										echo "<div style='color:red' class='stockIdWrap' onClick='goToBuy($itemID)'>";
+										echo "<div style='color:red' class='stockIdWrap' onClick='goToBuy($itemID, true)'>";
 									} else {
-										echo "<div class='stockIdWrap' onClick='goToBuy($itemID)'>";
+										echo "<div class='stockIdWrap' onClick='goToBuy($itemID, true)'>";
 									}
 									echo $itemName;
 									echo "</div>";

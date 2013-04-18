@@ -30,6 +30,7 @@
 					<li><a class="menuCase" style="margin-top:10px">Admin Panel</a>
 					<ul>
 						<li><a class="menuCase" href="/admin/manage_stock.php">Manage Stock</a></li>
+						<li><a class="menuCase" href="/admin/order_history.php">Order History</a></li>
 					</ul>
 					<li><h2 style="margin-top:10px; margin-right:20px;">Admin</h2></li>
 				</ul>

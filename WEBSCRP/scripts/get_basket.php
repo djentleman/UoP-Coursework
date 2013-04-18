@@ -55,7 +55,7 @@
 								
 								$itemName = $dataArray[0]; // name
 							
-								echo "<div value='$currentID' class='basketIdWrap' onClick='goToBuy($currentID)'>";
+								echo "<div value='$currentID' class='basketIdWrap' onClick='goToBuy($currentID, false)'>";
 								echo "<input type='hidden' id='$itemNo' value='$currentID'>";
 								echo $itemName;
 								echo "</div>";

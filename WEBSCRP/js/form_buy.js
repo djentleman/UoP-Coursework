@@ -1,6 +1,10 @@
 
-function goToBuy(itemID){
+function goToBuy(itemID, isAdmin){
 	var stringToPass = "?itemID=" + itemID; // contruct GET string
-	location = "buy.php" + stringToPass; // changes page
+	if (isAdmin){
+		location = "../buy.php" + stringToPass; // changes page
+	} else {
+		location = "buy.php" + stringToPass; // changes page
+	}
 };
 

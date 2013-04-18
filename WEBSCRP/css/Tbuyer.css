@@ -24,6 +24,67 @@ body
 	padding-bottom:20px;
 }
 
+.orderTable{
+	font-size:15px;
+	width: 90%;
+	box-shadow:0 0ex 1px rgba(0,0,0,0.5) inset;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.buyerInfoWrap{
+	width: 15%;
+	height: 19px;
+	float:left;
+}
+
+.itemNameWrap:active{
+	background-color: #fea;
+}
+
+.itemNameWrap:hover{
+	background-color: #fd9;
+	box-shadow:0 0ex 6px;
+}
+
+.itemNameWrap{
+	width: 20%;
+	height: 19px;
+	float:left;
+}
+
+.orderQuantityWrap{
+	width: 10%;
+	height: 19px;
+	float:left;
+}
+
+.postCodeWrap{	
+	width: 10%;
+	height: 19px;
+	float:left;
+}
+
+.buyerEmailWrap{
+	width: 20%;
+	height: 19px;
+	float:left;
+}
+
+
+
+div.orderTable > *:nth-child(2n - 1){
+	/* use this to distinguish rows */
+	background-color: #eee;
+	box-shadow:0 0ex 1px rgba(0,0,0,0.5) inset;
+}
+
+div.orderTable > *:nth-child(1){
+	/* headers */
+	background-color: #ddd;
+	box-shadow:0 0ex 2px rgba(0,0,0,0.5) inset;
+}
+
 .choiceObject{
 	margin-left: 40%;
 	width: 20%;
@@ -108,7 +169,7 @@ body
 
 
 .basketTable{
-	font-size:15px
+	font-size:15px;
 	width: 80%;
 	box-shadow:0 0ex 1px rgba(0,0,0,0.5) inset;
 	margin-left: 10%;
