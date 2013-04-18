@@ -10,9 +10,7 @@
 					<?php
 						$GLOBALS = $GLOBALS+$_REQUEST;
 						
-						include "executeQuery.php";
-						include "renderListBox.php";
-						include "getData.php";
+						include "mysql.php";
 						
 						
 						

@@ -5,7 +5,7 @@
 				$catagoryName = $_GET['catagoryName'];
 				$catagoryID = $_GET['catagoryID'];
 				
-				include "executeQuery.php";
+				include "mysql.php";
 				
 
 				

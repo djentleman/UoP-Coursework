@@ -7,7 +7,7 @@
 						$deleteType = $_GET['delType'];
 					
 						
-						include "executeQuery.php";
+						include "mysql.php";
 						
 					
 						

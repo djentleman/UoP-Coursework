@@ -1,6 +1,5 @@
 <?php
-	include "executeQuery.php";
-	include "getData.php";
+	include "mysql.php";
 						
 	if (!isset($_SESSION['basket'])){
 		include "classes/basket.php"; // catch for ajax loads

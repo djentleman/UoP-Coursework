@@ -36,8 +36,7 @@
 					<?php
 					
 						
-						include "executeQuery.php";
-						include "renderListBox.php";
+						include "mysql.php";
 						
 						
 						

@@ -1,6 +1,5 @@
 <?php
-	include "executeQuery.php";
-	include "getData.php";
+	include "mysql.php";
 	
 	
 	$itemID = $_GET['itemID'];

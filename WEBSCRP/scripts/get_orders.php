@@ -1,8 +1,7 @@
 					<?php	
 						// uses the same css formatting as basket
 						
-						include "executeQuery.php";
-						include "getData.php";
+						include "mysql.php";
 
 						
 					function executeResults($query, $con){

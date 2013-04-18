@@ -6,8 +6,7 @@
 						$GLOBALS = $GLOBALS+$_REQUEST;
 						
 						
-						include "executeQuery.php";
-						include "renderListBox.php";
+						include "mysql.php";
 						
 						
 						

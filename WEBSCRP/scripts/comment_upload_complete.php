@@ -8,7 +8,7 @@
 				
 				echo "<h2> Comment Upload Successful </h2>";
 				
-				include "executeQuery.php";
+				include "mysql.php";
 				
 				
 				

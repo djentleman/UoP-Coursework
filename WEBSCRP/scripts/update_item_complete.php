@@ -21,7 +21,7 @@
 				
 				echo $isNew;
 				
-				include "executeQuery.php";
+				include "mysql.php";
 				
 				
 				// connections must be open while above function is executed

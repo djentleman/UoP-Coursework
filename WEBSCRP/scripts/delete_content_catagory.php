@@ -4,8 +4,7 @@
 				<form class="left" method="post">
 					<?php
 						
-						include "executeQuery.php";
-						include "renderListBox.php";
+						include "mysql.php";
 						
 						
 						$con = mysql_connect("localhost","root");

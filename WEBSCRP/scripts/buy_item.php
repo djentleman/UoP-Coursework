@@ -36,8 +36,7 @@
 
 	header("JSON: " . json_encode($_GET));  // debug
 	
-	include "executeQuery.php";
-	include "getData.php";
+	include "mysql.php";
 	$con = mysql_connect("localhost","root"); // will be querying item IDs
 	$query = "USE `tbuyer`";
 	executeQuery($query, $con); // use tbuyer

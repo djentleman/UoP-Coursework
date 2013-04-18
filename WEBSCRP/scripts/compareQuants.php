@@ -3,8 +3,7 @@
 	// compare with quanToBuy
 	// return callback (0 or 1)
 	
-	include "executeQuery.php";
-	include "getData.php";
+	include "mysql.php";
 	
 	$itemID = $_GET['itemID'];
 	$quanToCompare = $_GET['quantityToCheck'];

@@ -9,8 +9,7 @@
 					<?php
 						$GLOBALS = $GLOBALS+$_REQUEST;
 						
-						include "executeQuery.php";
-						include "renderListBox.php";
+						include "mysql.php";
 						
 						// renders list box
 						$con = mysql_connect("localhost","root");

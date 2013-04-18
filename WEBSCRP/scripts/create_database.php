@@ -4,7 +4,7 @@
 				
 				$GLOBALS = $GLOBALS+$_REQUEST;
 				
-				include "executeQuery.php";
+				include "mysql.php";
 				
 				// reset basket
 				include "clear_basket.php"; // catch for ajax loads

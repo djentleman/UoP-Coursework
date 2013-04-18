@@ -3,8 +3,7 @@
 	
 	
 	
-	include "executeQuery.php";
-	include "getData.php"; // the getData function
+	include "mysql.php";
 	
 	
 

@@ -38,7 +38,7 @@
 					//for now, no catagories are returned.
 					
 					
-					include "scripts/executeQuery.php";
+					include "scripts/mysql.php";
 					
 					function executeResults($query, $con, $search){
 						if (!$con){
@@ -148,7 +148,6 @@
 				<div class="catagorySearch" Style="padding: 10px">
 					<p>Want To Be More Specific!  Try Advanced Search.</p>
 					<?php
-						include "scripts/renderListBox.php";
 						
 						$query = "SELECT * FROM `catagories`";
 						renderListBoxCatEmpty($query, $con);

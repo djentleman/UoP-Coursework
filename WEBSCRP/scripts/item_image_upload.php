@@ -4,7 +4,7 @@
 				$response["request"] = $_REQUEST;
 				$response["files"] = $_FILES;
 				
-				include "executeQuery.php";
+				include "mysql.php";
 			
 				function getHighestID($con){ // gets the item ID to be worked with
 					
