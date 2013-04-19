@@ -19,7 +19,7 @@
 						
 					function executeResults($query, $con){
 						if (!$con){
-							die('Could not connect: ' . mysql_error());
+							die("Database Not Set Up");
 						}
 						if (mysql_query($query ,$con)){
 							$output = (mysql_query($query ,$con));
@@ -72,7 +72,7 @@
 							}						
 						}
 						else{
-							echo mysql_error();
+							echo "Database Not Set Up";
 						}
 					}
 						
