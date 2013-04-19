@@ -12,9 +12,9 @@ function editItem() {
 	changeListener = function () {
 		if (xhr.readyState === 4) {
 			if (xhr.status === 200) {
-				alert("The Item Has Been Updated");
+				document.getElementById('dynamicText').innerHTML = "Item Successfully Updated";
 			} else {
-				alert("Something Went Wrong, Try Reloading The Page.");
+				document.getElementById('dynamicText').innerHTML = "Something Went Wrong. Try Refreshing The Page";
 			}
 		}
 	};

@@ -75,6 +75,8 @@
 
 					
 					<button onclick="return validateItem()">Submit</button>		
+					
+					<p id="dynamicText"></p>
 
 				
 						

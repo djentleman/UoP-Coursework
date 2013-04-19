@@ -26,7 +26,10 @@
 					?>
 						
 						<!--  DRAG AND DROP HANDLES EVERYTHING <button onclick="">Submit</button> <!-- add oinclick-->
-					</form>
-					
+						
+						
+					<p id="dynamicText"></p>
 				</form>
+					
+
 			</div>

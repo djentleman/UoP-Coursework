@@ -12,9 +12,9 @@ function editCat() {
 	changeListener = function () {
 		if (xhr.readyState === 4) {
 			if (xhr.status === 200) {
-				alert("The Catagory Has Been Updated");
+				document.getElementById('dynamicText').innerHTML = "Category Successfully Updated";
 			} else {
-				alert("Something Went Wrong, Try Reloading The Page.");
+				document.getElementById('dynamicText').innerHTML = "Something Went Wrong, Try Refreshing The Page";
 			}
 		}
 	};

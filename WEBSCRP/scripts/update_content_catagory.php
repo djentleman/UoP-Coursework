@@ -29,5 +29,7 @@
 					
 					<input type="button" name="submit" value="Submit" onclick="return editCat()">
 					
+					<p id="dynamicText"></p>
+					
 				</form>
 			</div>
