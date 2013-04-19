@@ -255,25 +255,20 @@ viewFilmsByFan films userName = do
 -------------VIEW FILMS WITH A CERTAIN ACTOR FROM A CERTAIN PERIOD--------
 
 viewFilmsFromPeriod :: [Film] -> String -> IO ()
-viewFilmsFromPeriod allFilms userName = do
+viewFilmsFromPeriod films userName = do
     putStrLn "Enter The First (Lower) Boundry:"
     putStr ">>>"
     after <- getLine
     putStrLn "Enter The Second (Higher) Boundry:"
     putStr ">>>"
     before <- getLine
-    putStrLn "Enter The Actor:"
-    putStr ">>>"
-    actor <- getLine
-    if (actorExists actor allFilms)
-        then do let filmsByPeriod = inPeriod (read before :: Int) (read after :: Int) actor allFilms
-                if filmsByPeriod == []
-                    then do putStrLn "No Films Found"
-                            pressEnter allFilms userName
-                    else do listFilms filmsByPeriod
-                            pressEnter allFilms userName
-        else do putStrLn "Actor Not In Database"
-                pressEnter allFilms userName
+    actor <- (getActorIO films)
+    let filmsByPeriod = inPeriod (read before :: Int) (read after :: Int) actor films
+    if filmsByPeriod == []
+        then do putStrLn "No Films Found"
+                pressEnter films userName
+        else do listFilms filmsByPeriod
+                pressEnter films userName
 
 -------------STATE YOU'RE A FAN OF A CERTAIN FILM-----------------
 
@@ -302,7 +297,7 @@ getFilmToBecomeFan films = do
 
 printTopFilm :: [Film] -> String -> IO ()
 printTopFilm films userName = do
-    actor <- (getActorForBestFilm films)
+    actor <- (getActorIO films)
     let filmsByActor = filter (actsInFilm actor) films
     let bestFilm = getBestFilm filmsByActor
     putStrLn "Best Film:"
@@ -310,15 +305,15 @@ printTopFilm films userName = do
     pressEnter films userName
 
 
-getActorForBestFilm :: [Film] -> IO String
-getActorForBestFilm films = do
+getActorIO :: [Film] -> IO String
+getActorIO films = do
     putStrLn "Enter Actor:"
     putStr ">>>"
     actor <- getLine
     if (actorExists actor films)
         then do return actor
         else do putStrLn "Actor Not In Database"
-                getActorForBestFilm films
+                getActorIO films
 	
 -----------------PRINT TOP 5 FILMS------------------------------------
 		
