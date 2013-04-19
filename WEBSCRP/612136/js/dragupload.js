@@ -1,3 +1,5 @@
+// modified from: https://github.com/portsoc/dragupload
+
 var registerDragListeners = function (target) {
 	// this makes a drop possible - remove it and drop events cannot occur.
 	target.addEventListener("dragover",
