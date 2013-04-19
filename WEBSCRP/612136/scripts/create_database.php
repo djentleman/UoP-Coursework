@@ -11,7 +11,7 @@
 	
 				
 				function clearImgDir(){
-					$dirname = $_SERVER['DOCUMENT_ROOT'] . "/img/uploads";
+					$dirname = $_SERVER['DOCUMENT_ROOT'] . "/612136/img/uploads";
 					$filesToDelete = $dirname . "/*";
 					// empty the directory
 					$files = glob($filesToDelete); // get file names
