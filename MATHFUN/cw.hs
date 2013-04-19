@@ -369,7 +369,9 @@ printStringArray :: [String] -> IO () -- general 'string printer'
 printStringArray [] = return ()
 printStringArray (str:strs) = do
     putStr str
-    putStr ", "
+    if strs == []
+        then do putStr "."
+        else do putStr ", "
     printStringArray strs
 
 printReleaseYear :: Int -> IO () -- use isInt
