@@ -3,7 +3,9 @@
 
 function updateAndRefresh(itemID){
 	// we can get the quantity from the item id
-	update(itemID); // 
+	if (document.getElementById(itemID + "").className == "validBox"){ // validate
+		update(itemID); // 
+	}
 	return false; // prevent refresh
 }
 

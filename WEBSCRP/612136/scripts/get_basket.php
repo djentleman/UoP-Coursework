@@ -63,7 +63,7 @@
 								$quanID = "" . $currentID; // stringified
 								
 								echo "<div class='basketQuanWrap'>"; // middle
-								echo "<input class='validBox' id='$quanID' onload='return checkValid($itemID , $quanID)' onkeyup='return checkValid($itemID , $quanID)' style='width:22px; height:12px' type='text' value='$quan'>";
+								echo "<input class='validBox' id='$quanID' onfocusout='return updateAndRefresh($itemID)' onload='return checkValid($itemID , $quanID)' onkeyup='return checkValid($itemID , $quanID)' style='width:22px; height:12px' type='text' value='$quan'>";
 								echo "</div>";
 								
 								
@@ -77,7 +77,7 @@
 								echo "</div>";
 								
 								
-								echo "<p class='updateButton' onclick='return updateAndRefresh($itemID)'>update</p>";
+								//echo "<p class='updateButton' onclick='return updateAndRefresh($itemID)'>update</p>";
 								
 								echo "</div>";
 								$count++;
