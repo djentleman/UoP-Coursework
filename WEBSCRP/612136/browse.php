@@ -167,7 +167,7 @@
 					} elseif ($orderID == 2){
 						$orderType = "itemPrice";
 					} else if ($orderID == 1){
-						$orderType = "10000 - itemPrice"; // gives opposite effect
+						$orderType = "-itemPrice"; // gives opposite effect
 					} else {
 						$orderType = "itemName";
 					}
