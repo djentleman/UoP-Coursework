@@ -15,7 +15,7 @@
 				$description = $_GET['description'];
 				
 				
-				if ($new == true){
+				if ($new == "true"){
 					$new = 0;
 				} else {
 					$new = 1;
@@ -40,9 +40,9 @@
 				
 				$query = "INSERT INTO `items` (`itemName`, `itemQuantity`,
 					`itemPrice`, `sellerName`, `isNew` , 
-					`tags`, `itemDescription`,  `inBasket`, `catagoryID`) 
-				VALUES ('$itemName', '$itemQuantity', '$price', '$sellerName', '$new', '$tags', '$description', '1', '$catagoryID')";
-				// inBasket is obsolete
+					`tags`, `itemDescription`,  `searchRelevance`, `catagoryID`) 
+				VALUES ('$itemName', '$itemQuantity', '$price', '$sellerName', '$new', '$tags', '$description', '0', '$catagoryID')";
+				// 0 for search relevance
 				executeQuery($query, $con);
 				
 				

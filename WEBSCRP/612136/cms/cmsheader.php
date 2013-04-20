@@ -35,6 +35,7 @@
 						<li><a class="menuCase" href="delete_content.php">Remove Content</a></li>
 						<li><a class="menuCase" id="fetch" onclick="return confirmAction()">Reset Database</a></li>
 					</ul>
+					<li><a href="../" style="margin-top:10px;" class="menuCase">Log Out</a></li>
 					<li><h2 style="margin-top:10px; margin-right:20px;">CMS</h2></li>
 				</ul>
 			</nav>

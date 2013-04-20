@@ -29,6 +29,11 @@
 			<nav>
 				<ul>
 					<a href="index.php" ><img class="logo" style="margin-top:5px" src="img/Tbuyer.png"></a></img>
+					<li><a class="menuCase" style="margin-top:10px">Log In</a>
+					<ul>
+						<li><a class="menuCase" href="admin/">Admin</a></li>
+						<li><a class="menuCase" href="cms/">CMS</a></li>
+					</ul>
 					<li><a class="menuCase" style="margin-top:10px" href="basket.php">Basket</a></li>
 					<li><h2 style="margin-top:10px; margin-right:20px;">Customer</h2></li>
 				</ul>

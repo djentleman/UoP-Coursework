@@ -33,7 +33,7 @@ var xhrSend = function(method, uri, payload, callback) {
 		xhr.addEventListener(evt, callback[evt].bind(xhr));
 	}
 	
-	// how can i send variables over too?
+	
 	xhr.send(payload);
 };
 

@@ -15,6 +15,7 @@ function executeQuery($query, $con){
 	else{
 		echo "<h3>The Shop Database Isn't Set Up Yet</h3>";
 		echo "<h3>Click Reset Database On The CMS Panel To Fix This Problem</h3>";
+		echo mysql_error();
 	}
 }
 
@@ -28,7 +29,7 @@ function getData($query, $con){
 			// there should only be one row
 			return [$row['itemName'], $row['itemQuantity'], $row['itemPrice'],
 								$row['sellerName'], $row['isNew'], $row['tags'], 
-								$row['itemDescription'], $row['image'], $row['inBasket'], 
+								$row['itemDescription'], $row['image'], $row['searchRelevance'], 
 								$row['catagoryID']]; // array of everything 
 				
 	}

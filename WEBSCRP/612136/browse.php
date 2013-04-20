@@ -7,9 +7,13 @@
 			<h1>Browse Results:</h1>
 			<div class="browseTable">
 				<?php
-					//echo "'$search' was your search criteria";
-					//echo "<br>";
-					//echo "under catagory: $catagory";
+				
+					
+				
+					include "scripts/search_for.php"; // search function for browse
+					
+					
+
 					$catID = -1; // defaults
 					$orderID = -1;
 					$search = $_GET['search']; // init var
@@ -20,20 +24,55 @@
 						$orderID = $_GET['orderID'];
 					}
 					
-					// ordering
 					
-					function length($str){
-						$i = 0;
-						while (isset($str{$i})){
-							$char = $str{$i};
-							$i++; 
+					
+					
+					
+					function relevanceConfig($query, $con, $search){
+						if (!$con){
+							die('Could not connect: ' . mysql_error());
 						}
-						return $i;
+						if (mysql_query($query ,$con)){
+							$output = (mysql_query($query ,$con));
+							while($row = mysql_fetch_array($output)){
+								// get search relevance for each individual item
+								$searchArr = explode(" ", $search);
+								$relevance = 0;
+								$itemID = $row['itemID'];
+								// title is weighted 5
+								// tags are weighted 2
+								// description is weighted 1
+								foreach($searchArr as &$currentSearch){
+									if (search_for($row['itemName'], $currentSearch)){
+										$relevance += 5;
+									}
+									if (search_for($row['tags'], $currentSearch)){
+										$relevance += 2;
+									}
+									if (search_for($row['itemDescription'], $currentSearch)){
+										$relevance += 1;
+									}
+								}
+								if ($search == ""){
+									$relevance = 0; // if all items are being returned, then no ordering
+								}
+								
+								$updateQuery = "UPDATE `items`
+								SET `searchRelevance`='$relevance'
+								WHERE `itemID`='$itemID'";
+								executeQuery($updateQuery, $con);
+							}						
+						}
+						else{
+							echo mysql_error();
+						}
+						
 					}
 					
 					
-				
-					include "scripts/search_for.php"; // search function for browse
+					
+					
+					
 					
 					//for now, no catagories are returned.
 					
@@ -54,6 +93,14 @@
 								if ($search != ""){
 								
 								
+									$success = false;
+									$searchArr = explode(" ", $search); // splits by space
+									foreach($searchArr as &$currentSearch){
+										if(search_for($row['itemName'], $currentSearch) || search_for($row['tags'], $currentSearch) ||search_for($row['itemDescription'], $currentSearch)){
+											$success = true; // search success
+										}
+									}
+									
 									
 								
 									//echo "search is not empty";
@@ -62,17 +109,14 @@
 									//echo "$bool";
 									
 								
-									if(search_for($row['itemName'], $search) || search_for($row['tags'], $search)){
+									if($success){
 									
 										$idParam = $row['itemID'];
 									
 										
 										echo "<div class='browseDiv'  onClick='goToBuy($idParam)'>";
-										include "scripts/browseButton.php"; // defines the variables
+										include "scripts/browseButton.php"; // renders the button
 										echo "</div>";
-										
-										//variables to pass
-										// TODO pass the rest
 										
 										
 									}
@@ -84,7 +128,7 @@
 									$idParam = $row['itemID'];
 									
 									echo "<div class='browseDiv' onClick='goToBuy($idParam)'>";
-									include "scripts/browseButton.php"; // defines the variables
+									include "scripts/browseButton.php"; // renders the button
 									echo "</div>";
 									
 								}
@@ -112,10 +156,15 @@
 					// "SELECT * FROM `items` WHERE `itemName`='$search'"
 					//if you leave the query black it returns all
 					
+					$query = "SELECT * FROM `items`";
+					relevanceConfig($query, $con, $search);
+					
 					
 					
 					// configure orderType
-					if ($orderID == 2){
+					if ($orderID == 3){
+						$orderType = "-searchRelevance";
+					} elseif ($orderID == 2){
 						$orderType = "itemPrice";
 					} else if ($orderID == 1){
 						$orderType = "10000 - itemPrice"; // gives opposite effect
@@ -164,6 +213,7 @@
 							<option value="0">Alphabetic</option>
 							<option value="1">Price - Highest To Lowest</option>
 							<option value="2">Price - Lowest To Highest</option>
+							<option value="3">Relevance</option>
 						</select>
 					</p>
 				</div>
