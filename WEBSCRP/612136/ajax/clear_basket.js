@@ -2,13 +2,13 @@
 
 
 function clearAndRefresh(){
-	clear(); // uploads new comment
+	clearBasket(); // uploads new comment
 	//refresh(); // refreshes current comments
 	return false; // prevent refresh
 }
 
 
-function clear() {
+function clearBasket() {
 	//uploads new comment
 
 	
@@ -26,7 +26,7 @@ function clear() {
 			if (xhr.status === 200) {
 				
 
-				refresh(); // Refreshes page
+				refreshFromClear(); // Refreshes page
 
 			} else {
 				target.innerHTML = "<p>Something Went Wrong</p>";
@@ -48,7 +48,7 @@ function clear() {
 	
 };
 
-function refresh(){
+function refreshFromClear(){
 	//re-renders comments
 	
 	

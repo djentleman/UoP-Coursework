@@ -1,12 +1,74 @@
 	<?php 
-		include "adminheader.php" 
+		include "adminheader.php";
+		include "../scripts/mysql.php";
 	?>
 	
 	
 		<div class="adminInfo">
 			<?php
 				// data set goes here
-				echo "<input id='test' type='hidden' name='Test2' value='5'>";
+				function getDataSets($query, $con){
+					if (!$con){
+						die('Could not connect: ' . mysql_error());
+					}
+					if (mysql_query($query ,$con)){
+						$output = (mysql_query($query ,$con));
+						$dataSetItems = array();
+						$dataSetValues = array();
+						while($row = mysql_fetch_array($output)){
+							// push itemID to dataSetItems
+							// push quantity sold to dataSetValues
+							$orderQuantity = $row['orderQuantity'];
+							$itemID = $row['itemID'];
+							array_push($dataSetItems, $itemID);
+							array_push($dataSetValues, $orderQuantity);
+						}
+						return array($dataSetItems, $dataSetValues);
+						
+					}
+					else{
+						echo mysql_error();
+					}
+						
+				}
+				
+				
+				$con = mysql_connect("localhost","root");
+				
+				$query = "USE `tbuyer`";
+				executeQuery($query, $con);
+				
+				$query = "SELECT * FROM `orders`";
+				$data = getDataSets($query, $con);
+				
+				generateData($data);
+				
+				function generateData($dataSets){
+					$dataSetItemId = $dataSets[0];
+					$dataSetQuantity = $dataSets[1];
+					
+					// collapse the data sets
+					
+					$len = count($dataSetItemId);
+					
+					echo "<input type='hidden' id='size' value='$len'>";
+					
+					for($index = 0; $index < $len; $index++){
+						$currentId = $dataSetItemId[$index];
+						$currentQuan = $dataSetQuantity[$index];
+						$itemId = "id" . $index;
+						$quanId = "quan" . $index;
+						echo "<input type='hidden' id='$itemId' value='$currentId'>";
+						echo "<input type='hidden' id='$quanId' value='$currentQuan'>";
+					}
+					
+				}
+				
+				//echo json_encode($data);
+				
+				mysql_close($con);
+				
+
 			?>
 		</div>
 		
@@ -38,9 +100,6 @@
 					['Pepperoni', 2]
 				]);
 				data.addRows([['Test', 3]]);
-				var currentName = document.getElementById('test').name;
-				var currentVal = document.getElementById('test').value;
-				data.addRows([[currentName, parseInt(currentVal)]]);
 
 				// Set chart options
 				var options = {'title':'Most Popular Items In Store',
