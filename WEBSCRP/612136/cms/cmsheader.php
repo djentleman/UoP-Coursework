@@ -28,6 +28,7 @@
 			<nav>
 				<ul>
 					<a href="index.php" ><img class="logo" style="margin-top:5px" src="../img/Tbuyer.png"></a></img>
+					<li><a href="../" style="margin-top:10px;" class="menuCase">Log Out</a></li>
 					<li><a class="menuCase" style="margin-top:10px">Manage Content</a>
 					<ul>
 						<li><a class="menuCase" href="upload.php">Upload Content</a></li>
@@ -35,7 +36,6 @@
 						<li><a class="menuCase" href="delete_content.php">Remove Content</a></li>
 						<li><a class="menuCase" id="fetch" onclick="return confirmAction()">Reset Database</a></li>
 					</ul>
-					<li><a href="../" style="margin-top:10px;" class="menuCase">Log Out</a></li>
 					<li><h2 style="margin-top:10px; margin-right:20px;">CMS</h2></li>
 				</ul>
 			</nav>
