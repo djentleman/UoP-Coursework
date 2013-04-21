@@ -5,7 +5,7 @@
 	
 		<div class="adminInfo">
 			<?php
-				// hidden data goes here
+				// data set goes here
 				echo "<input id='test' type='hidden' name='Test2' value='5'>";
 			?>
 		</div>
