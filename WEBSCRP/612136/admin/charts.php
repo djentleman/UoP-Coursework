@@ -1,10 +1,13 @@
 	<?php 
+		// this page uses the google graph API
+		// https://developers.google.com/chart/
+	
 		include "adminheader.php";
 		include "../scripts/mysql.php";
 	?>
 	
 	
-		<div class="data">
+		<div class="dataSets">
 			<?php
 				// data set goes here
 				function getDataSets($query, $con){
@@ -38,7 +41,7 @@
 				$query = "USE `tbuyer`";
 				executeQuery($query, $con);
 				
-				$query = "SELECT * FROM `orders`";
+				$query = "SELECT * FROM `orders` ORDER BY `orderQuantity`";
 				$data = getDataSets($query, $con);
 				
 				generateData($data, $con);
@@ -58,6 +61,8 @@
 					$oldQuan = $dataSets[1];
 					$newId = array();
 					$newQuan = array();
+					$cat = array();
+					$catFreq = array();
 					$len = count($oldId);
 					for ($index = 0; $index < $len; $index++){
 						// check if it exists
@@ -79,20 +84,38 @@
 							array_push($newId, $currentName);
 							array_push($newQuan, $currentQuan);
 						}
+						
+						$catId = getData($newQuery, $con)[9];
+						$catName = getCatName($catId, $con);
+						
+						$doesExist = exists($catName, $cat);
+						if ($doesExist){
+							// exists, fold
+							// add quantity
+							$indexForAdd = array_search($catName, $cat);
+							$catFreq[$indexForAdd] += $currentQuan;
+						} else {
+							// new, add
+							array_push($cat, $catName);
+							array_push($catFreq, $currentQuan);
+						}
 					}
-					return array($newId, $newQuan);
+					return array($newId, $newQuan, $cat, $catFreq);
 				}
 				
 				function generateData($dataSets, $con){
 					$dataSets = collapseDataSets($dataSets, $con);
 					$dataSetItemId = $dataSets[0];
 					$dataSetQuantity = $dataSets[1];
+					$dataSetCatName = $dataSets[2];
+					$dataSetCatFreq = $dataSets[3];
 					
 					
 					
 					
 					$len = count($dataSetItemId);
 					
+					echo "<!-- Item Data Sets -->";
 					echo "<input type='hidden' id='size' value='$len'>";
 					
 					for($index = 0; $index < $len; $index++){
@@ -102,6 +125,20 @@
 						$quanId = "quan" . $index;
 						echo "<input type='hidden' id='$itemId' value='$currentId'>";
 						echo "<input type='hidden' id='$quanId' value='$currentQuan'>";
+					}
+					
+					$len = count($dataSetCatName);
+					
+					echo "<!-- Category Data Sets -->";
+					echo "<input type='hidden' id='catSize' value='$len'>";
+					
+					for($index = 0; $index < $len; $index++){
+						$currentCat = $dataSetCatName[$index];
+						$currentFreq = $dataSetCatFreq[$index];
+						$catId = "cat" . $index;
+						$freqId = "freq" . $index;
+						echo "<input type='hidden' id='$catId' value='$currentCat'>";
+						echo "<input type='hidden' id='$freqId' value='$currentFreq'>";
 					}
 					
 				}
@@ -122,19 +159,22 @@
 			google.load('visualization', '1.0', {'packages':['corechart']});
 
 			// Set a callback to run when the Google Visualization API is loaded.
-			google.setOnLoadCallback(drawChart);
-			//google.setOnLoadCallback(drawChart2);
+			google.setOnLoadCallback(drawItemChart);
+			google.setOnLoadCallback(drawCatChart);
 
 			// Callback that creates and populates a data table,
 			// instantiates the pie chart, passes in the data and
 			// draws it.
-			function drawChart() {
+			function drawItemChart() {
 
 				// Create the data table.
 				var data = new google.visualization.DataTable();
 				data.addColumn('string', 'Product');
 				data.addColumn('number', 'Sold');
 				var len = document.getElementById('size').value;
+				if (len > 15){
+					len = 15; //regulate
+				}
 				for(var i = 0; i < len; i++){
 					var name = "id" + i;
 					var quan = "quan" + i;
@@ -153,6 +193,34 @@
 				chart.draw(data, options);
 			}
 			
+			function drawCatChart() {
+
+				// Create the data table.
+				var data = new google.visualization.DataTable();
+				data.addColumn('string', 'Product');
+				data.addColumn('number', 'Sold');
+				var len = document.getElementById('catSize').value;
+				if (len > 15){
+					len = 15; //regulate
+				}
+				for(var i = 0; i < len; i++){
+					var name = "cat" + i;
+					var freq = "freq" + i;
+					var currentName = document.getElementById(name).value;
+					var currentQuan = document.getElementById(freq).value;
+					data.addRows([[currentName, parseInt(currentQuan)]]);
+				}
+
+				// Set chart options
+				var options = {'title':'Most Popular Categories In Store',
+						   'width':1000,
+						   'height':700};
+
+				// Instantiate and draw our chart, passing in some options.
+				var chart = new google.visualization.PieChart(document.getElementById('chart_div2'));
+				chart.draw(data, options);
+			}
+			
 
 		</script>
 		
@@ -160,6 +228,7 @@
 			<h1>Graphical Insights</h1>
 		
 			<div style="margin-left:20%" id="chart_div"></div>
+			<div style="margin-left:20%" id="chart_div2"></div>
 
 		</div>
 	</body>
