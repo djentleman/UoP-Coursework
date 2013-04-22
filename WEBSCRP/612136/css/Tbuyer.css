@@ -18,7 +18,7 @@ body
 	margin-right:10%;
 	margin-left:10%;
 	overflow: auto;
-	min-width: 950px;
+	min-width: 700px;
 	border-radius: 25px;
 	-moz-border-radius: 25px;
 	padding-bottom:20px;
@@ -442,7 +442,7 @@ header
 	position: fixed;
 	width:100%;
 	right:0px;
-	min-width: 900px;
+	min-width: 790px;
 	top: 0px;
 	height: 50px;
 	background-color:#FFCC88;

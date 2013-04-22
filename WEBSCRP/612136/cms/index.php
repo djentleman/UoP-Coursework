@@ -106,7 +106,7 @@
 							echo "</div>";
 							
 							echo "<div class='buyerInfoWrap'>";
-							echo "Seller Name";
+							echo "Seller";
 							echo "</div>";
 							
 							echo "<div class='buyerInfoWrap'>";

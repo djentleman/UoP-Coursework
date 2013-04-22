@@ -5,7 +5,6 @@
 		<title> Tbuyer </title>
 		<meta http-equiv="Content-Script-Type" content="text/javascript">
 		<link rel="stylesheet" type="text/css" href="css/Tbuyer.css">
-		<script src="ajax/reset.js"></script> <!-- AJAX for DB reset -->
 		<script src="js/form_browse.js"></script> <!-- JS for browse -->
 		
 		
@@ -40,7 +39,7 @@
 			</nav>
 			<form class="searchForm" action="browse.php"> <!-- action still needs to be 'beowse.php' -->
 				<div class="search headerSearch">
-					<input type="text" id="searchValue" name="search" value="">
+					<input style="width:120px" type="text" id="searchValue" name="search" value="">
 					<button onclick="browse()">Search</button> <!-- USES JS NOW -->
 					<!--<input type="submit" name="submit" value="Search"> -->
 				</div>

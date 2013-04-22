@@ -227,8 +227,8 @@
 		<div class="mainContent">
 			<h1>Graphical Insights</h1>
 		
-			<div style="margin-left:20%" id="chart_div"></div>
-			<div style="margin-left:20%" id="chart_div2"></div>
+			<div style="float:left" id="chart_div"></div>
+			<div style="float:left" id="chart_div2"></div>
 
 		</div>
 	</body>
