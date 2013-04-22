@@ -29,6 +29,105 @@
 				}
 				return false;
 			}
+			
+			function checkValidEmail(){
+				// buyerEmail validation
+				
+				// id will always be buyerEmail
+				
+				var target = document.getElementById('buyerEmail');
+				var email = target.value;
+				
+				var regex = new RegExp("^(_|[A-Z]|[a-z]|[0-9])+@(_|[A-Z]|[a-z]|[0-9])+[.]([a-z]{2,}[.][a-z]{2,}|[a-z]{2,})$");
+				var valid = regex.test(email);
+				
+				if (valid){
+					target.className = "validBox";
+				} else {
+					target.className = "invalidBox";
+				}
+				//console.log(valid);
+				return false;
+			}
+			
+			function checkValidPhone(){
+				// buyerPhoneNo validation
+				
+				// id will always be buyerPhoneNo
+				
+				var target = document.getElementById('buyerPhoneNo');
+				var phoneNo = target.value;
+				
+				var regex = new RegExp("^[0-9]{5}[ ]?[0-9]{6}$");
+				var valid = regex.test(phoneNo);
+				
+				if (valid){
+					target.className = "validBox";
+				} else {
+					target.className = "invalidBox";
+				}
+				//console.log(valid);
+				return false;
+			}
+			
+			function checkValidPostcode(){
+				// buyerPostcode validation
+				
+				// id will always be buyerPostcode
+				
+				var target = document.getElementById('buyerPC');
+				var postcode = target.value;
+				
+				var regex = new RegExp("^([A-Z]|[0-9]){3,4}[ ]([A-Z]|[0-9]){3,4}$");
+				var valid = regex.test(postcode);
+				
+				if (valid){
+					target.className = "validBox";
+				} else {
+					target.className = "invalidBox";
+				}
+				console.log(valid);
+				return false;
+			}
+			
+			function validate(){
+				// check class of every text box, if valid then call function, else validate
+				var isValid = true;
+				if (document.getElementById('buyerName').className == "invalidBox"){
+					// invalid
+					isValid = false;
+				}
+				
+				if (document.getElementById('buyerAddress').className == "invalidBox"){
+					// invalid
+					isValid = false;
+				}
+				
+				if (document.getElementById('buyerPC').className == "invalidBox"){
+					// invalid
+					isValid = false;
+				}
+				
+				if (document.getElementById('buyerEmail').className == "invalidBox"){
+					// invalid
+					isValid = false;
+				}
+				
+				
+				if (document.getElementById('buyerPhoneNo').className == "invalidBox"){
+					// invalid
+					isValid = false;
+				}
+				
+				if (isValid){
+					document.getElementById('invalidResponse').innerHTML = "";
+					return uploadOrdersAndRefresh();
+				}
+				
+				document.getElementById('invalidResponse').innerHTML = "Invalid Input";
+				return false;
+			}
+			
 		</script>
 		
 		
@@ -48,17 +147,19 @@
 					<textarea onkeyup="return checkValid(false, 'buyerAddress');" class="invalidBox" id="buyerAddress" cols="25" rows="5"></textarea>
 					
 					<p>Enter Post Code*:</p>
-					<input onkeyup="return checkValid(false, 'buyerPC');" class="invalidBox" id="buyerPC" type="text">
+					<input onkeyup="return checkValidPostcode();" class="invalidBox" id="buyerPC" type="text">
 					
 					<p>Enter Email*:</p>
-					<input onkeyup="return checkValid(false, 'buyerEmail');" class="invalidBox" id="buyerEmail" type="text">
+					<input onkeyup="return checkValidEmail();" class="invalidBox" id="buyerEmail" type="text">
 					<p></p>
 					
 					<p>Enter Phone Number*:</p>
-					<input onkeyup="return checkValid(true, 'buyerPhoneNo');" class="invalidBox" id="buyerPhoneNo" type="text">
+					<input onkeyup="return checkValidPhone();" class="invalidBox" id="buyerPhoneNo" type="text">
 					<p></p>
 					
-					<button onclick="return uploadOrdersAndRefresh()">Submit Order</button> <!-- que JS function to handle -->
+					<button onclick="return validate();">Submit Order</button> <!-- que JS function to handle -->
+					
+					<p id="invalidResponse"></p>
 				</form>
 				<div class="orderInfo">
 					<?php

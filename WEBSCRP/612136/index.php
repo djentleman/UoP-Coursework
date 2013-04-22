@@ -14,6 +14,7 @@
 			<br>
 			<?php
 				echo "hello";
+				//phpinfo(); 
 			?>
 			<br>
 			<br>
