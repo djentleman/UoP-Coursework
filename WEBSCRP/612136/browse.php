@@ -76,6 +76,16 @@
 					
 					//for now, no catagories are returned.
 					
+					function removeMinus($str){
+						$newStr = "";
+						$len = strlen($str);
+						for($i = 0; $i < $len; $i++){
+							if ($str[$i] != "-"){
+								$newStr .= $str[$i];
+							}
+						}
+						return $newStr;
+					}
 					
 					include "scripts/mysql.php";
 					
@@ -83,6 +93,7 @@
 						if (!$con){
 							die('Could not connect: ' . mysql_error());
 						}
+					
 						if (mysql_query($query ,$con)){
 							$output = (mysql_query($query ,$con));
 							$count = 0;
@@ -94,11 +105,34 @@
 								
 								
 									$success = false;
+									$notFlag = false;
 									$searchArr = explode(" ", $search); // splits by space
+									$count = 0;
 									foreach($searchArr as &$currentSearch){
-										if(search_for($row['itemName'], $currentSearch) || search_for($row['tags'], $currentSearch) ||search_for($row['itemDescription'], $currentSearch)){
-											$success = true; // search success
+										if ($currentSearch[0] == "-"){
+											$notFlag = true;
 										}
+										$currentSearch = removeMinus($currentSearch);
+										
+										$currentSuccess = false;
+										
+										if(search_for($row['itemName'], $currentSearch) || search_for($row['tags'], $currentSearch) ||search_for($row['itemDescription'], $currentSearch)){
+											$currentSuccess = true; // search success
+										}
+										//echo $row['itemName'];
+										//echo $notFlag;
+										//echo $currentSuccess;
+										//echo $currentSearch;
+										//echo "-------";
+										
+										if ($notFlag){
+											$currentSuccess = !$currentSuccess;
+											$success = $success && $currentSuccess;
+											
+										} else {
+											$success = $success || $currentSuccess;
+										}
+										$count++;
 									}
 									
 									
