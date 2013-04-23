@@ -3,7 +3,7 @@
 					$GLOBALS = $GLOBALS+$_REQUEST;
 					
 
-					function execute($query, $con){ //executeQuery
+					function executeQ($query, $con){ //executeQuery
 					// needs tidying.
 					if (!$con){
 						die('Could not connect: ' . mysql_error());
@@ -44,7 +44,7 @@
 				
 				
 					$query = "USE `tbuyer`";
-					execute($query, $con);
+					executeQ($query, $con);
 					
 
 					

@@ -67,7 +67,7 @@
 					return false;
 				}
 				if (mysql_query($query ,$con)){
-					return false;
+					return true;
 				}
 				else{
 					return false;
