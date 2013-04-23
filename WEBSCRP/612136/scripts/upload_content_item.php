@@ -29,7 +29,8 @@
 						
 						
 					<p>Tag(s) (seperate with commas)</p>
-					<textarea cols="25" rows="5" id="tags" name="tags"></textarea>
+					<textarea onkeyup="return tagsKeyDown()" cols="40" rows="8" id="tags" name="tags"></textarea>
+					<p id="tagsRemaining" class="charRemaining">500 Characters Remaining</p>
 						
 					<p>Catagory*</p>
 					
@@ -38,22 +39,21 @@
 						
 						include "mysql.php";
 						
-						
-						
 						$con = mysql_connect("localhost","root");
 				
 						$query = "USE `tbuyer`";
 						executeQuery($query, $con);
 						
 						$query = "SELECT * FROM `catagories`";
-						renderListBoxCat($query, $con);
+						renderListBoxCatMessage($query, $con, "Please Select");
 						
 						
 						mysql_close($con);
 					?>
 						
 					<p>Description (MAX 1000 characters)</p>
-					<textarea cols="25" rows="5" id="desc" name="description"></textarea>
+					<textarea onkeyup="return descKeyDown()" cols="40" rows="8" id="desc" name="description"></textarea>
+					<p id="descRemaining" class="charRemaining">1000 Characters Remaining</p>
 						
 					
 

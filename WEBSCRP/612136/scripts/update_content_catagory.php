@@ -18,7 +18,7 @@
 						executeQuery($query, $con);
 						
 						$query = "SELECT * FROM `catagories`";
-						renderListBoxCat($query, $con);
+						renderListBoxCatMessage($query, $con, "Please Select");
 						
 						mysql_close($con);
 					?>
@@ -27,7 +27,7 @@
 					<p>Catagory Name*</p>
 					<input type="text" id="catName" name="catagoryName" value="">
 					
-					<input type="button" name="submit" value="Submit" onclick="return editCat()">
+					<input type="button" name="submit" value="Submit" onclick="return validateCat()">
 					
 					<p id="dynamicText"></p>
 					

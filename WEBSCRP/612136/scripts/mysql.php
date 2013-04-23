@@ -113,7 +113,7 @@ function renderListBoxCat($query, $con){
 	}
 }
 						
-function renderListBoxCatEmpty($query, $con){
+function renderListBoxCatMessage($query, $con, $message){
 	if (!$con){
 		die('Could not connect: ' . mysql_error());
 	}
@@ -124,7 +124,7 @@ function renderListBoxCatEmpty($query, $con){
 		$output = (mysql_query($query ,$con));
 								
 		echo "<select id='catagoryList' name='catagoryID'>";
-		echo "<option value='-1'>No Catagory</option>"; // -1 fits with search filter
+		echo "<option value='-1'>$message</option>"; // -1 fits with search filter
 								
 		while($row = mysql_fetch_array($output)){
 			$val = $row['catagoryID'];
@@ -143,7 +143,32 @@ function renderListBoxCatEmpty($query, $con){
 }
 
 
-
+function renderListBoxMessage($query, $con, $message){
+	if (!$con){
+		die('Could not connect: ' . mysql_error());
+	}
+	if (mysql_query($query ,$con)){
+		//render list box
+								
+								
+		$output = (mysql_query($query ,$con));
+								
+		echo "<select id='itemList' name='itemID'>";
+		echo "<option value='-1'>$message</option>";
+		// list box name is ID
+		//list box JS ID is always 'list'
+								
+		while($row = mysql_fetch_array($output)){
+			$val = $row['itemID'];
+			$nam = $row['itemName'];
+			echo "<option value=$val>$nam</option>";
+		}
+		echo "</select>";
+	}
+	else{
+		echo mysql_error();
+	}
+}
 
 
 

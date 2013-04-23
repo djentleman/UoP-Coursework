@@ -88,7 +88,7 @@
 				} // else keep it the same
 				
 				
-				if ($catagoryID != ""){
+				if ($catagoryID != -1){
 					$query = "UPDATE `items`
 					SET `catagoryID`='$catagoryID'
 					WHERE `itemID`='$itemID'";

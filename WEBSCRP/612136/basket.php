@@ -3,7 +3,10 @@
 		
 		if (!isset($_SESSION['basket'])){
 			$_SESSION['basket'] = new Basket();
-		} // init
+			//echo $_SESSION['basket'];
+		} else {
+			//$_SESSION['basket'] = new Basket();
+		}// init
 		if (!isset($_SESSION['flag'])){
 			$_SESSION['flag'] = false; // init, unlocked
 		}
@@ -32,7 +35,10 @@
 			<br>
 			
 			
+			
 					<?php
+					
+									//echo json_encode($_SESSION);
 						// adding new items>
 						// validation uses a session flag
 						if (isset($_POST['itemID'])){ // has a new thing just beed added?
@@ -41,6 +47,7 @@
 								$itemIdToAdd = $_POST['itemID'];
 								$itemQuant = $_POST['quanToBuy'];
 								if (is_numeric($itemQuant)){
+									//echo json_encode($_SESSION);
 									$_SESSION['basket']->addItem($itemIdToAdd, intval($itemQuant));
 									$_SESSION['flag'] = true; // true = locked
 								}

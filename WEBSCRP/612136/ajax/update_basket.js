@@ -13,7 +13,7 @@ function updateAndRefresh(itemID){
 function update(itemID) {
 	//uploads new comment
 
-	
+	console.log("test");
 
 	// declare the two variables that will be used
 	var xhr, target, changeListener;
@@ -26,12 +26,13 @@ function update(itemID) {
 	changeListener = function () {
 		if (xhr.readyState === 4) {
 			if (xhr.status === 200) {
+				console.log(xhr.status);
 				
 
-				refresh(); // Refreshes page
+				refreshUpdate(); // Refreshes page
 
 			} else {
-				target.innerHTML = "<p>Something Went Wrong</p>";
+				//target.innerHTML = "<p>Something Went Wrong</p>";
 			}
 		} else if (xhr.readyState != 0 && xhr.readyState != 4){
 			//target.innerHTML = "<p> Loading... </p>";
@@ -54,10 +55,10 @@ function update(itemID) {
 	
 };
 
-function refresh(){
+function refreshUpdate(){
 	// re-renders basket
 	// same code as clear basket, as variables and hardled through session
-	
+	console.log("refreshing");
 	
 	var xhr, target, changeListener;
 	
@@ -69,16 +70,16 @@ function refresh(){
 	changeListener = function () {
 		if (xhr.readyState === 4) {
 			if (xhr.status === 200) {
-				
+				console.log("hello");
 
 
 				target.innerHTML = xhr.responseText; // rendered text from php
 
 			} else {
-				target.innerHTML = "<p>Something Went Wrong</p>";
+				//target.innerHTML = "<p>Something Went Wrong</p>";
 			}
 		} else if (xhr.readyState != 0 && xhr.readyState != 4){
-			target.innerHTML = "<p> Loading... </p>";
+			//target.innerHTML = "<p> Loading... </p>";
 		}
 	};
 	

@@ -199,7 +199,7 @@
 					<?php
 						
 						$query = "SELECT * FROM `catagories`";
-						renderListBoxCatEmpty($query, $con);
+						renderListBoxCatMessage($query, $con, "All Categories");
 						
 						mysql_close($con);
 					?>

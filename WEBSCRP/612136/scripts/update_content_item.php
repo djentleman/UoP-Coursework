@@ -21,7 +21,7 @@
 						executeQuery($query, $con);
 						
 						$query = "SELECT * FROM `items`";
-						renderListBox($query, $con);
+						renderListBoxMessage($query, $con, "Please Select");
 						
 						
 						mysql_close($con);
@@ -50,7 +50,8 @@
 						
 						
 					<p>Tag(s) (seperate with commas)</p>
-					<textarea id="tags" cols="25" rows="5" name="tags"></textarea>
+					<textarea onkeyup="return tagsKeyDown()" id="tags" cols="40" rows="8" name="tags"></textarea>
+					<p id="tagsRemaining" class="charRemaining">500 Characters Remaining</p>
 						
 					<p>Catagory*</p>
 					
@@ -64,14 +65,15 @@
 						executeQuery($query, $con);
 						
 						$query = "SELECT * FROM `catagories`";
-						renderListBoxCat($query, $con);
+						renderListBoxCatMessage($query, $con, "Keep The Same");
 						
 						
 						mysql_close($con);
 					?>
 						
 					<p>Description (MAX 1000 characters)</p>
-					<textarea id="desc" cols="25" rows="5" name="description"></textarea>
+					<textarea onkeyup="return descKeyDown()" id="desc" cols="40" rows="8" name="description"></textarea>
+					<p id="descRemaining" class="charRemaining">1000 Characters Remaining</p>
 
 					
 					<button onclick="return validateItem()">Submit</button>		

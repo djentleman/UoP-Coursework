@@ -32,6 +32,19 @@
 					valid = false;
 				}
 				
+				if (document.getElementById('tags').className == "invalidBox"){
+					valid = false;
+				}
+				
+				if (document.getElementById('desc').className == "invalidBox"){
+					valid = false;
+				}
+				
+				
+				if (document.getElementById('catagoryList').value == "-1"){
+					valid = false;
+				}
+				
 				if (document.getElementById('sellerName').value == ""){
 					valid = false;
 				}
@@ -44,9 +57,6 @@
 			}
 			
 			function checkValidPrice(){
-				// buyerPostcode validation
-				
-				// id will always be buyerPostcode
 				
 				var target = document.getElementById('price');
 				var price = target.value;
@@ -62,6 +72,39 @@
 				console.log(valid);
 				return false;
 			}
+			
+			function checkValidDesc(){
+				var target = document.getElementById('desc');
+				var desc = target.value;
+				
+				var regex = new RegExp("^(.{0,999})?$");
+				var valid = regex.test(desc);
+				
+				if (valid){
+					target.className = "";
+				} else {
+					target.className = "invalidBox";
+				}
+				console.log(valid);
+				return false;
+			}
+			
+			function checkValidTags(){
+				var target = document.getElementById('tags');
+				var tags = target.value;
+				
+				var regex = new RegExp("^(.{0,499})?$");
+				var valid = regex.test(tags);
+				
+				if (valid){
+					target.className = "";
+				} else {
+					target.className = "invalidBox";
+				}
+				console.log(valid);
+				return false;
+			}
+			
 			
 			function validateCat(){
 				var valid = true;
@@ -103,6 +146,43 @@
 				}
 				return false;
 			}
+			
+			function updateTagsRemaining(){
+				// get number of characters
+				var currentText = document.getElementById('tags').value;
+				var len = currentText.length;
+				var remaining = 500 - len;
+				
+				var message = remaining + " Characters Remaining";
+				console.log(message);
+				document.getElementById('tagsRemaining').innerHTML = message;
+				return false;
+			}
+			
+			function tagsKeyDown(){
+				updateTagsRemaining();
+				checkValidTags()
+				return false;
+			}
+			
+			function updateDescRemaining(){
+				// get number of characters
+				var currentText = document.getElementById('desc').value;
+				var len = currentText.length;
+				var remaining = 1000 - len;
+				
+				var message = remaining + " Characters Remaining";
+				console.log(message);
+				document.getElementById('descRemaining').innerHTML = message;
+				return false;
+			}
+			
+			function descKeyDown(){
+				updateDescRemaining();
+				checkValidDesc()
+				return false;
+			}
+			
 			
 		</script>
 
