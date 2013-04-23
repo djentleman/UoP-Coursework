@@ -38,7 +38,7 @@
 				var target = document.getElementById('buyerEmail');
 				var email = target.value;
 				
-				var regex = new RegExp("^(_|[A-Z]|[a-z]|[0-9])+@(_|[A-Z]|[a-z]|[0-9])+[.]([a-z]{2,}[.][a-z]{2,}|[a-z]{2,})$");
+				var regex = new RegExp("^(.|_|[A-Z]|[a-z]|[0-9])+@(_|[A-Z]|[a-z]|[0-9])+[.]([a-z]{2,4}[.][a-z]{2,4}|[a-z]{2,4})$");
 				var valid = regex.test(email);
 				
 				if (valid){

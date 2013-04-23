@@ -38,7 +38,7 @@ function buyItems(basketSize) {
 				return true;
 
 			} else {
-				target.innerHTML = "<p>Something Went Wrong</p>";
+				//target.innerHTML = "<p>Something Went Wrong</p>";
 			}
 		} else if (xhr.readyState != 0 && xhr.readyState != 4){
 			//target.innerHTML = "<p> Loading... </p>";
@@ -98,7 +98,7 @@ function clear() {
 				return refresh(); // Refreshes page
 
 			} else {
-				target.innerHTML = "<p>Something Went Wrong</p>";
+				//target.innerHTML = "<p>Something Went Wrong</p>";
 			}
 		} else if (xhr.readyState != 0 && xhr.readyState != 4){
 			//target.innerHTML = "<p> Loading... </p>";
@@ -133,14 +133,14 @@ function refresh(){
 				
 
 
-				target.innerHTML = xhr.responseText; // rendered text from php
+				//target.innerHTML = xhr.responseText; // rendered text from php
 				
 
 			} else {
 				target.innerHTML = "<p>Something Went Wrong</p>";
 			}
 		} else if (xhr.readyState != 0 && xhr.readyState != 4){
-			target.innerHTML = "<p> Loading... </p>";
+			//target.innerHTML = "<p> Loading... </p>";
 		}
 	};
 	

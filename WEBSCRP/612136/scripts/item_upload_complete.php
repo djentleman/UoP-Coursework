@@ -16,9 +16,9 @@
 				
 				
 				if ($new == "true"){
-					$new = 1;
-				} else {
 					$new = 0;
+				} else {
+					$new = 1;
 				}
 				
 				echo $new;
