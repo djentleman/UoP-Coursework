@@ -4,7 +4,20 @@
 				
 				$GLOBALS = $GLOBALS+$_REQUEST;
 				
-				include "mysql.php";
+				function execute($query, $con){
+					
+				if (!$con){
+					die('Could not connect: ' . mysql_error());
+				}
+				if (mysql_query($query ,$con)){
+					//echo "Command Executed.";
+				}
+				else{
+					echo "<h3>The Shop Database Isn't Set Up Yet</h3>";
+					echo "<h3>Click Reset Database On The CMS Panel To Fix This Problem</h3>";
+					echo mysql_error();
+				}
+}
 				
 				// reset basket
 				include "clear_basket.php"; // catch for ajax loads
@@ -44,7 +57,7 @@
 				//delete current database
 				$query = "DROP DATABASE IF EXISTS `tbuyer`";
 				try{
-					executeQuery($query, $con);
+					execute($query, $con);
 				}
 				catch (Exception $e){
 					//nothing
@@ -55,19 +68,19 @@
 				
 				//create new database
 				$query = "CREATE DATABASE `tbuyer`";
-				executeQuery($query, $con);
+				execute($query, $con);
 				
 				//the database has catagories, comments, images and items
 				//one catagory can have many items
 				// one item can have many comments
 				
 				$query = "USE `tbuyer`";
-				executeQuery($query, $con);
+				execute($query, $con);
 				
 				//create the catagories table
 				$query = "CREATE TABLE `catagories` (`catagoryID` int(10) NOT NULL AUTO_INCREMENT, `catagoryName` varchar(30), 
 					PRIMARY KEY(`catagoryID`))";
-				executeQuery($query, $con);
+				execute($query, $con);
 				
 				//create the items table
 				// add end date?
@@ -80,18 +93,18 @@
 				//image is directory
 				//tags is a big list seperated by commas
 				// if isNew isn't 0, then it's false
-				executeQuery($query, $con);
+				execute($query, $con);
 				
 				//create the comments table
 				$query = "CREATE TABLE `comments` (`commentID` int(10) NOT NULL AUTO_INCREMENT, `posterName` varchar(30),
 					`commentBody` varchar(1000), `itemID` int(10), 
 					PRIMARY KEY(`commentID`))";
-				executeQuery($query, $con);
+				execute($query, $con);
 				
 				$query = "CREATE TABLE `orders` (`orderID` int(10) NOT NULL AUTO_INCREMENT, `orderQuantity` int(10), `buyerName` varchar(30),
 					`buyerAddress` varchar(1000), `buyerPostcode` varchar(10), `buyerEmail` varchar(80), `buyerPhoneNo` varchar(12), `itemID` int(10), 
 					PRIMARY KEY(`orderID`))";
-				executeQuery($query, $con);
+				execute($query, $con);
 				
 				echo "callback: database set up success";
 				
