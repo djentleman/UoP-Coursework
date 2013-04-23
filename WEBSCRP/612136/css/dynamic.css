@@ -1,0 +1,86 @@
+/*generated dynamically from user input*/
+
+body{
+	background-color:#FFDD99;
+}
+
+.itemNameWrap:active{
+	background-color: #fea;
+}
+
+.itemNameWrap:hover{
+	background-color: #fd9;
+}
+.addStock:active{
+	background-color: #fea;
+}
+
+.addStock:hover{
+	background-color: #fd9;
+}
+
+.stockIdWrap:active{
+	background-color: #fea;
+}
+
+.stockIdWrap:hover{
+	background-color: #fd9;
+}
+
+.choiceObject:hover{
+	background-color: #fd9;
+}
+
+.choiceObject:active{
+	background-color: #fea;
+}
+.updateButton:hover{
+	background-color: #fd9;
+}
+
+.updateButton:active{
+	background-color: #fea;
+}
+
+.basketIdWrap:hover{
+	background-color: #fd9;
+}
+
+.basketIdWrap:active{
+	background-color: #fea;
+}
+
+.browseDiv:hover{
+	box-shadow: 0px 0px 8px #DDBB77;
+}
+
+.browseDiv:active{
+	box-shadow: 0px 0px 12px #BB9955;
+}
+
+.menuCase{
+	background: #FFCC88;
+}
+
+ul li a:hover {
+	background: #FFDD99; 
+}
+
+li:hover a {
+	background: #FFDD99; 
+}
+
+li:hover li a:hover {
+	background: #FFCC88;
+}
+
+header{
+	background-color:#FFCC88;
+}
+
+.dragBox {
+	background: #FFDD99;
+}
+.dragBox:hover{
+	background:#FFCC88;
+}

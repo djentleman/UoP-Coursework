@@ -28,13 +28,8 @@
 					}
 				}
 				
-				if (isNaN(document.getElementById('price').value) || (document.getElementById('price').value == "")){
+				if (document.getElementById('price').className == "invalidBox"){
 					valid = false;
-				} else {
-					// price is numeric
-					if (document.getElementById('price').value < 0){
-						valid = false
-					}
 				}
 				
 				if (document.getElementById('sellerName').value == ""){
@@ -46,6 +41,26 @@
 				} else {
 					alert("Invalid Input, Please Make Sure All The Required Fields Are Filled");
 				}
+			}
+			
+			function checkValidPrice(){
+				// buyerPostcode validation
+				
+				// id will always be buyerPostcode
+				
+				var target = document.getElementById('price');
+				var price = target.value;
+				
+				var regex = new RegExp("^[0-9]+([.][0-9]{2})?$");
+				var valid = regex.test(price);
+				
+				if (valid){
+					target.className = "validBox";
+				} else {
+					target.className = "invalidBox";
+				}
+				console.log(valid);
+				return false;
 			}
 			
 			function validateCat(){

@@ -18,7 +18,7 @@
 					<input class="invalidBox" onkeyup="return checkValid(true, 'quan')" type="text" id="quan" name="itemQuantity" value="">
 						
 					<p>Price* (in &pound;)</p>
-					<input class="invalidBox" onkeyup="return checkValid(true, 'price')" type="text" id="price" name="price" value="">
+					<input class="invalidBox" onkeyup="return checkValidPrice()" type="text" id="price" name="price" value="">
 						
 					<p>Seller Name*</p>
 					<input class="invalidBox" onkeyup="return checkValid(false, 'sellerName')" type="text" id="sellerName" name="sellerName" value="">

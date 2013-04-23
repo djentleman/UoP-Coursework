@@ -13,12 +13,15 @@
 				var quan = document.getElementById('quantity').value;
 				var price = document.getElementById('price').value;
 				
+				var regex = new RegExp("^[0-9]+([.][0-9]{2})?$");
+				var priceValid = regex.test(price);
+				
 				if (quan != "" && isNaN(quan)){
 					// quan is not empty, and not a number
 					valid = false;
 				}
 				
-				if (price != "" && isNaN(price)){
+				if (price != "" && priceValid == false){
 					valid = false;
 				}
 				
