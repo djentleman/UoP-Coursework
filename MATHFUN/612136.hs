@@ -24,7 +24,7 @@ getFilmFans (Film _ _ _ fans) = fans -- 'accessors'
 ----Functional Code----
 --                   --
 
-isValidYear = (foldr (&&) True) . (map isNumber)
+isValidYear = (foldr (&&) True) . (map isNumber) -- checks if it's a number
 
 filmExists :: String -> [Film] -> Bool -- could be higher order - elem
 filmExists _ [] = False
@@ -115,10 +115,10 @@ welcome films = do
     putStr ">>>"
     userName <- getLine
     putStrLn ""
-    putStrLn "#########################"
-    putStr "    Welcome   "
+    putStrLn "      #########################"
+    putStr "           Welcome   "
     putStrLn userName
-    putStrLn "#########################"
+    putStrLn "      #########################"
     menu films userName
 
 --input = String, output = IO function
@@ -136,12 +136,10 @@ getMenuChoice _ films userName = invalidChoice films userName
 
 menu :: [Film] -> String -> IO ()
 menu films userName = do
-    putStrLn " ##############"
-    putStrLn " #PORT SOLENT#"
-    putStrLn " #FILM SYSTEM#"
-    putStrLn " ##############"
-    putStrLn "(not related to year 1 java in any way!)"
-    putStrLn ""
+    putStrLn "           ###############"
+    putStrLn "           # PORT SOLENT #"
+    putStrLn "           # FILM SYSTEM #"
+    putStrLn "           ###############"
     putStrLn "#-#-#-#-#-#- MENU SYSTEM -#-#-#-#-#-#"
     putStrLn "Press 1 To Add A Film"
     putStrLn "Press 2 To View All Films"
@@ -191,7 +189,7 @@ getActors actors = do
     actorToAdd <- getLine
     if actorToAdd == ""
         then return actors
-        else do getActors (actorToAdd : actors)
+        else do getActors (actors ++ (actorToAdd : []))
 
 getReleaseYear :: IO Int
 getReleaseYear = do
@@ -202,7 +200,7 @@ getReleaseYear = do
         then do return (read releaseYear :: Int)
         else do putStrLn "Invalid Release Year!"
                 getReleaseYear
-
+				
 getFans :: [String] -> IO [String]
 getFans fans = do
     putStrLn "Enter Fan Name (enter empty string to finish entering fans)"
@@ -210,7 +208,7 @@ getFans fans = do
     fanToAdd <- getLine
     if fanToAdd == ""
         then return fans
-        else do getFans (fanToAdd : fans)
+        else do getFans (fans ++ (fanToAdd : []))
     
 --------------VIEW ALL FILMS---------------
 
@@ -320,8 +318,8 @@ getActorIO films = do
 printTopFive :: [Film] -> String -> IO ()
 printTopFive films userName = do
     putStrLn "Top 5 Films"
-    let topFiveFilms = reverse (getTopFive films)
-    listFilmsInOrder 5 topFiveFilms
+    let topFiveFilms = (getTopFive films)
+    listFilmsInOrder 1 topFiveFilms
     pressEnter films userName
 	
 listFilmsInOrder :: Int -> [Film] -> IO ()
@@ -331,7 +329,7 @@ listFilmsInOrder count (film:films) = do
     filmPrintOut film
     if films == []
         then return ()
-        else do listFilmsInOrder (count - 1) films
+        else do listFilmsInOrder (count + 1) films
     
 --------------PRESS ENTER TO CONTINUTE---------------------------
 
