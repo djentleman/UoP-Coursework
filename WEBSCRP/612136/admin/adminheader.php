@@ -1,4 +1,8 @@
-<?php include "../scripts/classes/basket.php"; session_start(); ?>
+<?php include "../scripts/classes/basket.php"; session_start(); 
+	if (!isset($_SESSION['storeName'])){
+		$_SESSION['storeName'] = "Tbuyer";
+	}
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -26,13 +30,17 @@
 		<header>
 			<nav>
 				<ul>
-					<a href="index.php" ><img class="logo" style="margin-top:5px" src="../img/Tbuyer.png"></a></img>
+					<?php
+						$storeName = $_SESSION['storeName'];
+						echo "<a href='index.php' ><h1 class='logo'>$storeName</h1></a>";
+					?>
 					<li><a href="../" style="margin-top:10px;" class="menuCase">Log Out</a></li>
 					<li><a class="menuCase" style="margin-top:10px">Admin Panel</a>
 					<ul>
 						<li><a class="menuCase" href="manage_stock.php">Manage Stock</a></li>
 						<li><a class="menuCase" href="order_history.php">Order History</a></li>
 						<li><a class="menuCase" href="charts.php">Graphical Insights</a></li>
+						<li><a class="menuCase" href="customize.php">Customize</a></li>
 					</ul>
 					<li><h2 style="margin-top:10px; margin-right:20px;">Admin</h2></li>
 				</ul>

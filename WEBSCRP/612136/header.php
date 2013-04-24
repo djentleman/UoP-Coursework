@@ -2,6 +2,9 @@
 	if (!isset($_SESSION['basket'])){
 		$_SESSION['basket'] = new Basket;
 	}
+	if (!isset($_SESSION['storeName'])){
+		$_SESSION['storeName'] = "Tbuyer";
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,7 +34,10 @@
 		<header>
 			<nav>
 				<ul>
-					<a href="index.php" ><img class="logo" style="margin-top:5px" src="img/Tbuyer.png"></a></img>
+					<?php
+						$storeName = $_SESSION['storeName'];
+						echo "<a href='index.php' ><h1 class='logo'>$storeName</h1></a>";
+					?>
 					<li><a class="menuCase" style="margin-top:10px">Log In</a>
 					<ul>
 						<li><a class="menuCase" href="admin/">Admin</a></li>

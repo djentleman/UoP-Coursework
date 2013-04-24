@@ -10,43 +10,48 @@
 		<script>
 			function validateItem(){
 				var valid = true;
-				var quan = document.getElementById('quantity');
-				var price = document.getElementById('price');
+				var callback = "";
                 
-                
-				
 				if (document.getElementById('itemName').className == "invalidBox"){
 					valid = false;
+					callback = "Invalid Item Name";
 				}
 				
 				if (document.getElementById('quantity').className == "invalidBox"){
 					valid = false;
+					callback = "Invalid Quantity";
 				}
                 
 				if (document.getElementById('price').className == "invalidBox"){
 					valid = false;
+					callback = "Invalid Price";
 				}
                 
 				if (document.getElementById('sellerName').className == "invalidBox"){
 					valid = false;
+					callback = "Invalid Seller Name";
 				}
 				
 				if (document.getElementById('tags').className == "invalidBox"){
 					valid = false;
+					callback = "Invalid Tags";
 				}
 				
 				if (document.getElementById('desc').className == "invalidBox"){
 					valid = false;
+					callback = "Invalid Description";
 				}
 				
 				if (document.getElementById('itemList').value == "-1"){
 					valid = false;
+					callback = "No Item Selected";
 				}
 				
 				if (valid){
+					document.getElementById('dynamicText').innerHTML = "";
 					return editItem();
 				} else {
-					alert("Input was invalid, make sure price and quantity are numbers.");
+					document.getElementById('dynamicText').innerHTML = "Invalid Input: " + callback;
 					return false;
 				}
 			}
@@ -90,21 +95,24 @@
             }
 			
 			function validateCat(){
-			
 				var valid = true;
+				var callback = "";
 				
 				if (document.getElementById('catagoryList').value == "-1"){
 					valid = false;
+					callback = "No Catagory Selected";
 				}
                 
                 if (document.getElementById('catName').className == "invalidBox"){
                     valid = false;
+					callback = "Invalid Catagory Name";
                 }
 				
 				if (valid){
 					return editCat();
+					document.getElementById('dynamicText').innerHTML = "";
 				} else {
-					alert("Input was invalid, make sure price and quantity are numbers.");
+					document.getElementById('dynamicText').innerHTML = "Invalid Input: " + callback;
 					return false;
 				}
 			}

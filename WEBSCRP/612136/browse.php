@@ -42,14 +42,14 @@
 								// title is weighted 5
 								// tags are weighted 2
 								// description is weighted 1
-								foreach($searchArr as &$currentSearch){
-									if (search_for($row['itemName'], $currentSearch)){
+								foreach($searchArr as &$current){
+									if (search_for($row['itemName'], $current)){
 										$relevance += 5;
 									}
-									if (search_for($row['tags'], $currentSearch)){
+									if (search_for($row['tags'], $current)){
 										$relevance += 2;
 									}
-									if (search_for($row['itemDescription'], $currentSearch)){
+									if (search_for($row['itemDescription'], $current)){
 										$relevance += 1;
 									}
 								}
@@ -61,6 +61,7 @@
 								SET `searchRelevance`='$relevance'
 								WHERE `itemID`='$itemID'";
 								executeQuery($updateQuery, $con);
+								
 							}						
 						}
 						else{
@@ -109,12 +110,15 @@
 									$andFlag = false;
 									$searchArr = explode(" ", $search); // splits by space
 									$count = 0;
-									foreach($searchArr as &$currentSearch){
-										if ($currentSearch[0] == "-"){
-											$notFlag = true;
-										}
-										if ($currentSearch[0] == "+"){
-											$andFlag = true;
+									foreach($searchArr as $currentSearch){
+										//echo json_encode($currentSearch);
+										if (!empty($currentSearch)){
+											if ($currentSearch[0] == "-"){
+												$notFlag = true;
+											}
+											if ($currentSearch[0] == "+"){
+												$andFlag = true;
+											}
 										}
 										
 										// search defaults as OR
@@ -199,6 +203,8 @@
 					// "SELECT * FROM `items` WHERE `itemName`='$search'"
 					//if you leave the query black it returns all
 					
+					//echo $search;
+					
 					$query = "SELECT * FROM `items`";
 					relevanceConfig($query, $con, $search);
 					
@@ -246,7 +252,6 @@
 						
 						mysql_close($con);
 					?>
-					
 					<input type="text" id="catSearch">
 					<button onclick="browseWithCat()">Search</button>
 				</div>
