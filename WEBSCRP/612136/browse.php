@@ -76,11 +76,11 @@
 					
 					//for now, no catagories are returned.
 					
-					function removeMinus($str){
+					function stripSyntax($str){
 						$newStr = "";
 						$len = strlen($str);
 						for($i = 0; $i < $len; $i++){
-							if ($str[$i] != "-"){
+							if ($str[$i] != "-" && $str[$i] != "+"){
 								$newStr .= $str[$i];
 							}
 						}
@@ -106,13 +106,21 @@
 								
 									$success = false;
 									$notFlag = false;
+									$andFlag = false;
 									$searchArr = explode(" ", $search); // splits by space
 									$count = 0;
 									foreach($searchArr as &$currentSearch){
 										if ($currentSearch[0] == "-"){
 											$notFlag = true;
 										}
-										$currentSearch = removeMinus($currentSearch);
+										if ($currentSearch[0] == "+"){
+											$andFlag = true;
+										}
+										
+										// search defaults as OR
+										
+										
+										$currentSearch = stripSyntax($currentSearch);
 										
 										$currentSuccess = false;
 										
@@ -126,9 +134,10 @@
 										//echo "-------";
 										
 										if ($notFlag){
-											$currentSuccess = !$currentSuccess;
-											$success = $success && $currentSuccess;
+											$success = $success && !$currentSuccess;
 											
+										} else if ($andFlag) {
+											$success = $success && $currentSuccess;
 										} else {
 											$success = $success || $currentSuccess;
 										}

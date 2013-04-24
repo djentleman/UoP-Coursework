@@ -66,6 +66,29 @@
 				}
 				return false;
 			}
+			
+			function addComment(){
+				var valid = true;
+				var callback = ""; // validation callback
+				if (document.getElementById('comment').className == "invalidBox"){
+					valid = false;
+					callback = "Invalid Comment Body";
+					callback += "<br>";
+				}
+				if (document.getElementById('posterName').className == "invalidBox"){
+					valid = false;
+					callback += "Invalid Poster Name";
+				}
+				
+				if(valid){
+					document.getElementById('validationCallback').innerHTML = "";
+					uploadAndRefresh();
+				} else {
+					document.getElementById('validationCallback').innerHTML = callback;
+				}
+				return false;
+			}
+				
 		</script>
 		
 		<div class="mainContent">
@@ -178,7 +201,8 @@
 					<p></p>
 					
 					<!-- calls ajax -->
-					<input type="submit" onclick="return uploadAndRefresh()" name="submit" value="Submit Comment">
+					<input type="submit" onclick="return addComment()" name="submit" value="Submit Comment">
+					<p id="validationCallback"></p>
 					
 					
 				</form>
