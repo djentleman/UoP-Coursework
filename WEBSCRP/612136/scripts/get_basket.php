@@ -63,8 +63,11 @@
 								$quanID = "" . $currentID; // stringified
 								
 								echo "<div class='basketQuanWrap'>"; // middle
-								echo "<input class='validBox' id='$quanID' onfocusout='return updateAndRefresh($itemID)' onload='return checkValid($itemID , $quanID)' onkeyup='return checkValid($itemID , $quanID)' style='width:22px; height:12px' type='text' value='$quan'>";
+								echo "<input class='validBox' id='$quanID' onkeyup='return runUpdate($itemID , $quanID)' onblur='return updateBasket($itemID)' style='width:22px; height:12px' type='text' value='$quan'>";
 								echo "</div>";
+								$load = "load" . $quanID;
+								echo "<div style='width:0px; height:0px; float:left;' id='$load'></div>";
+                                
 								
 								
 								
@@ -96,5 +99,6 @@
 						echo "<p style='float:left; margin-left:13%; margin-top:19px;'>Total Price: &pound;" . $totalPrice . "</p>";
 						$rows = $basket->getSize();
 						echo "<div id='rows' value='$rows' style='visibility:hidden'>$rows</div>";
+						
 						// have to use innerHTML as value wasn't working
 					?>

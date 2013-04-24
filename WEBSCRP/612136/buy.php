@@ -7,6 +7,66 @@
 		<!-- Script For Comment Upload -->
 		<script src="ajax/upload_com.js"></script>
 		<script src="ajax/check_valid_quantity.js"></script>
+		<script>
+			// validation for comments
+			
+			
+            function checkForInjection(id){
+				var target = document.getElementById(id);
+				var str = target.value;
+				
+				var regex = new RegExp("(([/]?(.+)[>])|([<][/]?(.+))|')");
+				var hasInjection = regex.test(str);
+                
+                // if true, str has HTML tags or SQL injection in it
+                
+                // (true BAD false GOOD)
+				
+				return hasInjection;
+            }
+			
+			function checkValidUser(){
+				var hasInjection = checkForInjection('posterName');
+				
+				if (hasInjection){
+					document.getElementById('posterName').className = "invalidBox";
+				} else {
+					document.getElementById('posterName').className = "";
+				}
+				return false;
+			
+			}
+			
+			function updateCommentRemaining(){
+				// get number of characters
+				var currentText = document.getElementById('comment').value;
+				var len = currentText.length;
+				var remaining = 1000 - len;
+				
+				var message = remaining + " Characters Remaining";
+				console.log(message);
+				document.getElementById('charRemaining').innerHTML = message;
+				return false;
+			}
+			
+			function commentKeyDown(){
+				updateCommentRemaining();
+				var hasInjection = checkForInjection('comment');
+				
+				if (hasInjection){
+					document.getElementById('comment').className = "invalidBox";
+				} else {
+					var regex = new RegExp("^(.{0,999})?$");
+					var valid = regex.test(document.getElementById('comment').value);
+					if (valid){
+						document.getElementById('comment').className = "";
+					} else {
+						document.getElementById('comment').className = "invalidBox";
+					}
+				}
+				return false;
+			}
+		</script>
 		
 		<div class="mainContent">
 			<div class="itemPicture">
@@ -108,11 +168,12 @@
 					
 					<p>
 						Poster Name (leave blank for 'Anon')
-						<input type="text" id="posterName" name="posterName" value="">
+						<input type="text" onkeyup="return checkValidUser()" id="posterName" name="posterName" value="">
 					</p>
 					
 					<p>Comment (MAX 500 characters)</p>
-					<textarea cols="35" rows="7" id="comment" name="comment"></textarea>
+					<textarea cols="35" onkeyup="return commentKeyDown();" rows="7" id="comment" name="comment"></textarea>
+					<p id="charRemaining" class="charRemaining">1000 Characters Remaining</p>
 					
 					<p></p>
 					

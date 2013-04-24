@@ -25,7 +25,7 @@
 					
 					
 					<p>Catagory Name*</p>
-					<input type="text" id="catName" name="catagoryName" value="">
+					<input type="text" onkeyup="return genericValidate(false, 'catName')" id="catName" name="catagoryName" value="">
 					
 					<input type="button" name="submit" value="Submit" onclick="return validateCat()">
 					

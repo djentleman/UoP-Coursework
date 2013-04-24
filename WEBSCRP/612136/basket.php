@@ -27,6 +27,12 @@
 				//	getOrderDetails();
 				//}
 			}
+            
+            function runUpdate(itemID, quanID){
+                checkValid(itemID , quanID);
+                return false
+                
+            }
 		</script>
 
 		

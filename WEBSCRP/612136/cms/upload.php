@@ -18,6 +18,13 @@
 				if (document.getElementById('itemName').value == ""){
 					valid = false;
 				}
+                
+                
+                var hasInjection = checkForInjection('itemName');
+                
+                if (hasInjection){
+                    valid = false;
+                }
 				
 				if (isNaN(document.getElementById('quan').value) || (document.getElementById('quan').value == "")){
 					valid = false;
@@ -27,6 +34,12 @@
 						valid = false
 					}
 				}
+                
+                hasInjection = checkForInjection('quan');
+                
+                if (hasInjection){
+                    valid = false;
+                }
 				
 				if (document.getElementById('price').className == "invalidBox"){
 					valid = false;
@@ -48,6 +61,12 @@
 				if (document.getElementById('sellerName').value == ""){
 					valid = false;
 				}
+                
+                hasInjection = checkForInjection('sellerName');
+                
+                if (hasInjection){
+                    valid = false;
+                }
 				
 				if (valid){
 					uploadInfo();
@@ -63,6 +82,11 @@
 				
 				var regex = new RegExp("^[0-9]+([.][0-9]{2})?$");
 				var valid = regex.test(price);
+                var hasInjection = checkForInjection('price');
+                
+                if (hasInjection){
+                    valid = false;
+                }
 				
 				if (valid){
 					target.className = "validBox";
@@ -79,6 +103,13 @@
 				
 				var regex = new RegExp("^(.{0,999})?$");
 				var valid = regex.test(desc);
+                
+                
+                var hasInjection = checkForInjection('desc');
+                
+                if (hasInjection){
+                    valid = false;
+                }
 				
 				if (valid){
 					target.className = "";
@@ -95,6 +126,11 @@
 				
 				var regex = new RegExp("^(.{0,499})?$");
 				var valid = regex.test(tags);
+                var hasInjection = checkForInjection('tags');
+                
+                if (hasInjection){
+                    valid = false;
+                }
 				
 				if (valid){
 					target.className = "";
@@ -109,7 +145,7 @@
 			function validateCat(){
 				var valid = true;
 				
-				if (document.getElementById('catName').value == ""){
+				if (document.getElementById('catName').className == "invalidBox"){
 					valid = false;
 				}
 				
@@ -126,6 +162,7 @@
 				// id is for getElement
 				
 				var input = document.getElementById(id).value;
+                
 				
 				if (isNumeric){
 					if (isNaN(input) || (input == "")){
@@ -144,8 +181,28 @@
 						document.getElementById(id).className = "validBox";
 					}
 				}
+                
+                
+                var hasInjection = checkForInjection(id);
+                if (hasInjection){
+                    document.getElementById(id).className = "invalidBox";
+                }
 				return false;
 			}
+            
+            function checkForInjection(id){
+				var target = document.getElementById(id);
+				var str = target.value;
+				
+				var regex = new RegExp("(([/]?(.+)[>])|([<][/]?(.+))|')");
+				var hasInjection = regex.test(str);
+                
+                // if true, str has HTML tags or SQL injection in it
+                
+                // (true BAD false GOOD)
+				
+				return hasInjection;
+            }
 			
 			function updateTagsRemaining(){
 				// get number of characters

@@ -33,16 +33,16 @@
 					
 				
 					<p>Item Name*</p>
-					<input type="text" id="itemName" name="itemName" value="">
+					<input type="text" onkeyup="return genericValidate(false, 'itemName')" id="itemName" name="itemName" value="">
 						
 					<p>Quantity*</p>
-					<input type="text" id="quantity" name="itemQuantity" value="">
+					<input type="text" onkeyup="return genericValidate(true, 'quantity')" id="quantity" name="itemQuantity" value="">
 						
 					<p>Price* (in &pound;)</p>
-					<input type="text" id="price" name="itemPrice" value="">
+					<input type="text" onkeyup="return genericValidate(true, 'price')" id="price" name="itemPrice" value="">
 						
 					<p>Seller Name*</p>
-					<input type="text" id="sellerName" name="sellerName" value="">
+					<input type="text" onkeyup="return genericValidate(false, 'sellerName')" id="sellerName" name="sellerName" value="">
 						
 					<p>Is The Item New?*
 						<input type="checkBox" id="isNew" name="new" value="">

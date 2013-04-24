@@ -1,9 +1,11 @@
 // Update Basket w/ Ajax
 
 
-function updateAndRefresh(itemID){
+function updateBasket(itemID){
 	// we can get the quantity from the item id
+    console.log("hi");
 	if (document.getElementById(itemID + "").className == "validBox"){ // validate
+        console.log("hi");
 		update(itemID); // 
 	}
 	return false; // prevent refresh
@@ -28,8 +30,10 @@ function update(itemID) {
 			if (xhr.status === 200) {
 				console.log(xhr.status);
 				
+				var load = "load" + quanID;
+				
 
-				refreshUpdate(); // Refreshes page
+				refreshUpdate(load); // Refreshes page
 
 			} else {
 				//target.innerHTML = "<p>Something Went Wrong</p>";
@@ -55,7 +59,7 @@ function update(itemID) {
 	
 };
 
-function refreshUpdate(){
+function refreshUpdate(load){
 	// re-renders basket
 	// same code as clear basket, as variables and hardled through session
 	console.log("refreshing");
@@ -69,17 +73,20 @@ function refreshUpdate(){
 	xhr = new XMLHttpRequest();
 	changeListener = function () {
 		if (xhr.readyState === 4) {
+            console.log(xhr.staus);
 			if (xhr.status === 200) {
 				console.log("hello");
 
 
+				document.getElementById(load).innerHTML = "";
 				target.innerHTML = xhr.responseText; // rendered text from php
 
 			} else {
-				//target.innerHTML = "<p>Something Went Wrong</p>";
+				document.getElementById('loading').innerHTML = "<p>Something Went Wrong</p>";
 			}
 		} else if (xhr.readyState != 0 && xhr.readyState != 4){
-			//target.innerHTML = "<p> Loading... </p>";
+				console.log("loading");
+				document.getElementById(load).innerHTML = "Loading...";
 		}
 	};
 	

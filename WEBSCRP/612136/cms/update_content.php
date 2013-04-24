@@ -10,18 +10,24 @@
 		<script>
 			function validateItem(){
 				var valid = true;
-				var quan = document.getElementById('quantity').value;
-				var price = document.getElementById('price').value;
+				var quan = document.getElementById('quantity');
+				var price = document.getElementById('price');
+                
+                
 				
-				var regex = new RegExp("^[0-9]+([.][0-9]{2})?$");
-				var priceValid = regex.test(price);
-				
-				if (quan != "" && isNaN(quan)){
-					// quan is not empty, and not a number
+				if (document.getElementById('itemName').className == "invalidBox"){
 					valid = false;
 				}
 				
-				if (price != "" && priceValid == false){
+				if (document.getElementById('quantity').className == "invalidBox"){
+					valid = false;
+				}
+                
+				if (document.getElementById('price').className == "invalidBox"){
+					valid = false;
+				}
+                
+				if (document.getElementById('sellerName').className == "invalidBox"){
 					valid = false;
 				}
 				
@@ -44,6 +50,44 @@
 					return false;
 				}
 			}
+            
+            
+            function genericValidate(isNumeric, id){
+                var valid = true;
+                var target = document.getElementById(id);
+                var str = target.value;
+                
+                var hasInjection = checkForInjection(id);
+                if(hasInjection){
+                    valid = false;
+                }
+                
+                if (isNumeric){
+                    if (id == "price"){
+                        // use regex
+                        var regex = new RegExp("^[0-9]+([.][0-9]{2})?$");
+                        var priceValid = regex.test(str);
+                        if (!priceValid){
+                            valid = false;
+                        }
+                    } else {
+                        if (str != "" && isNaN(str)){
+                            valid = false;
+                        } else {
+                            if (str < 0){
+                                valid = false;
+                            }
+                        }
+                    }
+                }
+                
+                if (valid){
+                    target.className = "";
+                } else {
+                    target.className ="invalidBox";
+                }
+                return false;
+            }
 			
 			function validateCat(){
 			
@@ -52,6 +96,10 @@
 				if (document.getElementById('catagoryList').value == "-1"){
 					valid = false;
 				}
+                
+                if (document.getElementById('catName').className == "invalidBox"){
+                    valid = false;
+                }
 				
 				if (valid){
 					return editCat();
@@ -60,6 +108,20 @@
 					return false;
 				}
 			}
+            
+            function checkForInjection(id){
+				var target = document.getElementById(id);
+				var str = target.value;
+				
+				var regex = new RegExp("(([/]?(.+)[>])|([<][/]?(.+))|')");
+				var hasInjection = regex.test(str);
+                
+                // if true, str has HTML tags or SQL injection in it
+                
+                // (true BAD false GOOD)
+				
+				return hasInjection;
+            }
 			
 			function checkValidDesc(){
 				var target = document.getElementById('desc');
@@ -67,6 +129,11 @@
 				
 				var regex = new RegExp("^(.{0,999})?$");
 				var valid = regex.test(desc);
+                
+                var hasInjection = checkForInjection('desc');
+                if(hasInjection){
+                    valid = false;
+                }
 				
 				if (valid){
 					target.className = "";
@@ -83,6 +150,11 @@
 				
 				var regex = new RegExp("^(.{0,499})?$");
 				var valid = regex.test(tags);
+				
+                var hasInjection = checkForInjection('tags');
+                if(hasInjection){
+                    valid = false;
+                }
 				
 				if (valid){
 					target.className = "";
