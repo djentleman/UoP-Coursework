@@ -73,18 +73,17 @@
 				if (document.getElementById('comment').className == "invalidBox"){
 					valid = false;
 					callback = "Invalid Comment Body";
-					callback += "<br>";
 				}
 				if (document.getElementById('posterName').className == "invalidBox"){
 					valid = false;
-					callback += "Invalid Poster Name";
+					callback = "Invalid Poster Name";
 				}
 				
 				if(valid){
 					document.getElementById('validationCallback').innerHTML = "";
 					uploadAndRefresh();
 				} else {
-					document.getElementById('validationCallback').innerHTML = callback;
+					document.getElementById('validationCallback').innerHTML = "Invalid Input: " + callback;
 				}
 				return false;
 			}

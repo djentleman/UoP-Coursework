@@ -14,64 +14,49 @@
 		<script>
 			function validateItem(){
 				var valid = true;
+				var callback = "";
 				
-				if (document.getElementById('itemName').value == ""){
+				if (document.getElementById('itemName').className == "invalidBox"){
 					valid = false;
+					callback = "Invalid Item Name";
 				}
-                
-                
-                var hasInjection = checkForInjection('itemName');
-                
-                if (hasInjection){
-                    valid = false;
-                }
 				
-				if (isNaN(document.getElementById('quan').value) || (document.getElementById('quan').value == "")){
+				if (document.getElementById('quan').className == "invalidBox"){
 					valid = false;
-				} else {
-					// quan is numberic
-					if (document.getElementById('quan').value < 0){
-						valid = false
-					}
-				}
-                
-                hasInjection = checkForInjection('quan');
-                
-                if (hasInjection){
-                    valid = false;
+					callback = "Invalid Quantity";
                 }
 				
 				if (document.getElementById('price').className == "invalidBox"){
 					valid = false;
+					callback = "Invalid Price";
 				}
 				
 				if (document.getElementById('tags').className == "invalidBox"){
 					valid = false;
+					callback = "Invalid Tags";
 				}
 				
 				if (document.getElementById('desc').className == "invalidBox"){
 					valid = false;
+					callback = "Invalid Description";
 				}
 				
 				
 				if (document.getElementById('catagoryList').value == "-1"){
 					valid = false;
+					callback = "Please Select A Category";
 				}
 				
-				if (document.getElementById('sellerName').value == ""){
+				if (document.getElementById('sellerName').className == "invalidBox"){
 					valid = false;
+					callback = "Invalid Seller Name";
 				}
-                
-                hasInjection = checkForInjection('sellerName');
-                
-                if (hasInjection){
-                    valid = false;
-                }
 				
 				if (valid){
+					document.getElementById('validationCallback').innerHTML = "";
 					uploadInfo();
 				} else {
-					alert("Invalid Input, Please Make Sure All The Required Fields Are Filled");
+					document.getElementById('validationCallback').innerHTML = "Invalid Input: " + callback;
 				}
 			}
 			
@@ -144,15 +129,18 @@
 			
 			function validateCat(){
 				var valid = true;
+				var callback = "";
 				
 				if (document.getElementById('catName').className == "invalidBox"){
 					valid = false;
+					callback = "Invalid Category Name";
 				}
 				
 				if (valid){
+					document.getElementById("dynamicText").innerHTML = "";
 					return uploadCat();
 				} else {
-					alert("Invalid Input, Please Make Sure All The Required Fields Are Filled");
+					document.getElementById("dynamicText").innerHTML = "Invalid Input: " + callback;
 				}
 				
 			}
