@@ -47,15 +47,21 @@
 					<li><h2 style="margin-top:10px; margin-right:20px;">Customer</h2></li>
 				</ul>
 			</nav>
-			<form class="searchForm" action="browse.php"> <!-- action still needs to be 'beowse.php' -->
+			<form autocomplete="off" class="searchForm" action="browse.php"> <!-- action still needs to be 'beowse.php' -->
 				<div class="search headerSearch">
-					<input style="width:120px" type="text" id="searchValue" name="search" value="">
+					<input style="width:140px" type="text" id="searchValue" name="search" value="">
 					<button onclick="browse()">Search</button> <!-- USES JS NOW -->
 					<!--<input type="submit" name="submit" value="Search"> -->
 				</div>
 			</form>
 			
 		</header>
+		
+		<div id="suggestions">
+			<p class="searchSuggestion">desktop</p>
+			<p style="margin-top:-20px" class="searchSuggestion">laptop</p>
+			<p style="margin-top:0px" class="searchSuggestion">usb stick</p>
+		</div>
 		
 		<?php
 		

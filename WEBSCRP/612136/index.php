@@ -3,12 +3,8 @@
 	?>
 		
 		
+		
 		<div class="mainContent">
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
 			<br>
 			<br>
 			<br>

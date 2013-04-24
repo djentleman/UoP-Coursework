@@ -4,6 +4,10 @@ body{
 	background-color:#FFDD99;
 }
 
+.searchSuggestion:hover{
+	background-color: #fd9;
+}
+
 .itemNameWrap:active{
 	background-color: #fea;
 }
