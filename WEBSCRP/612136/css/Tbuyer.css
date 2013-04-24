@@ -414,6 +414,8 @@ li:hover li a:hover
 {
 	float: left;
 	margin: 2px;
+	margin-left: 10px;
+	width: 180px;
 	font-size: 40px;
 	color: black;
 }
@@ -473,6 +475,7 @@ header
 
 
 /* drag drop uploader style */
+/* modified from */
 /* http://github.com/portsoc/dragupload */
 
 .dragBox {

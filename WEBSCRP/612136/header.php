@@ -36,7 +36,7 @@
 				<ul>
 					<?php
 						$storeName = $_SESSION['storeName'];
-						echo "<a href='index.php' ><h1 class='logo'>$storeName</h1></a>";
+						echo "<a href='index.php' ><h1 id='logo' class='logo'>$storeName</h1></a>";
 					?>
 					<li><a class="menuCase" style="margin-top:10px">Log In</a>
 					<ul>
