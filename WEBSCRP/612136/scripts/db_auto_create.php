@@ -72,7 +72,7 @@
 				
 				//create the comments table
 				$query = "CREATE TABLE `comments` (`commentID` int(10) NOT NULL AUTO_INCREMENT, `posterName` varchar(30),
-					`commentBody` varchar(1000), `itemID` int(10), 
+					`commentBody` varchar(1000), `rating` int(10), `itemID` int(10), 
 					PRIMARY KEY(`commentID`))";
 				execute($query, $con);
 				

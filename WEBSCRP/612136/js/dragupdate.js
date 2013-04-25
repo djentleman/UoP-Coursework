@@ -47,9 +47,9 @@ var upload = function (files) {
 		file = files[0];
 
 	callback.load = function() {
-		console.log("Loaded", JSON.parse(this.responseText) );
+		//console.log("Loaded", JSON.parse(this.responseText) );
 		document.getElementById('response').innerHTML = "Image Successfully Uploaded";
-		document.getElementById('dynamicText').innerHTML = "Item Image Successfully Updated";
+		//document.getElementById('dynamicText').innerHTML = "Item Image Successfully Updated";
 	};
 
 

@@ -51,7 +51,7 @@
 				
 			
 				if ($tmpName != "none"){
-					$newfile = $_SERVER['DOCUMENT_ROOT'] . "/612136/img/uploads/" . $itemID . ".jpg"; // ID is unique
+					$newfile = "../img/uploads/" . $itemID . ".jpg"; // ID is unique
 					copy($tmpName, $newfile);
 				}
 				else {
@@ -59,7 +59,7 @@
 				}
 				
 				
-				$actualDir = "/612136/img/uploads/" . $itemID . ".jpg";
+				$actualDir = "img/uploads/" . $itemID . ".jpg";
 				
 				$response['temp dir'] = $tmpName;
 				$response['new dir'] = $newfile;

@@ -18,9 +18,9 @@
 				
 					// delete current file
 					
-					if (file_exists($_SERVER['DOCUMENT_ROOT'] . "612136/img/uploads/" . $itemID . ".jpg")){
+					if (file_exists("../img/uploads/" . $itemID . ".jpg")){
 						// if file exists, delete file
-						unlink($_SERVER['DOCUMENT_ROOT'] . "612136/img/uploads/" . $itemID . ".jpg");
+						unlink("../img/uploads/" . $itemID . ".jpg");
 					}
 
 					// Temporary file name stored on the server
@@ -33,12 +33,12 @@
 					$query = "USE `tbuyer`";
 					executeQuery($query, $con);
 					
-					$newfile = $_SERVER['DOCUMENT_ROOT'] . "/612136/img/uploads/" . $itemID . ".jpg"; // ID is unique
+					$newfile = "../img/uploads/" . $itemID . ".jpg"; // ID is unique
 					copy($tmpName, $newfile);
 					
 					
 				
-					$actualDir = "/612136/img/uploads/" . $itemID . ".jpg";
+					$actualDir = "img/uploads/" . $itemID . ".jpg";
 					
 					
 					if ($newfile != ""){
