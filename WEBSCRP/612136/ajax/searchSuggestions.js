@@ -15,6 +15,11 @@ function getSuggestions() {
 				target.innerHTML = xhr.responseText;
 
 			}
+		} else if (xhr.readyState != 0){
+			// loading
+			if (target.innerHTML != ""){ // stops it loading when there is nothing to load
+				target.innerHTML = "<p class='searchSuggestion'>Loading...</p>";
+			}
 		}
 	};
 

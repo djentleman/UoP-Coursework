@@ -17,15 +17,16 @@
 			while($row = mysql_fetch_array($output)){
 				// if this string is the beggining of itemName, echo suggestion
 				$itemName = strtolower($row['itemName']);
+				$itemID = $row['itemID'];
 				
 				$success = false;
 				if (strpos($itemName,$search) !== false) {
 					$success = true;
 				}
-				if ($success){
+				if ($success && $currentPos < 121){ // limited to 6 suggestions
 					// render suggested item
 					$pos = $currentPos . "px";
-					echo "<p class='searchSuggestion' style='margin-top:$pos'>$itemName</p>";
+					echo "<p onclick='goToBuy($itemID)' class='searchSuggestion' style='margin-top:$pos'>$itemName</p>";
 				
 					$currentPos += 20; // move down
 				}
