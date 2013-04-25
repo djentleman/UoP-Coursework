@@ -87,7 +87,7 @@ function refresh(){
 				target.innerHTML = "<p>Something Went Wrong</p>";
 			}
 		} else if (xhr.readyState != 0 && xhr.readyState != 4){
-			target.innerHTML = "<p> Loading... </p>";
+			target.innerHTML = target.innerHTML + "<br><p> Loading... </p>";
 		}
 	};
 	

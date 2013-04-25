@@ -237,10 +237,10 @@
 			<h1>Upload Content</h1>
 			<p> * indicates mandatory field </p>
 			<div class="choiceObject" onclick="return run(false);">
-				<p style="padding-top: 3px;">Upload New Item</p>
+				<p style="padding-top: 3px;">New Item</p>
 			</div>
 			<div class="choiceObject" onclick="return run(true);">
-				<p style="padding-top: 3px;">Upload New Catagory</p>
+				<p style="padding-top: 3px;">New Catagory</p>
 			</div>
 			
 			<div id="dynamic"></div>

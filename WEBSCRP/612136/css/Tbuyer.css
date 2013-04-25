@@ -4,6 +4,17 @@
 	font-family:arial;
 }
 
+.noHighlight::-moz-selection{
+    background-color:Transparent;
+    color:#000;
+}
+
+
+.noHighlight::selection{
+    background-color:Transparent;
+    color:#000;
+}
+
 body
 {
 	text-align: center;
@@ -33,7 +44,7 @@ body
 	z-index: 10000;
 	background-color: white;
 	margin-top: -40px;
-	margin-left: 246px;
+	margin-left: 206px;
 	width: 140px;
 	border-radius: 6px;
 	-moz-border-radius: 6px;
@@ -433,7 +444,7 @@ li:hover li a:hover
 	float: left;
 	margin: 2px;
 	margin-left: 10px;
-	width: 180px;
+	width: 140px;
 	font-size: 40px;
 	color: black;
 }

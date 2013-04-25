@@ -50,7 +50,7 @@
 						
 						
 					<p>Tag(s) (seperate with commas)</p>
-					<textarea onkeyup="return tagsKeyDown()" id="tags" cols="40" rows="8" name="tags"></textarea>
+					<textarea onkeyup="return tagsKeyDown()" id="tags" cols="32" rows="8" name="tags"></textarea>
 					<p id="tagsRemaining" class="charRemaining">500 Characters Remaining</p>
 						
 					<p>Catagory*</p>
@@ -72,7 +72,7 @@
 					?>
 						
 					<p>Description (MAX 1000 characters)</p>
-					<textarea onkeyup="return descKeyDown()" id="desc" cols="40" rows="8" name="description"></textarea>
+					<textarea onkeyup="return descKeyDown()" id="desc" cols="32" rows="8" name="description"></textarea>
 					<p id="descRemaining" class="charRemaining">1000 Characters Remaining</p>
 
 					
