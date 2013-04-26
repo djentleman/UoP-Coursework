@@ -40,9 +40,10 @@
 				
 				$query = "INSERT INTO `items` (`itemName`, `itemQuantity`,
 					`itemPrice`, `sellerName`, `isNew` , 
-					`tags`, `itemDescription`,  `searchRelevance`, `catagoryID`) 
-				VALUES ('$itemName', '$itemQuantity', '$price', '$sellerName', '$new', '$tags', '$description', '0', '$catagoryID')";
+					`tags`, `itemDescription`,  `searchRelevance`, `catagoryID`, `averageRating`) 
+				VALUES ('$itemName', '$itemQuantity', '$price', '$sellerName', '$new', '$tags', '$description', '0', '$catagoryID', '-1')";
 				// 0 for search relevance
+				// -1 for average rating
 				executeQuery($query, $con);
 				
 				

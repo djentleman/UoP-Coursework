@@ -42,11 +42,12 @@ function uploadCom() {
 	
 	var itemID = document.getElementById('itemID').value;
 	var posterName = document.getElementById('posterName').value;
+	var rating = document.getElementById('rating').value
 	var comment = document.getElementById('comment').value;
 	
 	
 	
-	var stringToPass = "?itemID=" + itemID + "&posterName=" + posterName + "&comment=" + comment;
+	var stringToPass = "?itemID=" + itemID + "&posterName=" + posterName + "&comment=" + comment + "&rating=" + rating;
 	
 	
 	

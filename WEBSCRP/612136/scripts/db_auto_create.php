@@ -61,7 +61,7 @@
 				// add end date?
 				$query = "CREATE TABLE `items`(`itemID` int(10) NOT NULL AUTO_INCREMENT, `itemName` varchar(30), `itemQuantity` int(10),
 					`itemPrice` float(10), `sellerName` varchar(50), `isNew` int(1), 
-					`tags` varchar(200), `itemDescription` varchar(1000), `image` varchar(200), `searchRelevance` int(100), `catagoryID` int(10),
+					`tags` varchar(200), `itemDescription` varchar(1000), `image` varchar(200), `searchRelevance` int(100), `catagoryID` int(10), `averageRating`  decimal(5, 1),
 					PRIMARY KEY(`itemID`))";
 				// FOREIGN KEY(`catagoryID`) REFERENCES catagories(`catagoryID`)?
 				// search relevance is a rating of the tasks relevance

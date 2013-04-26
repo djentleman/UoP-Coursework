@@ -94,7 +94,7 @@
 			<div class="itemPicture">
 				<?php
 					$GLOBALS = $GLOBALS+$_REQUEST;
-					include "scripts/getItemInfo.php"; // comes with a free scripts/executeQuery.php
+					include "scripts/getItemInfo.php"; // comes with a free scripts/mysql.php
 					
 					if ($image != "none" && $image != ""){
 						echo "<img src='$image' class='itemImage'></img>";
@@ -109,26 +109,30 @@
 					echo "<h2>$itemName</h2>";
 					if ($itemQuantity > 5){
 						echo "<p>Price &pound;$itemPrice</p>";
-						echo "<p>Quantity: $itemQuantity</p>";
+						echo "<p>$itemQuantity Left In Stock</p>";
 					} else {
 						echo "<p>Price &pound;$itemPrice</p>";
 						if ($itemQuantity != 0){
-							echo "<p style='color:red'>Quantity: $itemQuantity</p>";
+							echo "<p style='color:red'>Only $itemQuantity Left In Stock!</p>";
 						} else {
 							echo "<p style='color:red'>SOLD OUT</p>";
 						}
 					}
-					echo "<p> Seller Name; $sellerName</p>";
+					echo "<p> Seller Name: $sellerName</p>";
+					echo "<p> Category: $catagoryName</p>";
 					
 					if ($isNew == 0){
 						echo "Item Is New";
 					} else {
 						echo "Item Is Used";
 					}
+					if ($averageRating == -1){
+						echo "<p>Item Not Yet Rated</p>";
+					} else {
+						echo "<p>Average Rating: $averageRating/10</p>";
+					}
 					
 				?>
-				<br>
-				<br>
 				<form method="post" action="basket.php"> <!-- still uses php lol -->
 					<p>Quantity To Buy:
 						<?php
@@ -193,6 +197,24 @@
 						<input type="text" onkeyup="return checkValidUser()" id="posterName" name="posterName" value="">
 					</p>
 					
+					Submit A Rating:
+					<select id="rating">
+						<option value="-1">No Rating</option>
+						<option value="0">0/10</option>
+						<option value="1">1/10</option>
+						<option value="2">2/10</option>
+						<option value="3">3/10</option>
+						<option value="4">4/10</option>
+						<option value="5">5/10</option>
+						<option value="6">6/10</option>
+						<option value="7">7/10</option>
+						<option value="8">8/10</option>
+						<option value="9">9/10</option>
+						<option value="10">10/10</option>
+					</select>
+					
+					
+					
 					<p>Comment (MAX 500 characters)</p>
 					<textarea cols="35" onkeyup="return commentKeyDown();" rows="7" id="comment" name="comment"></textarea>
 					<p id="charRemaining" class="charRemaining">1000 Characters Remaining</p>
@@ -200,7 +222,7 @@
 					<p></p>
 					
 					<!-- calls ajax -->
-					<input type="submit" onclick="return addComment()" name="submit" value="Submit Comment">
+					<button type="submit" onclick="return addComment()" name="submit">Add Comment</button>
 					<p id="validationCallback"></p>
 					
 					

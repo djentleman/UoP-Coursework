@@ -25,12 +25,13 @@ function getData($query, $con){
 	}
 	if (mysql_query($query ,$con)){
 		$output = (mysql_query($query ,$con));
-		while($row = mysql_fetch_array($output))
+		while($row = mysql_fetch_array($output)){
 			// there should only be one row
 			return [$row['itemName'], $row['itemQuantity'], $row['itemPrice'],
 								$row['sellerName'], $row['isNew'], $row['tags'], 
 								$row['itemDescription'], $row['image'], $row['searchRelevance'], 
-								$row['catagoryID']]; // array of everything 
+								$row['catagoryID'], $row['averageRating']]; // array of everything 
+		}
 				
 	}
 	else{

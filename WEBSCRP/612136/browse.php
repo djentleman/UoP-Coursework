@@ -217,7 +217,9 @@
 						$orderType = "itemPrice";
 					} else if ($orderID == 1){
 						$orderType = "-itemPrice"; // gives opposite effect
-					} else {
+					} else if ($orderID == 4){
+						$orderType = "-averageRating"; // gives opposite effect
+					}  else {
 						$orderType = "itemName";
 					}
 					
@@ -262,6 +264,7 @@
 							<option value="1">Price - Highest To Lowest</option>
 							<option value="2">Price - Lowest To Highest</option>
 							<option value="3">Relevance</option>
+							<option value="4">Rating - Highest To Lowest</option>
 						</select>
 					</p>
 				</div>

@@ -2,19 +2,7 @@
 					
 					$GLOBALS = $GLOBALS+$_REQUEST;
 					
-
-					function executeQ($query, $con){ //executeQuery
-					// needs tidying.
-					if (!$con){
-						die('Could not connect: ' . mysql_error());
-					}
-					if (mysql_query($query ,$con)){
-						//echo "Command Executed.";
-					}
-					else{
-						echo mysql_error();
-					}
-					}
+					include_once "mysql.php";
 
 					
 					function fetchComments($query, $con){
@@ -30,6 +18,11 @@
 							// this is the printed comment section
 							
 								echo "<p> Poster Name: " . $row['posterName'] . "</p>";
+								if ($row['rating'] != -1){
+									echo "<p>Product Rating: " . $row['rating'] . "/10</p>";
+								} else {
+									echo "<p>No Rating Given</p>";
+								}
 								echo "<p> " . $row['commentBody'] . "</p>";
 								echo "<br>";
 							}
@@ -44,7 +37,7 @@
 				
 				
 					$query = "USE `tbuyer`";
-					executeQ($query, $con);
+					executeQuery($query, $con);
 					
 
 					
