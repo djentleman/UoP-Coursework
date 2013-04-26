@@ -16,7 +16,10 @@
 
 					$catID = -1; // defaults
 					$orderID = -1;
-					$search = $_GET['search']; // init var
+					$search = "";
+					if (isset($_GET['search'])){
+						$search = $_GET['search']; // init var
+					}
 					if (isset($_GET['catID'])){
 						$catID = $_GET['catID'];
 					}

@@ -130,6 +130,51 @@
 			
 		</script>
 		
+		<div class="orderInfo">
+			<?php
+				$flag404 = false; // can't call it 404flag :(
+				if (isset($_GET['basketSize'])){
+					$basketSize = $_GET['basketSize'];
+							
+					echo "<input type='hidden' id='basketSize' value='$basketSize'>";
+					
+					for ($i = 0; $i < $basketSize; $i++){
+						$currentIdString = "id" . ($i . "");
+						$currentQuanString = "quan" . ($i . "");
+						if (isset($_GET[$currentIdString])){
+							$currentId = $_GET[$currentIdString];
+						} else { // invalid
+							$currentId = "";
+							$flag404 = true;
+						}
+						if (isset($_GET[$currentQuanString])){
+							$currentQuan = $_GET[$currentQuanString];
+						} else { // invalid
+							$currentQuan = ""; // no errors for me :D
+							$flag404 = true;
+						}
+								
+						echo "<input type='hidden' id='$currentIdString' value='$currentId'>";
+						echo "<input type='hidden' id='$currentQuanString' value='$currentQuan'>";
+
+					}
+				} else {
+					$flag404 = true;
+				}
+				
+				if ($flag404){
+					echo "<div class='mainContent'>";
+					echo "<div id='404'>";
+					echo "<img src='img/404.jpg'><img>";
+					echo "<h1>Something Went Wrong</h1>";
+					echo "<a style='text-decoration: none;' href='index.php'><h3 style='color:grey'>Back To Home</h3></a>";
+					echo "</div>";
+					echo "</div>";
+					die();
+				}
+			?>
+		</div>
+		
 		
 		<div class="mainContent">
 			<h1>Complete Order</h1>
@@ -161,28 +206,6 @@
 					
 					<p id="invalidResponse"></p>
 				</form>
-				<div class="orderInfo">
-					<?php
-						if (isset($_GET['basketSize'])){
-							$basketSize = $_GET['basketSize'];
-							
-							echo "<input type='hidden' id='basketSize' value='$basketSize'>";
-					
-							for ($i = 0; $i < $basketSize; $i++){
-								$currentIdString = "id" . ($i . "");
-								$currentQuanString = "quan" . ($i . "");
-								
-								$currentId = $_GET[$currentIdString];
-								$currentQuan = $_GET[$currentQuanString];
-								
-								echo "<input type='hidden' id='$currentIdString' value='$currentId'>";
-								echo "<input type='hidden' id='$currentQuanString' value='$currentQuan'>";
-
-							}
-						}
-					
-					?>
-				</div>
 			</div>
 		</div>
 	</body>

@@ -91,8 +91,8 @@
 		</script>
 		
 		<div class="mainContent">
-			<div class="itemPicture">
 				<?php
+				
 					if (isset($_GET['itemID'])){
 						$itemID = $_GET['itemID'];
 					} else {
@@ -100,19 +100,15 @@
 					}
 					include "scripts/getItemInfo.php"; // comes with a free scripts/mysql.php
 					
-					if ($image != "none" && $image != ""){
-						echo "<img src='$image' class='itemImage'></img>";
-					}
-					else {
-						echo "<img src='img/no_img.png' class='itemImage'></img>"; // 'no image defined'
-					}
-				?>
-			</div>
-			<div class="itemInfo">
-				<?php
 					if ($itemName == "404: Item Not Found :("){
-						echo "<h1 style='color:red'>$itemName</h1>";
+						echo "<div id='404'>";
+						echo "<img src='img/404.jpg'><img>";
+						echo "<h1>Item Not Found</h1>";
+						echo "<a style='text-decoration: none;' href='index.php'><h3 style='color:grey'>Back To Home</h3></a>";
+						
 					} else {
+						
+						echo "<div class='itemInfo'>";
 						echo "<h2>$itemName</h2>";
 						if ($itemQuantity > 5){
 							echo "<p>Price &pound;$itemPrice</p>";
@@ -159,10 +155,23 @@
 						echo "</form>";
 					}
 				?>
+			</div> <!--closes 404 div OR item info div -->
+			<div class="itemPicture">
+				<?php
+					
+					if (!($itemName == "404: Item Not Found :(")){
+						if ($image != "none" && $image != ""){
+							echo "<img src='$image' class='itemImage'></img>";
+						}
+						else {
+							echo "<img src='img/no_img.png' class='itemImage'></img>"; // 'no image defined'
+						}
+					}
+				?>
 			</div>
 			<div class="itemDescription">
 				<?php
-					if (!$itemName == "404: Item Not Found :("){
+					if (!($itemName == "404: Item Not Found :(")){
 						echo "<p> <strong>Description:</strong>   $itemDescription</p>";
 						echo "<br>";
 						echo "<br>";
