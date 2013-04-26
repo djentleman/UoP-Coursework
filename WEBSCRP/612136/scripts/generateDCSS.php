@@ -135,6 +135,10 @@
 		$css .= generateObject(".searchSuggestion:hover", "color", "#FFFFFF");
 		$css .= generateObject(".itemNameWrap:hover", "color", "#FFFFFF");
 		$css .= generateObject(".itemnameWrap:active", "color", "#FFFFFF");
+		$css .= generateObject(".addStock:active", "color", "#FFFFFF");
+		$css .= generateObject(".addStock:hover", "color", "#FFFFFF");
+		$css .= generateObject(".stockIdWrap:active", "color", "#FFFFFF");
+		$css .= generateObject(".stockIdWrap:hover", "color", "#FFFFFF");
 		
 	}	
 	

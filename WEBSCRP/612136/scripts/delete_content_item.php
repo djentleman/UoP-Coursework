@@ -25,7 +25,7 @@
 									echo "<div class='basketRow'>";
 									
 
-									echo "<div class='stockIdWrap' onClick='goToBuy($itemID, true)'>";
+									echo "<div style='width:50%; white-space:nowrap;' class='stockIdWrap' onClick='goToBuy($itemID, true)'>";
 									echo $itemName;
 									echo "</div>";
 									

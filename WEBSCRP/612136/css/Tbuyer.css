@@ -2,6 +2,7 @@
 *
 {
 	font-family:arial;
+	white-space:nowrap;
 }
 
 .noHighlight::-moz-selection{
@@ -207,10 +208,10 @@ div.orderTable > *:nth-child(1){
 
 .basketTable{
 	font-size:15px;
-	width: 80%;
+	width: 90%;
 	box-shadow:0 0ex 1px rgba(0,0,0,0.5) inset;
-	margin-left: 10%;
-	margin-right: 10%;
+	margin-left: 5%;
+	margin-right: 5%;
 }
 
 

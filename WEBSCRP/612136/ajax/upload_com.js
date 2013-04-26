@@ -50,10 +50,6 @@ function uploadCom() {
 	var stringToPass = "?itemID=" + itemID + "&posterName=" + posterName + "&comment=" + comment + "&rating=" + rating;
 	
 	
-	
-	
-	
-	
 	xhr.onreadystatechange = changeListener;
 	xhr.open("GET", "./scripts/comment_upload_complete.php" + stringToPass, true);
 	xhr.send();

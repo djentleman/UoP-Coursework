@@ -10,6 +10,47 @@
 		<script>
 			// validation for comments
 			
+			setInterval(function(){
+				updateItemStock(); // update stock updates
+			},3000);
+			
+			function updateItemStock(){
+				var itemID = document.getElementById('itemID').value;
+				//console.log(itemID);
+				if (itemID == -1){
+					console.log("invalid item id, 404");
+					return false; // end
+				}
+				// next part is AJAX
+				
+				var xhr = new XMLHttpRequest();
+				var target = document.getElementById('quan');
+				
+				var changeListener = function () {
+					if (xhr.readyState === 4 && xhr.status === 200) {
+						var callback = xhr.responseText;
+						if (callback == 0){
+							target.innerHTML = "SOLD OUT";
+							target.style.color = "red";
+						} else if (callback < 6){
+							target.innerHTML = "Only " + callback + " Left In Stock!";
+							target.style.color = "red";
+						} else {
+							target.innerHTML = callback + " Left In Stock";
+							target.style.color = "black";
+						}
+						console.log(callback);
+						// normally would use nested if, but this one is being built compact
+					}
+				};
+			
+				stringToPass = "?itemID=" + itemID;
+				
+				xhr.onreadystatechange = changeListener;
+				xhr.open("GET", "./scripts/get_quantity.php" + stringToPass, true);
+				xhr.send();
+			}
+			
 			
             function checkForInjection(id){
 				var target = document.getElementById(id);
@@ -98,6 +139,7 @@
 					} else {
 						$itemID = -1;
 					}
+					
 					include "scripts/getItemInfo.php"; // comes with a free scripts/mysql.php
 					
 					if ($itemName == "404: Item Not Found :("){
@@ -105,20 +147,25 @@
 						echo "<img src='img/404.jpg'><img>";
 						echo "<h1>Item Not Found</h1>";
 						echo "<a style='text-decoration: none;' href='index.php'><h3 style='color:grey'>Back To Home</h3></a>";
+						echo "<input type='hidden' id='itemID' value='-1'>";
+						echo "</div>";
+						die();
 						
 					} else {
+						
+						echo "<input type='hidden' id='itemID' value='$itemID'>";
 						
 						echo "<div class='itemInfo'>";
 						echo "<h2>$itemName</h2>";
 						if ($itemQuantity > 5){
 							echo "<p>Price &pound;$itemPrice</p>";
-							echo "<p>$itemQuantity Left In Stock</p>";
+							echo "<p id='quan'>$itemQuantity Left In Stock</p>";
 						} else {
 							echo "<p>Price &pound;$itemPrice</p>";
 							if ($itemQuantity != 0){
-								echo "<p style='color:red'>Only $itemQuantity Left In Stock!</p>";
+								echo "<p id='quan' style='color:red'>Only $itemQuantity Left In Stock!</p>";
 							} else {
-								echo "<p style='color:red'>SOLD OUT</p>";
+								echo "<p id='quan' style='color:red'>SOLD OUT</p>";
 							}
 						}
 						echo "<p> Seller Name: $sellerName</p>";
