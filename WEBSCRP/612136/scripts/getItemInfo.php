@@ -12,7 +12,7 @@
 	$query = "USE `tbuyer`";
 	executeQuery($query, $con);
 	
-	$itemID = $_GET['itemID'];
+	//$itemID = $_GET['itemID'];
 	$query = "SELECT * FROM `items` WHERE `itemID` = '$itemID'";
 	$dataArray = getData($query, $con);
 	
@@ -35,7 +35,7 @@
 
 	} else {
 
-		$itemName = "Item Not Found :(";
+		$itemName = "404: Item Not Found :(";
 		$itemQuantity = "";
 		$itemPrice = "";
 		$sellerName = "";
