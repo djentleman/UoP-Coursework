@@ -2,6 +2,8 @@
 		include "cmsheader.php" 
 	?>
 		<script src="../js/form_buy.js"></script>
+		<!-- i would very much like to have self updating quantities here -->
+		<!-- but due to the nature of xhrs, i couldn't manage it :( -->
 		
 		<div class="mainContent">
 
@@ -51,9 +53,11 @@
 									echo $catName;
 									echo "</div>";
 									
-									echo "<div class='buyerInfoWrap'>";
+									$quanId = "q" . $count;
+									echo "<div id='$quanId' class='buyerInfoWrap'>";
 									echo $quantity;
 									echo "</div>";
+									echo "<input type='hidden' id='$count' value='$itemID' >";
 									
 									echo "<div class='buyerInfoWrap'>";
 									echo "&pound;" . $price;
@@ -68,7 +72,7 @@
 									echo "</div>";
 									
 									echo "</div>";
-								
+									$count++;
 							}						
 						}
 						else{
