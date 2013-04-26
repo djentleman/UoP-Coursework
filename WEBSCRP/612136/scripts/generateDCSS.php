@@ -127,6 +127,8 @@
 		$css .= generateObject("header", "color", "#FFFFFF");
 		$css .= generateObject(".logo", "color", "#FFFFFF");
 		$css .= generateObject(".menuCase", "color", "#FFFFFF");
+		$css .= generateObject(".menuCase", "border-left", "1px solid #FFFFFF");
+		
 	}	
 	
 	echo $css; // generated css
