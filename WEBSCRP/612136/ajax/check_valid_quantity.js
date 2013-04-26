@@ -65,7 +65,6 @@ function changeCSS(isValid, id){
 		document.getElementById(id).className = "invalidBox";
 	}
 	
-	return false;
 	
 
 

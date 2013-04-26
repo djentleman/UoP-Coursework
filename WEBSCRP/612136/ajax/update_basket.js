@@ -3,11 +3,12 @@
 
 function updateBasket(itemID){
 	// we can get the quantity from the item id
-    console.log("hi");
-	if (document.getElementById(itemID + "").className == "validBox"){ // validate
-        console.log("hi");
-		update(itemID); // 
-	}
+
+		setTimeout(function(){ // validate
+			if (document.getElementById(itemID + "").className == "validBox"){
+				update(itemID);
+			}
+		},1000); // should be long enough for an onkeyup ajax to fire
 	return false; // prevent refresh
 }
 
@@ -82,7 +83,7 @@ function refreshUpdate(load){
 				target.innerHTML = xhr.responseText; // rendered text from php
 
 			} else {
-				document.getElementById('loading').innerHTML = "<p>Something Went Wrong</p>";
+				//document.getElementById('loading').innerHTML = "<p>Something Went Wrong</p>";
 			}
 		} else if (xhr.readyState != 0 && xhr.readyState != 4){
 				console.log("loading");

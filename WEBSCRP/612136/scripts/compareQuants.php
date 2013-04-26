@@ -17,10 +17,20 @@
 	
 	$itemQuan = $dataArray[1];
 	
+	if (!is_numeric($quanToCompare)){
+		echo "1";
+		die();
+	}
+	if ($quanToCompare < 0){
+		echo "1";
+		die();
+	}
 	if ($itemQuan >= $quanToCompare){
 		echo "0"; // callback
+		die();
 	} else {
 		echo "1"; // callback
+		die();
 	}
 	
 	

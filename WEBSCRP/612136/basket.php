@@ -20,7 +20,10 @@
 		
 		<script>
 			function runBuy(){
-				var isInvalid = buyClearRefresh();
+				var valid = validate();
+				if (valid){
+					var isInvalid = buyClearRefresh();
+				}
 				console.log(isInvalid);
 				//if (!isInvalid) { // isInvalid needs to be false
 				//	console.log("hi");
@@ -33,6 +36,14 @@
                 return false
                 
             }
+			
+			function validate(){
+				var boxes = document.getElementsByClassName('invalidBox');
+				if (boxes.length == 0){
+					return true;
+				}
+				return false;
+			}	
 		</script>
 
 		
