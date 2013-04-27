@@ -230,11 +230,11 @@
 			<div class="itemComments">
 				
 				
-				
+				<h3>COMMENTS</h3>
 				<div id="comments">
 					<?php
 						if (!($itemName == "404: Item Not Found :(")){
-							echo "<h3> COMMENTS </h3>";
+							
 							include "scripts/fetch_comments.php";
 						}
 					?>

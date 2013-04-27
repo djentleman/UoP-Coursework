@@ -2,16 +2,16 @@
 
 function uploadReply() {
 
-	var xhr, target, changeListener;
+	var xhr, changeListener;
 	
 	
-	target = document.getElementById("dynamicText");
 
 	xhr = new XMLHttpRequest();
 	changeListener = function () {
 		if (xhr.readyState === 4) {
 			if (xhr.status === 200) {
 				document.getElementById('poorComment').innerHTML = "<p> Reply Uploaded </p>";
+				nextPoor();
 
 			}
 		}
@@ -42,3 +42,60 @@ function uploadReply() {
 	
 };
 
+
+function ignore() {
+
+	var xhr, changeListener;
+	
+	
+
+	xhr = new XMLHttpRequest();
+	changeListener = function () {
+		if (xhr.readyState === 4) {
+			if (xhr.status === 200) {
+				document.getElementById('poorComment').innerHTML = "<p> Review Ignored </p>";
+				nextPoor();
+
+			}
+		}
+	};
+	
+	var OPID = document.getElementById('OPID').value;
+	var stringToPass = "?OPID=" + OPID;
+	
+	xhr.onreadystatechange = changeListener;
+	xhr.open("GET", "../scripts/ignore_comment.php" + stringToPass, true);
+	xhr.send();
+	
+	
+	
+	return false;
+	
+};
+
+
+function nextPoor() {
+
+	var xhr, changeListener;
+	
+	
+
+	xhr = new XMLHttpRequest();
+	changeListener = function () {
+		if (xhr.readyState === 4) {
+			if (xhr.status === 200) {
+				document.getElementById('poorComment').innerHTML = document.getElementById('poorComment').innerHTML + xhr.responseText;
+
+			}
+		}
+	};
+	
+	xhr.onreadystatechange = changeListener;
+	xhr.open("GET", "../scripts/get_poor_reviews.php", true);
+	xhr.send();
+	
+	
+	
+	return false;
+	
+};
