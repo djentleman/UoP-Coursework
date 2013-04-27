@@ -30,8 +30,8 @@
 				var right = document.getElementsByClassName('rightContent')[0];
 				
 				current.className = "leftContent";
-				left.className = "rightContent";
 				right.className = "currentContent";
+				left.className = "rightContent";
 				
 				return false;
 			}
@@ -68,7 +68,7 @@
 				
 				echo "</div>";
 				
-				echo "<a style='text-decoration: none;'><h3 style='color:grey'>Begin Shopping</h3></a>";
+				echo "<a href='browse.php' style='text-decoration: none;'><h3 style='color:grey'>Begin Shopping</h3></a>";
 				
 				function getMostPopularItemID($con){
 					$query = "SELECT * FROM `orders` ORDER BY -orderQuantity";

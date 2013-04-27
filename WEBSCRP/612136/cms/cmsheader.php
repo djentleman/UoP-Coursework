@@ -1,6 +1,6 @@
 <?php include "../scripts/classes/basket.php"; session_start(); 
 	if (!isset($_SESSION['storeName'])){
-		$_SESSION['storeName'] = "Tbuyer";
+		$_SESSION['storeName'] = file_get_contents('../assets/storeName.txt');
 	}
 ?>
 <!DOCTYPE html>

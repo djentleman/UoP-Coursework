@@ -46,22 +46,24 @@ body
 .leftContent{
 	visibility:hidden;
 	opacity:0;
-	left:0px;
+	left:100px;
 	top:300px;
 	height:300px;
 	width:0px;
 	position:absolute;
+	/*transition:0.5s, visibility 1s, opacity 0.2s, top 0s;*/
 	
 }
 
 .rightContent{
 	visibility:hidden;
-	right:200px;
+	right:500px;
 	opacity:0;
 	top:300px;
 	height:300px;
 	width:0px;
 	position:absolute;
+	/*transition:0.5s, visibility 1s, opacity 0.2s, top 0s;*/
 	
 }
 
@@ -70,6 +72,7 @@ body
 	height: 300px;
 	margin-left: 20%;
 	margin-top: 100px;
+	/*transition:0.5s, visibility 1s, opacity 0.5s, margin-top 0s;*/
 	
 }
 

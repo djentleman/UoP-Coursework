@@ -3,7 +3,7 @@
 		$_SESSION['basket'] = new Basket;
 	}
 	if (!isset($_SESSION['storeName'])){
-		$_SESSION['storeName'] = "Tbuyer";
+		$_SESSION['storeName'] = file_get_contents('assets/storeName.txt');
 	}
 ?>
 <!DOCTYPE html>
