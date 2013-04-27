@@ -16,7 +16,12 @@
 							$output = (mysql_query($query ,$con));
 							while($row = mysql_fetch_array($output)){
 							// this is the printed comment section
-							
+								if ($row['posterName'] == "Admin"){
+									echo "<div style='color:red' id='comment'>";
+								} else {
+									echo "<div id='comment'>";
+								}
+								
 								echo "<p> Poster Name: " . $row['posterName'] . "</p>";
 								if ($row['rating'] != -1){
 									echo "<p>Product Rating: " . $row['rating'] . "/10</p>";
@@ -25,6 +30,7 @@
 								}
 								echo "<p> " . $row['commentBody'] . "</p>";
 								echo "<br>";
+								echo "</div>";
 							}
 								
 						}

@@ -5,6 +5,12 @@
 				$comment = $_GET['comment'];
 				$rating = $_GET['rating'];
 				$itemID = $_GET['itemID'];
+				$isReply = 1; // not reply
+				if (isset($_GET['isReply'])){
+					$isReply = $_GET['isReply'];
+					$OPID = $_GET['OPID'];
+				}
+				
 				
 				
 				echo "<h2> Comment Upload Successful </h2>";
@@ -58,6 +64,13 @@
 				$query = "INSERT INTO `comments` (`posterName`, `commentBody`, `rating`, `itemID`)
 				VALUES ('$posterName', '$comment', '$rating', '$itemID')";
 				executeQuery($query, $con);
+				
+				if (isset($OPID)){
+					$query = "UPDATE `comments`
+					SET `replied`='0'
+					WHERE `commentID`='$OPID'";
+					executeQuery($query, $con);
+				}
 				
 				$mean = getAverageRating($con);
 				

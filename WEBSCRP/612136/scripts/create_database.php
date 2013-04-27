@@ -97,9 +97,10 @@
 				
 				//create the comments table
 				$query = "CREATE TABLE `comments` (`commentID` int(10) NOT NULL AUTO_INCREMENT, `posterName` varchar(30),
-					`commentBody` varchar(1000), `rating` int(10), `itemID` int(10), 
+					`commentBody` varchar(1000), `rating` int(10), `replied` int(1), `itemID` int(10), 
 					PRIMARY KEY(`commentID`))";
 				execute($query, $con);
+				// if replied = 0 then true, else false
 				
 				$query = "CREATE TABLE `orders` (`orderID` int(10) NOT NULL AUTO_INCREMENT, `orderQuantity` int(10), `buyerName` varchar(30),
 					`buyerAddress` varchar(1000), `buyerPostcode` varchar(10), `buyerEmail` varchar(80), `buyerPhoneNo` varchar(12), `itemID` int(10), 
