@@ -17,9 +17,9 @@
 							while($row = mysql_fetch_array($output)){
 							// this is the printed comment section
 								if ($row['posterName'] == "Admin"){
-									echo "<div style='color:red' id='comment'>";
+									echo "<div style='color:red'>";
 								} else {
-									echo "<div id='comment'>";
+									echo "<div>";
 								}
 								
 								echo "<p> Poster Name: " . $row['posterName'] . "</p>";

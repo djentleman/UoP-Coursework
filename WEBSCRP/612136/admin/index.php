@@ -39,7 +39,8 @@
 					if (mysql_query($query ,$con)){
 						$output = (mysql_query($query ,$con));
 						while($row = mysql_fetch_array($output)){
-							if ($row['rating'] != -1 && $row['rating'] < 4 && $row['replied'] != 0){
+							//echo NULL == 0;
+							if ($row['rating'] != -1 && $row['rating'] < 4 && $row['replied'] !== "0"){
 								// not -1, valid comment
 								$itemID = $row['itemID'];
 								echo "<input type='hidden' id='itemID' value='$itemID'>";
@@ -59,6 +60,7 @@
 								echo "<textarea cols='26' rows='5' id='replyText'></textarea>";
 								echo "<p></p>";
 								echo "<button onclick='return uploadReply();'>Reply</button>";
+								echo "<button onclick='return uploadReply();'>Ignore</button>";
 								echo "</div>";
 								echo "</div>";
 								return false;
