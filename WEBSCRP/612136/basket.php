@@ -95,9 +95,9 @@
 				
 				<p style="margin-top: 40px" id="dynamic"></p>
 				
-			<br>
-			<br>
-			<br>
+				<?php
+					echo "<a style='text-decoration: none;' href='browse.php'><h3 style='color:grey'>Continue Shopping</h3></a>";
+				?>
 		</div>
 		
 	<script src="ajax/buy_item.js"></script> <!-- stock control -->

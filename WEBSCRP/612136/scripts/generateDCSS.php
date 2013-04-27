@@ -108,6 +108,10 @@
 	$css .= generateObject(".addStock:hover", "background-color", $light1);
 	$css .= generateObject(".stockIdWrap:active", "background-color", $light2);
 	$css .= generateObject(".stockIdWrap:hover", "background-color", $light1);
+	$css .= generateObject(".leftButton", "background-color", $light1);
+	$css .= generateObject(".leftButton:hover", "background-color", $light2);
+	$css .= generateObject(".rightButton", "background-color", $light1);
+	$css .= generateObject(".rightButton:hover", "background-color", $light2);
 	$css .= generateObject(".choiceObject:hover", "background-color", $light1);
 	$css .= generateObject(".choiceObject:active", "background-color", $light2);
 	$css .= generateObject(".updateButton:hover", "background-color", $light1);
@@ -128,6 +132,8 @@
 		$css .= generateObject(".logo", "color", "#FFFFFF");
 		$css .= generateObject(".menuCase", "color", "#FFFFFF");
 		$css .= generateObject(".menuCase", "border-left", "1px solid #FFFFFF");
+		$css .= generateObject(".rightButton", "color", "#FFFFFF");
+		$css .= generateObject(".leftButton", "color", "#FFFFFF");
 		$css .= generateObject(".basketIdWrap:hover", "color", "#FFFFFF");
 		$css .= generateObject(".basketIdWrap:active", "color", "#FFFFFF");
 		$css .= generateObject(".choiceObject:hover", "color", "#FFFFFF");
