@@ -72,7 +72,7 @@
 
 							return $row['itemID'];
 						}
-						echo "The Shop Has No Items";
+						echo "No Orders Have Been Made Yet";
 					}
 						
 				}

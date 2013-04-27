@@ -1,33 +1,47 @@
 	<?php 
 		include "adminheader.php" 
 	?>
+		<script src="../js/form_buy.js"></script>
+		<script src="../ajax/add_stock.js"></script>
 		
 		
 		<div class="mainContent">
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
 			<?php
-				echo "Welcome To the Tbuyer Admin Panel";
+				include "../scripts/mysql.php";
+				echo "<h1>Welcome To The " . $_SESSION['storeName'] . " Admin Panel</h1>";
+				
+				echo "<div class='lowOnStock'>";
+				echo "<h3>Items Running Low On Stock</h3>";
+
+						include "../scripts/get_stock_low.php";
+						
+				
+				echo "</div>";
+				
+				
+				echo "<div class='poorComments'>";
+				echo "<h3>Recent Poor Reviews</h3>";
+				echo "</div>";
+				
+				
+				mysql_close($con);
 			?>
-			<br>
-			<br>
-			<br>
-			<p>content will go here</p>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 		</div>
 	</body>
 </html>

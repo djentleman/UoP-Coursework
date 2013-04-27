@@ -3,13 +3,18 @@
 
 function addStock(itemID){
 	// we can get the quantity from the item id
-	update(itemID); // uploads new comment
+	update(itemID, false); // uploads new comment
 	//refresh(); // refreshes current comments
 	return false; // prevent refresh
 }
 
+function addLowStock(itemID){
+	update(itemID, true);
+	return false;
+}
 
-function update(itemID) {
+
+function update(itemID, isLowStock) {
 	//uploads new comment
 
 	
@@ -27,7 +32,7 @@ function update(itemID) {
 			if (xhr.status === 200) {
 				
 
-				refresh(); // Refreshes page
+				refresh(isLowStock); // Refreshes page
 
 			} else {
 				target.innerHTML = "<p>Something Went Wrong</p>";
@@ -53,7 +58,9 @@ function update(itemID) {
 	
 };
 
-function refresh(){
+
+
+function refresh(isLowStock){
 	// re-renders basket
 	// same code as clear basket, as variables and hardled through session
 	
@@ -83,7 +90,11 @@ function refresh(){
 	
 
 	xhr.onreadystatechange = changeListener;
-	xhr.open("GET", "../scripts/get_stock.php", true);
+	if (!isLowStock){
+		xhr.open("GET", "../scripts/get_stock.php", true);
+	} else {
+		xhr.open("GET", "../scripts/get_stock_low.php", true);
+	}
 	xhr.send();
 	
 	return false; //stops page from refreshing
