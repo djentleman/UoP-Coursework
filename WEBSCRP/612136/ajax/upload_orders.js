@@ -70,7 +70,10 @@ function uploadOrders() {
 	};
 	
 	target = document.getElementById("dynamicWrap");
-	target.innerHTML = "<p>Transaction Complete</p><p>Thank You For Shopping With Tbuyer</p>";
+	var response = "<p>Transaction Complete</p><p>Thank You For Shopping With Tbuyer</p>";
+	response +=  "<a style='text-decoration: none;' href='index.php'><h3 style='color:grey'>Back To Home</h3></a>";
+	target.innerHTML = response;
+	
 	return false;
 
 	

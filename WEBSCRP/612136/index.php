@@ -1,6 +1,15 @@
 	<?php 
 		include "header.php" 
 	?>
+		<style type="text/css">
+			.browseDiv:hover{
+				opacity:1;
+			}
+			.browseDiv{
+				opacity:0.7; 
+				transition: 0.5s;
+			}
+		</style>
 		
 		<script>	
 			function shiftLeft(){
@@ -59,7 +68,7 @@
 				
 				echo "</div>";
 				
-				echo "<a style='text-decoration: none;' href='browse.php'><h3 style='color:grey'>Begin Shopping</h3></a>";
+				echo "<a style='text-decoration: none;'><h3 style='color:grey'>Begin Shopping</h3></a>";
 				
 				function getMostPopularItemID($con){
 					$query = "SELECT * FROM `orders` ORDER BY -orderQuantity";
@@ -86,7 +95,7 @@
 						while($row = mysql_fetch_array($output)){
 							
 							$idParam = $row['itemID'];
-							echo "<div style='width:90%' class='browseDiv'  onClick='goToBuy($idParam)'>";
+							echo "<div style='width:90%;' href='browse.php' class='browseDiv'  onClick='goToBuy($idParam)'>";
 							include "scripts/browseButton.php"; // renders the button
 							echo "</div>";
 							return false;

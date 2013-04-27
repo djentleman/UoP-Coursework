@@ -42,8 +42,10 @@ body
 }
 
 
+
 .leftContent{
 	visibility:hidden;
+	opacity:0;
 	left:0px;
 	top:300px;
 	height:300px;
@@ -55,6 +57,7 @@ body
 .rightContent{
 	visibility:hidden;
 	right:200px;
+	opacity:0;
 	top:300px;
 	height:300px;
 	width:0px;
@@ -395,11 +398,13 @@ div.basketTable > *:nth-child(1){
 .browseDiv:hover
 {
 	box-shadow: 0px 0px 8px #DDBB77;
+	opacity:1;
 }
 
 .browseDiv:active
 {
 	box-shadow: 0px 0px 12px #BB9955;
+	opacity:1;
 }
 
 .itemComments
