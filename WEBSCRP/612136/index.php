@@ -61,6 +61,21 @@
 				
 				echo "<a style='text-decoration: none;' href='browse.php'><h3 style='color:grey'>Begin Shopping</h3></a>";
 				
+				function getMostPopularItemID($con){
+					$query = "SELECT * FROM `orders` ORDER BY -orderQuantity";
+					if (!$con){
+						die('Could not connect: ' . mysql_error());
+					}
+					if (mysql_query($query ,$con)){
+						$output = (mysql_query($query ,$con));
+						while($row = mysql_fetch_array($output)){
+
+							return $row['itemID'];
+						}						
+					}
+						
+				}
+				
 				function getTopResult($query, $con){
 					if (!$con){
 						die('Could not connect: ' . mysql_error());
@@ -89,7 +104,7 @@
 					$query = "USE `tbuyer`";
 					executeQuery($query, $con);
 					
-					$query = "SELECT * FROM `items` ORDER BY -averageRating";
+					$query = "SELECT * FROM `items` ORDER BY -averageRating LIMIT 1";
 					getTopResult($query, $con);
 					
 					mysql_close($con);
@@ -102,6 +117,13 @@
 					$query = "USE `tbuyer`";
 					executeQuery($query, $con);
 					
+					// get most popular item from orders table
+					// only rough estimate, as array not collapsed
+					$itemID = getMostPopularItemID($con);
+					
+					$query = "SELECT * FROM `items` WHERE `itemID` = $itemID LIMIT 1";
+					getTopResult($query, $con);
+					
 					mysql_close($con);
 				}
 				
@@ -112,7 +134,7 @@
 					$query = "USE `tbuyer`";
 					executeQuery($query, $con);
 					
-					$query = "SELECT * FROM `items` ORDER BY -itemID";
+					$query = "SELECT * FROM `items` ORDER BY -itemID LIMIT 1";
 					getTopResult($query, $con);
 					
 					mysql_close($con);
