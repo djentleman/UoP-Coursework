@@ -1,4 +1,4 @@
-// modified from: https://github.com/portsoc/dragupload
+// modified from: http://github.com/portsoc/dragupload
 
 var registerDragListeners = function (target) {
 	// this makes a drop possible - remove it and drop events cannot occur.
@@ -16,33 +16,10 @@ var registerDragListeners = function (target) {
 	);
 };
 
-
-var xhrSend = function(method, uri, payload, callback) {
-
-	var xhr = new XMLHttpRequest();
-	xhr.open(method, uri, true);
-
-	xhr.setRequestHeader("Accept", "application/json");
-
-	if (!payload) {
-		// no payload? don't use the form's multipart mime type.
-		xhr.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
-	}
-
-	for (var evt in callback) {
-		xhr.addEventListener(evt, callback[evt].bind(xhr));
-	}
-	
-	
-	xhr.send(payload);
-};
-
-
 var upload = function (files) {
 
 	var
 		fd,
-		xhr,
 		callback = {},
 		file = files[0];
 
@@ -52,7 +29,6 @@ var upload = function (files) {
 		var target = document.getElementById('dynamicText');
 		target.innerHTML = "Item Successfully Uploaded";
 	};
-
 
 	callback.error = function uploadError(e) {
 		document.getElementById("response").innerHTML = "Previous upload failed.  No upload in progress." ;
@@ -66,12 +42,21 @@ var upload = function (files) {
 
 	console.log("Aiming to upload file: ", file);
 
-	xhrSend(
-		"POST",
-		"../scripts/item_image_upload.php",
-		fd,
-		callback
-	);
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", "../scripts/item_image_upload.php", true);
+
+	xhr.setRequestHeader("Accept", "application/json");
+
+	if (!fd) {
+		// no payload? don't use the form's multipart mime type.
+		xhr.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+	}
+
+	for (var evt in callback) {
+		xhr.addEventListener(evt, callback[evt].bind(xhr));
+	}
+	
+	xhr.send(fd);
 
 	return false;
 
