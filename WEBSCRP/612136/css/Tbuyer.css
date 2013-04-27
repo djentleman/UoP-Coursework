@@ -82,6 +82,8 @@ body
 	top: 354px;
 	background-color: #fd9;
 	right: 20%;
+	-moz-user-select: none; /* user select stops highlight in click */
+	-webkit-user-select: none;
 }
 .leftButton{
 	width: 50px;
@@ -91,6 +93,8 @@ body
 	top: 354px;
 	background-color: #fd9;
 	left: 20%;
+	-moz-user-select: none;
+	-webkit-user-select: none;
 }
 
 
@@ -586,6 +590,7 @@ header
 	text-shadow: 0 0ex 0.1ex rgba(0,0,0,0.5);
 	box-shadow:  0 0ex 3px rgba(0,0,0,0.5) inset;
 	margin-left: 10em;
+	white-space: normal;
 }
 
 #response {
@@ -595,6 +600,7 @@ header
 .dragBox:hover{
 	background:#FFCC88;
 	box-shadow:0 0ex 5px rgba(0,0,0,0.5) inset;
+	white-space: normal;
 	
 }
 

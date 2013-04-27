@@ -234,7 +234,7 @@
 			<!-- hidden (for now) so listeners init -->
 			<!-- doesn't render with ajax, uses regular JS to unhide -->
 			<div class="dragBox" id="dragtarget" style="visibility:hidden"> <!--   -->
-				<p>Drop The Image You Want To Upload Here</p>
+				<p style="white-space: normal;">Drop The Image You Want To Upload Here</p>
 				<p id="response">No Image Uploaded Yet</p>
 			</div>
 			

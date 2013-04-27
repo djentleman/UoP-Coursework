@@ -31,6 +31,8 @@
 		
 		<div style="overflow:hidden" class="mainContent">
 			<?php
+			
+				include "/scripts/mysql.php";
 				echo "<h1>Welcome To " . $_SESSION['storeName'] . "</h1>";
 				
 				echo "<div class='indexItemWrap'>";
@@ -59,16 +61,61 @@
 				
 				echo "<a style='text-decoration: none;' href='browse.php'><h3 style='color:grey'>Begin Shopping</h3></a>";
 				
+				function getTopResult($query, $con){
+					if (!$con){
+						die('Could not connect: ' . mysql_error());
+					}
+					if (mysql_query($query ,$con)){
+						$output = (mysql_query($query ,$con));
+						while($row = mysql_fetch_array($output)){
+							
+							$idParam = $row['itemID'];
+							echo "<div style='width:90%' class='browseDiv'  onClick='goToBuy($idParam)'>";
+							include "scripts/browseButton.php"; // renders the button
+							echo "</div>";
+							return false;
+						}						
+					} else {
+						"The Shop Has No Items";
+					}
+						
+				}
+				
+				
 				function getHighestRated(){
 					echo "<h2>Highest Rated</h2>";
+					
+					$con = mysql_connect("localhost","root");
+					$query = "USE `tbuyer`";
+					executeQuery($query, $con);
+					
+					$query = "SELECT * FROM `items` ORDER BY -averageRating";
+					getTopResult($query, $con);
+					
+					mysql_close($con);
 				}
 				
 				function getMostPopular(){
 					echo "<h2>What's Popular</h2>";
+					
+					$con = mysql_connect("localhost","root");
+					$query = "USE `tbuyer`";
+					executeQuery($query, $con);
+					
+					mysql_close($con);
 				}
 				
 				function getNewest(){
 					echo "<h2>What's New</h2>";
+					
+					$con = mysql_connect("localhost","root");
+					$query = "USE `tbuyer`";
+					executeQuery($query, $con);
+					
+					$query = "SELECT * FROM `items` ORDER BY -itemID";
+					getTopResult($query, $con);
+					
+					mysql_close($con);
 				}
 			?>
 		</div>
