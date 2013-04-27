@@ -16,6 +16,10 @@
     color:#000;
 }
 
+.noHighlight{
+	cursor: pointer;
+}
+
 body
 {
 	text-align: center;
@@ -84,6 +88,7 @@ body
 	right: 20%;
 	-moz-user-select: none; /* user select stops highlight in click */
 	-webkit-user-select: none;
+	cursor: pointer;
 }
 .leftButton{
 	width: 50px;
@@ -95,6 +100,7 @@ body
 	left: 20%;
 	-moz-user-select: none;
 	-webkit-user-select: none;
+	cursor: pointer;
 }
 
 
@@ -121,6 +127,7 @@ body
 	position: fixed;
 	box-shadow: 0px 0px 2px;
 	opacity: 0.8;
+	cursor: pointer;
 }
 
 .charRemaining{
@@ -157,6 +164,7 @@ body
 	width: 20%;
 	height: 19px;
 	float:left;
+	cursor: pointer;
 }
 
 .orderQuantityWrap{
@@ -196,6 +204,7 @@ div.orderTable > *:nth-child(1){
 	width: 20%;
 	height: 25px;
 	box-shadow:0 0ex 2px;
+	cursor: pointer;
 }
 
 .invalidBox:focus{
@@ -230,6 +239,7 @@ div.orderTable > *:nth-child(1){
 	width:19px; /*square */
 	box-shadow: 0 0ex 2px rgba(0,0,0,0.5);
 	margin-right: 40px;
+	cursor: pointer;
 	
 }
 
@@ -246,6 +256,7 @@ div.orderTable > *:nth-child(1){
 	width: 30%;
 	float:left;
 	height: 19px;
+	cursor: pointer;
 }
 
 .choiceObject:hover{
@@ -263,6 +274,7 @@ div.orderTable > *:nth-child(1){
 	margin-left: 50%;
 	margin-right: 40%;
 	box-shadow:0 0ex 2px rgba(0,0,0,0.5) inset;
+	cursor: pointer;
 }
 
 .updateButton:hover{
@@ -319,6 +331,7 @@ div.basketTable > *:nth-child(1){
 	width: 20%;
 	float:left;
 	height: 19px;
+	cursor: pointer;
 }
 
 .basketQuanWrap{
@@ -376,6 +389,7 @@ div.basketTable > *:nth-child(1){
 	margin-top: 2px;
 	margin-bottom: 2px;
 	float: left;
+	cursor: pointer;
 }
 
 .browseDiv:hover

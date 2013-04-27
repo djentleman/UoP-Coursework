@@ -71,7 +71,8 @@
 						while($row = mysql_fetch_array($output)){
 
 							return $row['itemID'];
-						}						
+						}
+						echo "The Shop Has No Items";
 					}
 						
 				}
@@ -89,10 +90,10 @@
 							include "scripts/browseButton.php"; // renders the button
 							echo "</div>";
 							return false;
-						}						
-					} else {
-						"The Shop Has No Items";
+						}			
+						echo "The Shop Has No Items";			
 					}
+					
 						
 				}
 				
