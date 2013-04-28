@@ -75,6 +75,16 @@
 				<button onclick="return changeName()">Submit</button>
 				<p id="validationCallback"></p>
 			</div>
+			<div id="currencyWrap">
+				<h3>Change The Store Currency</h3>
+				Currency:
+				<select id="currencySelect">
+					<option value="GBP">£</option>
+					<option value="USD">$</option>
+					<option value="EUR">€</option>
+					<option value="JPN">¥</option>
+				</select>
+			</div>
 			<div id="DCSSWrap">
 				<h3>Change The Colour Scheme</h3>
 				Popular Colours:
