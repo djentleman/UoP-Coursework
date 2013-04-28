@@ -52,7 +52,7 @@
 				var target = document.getElementById(id);
 				var str = target.value;
 				
-				var regex = new RegExp("(([/]?(.+)[>])|([<][/]?(.+))|')");
+				var regex = new RegExp("(([/]?(.+)[>])|([<][/]?(.+)))");
 				var hasInjection = regex.test(str);
                 
                 // if true, str has HTML tags or SQL injection in it
