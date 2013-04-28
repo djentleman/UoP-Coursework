@@ -48,6 +48,20 @@
 				return false;
 			}
 			
+            function checkForInjection(id){
+				var target = document.getElementById(id);
+				var str = target.value;
+				
+				var regex = new RegExp("(([/]?(.+)[>])|([<][/]?(.+))|')");
+				var hasInjection = regex.test(str);
+                
+                // if true, str has HTML tags or SQL injection in it
+                
+                // (true BAD false GOOD)
+				
+				return hasInjection;
+            }
+			
 			function hideShowAdvancedSettings(){
 				var buttonText = document.getElementById('advancedButton').innerHTML;
 				var target = document.getElementById('advancedSettings');
@@ -59,6 +73,14 @@
 					// hide settings
 					document.getElementById('advancedButton').innerHTML = "Show Advanced Settings";
 					target.style.visibility = "hidden";
+				}
+				return false;
+			}
+			
+			function checkHex(){
+				if (!(document.getElementById('hexCallback').innerHTML == "Invalid Hex Code")){
+					document.getElementById('hexCallback').innerHTML = "Colour Scheme Changed";
+					return changeCSS(true)
 				}
 				return false;
 			}
@@ -99,6 +121,26 @@
 				xhr.send();
 				return false;
 			}
+			
+			function nameKeyDown(){
+				var hasInjection = checkForInjection("storeName");
+				if (hasInjection){
+					document.getElementById('storeName').className = "invalidBox";
+				} else {
+					document.getElementById('storeName').className = "";
+				}
+				return false;
+			}
+			
+			function checkValidNameChange(){
+				if (document.getElementById('storeName').className != "invalidBox"){
+					document.getElementById('validationCallback').innerHTML = "";
+					return changeName()
+				}
+				document.getElementById('validationCallback').innerHTML = "Invalid Store Name";
+				return false;
+				
+			}
 		
 		</script>
 		
@@ -108,8 +150,8 @@
 			<div id="storeNameWrap">
 				<h3>Change The Store Name</h3>
 				<p>Enter New Store Name:</p>
-				<input type="text" id="storeName">
-				<button onclick="return changeName()">Submit</button>
+				<input onkeyup="return nameKeyDown()" type="text" id="storeName">
+				<button onclick="return checkValidNameChange()">Submit</button>
 				<p id="validationCallback"></p>
 			</div>
 			<div id="currencyWrap">
@@ -146,7 +188,7 @@
 				<div style="visibility:hidden" id="advancedSettings">
 					<p>Please Enter A 6 Digit Hex Code:</p>
 					#<input style="color: #999999" onkeyup="return updateHex()" value="eg. FFCC88" id="hex" onblur="if(this.value==''){this.value='eg. FFCC88';}" onclick="if(this.value=='eg. FFCC88'){this.value='';}" onkeyup="return updateHex()" type="text">
-					<button onclick="return changeCSS(true)">Submit</button>
+					<button onclick="return checkHex()">Submit</button>
 					<p id="hexCallback"></p>
 				</div>
 			</div>

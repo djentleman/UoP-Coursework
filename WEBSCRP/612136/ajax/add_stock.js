@@ -45,6 +45,12 @@ function update(itemID, isLowStock) {
 	// itemID is passed through
 	var quanID = "" + itemID; // stringified
 	var stockToAdd = document.getElementById(quanID).value;
+	if (stockToAdd < 0 || isNaN(stockToAdd)){
+		document.getElementById(quanID).className = "invalidBox";
+		return false;
+	} else {
+	document.getElementById(quanID).className = "";
+	}
 	
 	var stringToPass = "?itemID=" + itemID + "&stockToAdd=" + stockToAdd;
 	

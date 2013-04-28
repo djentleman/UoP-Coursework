@@ -37,9 +37,11 @@
 									
 									echo "<div id='replyForm'>";
 									echo "<p>Reply:</p>";
-									echo "<textarea cols='26' rows='5' id='replyText'></textarea>";
+									echo "<textarea onkeyup='return commentKeyDown()' cols='40' rows='8' id='replyText'></textarea>";
+									echo "<p id='charRemaining' class='charRemaining'>1000 Characters Remaining</p>";
+									echo "<p id='replyResponse'></p>";
 									echo "<p></p>";
-									echo "<button onclick='return uploadReply();'>Reply</button>";
+									echo "<button onclick='return replyButtonDown();'>Reply</button>";
 									echo "<button onclick='return ignore();'>Ignore</button>";
 									echo "</div>";
 									return false;

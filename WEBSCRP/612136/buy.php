@@ -126,6 +126,9 @@
 				} else {
 					document.getElementById('validationCallback').innerHTML = "Invalid Input: " + callback;
 				}
+				document.getElementById('comment').value = "";
+				document.getElementById('posterName').value = "";
+				document.getElementById('rating').value = -1; // blanks everything
 				return false;
 			}
 				
@@ -277,7 +280,7 @@
 							echo "<option value='10'>10/10</option>";
 							echo "</select>";
 							
-							echo "<p>Comment (MAX 500 characters)</p>";
+							echo "<p>Comment (MAX 1000 characters)</p>";
 							
 							
 							echo "<textarea cols='35' onkeyup='return commentKeyDown();' rows='7' id='comment' name='comment'></textarea>";
