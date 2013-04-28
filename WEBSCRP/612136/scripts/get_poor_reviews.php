@@ -30,7 +30,7 @@
 									echo "<input type='hidden' id='OPID' value='" . $row['commentID'] . "'>";
 									echo "<p>Item Name: '" . $itemName . "'</p>";
 									echo "<p>Poster Name: '" . $row['posterName'] . "'</p>";
-									echo "<p>Comment: '" . $row['commentBody'] . "'</p>";
+									echo "<p style='white-space: normal; width: 60%; margin-left: 20%;'>Comment: '" . $row['commentBody'] . "'</p>";
 									echo "<p>Rating: " . $row['rating'] . "/10</p>";
 									
 									echo "<p></p>";

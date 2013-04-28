@@ -1,15 +1,6 @@
 	<?php 
 		include "header.php" 
 	?>
-		<style type="text/css">
-			.browseDiv:hover{
-				opacity:1;
-			}
-			.browseDiv{
-				opacity:0.7; 
-				transition: 0.5s;
-			}
-		</style>
 		
 		<script>	
 			function shiftLeft(){

@@ -76,7 +76,7 @@
 								$totalPrice += $itemPrice;
 								
 								echo "<div class='basketPriceWrap'>";
-								echo '&pound;' . $itemPrice;
+								echo $_SESSION['currency'] . $itemPrice;
 								echo "</div>";
 								
 								
@@ -96,7 +96,7 @@
 						
 						
 						
-						echo "<p style='float:left; margin-left:13%; margin-top:19px;'>Total Price: &pound;" . $totalPrice . "</p>";
+						echo "<p style='float:left; margin-left:13%; margin-top:19px;'>Total Price: " . $_SESSION['currency'] . $totalPrice . "</p>";
 						$rows = $basket->getSize();
 						echo "<div id='rows' value='$rows' style='visibility:hidden'>$rows</div>";
 						

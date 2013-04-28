@@ -62,6 +62,29 @@
 				}
 				return false;
 			}
+			
+			function updateCurrencies(){
+				// ajax request
+				
+				var xhr = new XMLHttpRequest();
+				var target = document.getElementById('currentCurrency');
+				
+				var changeListener = function () {
+					if (xhr.readyState === 4 && xhr.status === 200) {
+						var callback = xhr.responseText;
+						target.innerHTML = callback;
+					}
+				};
+			
+				var code = document.getElementById('currencySelect').value;
+				var convert = document.getElementById('convert').checked;
+				var stringToPass = "?code=" + code + "&convert=" + convert;
+				
+				xhr.onreadystatechange = changeListener;
+				xhr.open("GET", "../scripts/changeStoreCurrency.php" + stringToPass, true);
+				xhr.send();
+				return false;
+			}
 		
 		</script>
 		
@@ -78,12 +101,21 @@
 			<div id="currencyWrap">
 				<h3>Change The Store Currency</h3>
 				Currency:
-				<select id="currencySelect">
-					<option value="GBP">£</option>
-					<option value="USD">$</option>
-					<option value="EUR">€</option>
-					<option value="JPN">¥</option>
+				<select style="width:80px" id="currencySelect">
+					<option value="GBP">GBP  £</option>
+					<option value="USD">USD  $</option>
+					<option value="EUR">EUR  €</option>
+					<option value="JPY">JPY  ¥</option>
 				</select>
+				Convert Prices:
+				<input id="convert" type="checkbox" checked="true">
+				<button onclick="return updateCurrencies()">Submit</button>
+				<p></p>
+				<p id="currentCurrency" class="charRemaining">Current Currency: <?php echo $_SESSION['currency']; ?></p>
+				<?php
+					echo "<input type='hidden' id='old' value='" . $_SESSION['currency'] . "'>";
+				
+				?>
 			</div>
 			<div id="DCSSWrap">
 				<h3>Change The Colour Scheme</h3>

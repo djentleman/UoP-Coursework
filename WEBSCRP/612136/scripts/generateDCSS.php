@@ -110,8 +110,10 @@
 	$css .= generateObject(".stockIdWrap:hover", "background-color", $light1);
 	$css .= generateObject(".leftButton", "background-color", $light1);
 	$css .= generateObject(".leftButton:hover", "background-color", $light2);
+	$css .= generateObject(".leftButton:hover", "box-shadow", "0px 0px 5px " . $light2);
 	$css .= generateObject(".rightButton", "background-color", $light1);
 	$css .= generateObject(".rightButton:hover", "background-color", $light2);
+	$css .= generateObject(".rightButton:hover", "box-shadow", "0px 0px 5px " . $light2);
 	$css .= generateObject(".choiceObject:hover", "background-color", $light1);
 	$css .= generateObject(".choiceObject:active", "background-color", $light2);
 	$css .= generateObject(".updateButton:hover", "background-color", $light1);

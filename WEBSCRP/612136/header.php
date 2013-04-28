@@ -5,6 +5,9 @@
 	if (!isset($_SESSION['storeName'])){
 		$_SESSION['storeName'] = file_get_contents('assets/storeName.txt');
 	}
+	if (!isset($_SESSION['currency'])){
+		$_SESSION['currency'] = file_get_contents('assets/currency.txt');
+	}
 ?>
 <!DOCTYPE html>
 <html>

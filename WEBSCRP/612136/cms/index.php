@@ -60,7 +60,7 @@
 									echo "<input type='hidden' id='$count' value='$itemID' >";
 									
 									echo "<div class='buyerInfoWrap'>";
-									echo "&pound;" . $price;
+									echo $_SESSION['currency'] . $price;
 									echo "</div>";
 									
 									echo "<div class='buyerInfoWrap'>";

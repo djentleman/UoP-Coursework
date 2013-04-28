@@ -86,8 +86,7 @@
 				var target = document.getElementById('desc');
 				var desc = target.value;
 				
-				var regex = new RegExp("^(.{0,999})?$");
-				var valid = regex.test(desc);
+				var valid = true;
                 
                 
                 var hasInjection = checkForInjection('desc');

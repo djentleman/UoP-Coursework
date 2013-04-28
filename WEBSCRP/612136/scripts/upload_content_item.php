@@ -17,7 +17,7 @@
 					<p>Quantity*</p>
 					<input class="invalidBox" onkeyup="return checkValid(true, 'quan')" type="text" id="quan" name="itemQuantity" value="">
 						
-					<p>Price* (in &pound;)</p>
+					<p>Price* (in <?php session_start(); echo $_SESSION['currency']; ?>)</p>
 					<input class="invalidBox" onkeyup="return checkValidPrice()" type="text" id="price" name="price" value="">
 						
 					<p>Seller Name*</p>
@@ -51,9 +51,8 @@
 						mysql_close($con);
 					?>
 						
-					<p>Description (MAX 1000 characters)</p>
+					<p>Description</p>
 					<textarea onkeyup="return descKeyDown()" cols="32" rows="8" id="desc" name="description"></textarea>
-					<p id="descRemaining" class="charRemaining">1000 Characters Remaining</p>
 						
 					
 

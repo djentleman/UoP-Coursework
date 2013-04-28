@@ -28,7 +28,7 @@
 								} else {
 									echo "<p>No Rating Given</p>";
 								}
-								echo "<p> " . $row['commentBody'] . "</p>";
+								echo "<p style='white-space:normal; text-align:left'> " . $row['commentBody'] . "</p>";
 								echo "<br>";
 								echo "</div>";
 							}

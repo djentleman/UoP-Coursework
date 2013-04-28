@@ -38,7 +38,7 @@
 					<p>Quantity*</p>
 					<input type="text" onkeyup="return genericValidate(true, 'quantity')" id="quantity" name="itemQuantity" value="">
 						
-					<p>Price* (in &pound;)</p>
+					<p>Price* (in <?php session_start(); echo $_SESSION['currency']; ?>)</p>
 					<input type="text" onkeyup="return genericValidate(true, 'price')" id="price" name="itemPrice" value="">
 						
 					<p>Seller Name*</p>

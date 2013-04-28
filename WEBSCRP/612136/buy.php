@@ -158,7 +158,7 @@
 						echo "<div class='itemInfo'>";
 						echo "<h2>$itemName</h2>";
 						if ($itemQuantity > 5){
-							echo "<p>Price &pound;$itemPrice</p>";
+							echo "<p>Price " . $_SESSION['currency'] . "$itemPrice</p>";
 							echo "<p id='quan'>$itemQuantity Left In Stock</p>";
 						} else {
 							echo "<p>Price &pound;$itemPrice</p>";
@@ -219,10 +219,10 @@
 			<div class="itemDescription">
 				<?php
 					if (!($itemName == "404: Item Not Found :(")){
-						echo "<p> <strong>Description:</strong>   $itemDescription</p>";
+						echo "<p style='white-space:normal'> <strong>Description:</strong>   $itemDescription</p>";
 						echo "<br>";
 						echo "<br>";
-						echo "<p><strong>Item Tags:</strong> $tags </p>";
+						echo "<p style='white-space:normal'><strong>Item Tags:</strong> $tags </p>";
 					}
 				?>
 			</div>

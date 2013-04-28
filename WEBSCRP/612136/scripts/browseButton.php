@@ -22,7 +22,7 @@
 	echo "</div>";
 	
 	
-	echo "<p> £" . $row['itemPrice'] . "</p>";
+	echo "<p> " . $_SESSION['currency'] . $row['itemPrice'] . "</p>";
 	
 	
 	echo "<input type='hidden' name='itemID' value='$itemID'>";

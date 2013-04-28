@@ -51,19 +51,17 @@ body
 	height:300px;
 	width:0px;
 	position:absolute;
-	/*transition:0.5s, visibility 1s, opacity 0.2s, top 0s;*/
 	
 }
 
 .rightContent{
 	visibility:hidden;
-	right:500px;
+	right:0px;
 	opacity:0;
 	top:300px;
 	height:300px;
 	width:0px;
 	position:absolute;
-	/*transition:0.5s, visibility 1s, opacity 0.2s, top 0s;*/
 	
 }
 
@@ -72,8 +70,9 @@ body
 	height: 300px;
 	margin-left: 20%;
 	margin-top: 100px;
-	/*transition:0.5s, visibility 1s, opacity 0.5s, margin-top 0s;*/
-	
+	transition: 0s, opacity 0.5s;
+	-moz-transition: opacity 0.5s;
+	-webkit-transition: opacity 0.5s;
 }
 
 .leftButton:hover{
@@ -83,6 +82,8 @@ body
 .rightButton:hover{
 	background-color: #fea;
 }
+
+
 
 .rightButton{
 	width: 50px;
@@ -95,6 +96,7 @@ body
 	-moz-user-select: none; /* user select stops highlight in click */
 	-webkit-user-select: none;
 	cursor: pointer;
+	border-radius:100px;
 }
 .leftButton{
 	width: 50px;
@@ -107,6 +109,7 @@ body
 	-moz-user-select: none;
 	-webkit-user-select: none;
 	cursor: pointer;
+	border-radius:100px;
 }
 
 
@@ -265,6 +268,10 @@ div.orderTable > *:nth-child(1){
 	cursor: pointer;
 }
 
+.choiceObject{
+	border-radius: 10px;
+}
+
 .choiceObject:hover{
 	background-color: #fd9;
 	box-shadow:0 0ex 6px;
@@ -360,6 +367,7 @@ div.basketTable > *:nth-child(1){
 {
 	max-width: 100%;
 	max-height: 100%;
+	border-radius: 10px;
 }
 
 
@@ -396,6 +404,9 @@ div.basketTable > *:nth-child(1){
 	margin-bottom: 2px;
 	float: left;
 	cursor: pointer;
+	opacity: 0.7;
+	border-radius: 15px;
+	transition: 0.2s;
 }
 
 .browseDiv:hover
@@ -465,7 +476,7 @@ div.basketTable > *:nth-child(1){
 
 select
 {
-	margin-right:10%;
+	margin-right:5%;
 }
 
 /*this code handles the menu, consider changing to classes for maintainabilty*/
