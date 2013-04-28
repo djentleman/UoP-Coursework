@@ -1,5 +1,5 @@
 	<?php 
-		include "cmsheader.php" 
+		include "cmsheader.php"; 
 	?>
 		
 		<script src="../ajax/upload_cat.js"></script> <!--AJAX script for catagory upload-->

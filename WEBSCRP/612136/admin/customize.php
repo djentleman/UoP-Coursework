@@ -1,5 +1,5 @@
 	<?php 
-		include "adminheader.php" 
+		include "adminheader.php";
 	?>
 	
 		<script src="../ajax/changeStoreName.js"></script>

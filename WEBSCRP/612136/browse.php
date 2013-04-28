@@ -1,5 +1,5 @@
 	<?php 
-		include "header.php" 
+		include "header.php";
 	?>
 		<script src="js/form_buy.js"></script> <!-- JS for page load -->
 		

@@ -1,5 +1,10 @@
 	<?php 
-		include "cmsheader.php" 
+		include "cmsheader.php";
+		if ($_SESSION['currency'] == "&yen;"){
+			echo "<input type='hidden' id='isYen' value='1'>";
+		} else {
+			echo "<input type='hidden' id='isYen' value='0'>";
+		}
 	?>
 		<script src="../ajax/edit_cat.js"></script>
 		<script src="../ajax/edit_item.js"></script>
@@ -70,7 +75,7 @@
                 if (isNumeric){
                     if (id == "price"){
                         // use regex
-                        var regex = new RegExp("^[0-9]+([.][0-9]{2})?$");
+                        var regex = new RegExp("^(([0-9]+([.][0-9]{2})?)|(^$))$");
                         var priceValid = regex.test(str);
                         if (!priceValid){
                             valid = false;

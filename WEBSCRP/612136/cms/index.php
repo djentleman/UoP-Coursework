@@ -1,5 +1,5 @@
 	<?php 
-		include "cmsheader.php" 
+		include "cmsheader.php"; 
 	?>
 		<script src="../js/form_buy.js"></script>
 		<!-- i would very much like to have self updating quantities here -->

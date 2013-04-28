@@ -220,8 +220,6 @@
 				<?php
 					if (!($itemName == "404: Item Not Found :(")){
 						echo "<p style='white-space:normal'> <strong>Description:</strong>   $itemDescription</p>";
-						echo "<br>";
-						echo "<br>";
 						echo "<p style='white-space:normal'><strong>Item Tags:</strong> $tags </p>";
 					}
 				?>

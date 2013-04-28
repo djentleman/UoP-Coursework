@@ -1,5 +1,5 @@
 <?php
-	include "adminheader.php"
+	include "adminheader.php";
 ?>
 		<script src="../js/form_buy.js"></script> <!-- fetching item pages -->
 		<script src="../ajax/add_stock.js"></script>

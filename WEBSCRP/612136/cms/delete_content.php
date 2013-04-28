@@ -1,5 +1,5 @@
 	<?php 
-		include "cmsheader.php" 
+		include "cmsheader.php";
 	?>
 	
 		<script src="../js/form_choice_delete.js"></script> <!-- JS for form choice -->
