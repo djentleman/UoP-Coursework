@@ -72,14 +72,28 @@
 				var changeListener = function () {
 					if (xhr.readyState === 4 && xhr.status === 200) {
 						var callback = xhr.responseText;
-						target.innerHTML = callback;
+						target.innerHTML = "Current Currency: " + callback;
+						document.getElementById('old').value = callback;
 					}
 				};
 			
 				var code = document.getElementById('currencySelect').value;
 				var convert = document.getElementById('convert').checked;
-				var stringToPass = "?code=" + code + "&convert=" + convert;
+				var sym = document.getElementById('old').value;
+				var old = "";
+				if (sym == "¥" || sym == "&yen;"){
+					old = "JPY";
+				} else if (sym == "$" || sym == "&dollar;"){
+					old = "USD";
+				} else if (sym == "€" || sym == "&euro;"){
+					old = "EUR";
+				} else {
+					old = "GBP";
+				}
 				
+				
+				var stringToPass = "?code=" + code + "&convert=" + convert + "&old=" + old;
+					
 				xhr.onreadystatechange = changeListener;
 				xhr.open("GET", "../scripts/changeStoreCurrency.php" + stringToPass, true);
 				xhr.send();

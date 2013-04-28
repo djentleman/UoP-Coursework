@@ -1,5 +1,10 @@
 	<?php 
 		include "cmsheader.php"; 
+		if ($_SESSION['currency'] == "&yen;"){
+			echo "<input type='hidden' id='isYen' value='1'>";
+		} else {
+			echo "<input type='hidden' id='isYen' value='0'>";
+		}
 	?>
 		
 		<script src="../ajax/upload_cat.js"></script> <!--AJAX script for catagory upload-->
@@ -64,8 +69,11 @@
 				
 				var target = document.getElementById('price');
 				var price = target.value;
-				
-				var regex = new RegExp("^[0-9]+([.][0-9]{2})?$");
+				if (document.getElementById('isYen').value == "0"){
+					var regex = new RegExp("^[0-9]+([.][0-9]{2})?$");
+				} else {
+					var regex = new RegExp("^[0-9]+$");
+				}
 				var valid = regex.test(price);
                 var hasInjection = checkForInjection('price');
                 

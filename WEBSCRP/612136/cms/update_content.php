@@ -75,7 +75,13 @@
                 if (isNumeric){
                     if (id == "price"){
                         // use regex
-                        var regex = new RegExp("^(([0-9]+([.][0-9]{2})?)|(^$))$");
+						if (document.getElementById('isYen') == "0"){
+							// not yen
+							var regex = new RegExp("^(([0-9]+([.][0-9]{2})?)|(^$))$");
+						} else {
+							// yen
+							var regex = new RegExp("^(([0-9]?)*)$");
+						}
                         var priceValid = regex.test(str);
                         if (!priceValid){
                             valid = false;
