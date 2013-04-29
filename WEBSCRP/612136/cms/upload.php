@@ -51,6 +51,11 @@
 					valid = false;
 					callback = "Please Select A Category";
 				}
+                
+				if (document.getElementById('isNew').value == "-1"){
+					valid = false;
+					callback = "Please Select A Condition";
+				}
 				
 				if (document.getElementById('sellerName').className == "invalidBox"){
 					valid = false;

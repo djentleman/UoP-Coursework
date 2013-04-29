@@ -13,11 +13,6 @@
 				$catagoryID = $_GET['catagoryID'];
 				$description = $_GET['description'];
 				
-				if ($isNew == "true"){
-					$isNew = 0;
-				} else {
-					$isNew = 1;
-				}
 				
 				echo $isNew;
 				
@@ -68,11 +63,12 @@
 					executeQuery($query, $con);
 				} // else keep it the same
 				
-				
-				$query = "UPDATE `items`
-				SET `isNew`='$isNew'
-				WHERE `itemID`='$itemID'";
-				executeQuery($query, $con);
+				if ($isNew != -1){
+                    $query = "UPDATE `items`
+                    SET `isNew`='$isNew'
+                    WHERE `itemID`='$itemID'";
+                    executeQuery($query, $con);
+                }
 				// else keep it the same
 				
 				

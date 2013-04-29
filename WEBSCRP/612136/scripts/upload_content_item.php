@@ -24,7 +24,12 @@
 					<input class="invalidBox" onkeyup="return checkValid(false, 'sellerName')" type="text" id="sellerName" name="sellerName" value="">
 						
 					<p>Is The Item New?
-						<input type="checkBox" id="isNew" name="new">
+						<!--<input type="checkBox" id="isNew" name="new">-->
+                        <select id="isNew">
+                            <option value="-1">Please Select</option>
+                            <option value="0">New</option>
+                            <option value="1">Used</option>
+                        </select>
 					</p>
 						
 						

@@ -86,6 +86,18 @@
 				}
 				return false;
 			}
+            
+            function getOldCode(sym){
+				if (sym == "¥" || sym == "&yen;"){
+					return "JPY";
+				} else if (sym == "$" || sym == "&dollar;"){
+					return "USD";
+				} else if (sym == "€" || sym == "&euro;"){
+					return "EUR";
+				} else {
+					return "GBP";
+				}
+            }
 			
 			function updateCurrencies(){
 				// ajax request
@@ -106,16 +118,7 @@
 				var code = document.getElementById('currencySelect').value;
 				var convert = document.getElementById('convert').checked;
 				var sym = document.getElementById('old').value;
-				var old = "";
-				if (sym == "¥" || sym == "&yen;"){
-					old = "JPY";
-				} else if (sym == "$" || sym == "&dollar;"){
-					old = "USD";
-				} else if (sym == "€" || sym == "&euro;"){
-					old = "EUR";
-				} else {
-					old = "GBP";
-				}
+				var old = getOldCode(sym);
 				
 				
 				var stringToPass = "?code=" + code + "&convert=" + convert + "&old=" + old;
@@ -147,6 +150,8 @@
 				return false;
 				
 			}
+            
+            
 		
 		</script>
 		
@@ -199,7 +204,12 @@
 					<p class="response" id="hexCallback"></p>
 				</div>
 			</div>
-			
 		</div>
+        <script>
+            // sets currency box
+            var sym = document.getElementById('old').value;
+			var current = getOldCode(sym);
+            document.getElementById('currencySelect').value = current;
+        </script>
 	</body>
 </html>

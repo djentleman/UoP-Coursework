@@ -32,7 +32,7 @@ function editItem() {
 	var quantity = document.getElementById('quantity').value;
 	var price = document.getElementById('price').value;
 	var sellerName = document.getElementById('sellerName').value;
-	var isNew = document.getElementById('isNew').checked; + ""; // stringify
+	var isNew = document.getElementById('isNew').value;
 	var tags = document.getElementById('tags').value;
 	var catagoryID = document.getElementById('catagoryList').value; // from listBoxRender
 	var desc = document.getElementById('desc').value;

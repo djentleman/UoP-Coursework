@@ -29,7 +29,7 @@ function uploadItem() {
 	var quantity = document.getElementById('quan').value;
 	var price = document.getElementById('price').value;
 	var sellerName = document.getElementById('sellerName').value;
-	var isNew = document.getElementById('isNew').checked + ""; //stringify
+	var isNew = document.getElementById('isNew').value
 	var tags = document.getElementById('tags').value;
 	var catagoryID = document.getElementById('catagoryList').value;
 	var description = document.getElementById('desc').value;

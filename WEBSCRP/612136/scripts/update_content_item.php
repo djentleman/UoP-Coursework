@@ -45,7 +45,11 @@
 					<input type="text" onkeyup="return genericValidate(false, 'sellerName')" id="sellerName" name="sellerName" value="">
 						
 					<p>Is The Item New?*
-						<input type="checkBox" id="isNew" name="new" value="">
+                         <select id="isNew">
+                            <option value="-1">Keep The Same</option>
+                            <option value="0">New</option>
+                            <option value="1">Used</option>
+                        </select>
 					</p>
 						
 						
