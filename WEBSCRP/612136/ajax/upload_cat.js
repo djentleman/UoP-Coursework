@@ -14,7 +14,7 @@ function uploadCat() {
 		if (xhr.readyState === 4) {
 			if (xhr.status === 200) {
 			
-				target.innerHTML = "The New Catagory: " + catagoryName + " Has Been Uploaded";
+				target.innerHTML = catagoryName + " Has Been Uploaded";
 				target.style.backgroundColor = "#4DB870";
 				// add the retrieved content to it using
 				// the innerHTML property
