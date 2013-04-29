@@ -27,6 +27,10 @@
 						$orderID = $_GET['orderID'];
 					}
 					
+					echo "<input type='hidden' id='catIdVal' value='$catID'>";
+					echo "<input type='hidden' id='orderIdVal' value='$orderID'>";
+					echo "<input type='hidden' id='searchVal' value='$search'>";
+					
 					
 					
 					
@@ -273,5 +277,10 @@
 				</div>
 			</div>
 		</div>
+		<script>
+			document.getElementById('catagoryList').value = document.getElementById('catIdVal').value;
+			document.getElementById('orderType').value = document.getElementById('orderIdVal').value;
+			document.getElementById('catSearch').value = document.getElementById('searchVal').value;
+		</script>
 	</body>
 </html>
