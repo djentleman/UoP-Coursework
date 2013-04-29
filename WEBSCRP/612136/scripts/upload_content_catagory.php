@@ -10,7 +10,7 @@
 						
 					<input type="button" onMouseDown="return validateCat()" name="submit" value="Submit">
 						
-					<p id="dynamicText"></p>
+					<p style="margin-right: 40%;border-radius: 5px; text-align: center;" id="dynamicText"></p>
 					
 				</form>
 				

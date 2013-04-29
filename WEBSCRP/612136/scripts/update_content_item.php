@@ -78,7 +78,7 @@
 					
 					<button onclick="return validateItem()">Submit</button>		
 					
-					<p id="dynamicText"></p>
+					<p  style="margin-right: 40%;border-radius: 5px; text-align: center;" id="dynamicText"></p>
 
 				
 						

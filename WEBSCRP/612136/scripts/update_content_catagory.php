@@ -29,7 +29,7 @@
 					
 					<input type="button" name="submit" value="Submit" onclick="return validateCat()">
 					
-					<p id="dynamicText"></p>
+					<p  style="margin-right: 40%;border-radius: 5px; text-align: center;" id="dynamicText"></p>
 					
 				</form>
 			</div>

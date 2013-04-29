@@ -22,6 +22,7 @@
 				// give validation callback
 				if (!valid){
 					document.getElementById('hexCallback').innerHTML = "Invalid Hex Code";
+						document.getElementById('hexCallback').style.backgroundColor = "#FF4D4D";
 					target.style.backgroundColor = "#FFFFFF";
 					return false; //exit
 				} else {
@@ -80,6 +81,7 @@
 			function checkHex(){
 				if (!(document.getElementById('hexCallback').innerHTML == "Invalid Hex Code")){
 					document.getElementById('hexCallback').innerHTML = "Colour Scheme Changed";
+					document.getElementById('hexCallback').style.backgroundColor = "#4DB870";
 					return changeCSS(true)
 				}
 				return false;
@@ -96,6 +98,8 @@
 						var callback = xhr.responseText;
 						target.innerHTML = "Current Currency: " + callback;
 						document.getElementById('old').value = callback;
+						document.getElementById('currencyCallback').innerHTML = "Currency Changed To " + callback;
+						document.getElementById('currencyCallback').style.backgroundColor = "#4DB870";
 					}
 				};
 			
@@ -135,9 +139,11 @@
 			function checkValidNameChange(){
 				if (document.getElementById('storeName').className != "invalidBox"){
 					document.getElementById('validationCallback').innerHTML = "";
+						document.getElementById('validationCallback').style.backgroundColor = "#4DB870";
 					return changeName()
 				}
 				document.getElementById('validationCallback').innerHTML = "Invalid Store Name";
+					document.getElementById('validationCallback').style.backgroundColor = "#FF4D4D";
 				return false;
 				
 			}
@@ -152,7 +158,7 @@
 				<p>Enter New Store Name:</p>
 				<input onkeyup="return nameKeyDown()" type="text" id="storeName">
 				<button onclick="return checkValidNameChange()">Submit</button>
-				<p id="validationCallback"></p>
+				<p class="response" id="validationCallback"></p>
 			</div>
 			<div id="currencyWrap">
 				<h3>Change The Store Currency</h3>
@@ -168,6 +174,7 @@
 				<button onclick="return updateCurrencies()">Submit</button>
 				<p></p>
 				<p id="currentCurrency" class="charRemaining">Current Currency: <?php echo $_SESSION['currency']; ?></p>
+				<p class="response" id="currencyCallback"></p>
 				<?php
 					echo "<input type='hidden' id='old' value='" . $_SESSION['currency'] . "'>";
 				
@@ -189,7 +196,7 @@
 					<p>Please Enter A 6 Digit Hex Code:</p>
 					#<input style="color: #999999" onkeyup="return updateHex()" value="eg. FFCC88" id="hex" onblur="if(this.value==''){this.value='eg. FFCC88';}" onclick="if(this.value=='eg. FFCC88'){this.value='';}" onkeyup="return updateHex()" type="text">
 					<button onclick="return checkHex()">Submit</button>
-					<p id="hexCallback"></p>
+					<p class="response" id="hexCallback"></p>
 				</div>
 			</div>
 			

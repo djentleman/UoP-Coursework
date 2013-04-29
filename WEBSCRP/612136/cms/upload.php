@@ -59,9 +59,11 @@
 				
 				if (valid){
 					document.getElementById('validationCallback').innerHTML = "";
+					document.getElementById('validationCallback').style.backgroundColor = "white";
 					uploadInfo();
 				} else {
-					document.getElementById('validationCallback').innerHTML = "Invalid Input: " + callback;
+					document.getElementById('validationCallback').innerHTML = callback;
+					document.getElementById('validationCallback').style.backgroundColor = "#FF4D4D";
 				}
 			}
 			
@@ -147,7 +149,8 @@
 					document.getElementById("dynamicText").innerHTML = "";
 					return uploadCat();
 				} else {
-					document.getElementById("dynamicText").innerHTML = "Invalid Input: " + callback;
+					document.getElementById("dynamicText").innerHTML = callback;
+					document.getElementById("dynamicText").style.backgroundColor = "#FF4D4D";
 				}
 				
 			}

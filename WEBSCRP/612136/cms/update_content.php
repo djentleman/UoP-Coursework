@@ -54,9 +54,11 @@
 				
 				if (valid){
 					document.getElementById('dynamicText').innerHTML = "";
+					document.getElementById("dynamicText").style.backgroundColor = "#4DB870";
 					return editItem();
 				} else {
-					document.getElementById('dynamicText').innerHTML = "Invalid Input: " + callback;
+					document.getElementById('dynamicText').innerHTML = callback;
+					document.getElementById("dynamicText").style.backgroundColor = "#FF4D4D";
 					return false;
 				}
 			}
@@ -120,10 +122,12 @@
                 }
 				
 				if (valid){
-					return editCat();
 					document.getElementById('dynamicText').innerHTML = "";
+					document.getElementById("dynamicText").style.backgroundColor = "#4DB870";
+					return editCat();
 				} else {
-					document.getElementById('dynamicText').innerHTML = "Invalid Input: " + callback;
+					document.getElementById('dynamicText').innerHTML = callback;
+					document.getElementById("dynamicText").style.backgroundColor = "#FF4D4D";
 					return false;
 				}
 			}

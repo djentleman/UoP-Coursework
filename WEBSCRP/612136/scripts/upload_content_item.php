@@ -57,7 +57,7 @@
 					
 
 					<input type="button"  onClick="validateItem()"  name="submit" value="Submit">
-					<p id="validationCallback"></p>
+					<p  style="margin-right: 40%;border-radius: 5px; text-align: center;" id="validationCallback"></p>
 					
 						
 				</form>
