@@ -12,6 +12,8 @@ function changeCSS(isAdvanced) {
 			if (xhr.status === 200) {
 				target.innerHTML = ""; // makes sure it refreshes
 				target.innerHTML = "<link rel='stylesheet' type='text/css' href='../css/dynamic.css'>";
+				document.getElementById('hexCallback').innerHTML = "Colour Scheme Changed";
+				document.getElementById('hexCallback').style.backgroundColor = "#4DB870";
 				// update css with ajax
 			}
 		}

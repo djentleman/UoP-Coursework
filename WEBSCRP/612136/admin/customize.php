@@ -201,8 +201,8 @@
 					<p>Please Enter A 6 Digit Hex Code:</p>
 					#<input style="color: #999999" onkeyup="return updateHex()" value="eg. FFCC88" id="hex" onblur="if(this.value==''){this.value='eg. FFCC88';}" onclick="if(this.value=='eg. FFCC88'){this.value='';}" onkeyup="return updateHex()" type="text">
 					<button onclick="return checkHex()">Submit</button>
-					<p class="response" id="hexCallback"></p>
 				</div>
+				<p class="response" id="hexCallback"></p>
 			</div>
 		</div>
         <script>
