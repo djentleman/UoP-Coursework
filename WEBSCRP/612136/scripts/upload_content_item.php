@@ -23,7 +23,7 @@
 					<p>Seller Name*</p>
 					<input class="invalidBox" onkeyup="return checkValid(false, 'sellerName')" type="text" id="sellerName" name="sellerName" value="">
 						
-					<p>Is The Item New?
+					<p>Condition*
 						<!--<input type="checkBox" id="isNew" name="new">-->
                         <select id="isNew">
                             <option value="-1">Please Select</option>

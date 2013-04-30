@@ -2,7 +2,7 @@
 			
 				
 				<h2>Update Item</h2>
-				<h3>Leaving a field blank causes that field to not be updated</h3> 
+				<p>Leaving a field blank causes that field to not be updated</p> 
 			
 				<p class="left">Select Item To Update</p>
 				<!-- action="update_item.php"  -->
@@ -32,19 +32,19 @@
 					
 					
 				
-					<p>Item Name*</p>
+					<p>Item Name</p>
 					<input type="text" onkeyup="return genericValidate(false, 'itemName')" id="itemName" name="itemName" value="">
 						
-					<p>Quantity*</p>
+					<p>Quantity</p>
 					<input type="text" onkeyup="return genericValidate(true, 'quantity')" id="quantity" name="itemQuantity" value="">
 						
-					<p>Price* (in <?php session_start(); echo $_SESSION['currency']; ?>)</p>
+					<p>Price (in <?php session_start(); echo $_SESSION['currency']; ?>)</p>
 					<input type="text" onkeyup="return genericValidate(true, 'price')" id="price" name="itemPrice" value="">
 						
-					<p>Seller Name*</p>
+					<p>Seller Name</p>
 					<input type="text" onkeyup="return genericValidate(false, 'sellerName')" id="sellerName" name="sellerName" value="">
 						
-					<p>Is The Item New?*
+					<p>Condition
                          <select id="isNew">
                             <option value="-1">Keep The Same</option>
                             <option value="0">New</option>

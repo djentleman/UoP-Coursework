@@ -23,7 +23,7 @@
 				if (strpos($itemName,$search) !== false) {
 					$success = true;
 				}
-				if ($success && $currentPos < 121){ // limited to 6 suggestions
+				if ($success && $currentPos < 81){ // limit  suggestions
 					// render suggested item
 					$pos = $currentPos . "px";
 					echo "<p onclick='goToBuy($itemID)' class='searchSuggestion' style='margin-top:$pos'>$itemName</p>";

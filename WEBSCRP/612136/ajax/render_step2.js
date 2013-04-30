@@ -1,4 +1,5 @@
 function renderStep2() {
+	// renders second stage of image upload
 
 	document.getElementById("dragtarget").style.visibility = 'visible';
 

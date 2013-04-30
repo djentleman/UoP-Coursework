@@ -121,10 +121,12 @@
 				}
 				
 				if(valid){
-					document.getElementById('validationCallback').innerHTML = "";
+					document.getElementById('validationCallback').innerHTML = "Comment Succesfully Uploaded";
+					document.getElementById('validationCallback').style.backgroundColor = "#4DB870";
 					uploadAndRefresh();
 				} else {
 					document.getElementById('validationCallback').innerHTML = "Invalid Input: " + callback;
+					document.getElementById('validationCallback').style.backgroundColor = "#FF4D4D";
 				}
 				document.getElementById('comment').value = "";
 				document.getElementById('posterName').value = "";
@@ -291,7 +293,7 @@
 							
 							echo "<!-- calls ajax -->";
 							echo "<button onclick='return addComment()' name='submit'>Add Comment</button>";
-							echo "<p id='validationCallback'></p>";
+							echo "<p  class='response' id='validationCallback'></p>";
 						}
 					?>
 					

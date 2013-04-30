@@ -206,20 +206,8 @@
 				return false;
 			}
 			
-			function updateDescRemaining(){
-				// get number of characters
-				var currentText = document.getElementById('desc').value;
-				var len = currentText.length;
-				var remaining = 1000 - len;
-				
-				var message = remaining + " Characters Remaining";
-				console.log(message);
-				document.getElementById('descRemaining').innerHTML = message;
-				return false;
-			}
 			
 			function descKeyDown(){
-				updateDescRemaining();
 				checkValidDesc()
 				return false;
 			}

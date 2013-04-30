@@ -7,7 +7,7 @@
 		
 		<div class="mainContent">
 
-			<h2>Welcome To The Tbuyer CMS</h2>
+			<h2>Welcome To The <?php echo $_SESSION['storeName'] ?> CMS</h2>
 			
 			
 			<h3>Items In Store</h3>

@@ -1,6 +1,6 @@
 	<?php 
 		// this page uses the google graph API
-		// https://developers.google.com/chart/
+		// http://developers.google.com/chart/
 	
 		include "adminheader.php";
 		include "../scripts/mysql.php";
